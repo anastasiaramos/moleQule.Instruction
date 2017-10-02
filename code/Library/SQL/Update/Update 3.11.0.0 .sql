@@ -1,0 +1,11 @@
+/* UPDATE 3.11.0.0*/
+
+SET SEARCH_PATH = "COMMON";
+
+SET SEARCH_PATH = "0001";
+
+ALTER TABLE "Empleado" ADD COLUMN "TIPO" bigint DEFAULT 6;
+UPDATE "Empleado" SET "TIPO" = 6;
+
+
+

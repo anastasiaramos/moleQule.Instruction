@@ -1,0 +1,1899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4F2AB1C3-E192-4F5D-B6AB-1E3B92D72408}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>moleQule.Face.Instruction</RootNamespace>
+    <AssemblyName>moleQule.Face.Instruction</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Csla">
+      <HintPath>..\..\..\External Libs\Csla.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Infralution.Localization">
+      <HintPath>..\..\..\External Libs\Infralution.Localization\bin\Infralution.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextSharp, Version=4.1.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <HintPath>..\..\..\Hangar\code\packages\iTextSharp-LGPL.4.1.6\lib\iTextSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\Common\Office.Interop\2007\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="moleQule.Face">
+      <HintPath>..\..\..\moleQule\moleQule.Face\bin\moleQule.Face.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Face.Common">
+      <HintPath>..\..\..\moleQule\moleQule.Common\code\Face\bin\moleQule.Face.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Face.Hipatia">
+      <HintPath>..\..\..\Hipatia\Code\Face\bin\moleQule.Face.Hipatia.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Face.Invoice">
+      <HintPath>..\..\..\moleQule.Invoice\code\Face\bin\moleQule.Face.Invoice.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Face.Store">
+      <HintPath>..\..\..\moleQule.Store\code\Face\bin\moleQule.Face.Store.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library">
+      <HintPath>..\..\..\moleQule\moleQule.Library\bin\moleQule.Library.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Application">
+      <HintPath>..\..\..\Hangar\code\moleQule.Application\Library\bin\moleQule.Library.Application.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Common">
+      <HintPath>..\..\..\moleQule\moleQule.Common\code\Library\bin\moleQule.Library.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Hipatia">
+      <HintPath>..\..\..\Hipatia\Code\Library\bin\moleQule.Library.Hipatia.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Instruction">
+      <HintPath>..\Library\bin\moleQule.Library.Instruction.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Invoice">
+      <HintPath>..\..\..\moleQule.Invoice\code\Library\bin\moleQule.Library.Invoice.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Store">
+      <HintPath>..\..\..\moleQule.Store\code\Library\bin\moleQule.Library.Store.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\moleQule\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Auxiliares\InstructoresPromocionViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Auxiliares\InstructoresPromocionViewForm.Designer.cs">
+      <DependentUpon>InstructoresPromocionViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\RegistroNotasAlumnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\RegistroNotasAlumnoForm.Designer.cs">
+      <DependentUpon>RegistroNotasAlumnoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClasesPromocionMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClasesPromocionMngForm.Designer.cs">
+      <DependentUpon>ClasesPromocionMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClasesPromocionSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClasesPromocionSelectForm.Designer.cs">
+      <DependentUpon>ClasesPromocionSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\PartesPrintSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\PartesPrintSelectForm.Designer.cs">
+      <DependentUpon>PartesPrintSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\DiasNoLectivosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\DiasNoLectivosForm.Designer.cs">
+      <DependentUpon>DiasNoLectivosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoAddForm.Designer.cs">
+      <DependentUpon>FestivoAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoEditForm.Designer.cs">
+      <DependentUpon>FestivoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoForm.Designer.cs">
+      <DependentUpon>FestivoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Dias No Lectivos\FestivoUIForm.Designer.cs">
+      <DependentUpon>FestivoUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\DisponibilidadSemanalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\DisponibilidadSemanalForm.Designer.cs">
+      <DependentUpon>DisponibilidadSemanalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMng.cs" />
+    <Compile Include="Forms\Alumnos\AlumnoAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoAddForm.Designer.cs">
+      <DependentUpon>AlumnoAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoEditForm.Designer.cs">
+      <DependentUpon>AlumnoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoForm.Designer.cs">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoLocalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoLocalizeForm.Designer.cs">
+      <DependentUpon>AlumnoLocalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoMngForm.Designer.cs">
+      <DependentUpon>AlumnoMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoSelectForm.Designer.cs">
+      <DependentUpon>AlumnoSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoUIForm.Designer.cs">
+      <DependentUpon>AlumnoUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\AlumnoViewForm.Designer.cs">
+      <DependentUpon>AlumnoViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenAddForm.Designer.cs">
+      <DependentUpon>Alumno_ExamenAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenEditForm.Designer.cs">
+      <DependentUpon>Alumno_ExamenEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenUIForm.Designer.cs">
+      <DependentUpon>Alumno_ExamenUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\FaltasAlumnosMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\FaltasAlumnosMngForm.Designer.cs">
+      <DependentUpon>FaltasAlumnosMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\NotasPracticasMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\NotasPracticasMngForm.Designer.cs">
+      <DependentUpon>NotasPracticasMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Alumnos\RegistroFaltasAlumnosMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Alumnos\RegistroFaltasAlumnosMngForm.Designer.cs">
+      <DependentUpon>RegistroFaltasAlumnosMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaAddForm.Designer.cs">
+      <DependentUpon>ConvocatoriaAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaEditForm.Designer.cs">
+      <DependentUpon>ConvocatoriaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\Convocatorias\ConvocatoriaForm.Designer.cs">
+      <DependentUpon>ConvocatoriaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoAddForm.Designer.cs">
+      <DependentUpon>CursoAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoEditForm.Designer.cs">
+      <DependentUpon>CursoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoForm.Designer.cs">
+      <DependentUpon>CursoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoMngForm.Designer.cs">
+      <DependentUpon>CursoMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoUIForm.Designer.cs">
+      <DependentUpon>CursoUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoViewForm.Designer.cs">
+      <DependentUpon>CursoViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Cursos\CursoSelectForm.Designer.cs">
+      <DependentUpon>CursoSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\AlumnosSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\AlumnosSelectForm.Designer.cs">
+      <DependentUpon>AlumnosSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotaDesarrolloAlumnoInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotaDesarrolloAlumnoInputForm.Designer.cs">
+      <DependentUpon>NotaDesarrolloAlumnoInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenAddForm.Designer.cs">
+      <DependentUpon>ExamenAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenDesarrolloReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenDesarrolloReportForm.Designer.cs">
+      <DependentUpon>ExamenDesarrolloReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEditForm.Designer.cs">
+      <DependentUpon>ExamenEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEmitidoEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEmitidoEditForm.Designer.cs">
+      <DependentUpon>ExamenEmitidoEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEmitidoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenEmitidoForm.Designer.cs">
+      <DependentUpon>ExamenEmitidoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenForm.Designer.cs">
+      <DependentUpon>ExamenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenMngForm.Designer.cs">
+      <DependentUpon>ExamenMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenSelectForm.Designer.cs">
+      <DependentUpon>ExamenSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenTestReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenTestReportForm.Designer.cs">
+      <DependentUpon>ExamenTestReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ExamenViewForm.Designer.cs">
+      <DependentUpon>ExamenViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotaAlumnoInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotaAlumnoInputForm.Designer.cs">
+      <DependentUpon>NotaAlumnoInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotasAlumnosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\NotasAlumnosForm.Designer.cs">
+      <DependentUpon>NotasAlumnosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\OrdenarPreguntasInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\OrdenarPreguntasInputForm.Designer.cs">
+      <DependentUpon>OrdenarPreguntasInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\PlantillaSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\PlantillaSelectForm.Designer.cs">
+      <DependentUpon>PlantillaSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\PreguntasEmitidasViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\PreguntasEmitidasViewForm.Designer.cs">
+      <DependentUpon>PreguntasEmitidasViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\PreguntasSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\PreguntasSelectForm.Designer.cs">
+      <DependentUpon>PreguntasSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ResumenActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ResumenActionForm.Designer.cs">
+      <DependentUpon>ResumenActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\ResumenEmitidoActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\ResumenEmitidoActionForm.Designer.cs">
+      <DependentUpon>ResumenEmitidoActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Examenes\VerPreguntasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Examenes\VerPreguntasActionForm.Designer.cs">
+      <DependentUpon>VerPreguntasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClaseHorarioSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\ClaseHorarioSelectForm.Designer.cs">
+      <DependentUpon>ClaseHorarioSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaAddForm.Designer.cs">
+      <DependentUpon>CronogramaAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaEditForm.Designer.cs">
+      <DependentUpon>CronogramaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaForm.Designer.cs">
+      <DependentUpon>CronogramaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaMngForm.Designer.cs">
+      <DependentUpon>CronogramaMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\CronogramaViewForm.Designer.cs">
+      <DependentUpon>CronogramaViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\OrdenarClasesInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\Cronogramas\OrdenarClasesInputForm.Designer.cs">
+      <DependentUpon>OrdenarClasesInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioAddForm.Designer.cs">
+      <DependentUpon>HorarioAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioEditForm.Designer.cs">
+      <DependentUpon>HorarioEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioForm.Designer.cs">
+      <DependentUpon>HorarioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioLocalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioLocalizeForm.Designer.cs">
+      <DependentUpon>HorarioLocalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioMngForm.Designer.cs">
+      <DependentUpon>HorarioMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioPrintSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioPrintSelectForm.Designer.cs">
+      <DependentUpon>HorarioPrintSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioSelectForm.Designer.cs">
+      <DependentUpon>HorarioSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioUIForm.Designer.cs">
+      <DependentUpon>HorarioUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Horarios\HorarioViewForm.Designer.cs">
+      <DependentUpon>HorarioViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\CapacidadActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\CapacidadActionForm.Designer.cs">
+      <DependentUpon>CapacidadActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadAddForm.Designer.cs">
+      <DependentUpon>DisponibilidadAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadEditForm.Designer.cs">
+      <DependentUpon>DisponibilidadEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadForm.Designer.cs">
+      <DependentUpon>DisponibilidadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadUIForm.Designer.cs">
+      <DependentUpon>DisponibilidadUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\Disponibilidad\DisponibilidadViewForm.Designer.cs">
+      <DependentUpon>DisponibilidadViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\DuplicarCapacidadActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\DuplicarCapacidadActionForm.Designer.cs">
+      <DependentUpon>DuplicarCapacidadActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorAddForm.Designer.cs">
+      <DependentUpon>InstructorAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorEditForm.Designer.cs">
+      <DependentUpon>InstructorEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorForm.Designer.cs">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorLocalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorLocalizeForm.Designer.cs">
+      <DependentUpon>InstructorLocalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorMngForm.Designer.cs">
+      <DependentUpon>InstructorMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorSelectForm.Designer.cs">
+      <DependentUpon>InstructorSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorUIForm.Designer.cs">
+      <DependentUpon>InstructorUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Instructores\InstructorViewForm.Designer.cs">
+      <DependentUpon>InstructorViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialAddForm.Designer.cs">
+      <DependentUpon>MaterialAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialEditForm.Designer.cs">
+      <DependentUpon>MaterialEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialForm.Designer.cs">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialMngForm.Designer.cs">
+      <DependentUpon>MaterialMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialUIForm.Designer.cs">
+      <DependentUpon>MaterialUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialViewForm.Designer.cs">
+      <DependentUpon>MaterialViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\MaterialSelectForm.Designer.cs">
+      <DependentUpon>MaterialSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionAddForm.Designer.cs">
+      <DependentUpon>RevisionAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionEditForm.Designer.cs">
+      <DependentUpon>RevisionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Material Docente\Revisiones\RevisionForm.Designer.cs">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloAddForm.Designer.cs">
+      <DependentUpon>ModuloAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloEditForm.Designer.cs">
+      <DependentUpon>ModuloEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloForm.Designer.cs">
+      <DependentUpon>ModuloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloLocalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloLocalizeForm.Designer.cs">
+      <DependentUpon>ModuloLocalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloMngForm.Designer.cs">
+      <DependentUpon>ModuloMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloSelectForm.Designer.cs">
+      <DependentUpon>ModuloSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloUIForm.Designer.cs">
+      <DependentUpon>ModuloUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\ModuloViewForm.Designer.cs">
+      <DependentUpon>ModuloViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\TemaActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\TemaActionForm.Designer.cs">
+      <DependentUpon>TemaActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Modulos\TemaViewActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Modulos\TemaViewActionForm.Designer.cs">
+      <DependentUpon>TemaViewActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasEditForm.Designer.cs">
+      <DependentUpon>FormularioNotasPracticasEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasMngForm.Designer.cs">
+      <DependentUpon>FormularioNotasPracticasMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasForm.Designer.cs">
+      <DependentUpon>FormularioNotasPracticasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasUIForm.Designer.cs">
+      <DependentUpon>FormularioNotasPracticasUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notas de Prácticas\FormularioNotasPracticasViewForm.Designer.cs">
+      <DependentUpon>FormularioNotasPracticasViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\ParteAsistenciaMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\ParteAsistenciaMngForm.Designer.cs">
+      <DependentUpon>ParteAsistenciaMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\ParteAsistenciaSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\ParteAsistenciaSelectForm.Designer.cs">
+      <DependentUpon>ParteAsistenciaSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaEditForm.Designer.cs">
+      <DependentUpon>PAsistenciaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaForm.Designer.cs">
+      <DependentUpon>PAsistenciaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaUIForm.Designer.cs">
+      <DependentUpon>PAsistenciaUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Partes de Asistencia\PAsistenciaViewForm.Designer.cs">
+      <DependentUpon>PAsistenciaViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanEstudiosMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanEstudiosMngForm.Designer.cs">
+      <DependentUpon>PlanEstudiosMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanEstudiosSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanEstudiosSelectForm.Designer.cs">
+      <DependentUpon>PlanEstudiosSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteAddForm.Designer.cs">
+      <DependentUpon>PlanDocenteAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteEditForm.Designer.cs">
+      <DependentUpon>PlanDocenteEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteForm.Designer.cs">
+      <DependentUpon>PlanDocenteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteUIForm.Designer.cs">
+      <DependentUpon>PlanDocenteUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PlanDocenteViewForm.Designer.cs">
+      <DependentUpon>PlanDocenteViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PracticasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\PracticasActionForm.Designer.cs">
+      <DependentUpon>PracticasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\ResumenPlanDocenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\ResumenPlanDocenteForm.Designer.cs">
+      <DependentUpon>ResumenPlanDocenteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\TeoricasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesDocentes\TeoricasActionForm.Designer.cs">
+      <DependentUpon>TeoricasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\ExtrasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\ExtrasActionForm.Designer.cs">
+      <DependentUpon>ExtrasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraMngForm.Designer.cs">
+      <DependentUpon>PlanExtraMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraSelectForm.Designer.cs">
+      <DependentUpon>PlanExtraSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraAddForm.Designer.cs">
+      <DependentUpon>PlanExtraAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraEditForm.Designer.cs">
+      <DependentUpon>PlanExtraEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraForm.Designer.cs">
+      <DependentUpon>PlanExtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraUIForm.Designer.cs">
+      <DependentUpon>PlanExtraUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\PlanExtraViewForm.Designer.cs">
+      <DependentUpon>PlanExtraViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\ResumenPlanExtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlanesExtra\ResumenPlanExtraForm.Designer.cs">
+      <DependentUpon>ResumenPlanExtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaAddForm.Designer.cs">
+      <DependentUpon>PlantillaAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaEditForm.Designer.cs">
+      <DependentUpon>PlantillaEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaForm.Designer.cs">
+      <DependentUpon>PlantillaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaMngForm.Designer.cs">
+      <DependentUpon>PlantillaMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PlantillaViewForm.Designer.cs">
+      <DependentUpon>PlantillaViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PreguntasPlantillaInputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\PreguntasPlantillaInputForm.Designer.cs">
+      <DependentUpon>PreguntasPlantillaInputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\DuplicarPreguntasTemaActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\DuplicarPreguntasTemaActionForm.Designer.cs">
+      <DependentUpon>DuplicarPreguntasTemaActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\ImagenPreguntaViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\ImagenPreguntaViewForm.Designer.cs">
+      <DependentUpon>ImagenPreguntaViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntaMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntaMngForm.Designer.cs">
+      <DependentUpon>PreguntaMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasAddForm.Designer.cs">
+      <DependentUpon>PreguntasAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasEditForm.Designer.cs">
+      <DependentUpon>PreguntasEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasForm.Designer.cs">
+      <DependentUpon>PreguntasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasUIForm.Designer.cs">
+      <DependentUpon>PreguntasUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\PreguntasViewForm.Designer.cs">
+      <DependentUpon>PreguntasViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Preguntas\RespuestasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\RespuestasActionForm.Designer.cs">
+      <DependentUpon>RespuestasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\ClasesOrdenadasViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\ClasesOrdenadasViewForm.Designer.cs">
+      <DependentUpon>ClasesOrdenadasViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionAddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionAddForm.Designer.cs">
+      <DependentUpon>PromocionAddForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionEditForm.Designer.cs">
+      <DependentUpon>PromocionEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionForm.Designer.cs">
+      <DependentUpon>PromocionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionLocalizeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionLocalizeForm.Designer.cs">
+      <DependentUpon>PromocionLocalizeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionMngForm.Designer.cs">
+      <DependentUpon>PromocionMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionSelectForm.Designer.cs">
+      <DependentUpon>PromocionSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionUIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionUIForm.Designer.cs">
+      <DependentUpon>PromocionUIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\PromocionViewForm.Designer.cs">
+      <DependentUpon>PromocionViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Promociones\RestantesOrdenadasViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Promociones\RestantesOrdenadasViewForm.Designer.cs">
+      <DependentUpon>RestantesOrdenadasViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClasesTeoricasDisponiblesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClasesTeoricasDisponiblesForm.Designer.cs">
+      <DependentUpon>ClasesTeoricasDisponiblesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClasesPracticasDisponiblesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClasesPracticasDisponiblesForm.Designer.cs">
+      <DependentUpon>ClasesPracticasDisponiblesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClasesPracticasProgramadasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClasesPracticasProgramadasForm.Designer.cs">
+      <DependentUpon>ClasesPracticasProgramadasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClasesTeoricasProgramadasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClasesTeoricasProgramadasForm.Designer.cs">
+      <DependentUpon>ClasesTeoricasProgramadasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\AlumnosAdmitidosExamenActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\AlumnosAdmitidosExamenActionForm.Designer.cs">
+      <DependentUpon>AlumnosAdmitidosExamenActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ClasesRestantesCronogramaMngForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ClasesRestantesCronogramaMngForm.Designer.cs">
+      <DependentUpon>ClasesRestantesCronogramaMngForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DateSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\DateSelectForm.Designer.cs">
+      <DependentUpon>DateSelectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\MatriculasActionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\MatriculasActionForm.Designer.cs">
+      <DependentUpon>MatriculasActionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Labels.Designer.cs">
+      <DependentUpon>Labels.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Messages.Designer.cs">
+      <DependentUpon>Messages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Paths.Designer.cs">
+      <DependentUpon>Paths.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Tools\HDataSourceList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Auxiliares\InstructoresPromocionViewForm.resx">
+      <DependentUpon>InstructoresPromocionViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\RegistroNotasAlumnoForm.resx">
+      <DependentUpon>RegistroNotasAlumnoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\ClasesPromocionMngForm.resx">
+      <DependentUpon>ClasesPromocionMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\PartesPrintSelectForm.resx">
+      <DependentUpon>PartesPrintSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Dias No Lectivos\DiasNoLectivosForm.resx">
+      <DependentUpon>DiasNoLectivosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Dias No Lectivos\FestivoAddForm.resx">
+      <DependentUpon>FestivoAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Dias No Lectivos\FestivoEditForm.resx">
+      <DependentUpon>FestivoEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Dias No Lectivos\FestivoForm.resx">
+      <DependentUpon>FestivoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\DisponibilidadSemanalForm.resx">
+      <DependentUpon>DisponibilidadSemanalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoAddForm.resx">
+      <DependentUpon>AlumnoAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoEditForm.resx">
+      <DependentUpon>AlumnoEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoForm.resx">
+      <DependentUpon>AlumnoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoLocalizeForm.resx">
+      <DependentUpon>AlumnoLocalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoMngForm.resx">
+      <DependentUpon>AlumnoMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoUIForm.resx">
+      <DependentUpon>AlumnoUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\AlumnoViewForm.resx">
+      <DependentUpon>AlumnoViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenAddForm.resx">
+      <DependentUpon>Alumno_ExamenAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenEditForm.resx">
+      <DependentUpon>Alumno_ExamenEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\Alumno_Examen\Alumno_ExamenUIForm.resx">
+      <DependentUpon>Alumno_ExamenUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\FaltasAlumnosMngForm.resx">
+      <DependentUpon>FaltasAlumnosMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\NotasPracticasMngForm.resx">
+      <DependentUpon>NotasPracticasMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Alumnos\RegistroFaltasAlumnosMngForm.resx">
+      <DependentUpon>RegistroFaltasAlumnosMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\Convocatorias\ConvocatoriaAddForm.resx">
+      <DependentUpon>ConvocatoriaAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\Convocatorias\ConvocatoriaEditForm.resx">
+      <DependentUpon>ConvocatoriaEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\Convocatorias\ConvocatoriaForm.resx">
+      <DependentUpon>ConvocatoriaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoAddForm.resx">
+      <DependentUpon>CursoAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoEditForm.resx">
+      <DependentUpon>CursoEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoForm.resx">
+      <DependentUpon>CursoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoMngForm.resx">
+      <DependentUpon>CursoMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoUIForm.resx">
+      <DependentUpon>CursoUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Cursos\CursoViewForm.resx">
+      <DependentUpon>CursoViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\AlumnosSelectForm.resx">
+      <DependentUpon>AlumnosSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\NotaDesarrolloAlumnoInputForm.resx">
+      <DependentUpon>NotaDesarrolloAlumnoInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenAddForm.resx">
+      <DependentUpon>ExamenAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenDesarrolloReportForm.resx">
+      <DependentUpon>ExamenDesarrolloReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenEditForm.resx">
+      <DependentUpon>ExamenEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenEmitidoEditForm.resx">
+      <DependentUpon>ExamenEmitidoEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenEmitidoForm.resx">
+      <DependentUpon>ExamenEmitidoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenForm.resx">
+      <DependentUpon>ExamenForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenMngForm.resx">
+      <DependentUpon>ExamenMngForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenTestReportForm.resx">
+      <DependentUpon>ExamenTestReportForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ExamenViewForm.resx">
+      <DependentUpon>ExamenViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\NotaAlumnoInputForm.resx">
+      <DependentUpon>NotaAlumnoInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\NotasAlumnosForm.resx">
+      <DependentUpon>NotasAlumnosForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\OrdenarPreguntasInputForm.resx">
+      <DependentUpon>OrdenarPreguntasInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\PlantillaSelectForm.resx">
+      <DependentUpon>PlantillaSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\PreguntasEmitidasViewForm.resx">
+      <DependentUpon>PreguntasEmitidasViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\PreguntasSelectForm.resx">
+      <DependentUpon>PreguntasSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ResumenActionForm.resx">
+      <DependentUpon>ResumenActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\ResumenEmitidoActionForm.resx">
+      <DependentUpon>ResumenEmitidoActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Examenes\VerPreguntasActionForm.resx">
+      <DependentUpon>VerPreguntasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\ClaseHorarioSelectForm.resx">
+      <DependentUpon>ClaseHorarioSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\CronogramaAddForm.resx">
+      <DependentUpon>CronogramaAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\CronogramaEditForm.resx">
+      <DependentUpon>CronogramaEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\CronogramaForm.resx">
+      <DependentUpon>CronogramaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\CronogramaMngForm.resx">
+      <DependentUpon>CronogramaMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\CronogramaViewForm.resx">
+      <DependentUpon>CronogramaViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\Cronogramas\OrdenarClasesInputForm.resx">
+      <DependentUpon>OrdenarClasesInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioAddForm.resx">
+      <DependentUpon>HorarioAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioEditForm.resx">
+      <DependentUpon>HorarioEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioForm.resx">
+      <DependentUpon>HorarioForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioLocalizeForm.resx">
+      <DependentUpon>HorarioLocalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioMngForm.resx">
+      <DependentUpon>HorarioMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioPrintSelectForm.resx">
+      <DependentUpon>HorarioPrintSelectForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioUIForm.resx">
+      <DependentUpon>HorarioUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Horarios\HorarioViewForm.resx">
+      <DependentUpon>HorarioViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\CapacidadActionForm.resx">
+      <DependentUpon>CapacidadActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\Disponibilidad\DisponibilidadAddForm.resx">
+      <DependentUpon>DisponibilidadAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\Disponibilidad\DisponibilidadEditForm.resx">
+      <DependentUpon>DisponibilidadEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\Disponibilidad\DisponibilidadForm.resx">
+      <DependentUpon>DisponibilidadForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\Disponibilidad\DisponibilidadUIForm.resx">
+      <DependentUpon>DisponibilidadUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\Disponibilidad\DisponibilidadViewForm.resx">
+      <DependentUpon>DisponibilidadViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\DuplicarCapacidadActionForm.resx">
+      <DependentUpon>DuplicarCapacidadActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorAddForm.resx">
+      <DependentUpon>InstructorAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorEditForm.resx">
+      <DependentUpon>InstructorEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorForm.resx">
+      <DependentUpon>InstructorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorLocalizeForm.resx">
+      <DependentUpon>InstructorLocalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorMngForm.resx">
+      <DependentUpon>InstructorMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorUIForm.resx">
+      <DependentUpon>InstructorUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Instructores\InstructorViewForm.resx">
+      <DependentUpon>InstructorViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\MaterialForm.resx">
+      <DependentUpon>MaterialForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\MaterialMngForm.resx">
+      <DependentUpon>MaterialMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\MaterialUIForm.resx">
+      <DependentUpon>MaterialUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\Revisiones\RevisionAddForm.resx">
+      <DependentUpon>RevisionAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\Revisiones\RevisionEditForm.resx">
+      <DependentUpon>RevisionEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Material Docente\Revisiones\RevisionForm.resx">
+      <DependentUpon>RevisionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloAddForm.resx">
+      <DependentUpon>ModuloAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloEditForm.resx">
+      <DependentUpon>ModuloEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloForm.resx">
+      <DependentUpon>ModuloForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloLocalizeForm.resx">
+      <DependentUpon>ModuloLocalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloMngForm.resx">
+      <DependentUpon>ModuloMngForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloUIForm.resx">
+      <DependentUpon>ModuloUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\ModuloViewForm.resx">
+      <DependentUpon>ModuloViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\TemaActionForm.resx">
+      <DependentUpon>TemaActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Modulos\TemaViewActionForm.resx">
+      <DependentUpon>TemaViewActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Notas de Prácticas\FormularioNotasPracticasMngForm.resx">
+      <DependentUpon>FormularioNotasPracticasMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Notas de Prácticas\FormularioNotasPracticasForm.resx">
+      <DependentUpon>FormularioNotasPracticasForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Partes de Asistencia\ParteAsistenciaMngForm.resx">
+      <DependentUpon>ParteAsistenciaMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Partes de Asistencia\PAsistenciaForm.resx">
+      <DependentUpon>PAsistenciaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanDocenteAddForm.resx">
+      <DependentUpon>PlanDocenteAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanDocenteEditForm.resx">
+      <DependentUpon>PlanDocenteEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanDocenteForm.resx">
+      <DependentUpon>PlanDocenteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanDocenteUIForm.resx">
+      <DependentUpon>PlanDocenteUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanDocenteViewForm.resx">
+      <DependentUpon>PlanDocenteViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PlanEstudiosMngForm.resx">
+      <DependentUpon>PlanEstudiosMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\PracticasActionForm.resx">
+      <DependentUpon>PracticasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\ResumenPlanDocenteForm.resx">
+      <DependentUpon>ResumenPlanDocenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesDocentes\TeoricasActionForm.resx">
+      <DependentUpon>TeoricasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\ExtrasActionForm.resx">
+      <DependentUpon>ExtrasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraAddForm.resx">
+      <DependentUpon>PlanExtraAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraEditForm.resx">
+      <DependentUpon>PlanExtraEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraForm.resx">
+      <DependentUpon>PlanExtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraMngForm.resx">
+      <DependentUpon>PlanExtraMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraUIForm.resx">
+      <DependentUpon>PlanExtraUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\PlanExtraViewForm.resx">
+      <DependentUpon>PlanExtraViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlanesExtra\ResumenPlanExtraForm.resx">
+      <DependentUpon>ResumenPlanExtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\PlantillaAddForm.resx">
+      <DependentUpon>PlantillaAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\PlantillaForm.resx">
+      <DependentUpon>PlantillaForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\PlantillaMngForm.resx">
+      <DependentUpon>PlantillaMngForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\PlantillaViewForm.resx">
+      <DependentUpon>PlantillaViewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\PreguntasPlantillaInputForm.resx">
+      <DependentUpon>PreguntasPlantillaInputForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\DuplicarPreguntasTemaActionForm.resx">
+      <DependentUpon>DuplicarPreguntasTemaActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\ImagenPreguntaViewForm.resx">
+      <DependentUpon>ImagenPreguntaViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\PreguntaMngForm.resx">
+      <DependentUpon>PreguntaMngForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\PreguntasAddForm.resx">
+      <DependentUpon>PreguntasAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\PreguntasEditForm.resx">
+      <DependentUpon>PreguntasEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\PreguntasForm.resx">
+      <DependentUpon>PreguntasForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\PreguntasUIForm.resx">
+      <DependentUpon>PreguntasUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\RespuestasActionForm.resx">
+      <DependentUpon>RespuestasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\ClasesOrdenadasViewForm.resx">
+      <DependentUpon>ClasesOrdenadasViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionAddForm.resx">
+      <DependentUpon>PromocionAddForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionEditForm.resx">
+      <DependentUpon>PromocionEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionForm.resx">
+      <DependentUpon>PromocionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionLocalizeForm.resx">
+      <DependentUpon>PromocionLocalizeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionMngForm.resx">
+      <DependentUpon>PromocionMngForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionUIForm.resx">
+      <DependentUpon>PromocionUIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\PromocionViewForm.resx">
+      <DependentUpon>PromocionViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Promociones\RestantesOrdenadasViewForm.resx">
+      <DependentUpon>RestantesOrdenadasViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClasesTeoricasDisponiblesForm.resx">
+      <DependentUpon>ClasesTeoricasDisponiblesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClasesPracticasDisponiblesForm.resx">
+      <DependentUpon>ClasesPracticasDisponiblesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClasesPracticasProgramadasForm.resx">
+      <DependentUpon>ClasesPracticasProgramadasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClasesTeoricasProgramadasForm.resx">
+      <DependentUpon>ClasesTeoricasProgramadasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\AlumnosAdmitidosExamenActionForm.resx">
+      <DependentUpon>AlumnosAdmitidosExamenActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\ClasesRestantesCronogramaMngForm.resx">
+      <DependentUpon>ClasesRestantesCronogramaMngForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\DateSelectForm.resx">
+      <DependentUpon>DateSelectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\MatriculasActionForm.resx">
+      <DependentUpon>MatriculasActionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Labels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Paths.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Paths.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\moleQule.Library.Application.HComboBoxSourceList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.ComboBoxSourceList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Common.HComboBoxSourceList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Alumno_ExamenInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Alumno_ExamenList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Alumno_Parte.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Alumno_Practica.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.ClaseGenericaList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.ClasePracticaInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.ClaseTeoricaInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.CronogramaList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.CursoList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.FaltaAlumnoInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Festivo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.FestivoInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.HComboBoxSourceList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.MaterialDocenteList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.NotaPracticasInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.PlanEstudiosList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.PlanExtra.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.PlanExtraList.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.RegistroDisponibilidad.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.RegistroFaltasInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.RegistroResumenPlanDocente.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Respuesta_Alumno_Examen.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.SesionCronogramaInfo.datasource" />
+    <None Include="Properties\DataSources\moleQule.Library.Instruction.Sesiones_Promociones.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Izquierda.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Derecha.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cerrar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\view_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imprimir.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liberar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alumnos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Resumen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_yellow1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter_on_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ordenar_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\select_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bloqueada.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disponible.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reservada1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Submodulos1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\submodulos_verde.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modulos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Emitir.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preguntas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Print.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proponer.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\molApp.Library.Modules.Instruction.Alumno.datasource" />
+    <None Include="Properties\DataSources\molApp.Library.Modules.Instruction.Alumno_ConvocatoriaList.datasource" />
+    <None Include="Resources\Quitar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dialogs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit1.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

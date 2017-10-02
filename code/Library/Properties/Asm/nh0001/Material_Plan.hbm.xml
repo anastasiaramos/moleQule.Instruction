@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Material_Plan" schema="`0001`" table="`Material_Plan`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Material_Plan_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_MODULO`" type="Int64" name="OidModulo" not-null="true" />
+		<property column="`OID_MATERIAL`" type="Int64" name="OidMaterial" not-null="true" />
+		<property column="`OID_REVISION`" type="Int64" name="OidRevision" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

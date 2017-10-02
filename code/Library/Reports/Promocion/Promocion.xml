@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+<xs:schema id="PromocionDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:element name="PromocionDataSet" msdata:IsDataSet="true"
+msdata:MainDataTable="PromocionInfo" msdata:UseCurrentLocale="true">
+<xs:complexType>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="PromocionInfo">
+<xs:complexType>
+<xs:sequence>
+  <xs:element name="OidPlan" type="xs:positiveInteger" />
+  <xs:element name="OidPlanExtra" type="xs:positiveInteger" />
+  <xs:element name="Nombre" type="xs:string" minOccurs="0" />
+  <xs:element name="Numero" type="xs:string" minOccurs="0" />
+  <xs:element name="Codigo" type="xs:string" minOccurs="0" />
+  <xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+  <xs:element name="FechaInicio" type="xs:date" />
+  <xs:element name="FechaFin" type="xs:date" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</NewDataSet>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Pregunta" schema="`0001`" table="`Pregunta`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Pregunta_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_MODULO`" type="Int64" name="OidModulo" not-null="true" />
+    <property column="`OID_SUBMODULO`" type="Int64" name="OidSubmodulo" not-null="true" />
+		<property column="`OID_TEMA`" type="Int64" name="OidTema" not-null="true" />
+    <property column="`ACTIVA`" type="Boolean" name="Activa" />
+    <property column="`IDIOMA`" type="String" name="Idioma" length="255" />
+    <property column="`IMAGEN_GRANDE`" type="Boolean" name="ImagenGrande" />
+		<property column="`NIVEL`" type="Int64" name="Nivel" />
+		<property column="`FECHA_ALTA`" type="date" name="FechaAlta" />
+		<property column="`FECHA_PUBLICACION`" type="date" name="FechaPublicacion" />
+    <property column="`FECHA_DISPONIBILIDAD`" type="date" name="FechaDisponibilidad" />
+		<property column="`TEXTO`" type="String" name="Texto" length="255" />
+		<property column="`TIPO`" type="String" name="Tipo" length="255" />
+		<property column="`IMAGEN`" type="String" name="Imagen" length="255" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+    <property column="`REVISADA`" type="Boolean" name="Revisada" />
+    <property column="`BLOQUEADA`" type="Boolean" name="Bloqueada" />
+    <property column="`RESERVADA`" type="Boolean" name="Reservada" />
+    <property column="`SERIAL`" type="Int64" name="Serial"/>
+    <property column="`CODIGO`" type="String" name="Codigo" length="255" />
+    <property column="`OID_OLD`" type="Int64" name="OidOld" />
+
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+<xs:schema id="FestivoDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:element name="FestivoDataSet" msdata:IsDataSet="true"
+msdata:MainDataTable="FestivoInfo" msdata:UseCurrentLocale="true">
+<xs:complexType>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="FestivoInfo">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="FechaInicio" type="xs:date" />
+<xs:element name="FechaFin" type="xs:date" />
+<xs:element name="Anual" type="xs:boolean" />
+<xs:element name="Tipo" type="xs:positiveInteger" />
+<xs:element name="Titulo" type="xs:string" minOccurs="0" />
+<xs:element name="Descripcion" type="xs:string" minOccurs="0" />
+<xs:element name="TipoLabel" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</NewDataSet>

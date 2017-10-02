@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.PreguntaExamen" schema="`0001`" table="`PreguntaExamen`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."PreguntaExamen_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_EXAMEN`" type="Int64" name="OidExamen" not-null="true" />
+		<property column="`OID_MODULO`" type="Int64" name="OidModulo" not-null="true" />
+		<property column="`OID_TEMA`" type="Int64" name="OidTema" not-null="true" />
+    <property column="`OID_PREGUNTA`" type="Int64" name="OidPregunta" not-null="true" />
+		<property column="`NIVEL`" type="Int64" name="Nivel" />
+		<property column="`FECHA_ALTA`" type="date" name="FechaAlta" />
+		<property column="`FECHA_PUBLICACION`" type="date" name="FechaPublicacion" />
+		<property column="`TEXTO`" type="String" name="Texto" length="255" />
+		<property column="`TIPO`" type="String" name="Tipo" length="255" />
+		<property column="`IMAGEN`" type="String" name="Imagen" length="255" />
+		<property column="`IDIOMA`" type="String" name="Idioma" length="255" />
+    <property column="`OBSERVACIONES`" type="String" name="Observaciones" length="255" />
+    <property column="`IMAGEN_GRANDE`" type="Boolean" name="ImagenGrande" />
+    <property column="`ORDEN`" type="Int64" name="Orden" not-null="true" />
+    <property column="`ANULADA`" type="Boolean" name="Anulada" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

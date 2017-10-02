@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.RevisionMaterial" schema="`0001`" table="`RevisionMaterial`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."RevisionMaterial_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_MATERIAL`" type="Int64" name="OidMaterial" not-null="true" />
+		<property column="`VERSION`" type="String" name="Version" length="255" />
+		<property column="`FECHA`" type="date" name="Fecha" />
+		<property column="`AUTOR`" type="String" name="Autor" length="255" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+		
+	</class>
+</hibernate-mapping>

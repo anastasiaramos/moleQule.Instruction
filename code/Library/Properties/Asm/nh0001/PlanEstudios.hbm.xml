@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.PlanEstudios" schema="`0001`" table="`PlanEstudios`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."PlanEstudios_OID_seq"</param>			</generator>
+		</id>
+		<property column="`NOMBRE`" type="String" name="Nombre" length="255" />
+		<property column="`FECHA`" type="date" name="Fecha" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+    <property column="`OID_PRODUCTO`" type="Int64" name="OidProducto" not-null="true" />
+    <property column="`OID_SERIE`" type="Int64" name="OidSerie" not-null="true" />
+		
+	</class>
+</hibernate-mapping>

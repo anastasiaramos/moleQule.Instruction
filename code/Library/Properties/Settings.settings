@@ -1,0 +1,57 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="moleQule.Library.Instruction.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="DB_VERSION_VARIABLE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">INSTRUCTION_DB_VERSION</Value>
+    </Setting>
+    <Setting Name="NAME" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">INSTRUCTION</Value>
+    </Setting>
+    <Setting Name="MODULE_VERSION" Type="System.String" Scope="User">
+      <Value Profile="(Default)">7.4.0.0</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_PORCENTAJE_MAXIMO_FALTAS_MODULO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PORCENTAJE_MAXIMO_FALTAS_MODULO</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_PORCENTAJE_MINIMO_EXAMEN_APROBADO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">PORCENTAJE_MINIMO_EXAMEN_APROBADO</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_CRITERIO_PORCENTAJE_MAXIMO_FALTAS_MODULO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CRITERIO_PORCENTAJE_MAXIMO_FALTAS_MODULO</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_CRITERIO_PORCENTAJE_MINIMO_EXAMEN_APROBADO" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CRITERIO_PORCENTAJE_MINIMO_EXAMEN_APROBADO</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_INICIO_DISPONIBILIDAD_MANANA" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_INICIO_DISPONIBILIDAD_MANANA</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_INICIO_DISPONIBILIDAD_TARDE1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_INICIO_DISPONIBILIDAD_TARDE1</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_INICIO_DISPONIBILIDAD_TARDE2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_INICIO_DISPONIBILIDAD_TARDE2</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_FIN_DISPONIBILIDAD_MANANA" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_FIN_DISPONIBILIDAD_MANANA</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_FIN_DISPONIBILIDAD_TARDE1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_FIN_DISPONIBILIDAD_TARDE1</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_HORA_FIN_DISPONIBILIDAD_TARDE2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">HORA_FIN_DISPONIBILIDAD_TARDE2</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_MOSTRAR_INSTRUCTORES_AUTORIZADOS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MOSTRAR_INSTRUCTORES_AUTORIZADOS</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_IMPRESION_EMPRESA_DEFAULT_BOOL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">IMPRESION_EMPRESA_DEFAULT_BOOL</Value>
+    </Setting>
+    <Setting Name="SETTING_NAME_IMPRESION_EMPRESA_DEFAULT_OID" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">IMPRESION_EMPRESA_DEFAULT_OID</Value>
+    </Setting>
+    <Setting Name="DB_VERSION" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">7.4.0.0</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

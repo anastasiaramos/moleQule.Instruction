@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+<xs:schema id="FaltaAlumnoDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:element name="FaltaAlumnoDataSet" msdata:IsDataSet="true"
+msdata:MainDataTable="FaltaAlumnoInfo" msdata:UseCurrentLocale="true">
+<xs:complexType>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="FaltaAlumnoInfo">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="Nombre" type="xs:string" minOccurs="0" />
+<xs:element name="Apellidos" type="xs:string" minOccurs="0" />
+<xs:element name="NExpediente" type="xs:string" minOccurs="0" />
+<xs:element name="Codigo" type="xs:string" minOccurs="0" />
+<xs:element name="Duracion" type="xs:positiveInteger" />
+<xs:element name="Promocion" type="xs:string" minOccurs="0" />
+<xs:element name="Modulo" type="xs:string" minOccurs="0" />
+<xs:element name="TotalClases" type="xs:positiveInteger" />
+<xs:element name="Porcentaje" type="xs:decimal" />
+<xs:element name="TotalFaltas" type="xs:positiveInteger" />
+<xs:element name="TotalClasesCurso" type="xs:positiveInteger" />
+<xs:element name="PorcentajeTotal" type="xs:decimal" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</NewDataSet>

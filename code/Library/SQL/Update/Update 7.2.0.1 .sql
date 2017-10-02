@@ -1,0 +1,23 @@
+/* UPDATE 7.2.0.1*/
+
+SET SEARCH_PATH = "COMMON";
+
+UPDATE "Variable" SET "VALUE" = '7.2.0.1' WHERE "NAME" = 'INSTRUCTION_DB_VERSION';
+
+SET SEARCH_PATH = "0001";
+
+CREATE TABLE "Festivos"
+( 
+	"OID" bigserial NOT NULL,	
+	"FECHA_INICIO" date,
+	"FECHA_FIN" date,
+    "ANUAL" boolean DEFAULT 'TRUE',
+	"TIPO" bigint DEFAULT 1,
+	"TITULO" character varying(255),
+	"DESCRIPCION" character varying,
+	CONSTRAINT "FESTIVOS_PK" PRIMARY KEY ("OID")
+) WITHOUT OIDS;
+
+ALTER TABLE "Festivos" OWNER TO moladmin;
+GRANT ALL ON TABLE "Festivos" TO GROUP "MOLEQULE_ADMINISTRATOR";
+

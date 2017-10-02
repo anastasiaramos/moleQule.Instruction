@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Sesion" schema="`0001`" table="`Sesion`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence"><param name="sequence">"0001"."Sesion_OID_seq"</param></generator>
+		</id>
+		<property column="`OID_HORARIO`" type="Int64" name="OidHorario" not-null="true" />
+		<property column="`OID_CLASE_TEORICA`" type="Int64" name="OidClaseTeorica" not-null="true" />
+		<property column="`OID_CLASE_PRACTICA`" type="Int64" name="OidClasePractica" not-null="true" />
+		<property column="`OID_CLASE_EXTRA`" type="Int64" name="OidClaseExtra" not-null="true" />
+		<property column="`OID_PROFESOR`" type="Int64" name="OidProfesor" not-null="true" />
+		<property column="`FECHA`" type="Date" name="Fecha" />
+		<property column="`HORA`" type="Time" name="Hora" />
+		<property column="`ESTADO`" type="Int64" name="Estado" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+    <property column="`GRUPO`" type="Int64" name="Grupo" not-null="true" />
+    <property column="`FORZADA`" type="Boolean" name="Forzada" />
+		
+	</class>
+</hibernate-mapping>

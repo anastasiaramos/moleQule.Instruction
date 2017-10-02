@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Submodulo_Instructor_Promocion" schema="`0001`" table="`Submodulo_Instructor_Promocion`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Submodulo_Instructor_Promocion_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_SUBMODULO`" type="Int64" name="OidSubmodulo" not-null="true" />
+		<property column="`OID_INSTRUCTOR`" type="Int64" name="OidInstructor" not-null="true" />
+    <property column="`OID_PROMOCION`" type="Int64" name="OidPromocion" not-null="true" />
+    <property column="`OID_INSTRUCTOR_PROMOCION`" type="Int64" name="OidInstructorPromocion" not-null="true" />
+    <property column="`PRIORIDAD`" type="Int64" name="Prioridad"/>
+		
+	</class>
+</hibernate-mapping>

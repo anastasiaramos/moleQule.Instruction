@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ALUMNO_YA_MATRICULADO" xml:space="preserve">
+    <value>Este alumno ya está matriculado en esta convocatoria</value>
+  </data>
+  <data name="CANCEL_CONFIRM" xml:space="preserve">
+    <value>Si cancela se perderán los últimos cambios realizados.
+                               ¿Cancelar?</value>
+  </data>
+  <data name="CLASE_ASIGNADA" xml:space="preserve">
+    <value>La clase que está intentando borrar ya ha sigo asignada en algún horario.</value>
+  </data>
+  <data name="CONVOCATORIA_FINALIZADA" xml:space="preserve">
+    <value>Ha finalizado el plazo de admisión de matrículas para esta convocatoria. Si desea realizar una matrícula modifique el plazo de admisión.</value>
+  </data>
+  <data name="CREANDO_HORARIO" xml:space="preserve">
+    <value>Creando horario...</value>
+  </data>
+  <data name="CURRENT_EDITION" xml:space="preserve">
+    <value>Ya existe un elemento de esta entidad que está siendo editado. Para editar otro, por favor, cierre el anterior.</value>
+  </data>
+  <data name="CURRENT_EDITION_CLOSE" xml:space="preserve">
+    <value>Hay elementos en edición ¿Está seguro de que desea cerrar?</value>
+  </data>
+  <data name="CURRENT_EDITION_DELETE" xml:space="preserve">
+    <value>No se puede eliminar el elemento. Está siendo editado</value>
+  </data>
+  <data name="DELETE_CONFIRM" xml:space="preserve">
+    <value>¿Confirmar la eliminación del elemento seleccionado?</value>
+  </data>
+  <data name="DELETE_CONFIRM_EMPRESA" xml:space="preserve">
+    <value>El borrado total de una empresa puede tardar algunos minutos.
+      ¿Confirmar la eliminación de la empresa seleccionada?</value>
+  </data>
+  <data name="DOWNLOADING_DATA" xml:space="preserve">
+    <value>Descargando actualización...</value>
+  </data>
+  <data name="DUMP_OK" xml:space="preserve">
+    <value>Copia de seguridad generada con éxito</value>
+  </data>
+  <data name="DUMPING_BACKUP" xml:space="preserve">
+    <value>Creando copia de seguridad...</value>
+  </data>
+  <data name="DUPLICATED_CODE" xml:space="preserve">
+    <value>Existe otro elemento con ese códígo.</value>
+  </data>
+  <data name="EMPRESA_NEEDED" xml:space="preserve">
+    <value>No se puede borrar la empresa activa.</value>
+  </data>
+  <data name="EMPTY_REPORT" xml:space="preserve">
+    <value>Informe vacío</value>
+  </data>
+  <data name="ENTERPRISE_MAX_LIMITED" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="ENTERPRISE_MAX_LIMITED_NOTICE" xml:space="preserve">
+    <value>El número de empresas de la aplicación ha alcanzado el límite permitido.</value>
+  </data>
+  <data name="ENTERPRISE_NOT_ALLOWED" xml:space="preserve">
+    <value>Usuario no autorizado para acceder a esta empresa</value>
+  </data>
+  <data name="EXAMEN_NO_EMITIDO" xml:space="preserve">
+    <value>No se puede llevar a cabo la acción seleccionada si el examen aún no ha sido emitido</value>
+  </data>
+  <data name="EXAMENES_MNG_OPEN" xml:space="preserve">
+    <value>Para acceder a las preguntas debe primero cerrar la ventana de edición de exámenes.</value>
+  </data>
+  <data name="INFORME_AMPLIACION_MODIFICADO" xml:space="preserve">
+    <value>Se ha modificado el informe de ampliación {0}.</value>
+  </data>
+  <data name="INFORME_CORRECCIONES_MODIFICADO" xml:space="preserve">
+    <value>Se ha modificado el informe de correcciones {0}.</value>
+  </data>
+  <data name="INFORME_DISCREPANCIA_MODIFICADO" xml:space="preserve">
+    <value>Se ha modificado el informe de discrepancia {0}.</value>
+  </data>
+  <data name="INVALID_FIELD_FORMAT" xml:space="preserve">
+    <value>El campo "{0}" contiene datos no válidos.</value>
+  </data>
+  <data name="INVALID_FORMAT" xml:space="preserve">
+    <value>El campo modificado contiene datos no válidos.</value>
+  </data>
+  <data name="LOADING_DATA" xml:space="preserve">
+    <value>Cargando datos...</value>
+  </data>
+  <data name="LOCK_ERROR" xml:space="preserve">
+    <value>Imposible bloquear el elemento seleccionado.
+Otro usuario está modificándolo en este momento. </value>
+  </data>
+  <data name="LOGIN_ERROR" xml:space="preserve">
+    <value>Error autentificando al usuario. Revise nombre de usuario y contraseña.</value>
+  </data>
+  <data name="NO_CLIENT_ASSOCIATED" xml:space="preserve">
+    <value>Este alumno no está asociado a ningún cliente. Es necesario asociar un cliente antes de  tramitar la matrícula</value>
+  </data>
+  <data name="NO_CLIENT_SELECTED" xml:space="preserve">
+    <value>No se ha seleccionado ningun cliente.</value>
+  </data>
+  <data name="NO_DATA_ENTITY" xml:space="preserve">
+    <value>No existen datos disponibles para realizar una selección específica para este tipo de informe.</value>
+  </data>
+  <data name="NO_DATA_REPORTS" xml:space="preserve">
+    <value>No existen datos para imprimir.</value>
+  </data>
+  <data name="NO_DELETE_USER" xml:space="preserve">
+    <value>El usuario actual no puede ser eliminado</value>
+  </data>
+  <data name="NO_RESULTS" xml:space="preserve">
+    <value>No se han encontrado elementos coincidentes</value>
+  </data>
+  <data name="NO_SELECTED" xml:space="preserve">
+    <value>Debe seleccionar un elemento de la lista</value>
+  </data>
+  <data name="NOT_ENABLED_ACTION" xml:space="preserve">
+    <value>No es posible realizar la acción solicitada ({0}) sobre una auditoría en estado {1}.</value>
+  </data>
+  <data name="NOT_ENABLED_PROPERTY" xml:space="preserve">
+    <value>No se puede modificar el campo {0} de una auditoría en estado {1}.</value>
+  </data>
+  <data name="NOT_EQUAL_PASS" xml:space="preserve">
+    <value>Las contraseñas introducidas no son iguales</value>
+  </data>
+  <data name="OPERATION_ERROR" xml:space="preserve">
+    <value>No ha sido posible realizar la operación.
+</value>
+  </data>
+  <data name="PASSWORD_NULL" xml:space="preserve">
+    <value>No ha escrito una contraseña. ¿Está seguro de que desea que el usuario no posea contraseña?</value>
+  </data>
+  <data name="PREGUNTA_INCLUIDA" xml:space="preserve">
+    <value>La pregunta número {0} ha sido reservada por otro usuario. 
+Para poder guardar el examen debe eliminarla del mismo.</value>
+  </data>
+  <data name="PREGUNTA_RESERVADA" xml:space="preserve">
+    <value>La pregunta actual está incluída en algún examen que aún no ha sido emitido. 
+No será posible marcarla como inactiva hasta que no deje de estar reservada.</value>
+  </data>
+  <data name="PREGUNTAS_INACTIVAS" xml:space="preserve">
+    <value>Las siguientes preguntas están inactivas y no podrán aparecer en el examen: {0}.
+Actívelas si desea que aparezcan en el mismo.</value>
+  </data>
+  <data name="PREGUNTAS_MNG_OPEN" xml:space="preserve">
+    <value>Para acceder a los exámenes debe primero cerrar la ventana de edición de preguntas.</value>
+  </data>
+  <data name="RESTORE_NOT_ALLOWED" xml:space="preserve">
+    <value>Usuario no autorizado para llevar a cabo la acción seleccionada.</value>
+  </data>
+  <data name="SAVING" xml:space="preserve">
+    <value>Guardando...</value>
+  </data>
+  <data name="STATUS_GENERICO" xml:space="preserve">
+    <value>+ = Agregar</value>
+  </data>
+  <data name="UPDATING_INSTRUCTORES_HORARIO" xml:space="preserve">
+    <value>Cargando disponibilidad de los instructores...</value>
+  </data>
+  <data name="UPDATING_PROMOCION_HORARIO" xml:space="preserve">
+    <value>Cargando instructores, disponibildades y clases sin programar...</value>
+  </data>
+  <data name="VALIDATION_MSG" xml:space="preserve">
+    <value>Comprobando permisos...</value>
+  </data>
+  <data name="PARTE_INCLUIDO_ALBARAN_FACTURADO" xml:space="preserve">
+    <value>El horario que está intentando modificar tiene asociados albaranes de instructor facturados. Debe eliminar los albaranes antes de continuar modificando.</value>
+  </data>
+  <data name="ALUMNO_CON_PARTES_DE_FALTAS" xml:space="preserve">
+    <value>No se puede borrar el alumno porque tiene partes de faltas asociados.</value>
+  </data>
+  <data name="ERROR_GENERACION_ALBARAN_INSTRUCTOR" xml:space="preserve">
+    <value>Ha habido algún error al generar el albarán de instructor. Compruebe que el albarán asociado no haya sido facturado y que los albaranes de instructor tengan serie y producto por defecto asociados.</value>
+  </data>
+  <data name="HORARIO_CONFIRMADO" xml:space="preserve">
+    <value>El horario que está intentando borrar contiene clases que han sido confirmadas y no puede ser borrado.</value>
+  </data>
+  <data name="HORARIO_NO_GENERADO" xml:space="preserve">
+    <value>No se ha generado ningún horario</value>
+  </data>
+  <data name="SESION_SIN_PROFESOR" xml:space="preserve">
+    <value>No se puede guardar el horario, existen sesiones que no tienen instructor asignado.</value>
+  </data>
+  <data name="GUARDADO_EXAMEN" xml:space="preserve">
+    <value>Antes de imprimir el examen actual se debe guardar. ¿Desea guardar ahora e imprimir el examen?</value>
+  </data>
+  <data name="SUBMODULO_SIN_TEMAS" xml:space="preserve">
+    <value>Todos los submódulos deben tener asociados al menos un tema</value>
+  </data>
+  <data name="TEMA_CON_PREGUNTAS" xml:space="preserve">
+    <value>El tema que está intentando eliminar tiene preguntas asociadas y no podrá ser eliminado.</value>
+  </data>
+  <data name="CREANDO_PARTES_ASISTENCIA" xml:space="preserve">
+    <value>Creando partes de asistencia...</value>
+  </data>
+  <data name="GENERANDO_SESIONES" xml:space="preserve">
+    <value>Generando sesiones del horario...</value>
+  </data>
+  <data name="MODIFICANDO_CLASE" xml:space="preserve">
+    <value>Modificando la clase actual...</value>
+  </data>
+  <data name="GENERANDO_CRONOGRAMA" xml:space="preserve">
+    <value>Generando cronograma...</value>
+  </data>
+  <data name="CRONOGRAMA_GENERADO_CON_EXITO" xml:space="preserve">
+    <value>El cronograma se ha generado satisfactoriamente. </value>
+  </data>
+  <data name="CONFIGURACION_NO_VALIDA" xml:space="preserve">
+    <value>La configuración introducida para los horarios de la promoción no es coherente.
+Por favor, revise antes de guardar.</value>
+  </data>
+  <data name="PARTE_CON_CONCEPTOS_ASOCIADOS" xml:space="preserve">
+    <value>El parte de faltas que intenta borrar ha sido confirmado y tiene conceptos de albarán asociados. Debe ir a Facturación y eliminar los conceptos asociados antes de borrar.</value>
+  </data>
+  <data name="TEMA_DUPLICADO_OK" xml:space="preserve">
+    <value>Las preguntas del tema se han duplicado correctamente</value>
+  </data>
+  <data name="EXAMEN_DUPLICADO_CON_PREGUNTAS_NO_DISPONIBLES" xml:space="preserve">
+    <value>No se han podido duplicar todas las preguntas del examen seleccionado ya que al menos una de ellas no está disponible en la fecha en la que va a tener lugar el examen.</value>
+  </data>
+  <data name="HORARIO_EXISTENTE" xml:space="preserve">
+    <value>Ya existe un horario generado para la promoción y fecha seleccionadas.</value>
+  </data>
+</root>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Instructor" schema="`0001`" table="`Empleado`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Empleado_OID_seq"</param>			</generator>
+		</id>
+    <property column="`CODIGO`" type="String" name="Codigo" length="255" />
+    <property column="`SERIAL`" type="Int64" name="Serial" />
+    <property column="`TIPO`" type="Int64" name="TipoAcreedor" not-null="true"/>
+    <property column="`ESTADO`"  type="Int64" name="Estado"  />
+    <property column="`ID`" type="String" name="ID" length="50" />
+    <property column="`TIPO_ID`" type="Int64" name="TipoId" not-null="true" />
+		<property column="`NOMBRE`" type="String" name="Nombre" length="255" />
+    <property column="`APELLIDOS`" type="String" name="Apellidos" length="255" />
+    <property column="`ALIAS`" type="String" name="Alias" />
+    <property column="`DIRECCION`" type="String" name="Direccion" length="255" />
+    <property column="`COD_POSTAL`" type="String" name="CodPostal" length="255" />
+    <property column="`LOCALIDAD`" type="String" name="Localidad" length="255" />
+    <property column="`MUNICIPIO`" type="String" name="Municipio" length="255" />
+    <property column="`PROVINCIA`" type="String" name="Provincia" length="255" />
+    <property column="`PAIS`"  type="String" name="Pais" not-null="false" length="255" />
+    <property column="`TELEFONO`" type="String" name="Telefono" length="255" />
+    <property column="`EMAIL`" type="String" name="Email" length="255" />
+    <property column="`CUENTA_BANCARIA`"  type="String" name="CuentaBancaria" not-null="false" length="255" />
+    <property column="`OID_CUENTA_BANCARIA_ASOCIADA`" type="Int64" name="OidCuentaBAsociada" />
+    <property column="`CUENTA_CONTABLE`" type="String" name="CuentaContable" not-null="false" length="255" />
+    <property column="`MEDIO_PAGO`"  type="Int64" name="MedioPago" not-null="false" />
+    <property column="`FORMA_PAGO`"  type="Int64" name="FormaPago" not-null="false"  />
+    <property column="`DIAS_PAGO`"  type="Int64" name="DiasPago" not-null="false"  />
+    <property column="`CONTACTO`"  type="String" name="Contacto" not-null="false" length="255" />
+    <property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+    <property column="`NIVEL_ESTUDIOS`" type="String" name="NivelEstudios" length="255" />
+		<property column="`PERFIL`" type="Int64" name="Perfil" />
+    <property column="`FOTO`" type="String" name="Foto" length="255" />
+    <property column="`INICIO_CONTRATO`" type="date" name="InicioContrato" />
+    <property column="`FIN_CONTRATO`" type="date" name="FinContrato" />
+    <property column="`P_IRPF`"  type="Decimal" name="IRPF" not-null="false"  />
+    <property column="`SUELDO_BRUTO`"  type="Decimal" name="SueldoBruto" not-null="false"  />
+    <property column="`OID_IMPUESTO`" type="Int64" name="OidImpuesto" />
+    <property column="`ACTIVO`" type="Boolean" name="Activo"/>
+    <property column="`NOMBRE_PROPIO`" type="String" name="NombrePropio" length="255" />
+    <property column="`CUENTA_ASOCIADA`"  type="String" name="CuentaAsociada" not-null="false" length="255" />
+
+  </class>
+</hibernate-mapping>

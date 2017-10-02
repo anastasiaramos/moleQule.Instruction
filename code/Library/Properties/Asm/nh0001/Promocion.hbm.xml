@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Promocion" schema="`0001`" table="`Promocion`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Promocion_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_PLAN`" type="Int64" name="OidPlan" not-null="true" />
+    <property column="`OID_PLAN_EXTRA`" type="Int64" name="OidPlanExtra" not-null="true" />
+		<property column="`NOMBRE`" type="String" name="Nombre" not-null="true" length="255" />
+		<property column="`NUMERO`" type="String" name="Numero" not-null="true" length="255" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+		<property column="`FECHA_INICIO`" type="date" name="FechaInicio" not-null="true" />
+		<property column="`FECHA_FIN`" type="date" name="FechaFin" />
+    <property column="`H0`" type="Boolean" name="H0" />
+    <property column="`H1`" type="Boolean" name="H1" />
+    <property column="`H2`" type="Boolean" name="H2" />
+    <property column="`H3`" type="Boolean" name="H3" />
+    <property column="`H4`" type="Boolean" name="H4" />
+    <property column="`H5`" type="Boolean" name="H5" />
+    <property column="`H6`" type="Boolean" name="H6" />
+    <property column="`H7`" type="Boolean" name="H7" />
+    <property column="`H8`" type="Boolean" name="H8" />
+    <property column="`H9`" type="Boolean" name="H9" />
+    <property column="`H10`" type="Boolean" name="H10" />
+    <property column="`H11`" type="Boolean" name="H11" />
+    <property column="`H12`" type="Boolean" name="H12" />
+    <property column="`HS0`" type="Boolean" name="HS0" />
+    <property column="`HS1`" type="Boolean" name="HS1" />
+    <property column="`HS2`" type="Boolean" name="HS2" />
+    <property column="`HS3`" type="Boolean" name="HS3" />
+    <property column="`HS4`" type="Boolean" name="HS4" />
+		
+	</class>
+</hibernate-mapping>

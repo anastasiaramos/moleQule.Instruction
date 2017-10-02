@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project name="moleQule.Library.Instruction">
+  <modules>
+    <module name="Alumno" />
+    <module name="Alumno_Cliente" />
+    <module name="Alumno_Convocatoria" />
+    <module name="Alumno_Curso" />
+    <module name="Alumno_Examen" />
+    <module name="Alumno_Parte" />
+    <module name="Alumno_Practica" />
+    <module name="Alumno_Promocion" />
+    <module name="Clase_Parte" />
+    <module name="ClaseExtra" />
+    <module name="ClasePractica" />
+    <module name="ClaseTeorica" />
+    <module name="Concepto_Parte" />
+    <module name="Convocatoria_Curso" />
+    <module name="Cronograma" />
+    <module name="Curso" />
+    <module name="Curso_Instructor" />
+    <module name="CursoFormacion" />
+    <module name="Disponibilidad" />
+    <module name="Examen" />
+    <module name="Examen_Promocion" />
+    <module name="Historia" />
+    <module name="Horario" />
+    <module name="Instructor" />
+    <module name="Instructor_Promocion" />
+    <module name="Material_Alumno" />
+    <module name="Material_Plan" />
+    <module name="MaterialDocente" />
+    <module name="Modulo" />
+    <module name="ParteAsistencia" />
+    <module name="PlanEstudios" />
+    <module name="PlanExtra" />
+    <module name="PlantillaExamen" />
+    <module name="Pregunta" />
+    <module name="Pregunta_Examen" />
+    <module name="PreguntaExamen" />
+    <module name="Preguntas_Plantilla" />
+    <module name="Promocion" />
+    <module name="Respuesta" />
+    <module name="Respuesta_Alumno_Examen" />
+    <module name="RespuestaExamen" />
+    <module name="RevisionMaterial" />
+    <module name="Sesion" />
+    <module name="Sesion_Promocion" />
+    <module name="SesionCronograma" />
+    <module name="Submodulo" />
+    <module name="Submodulo_Instructor" />
+    <module name="Submodulo_Instructor_Promocion" />
+    <module name="Tema" />
+  </modules>
+</project>

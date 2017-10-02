@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+<xs:schema id="ClaseTeoricaDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:element name="ClaseTeoricaDataSet" msdata:IsDataSet="true"
+msdata:MainDataTable="ClaseTeoricaInfo" msdata:UseCurrentLocale="true">
+<xs:complexType>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="ClaseTeoricaInfo">
+<xs:complexType>
+<xs:sequence>
+  <xs:element name="OidPlan" type="xs:positiveInteger" />
+  <xs:element name="OidModulo" type="xs:positiveInteger" />
+  <xs:element name="OidSubmodulo" type="xs:positiveInteger" />
+  <xs:element name="OrdenPrimario" type="xs:positiveInteger" />
+  <xs:element name="OrdenSecundario" type="xs:positiveInteger" />
+  <xs:element name="OrdenTerciario" type="xs:positiveInteger" />
+  <xs:element name="Titulo" type="xs:string" minOccurs="0" />
+  <xs:element name="Observaciones" type="xs:string" minOccurs="0" />
+  <xs:element name="Incompatible" type="xs:positiveInteger" />
+  <xs:element name="OrdenTerciario" type="xs:positiveInteger" />
+  <xs:element name="Duracion" type="xs:string" minOccurs="0" />
+  <xs:element name="Alias" type="xs:string" minOccurs="0" />
+  <xs:element name="Tipo" type="xs:positiveInteger" />
+  <xs:element name="TotalClases" type="xs:positiveInteger" />
+  <xs:element name="Laboratorio" type="xs:positiveInteger" />
+  <xs:element name="Modulo" type="xs:string" minOccurs="0" />
+  <xs:element name="SubModulo" type="xs:string" minOccurs="0" />
+  <xs:element name="CodigoOrden" type="xs:string" minOccurs="0" />
+  <xs:element name="Estado" type="xs:positiveInteger" />
+  <xs:element name="Grupo" type="xs:positiveInteger" />
+  <xs:element name="TotalModulo" type="xs:positiveInteger" />
+  <xs:element name="TotalSubmodulo" type="xs:positiveInteger" />
+  <xs:element name="Instructor" type="xs:string" minOccurs="0" />
+  <xs:element name="Fecha" type="xs:date" />
+  <xs:element name="Hora" type="xs:time" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</NewDataSet>

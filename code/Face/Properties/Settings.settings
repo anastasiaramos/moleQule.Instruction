@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="moleQule.Face.Instruction.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="SUBMODULO_ICON" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">submodulo</Value>
+    </Setting>
+    <Setting Name="PREGUNTA_DISPONIBLE_ICON" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">disponible</Value>
+    </Setting>
+    <Setting Name="PREGUNTA_RESERVADA_ICON" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">reservada</Value>
+    </Setting>
+    <Setting Name="PREGUNTA_BLOQUEADA_ICON" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">bloqueada</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

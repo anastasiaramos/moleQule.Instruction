@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.SesionCronograma" schema="`0001`" table="`SesionCronograma`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Sesion_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_CRONOGRAMA`" type="Int64" name="OidCronograma" not-null="true" />
+		<property column="`OID_CLASE_TEORICA`" type="Int64" name="OidClaseTeorica" not-null="true" />
+		<property column="`OID_CLASE_PRACTICA`" type="Int64" name="OidClasePractica" not-null="true" />
+		<property column="`SEMANA`" type="Int64" name="Semana" not-null="true"/>
+		<property column="`DIA`" type="Int64" name="Dia" not-null="true"/>
+    <property column="`TURNO`" type="Int64" name="Turno" not-null="true" />
+    <property column="`NUMERO`" type="Int64" name="Numero" />
+    <property column="`TEXTO`" type="String" name="Texto" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,1133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3EDEBFF9-FDE9-41B3-BD6A-E53653DBFAEC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>moleQule.Library.Instruction</RootNamespace>
+    <AssemblyName>moleQule.Library.Instruction</AssemblyName>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\moleQule.Library.Instruction.XML</DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Csla">
+      <HintPath>..\..\..\External Libs\Csla.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\..\..\Hangar\code\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Infralution.Localization">
+      <HintPath>..\..\..\External Libs\Infralution.Localization\bin\Infralution.Localization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\External Libs\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library">
+      <HintPath>..\..\..\moleQule\moleQule.Library\bin\moleQule.Library.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Common">
+      <HintPath>..\..\..\moleQule\moleQule.Common\code\Library\bin\moleQule.Library.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Hipatia">
+      <HintPath>..\..\..\Hipatia\Code\Library\bin\moleQule.Library.Hipatia.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Invoice, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\moleQule.Invoice\code\Library\bin\moleQule.Library.Invoice.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="moleQule.Library.Store, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\moleQule.Store\code\Library\bin\moleQule.Library.Store.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\Hangar\code\packages\Npgsql.2.0.12.1\lib\net40\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>..\..\..\Hangar\code\packages\NHibernate.3.3.3.4001\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\..\Hangar\code\packages\Npgsql.2.0.12.1\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="policy.2.0.Npgsql">
+      <HintPath>..\..\..\Hangar\code\packages\Npgsql.2.0.12.1\lib\net40\policy.2.0.Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\Alumno\Alumno.cs" />
+    <Compile Include="BO\Alumno\AlumnoCurso\AlumnoCurso.cs" />
+    <Compile Include="BO\Alumno\AlumnoCurso\AlumnoCursoInfo.cs" />
+    <Compile Include="BO\Alumno\AlumnoCurso\AlumnoCursoList.cs" />
+    <Compile Include="BO\Alumno\AlumnoCurso\AlumnoCursoMap.cs" />
+    <Compile Include="BO\Alumno\AlumnoCurso\AlumnoCursos.cs" />
+    <Compile Include="BO\Alumno\AlumnoInfo.cs" />
+    <Compile Include="BO\Alumno\AlumnoList.cs" />
+    <Compile Include="BO\Alumno\AlumnoMap.cs" />
+    <Compile Include="BO\Alumno\AlumnoPrint.cs" />
+    <Compile Include="BO\Alumno\AlumnoReportMng.cs" />
+    <Compile Include="BO\Alumno\Alumnos.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoCliente.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoClienteInfo.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoClienteList.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoClienteMap.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoClientePrint.cs" />
+    <Compile Include="BO\Alumno\Alumno_Cliente\AlumnoClientes.cs" />
+    <Compile Include="BO\Alumno\Alumno_Convocatoria\Alumno_Convocatoria.cs" />
+    <Compile Include="BO\Alumno\Alumno_Convocatoria\Alumno_ConvocatoriaInfo.cs" />
+    <Compile Include="BO\Alumno\Alumno_Convocatoria\Alumno_ConvocatoriaList.cs" />
+    <Compile Include="BO\Alumno\Alumno_Convocatoria\Alumno_Convocatorias.cs" />
+    <Compile Include="BO\Alumno\Alumno_Parte\AlumnoParteMap.cs" />
+    <Compile Include="BO\Alumno\Alumno_Parte\Alumno_Parte.cs" />
+    <Compile Include="BO\Alumno\Alumno_Parte\Alumno_ParteInfo.cs" />
+    <Compile Include="BO\Alumno\Alumno_Parte\Alumno_ParteList.cs" />
+    <Compile Include="BO\Alumno\Alumno_Parte\Alumno_Partes.cs" />
+    <Compile Include="BO\Alumno\Alumno_Practica\AlumnoPracticaMap.cs" />
+    <Compile Include="BO\Alumno\Alumno_Practica\Alumnos_Practicas.cs" />
+    <Compile Include="BO\Alumno\Alumno_Practica\Alumno_Practica.cs" />
+    <Compile Include="BO\Alumno\Alumno_Practica\Alumno_PracticaInfo.cs" />
+    <Compile Include="BO\Alumno\Alumno_Practica\Alumno_PracticaList.cs" />
+    <Compile Include="BO\Alumno\Alumno_Promocion\AlumnoPromocionMap.cs" />
+    <Compile Include="BO\Alumno\Alumno_Promocion\Alumno_Promocion.cs" />
+    <Compile Include="BO\Alumno\Alumno_Promocion\Alumno_PromocionInfo.cs" />
+    <Compile Include="BO\Alumno\Alumno_Promocion\Alumno_PromocionList.cs" />
+    <Compile Include="BO\Alumno\Alumno_Promocion\Alumnos_Promociones.cs" />
+    <Compile Include="BO\Alumno\Alumno_Convocatoria\AlumnoConvocatoriaMap.cs" />
+    <Compile Include="BO\Curso\Convocatorias\ConvocatoriaCursoList.cs" />
+    <Compile Include="BO\Curso\Convocatorias\Convocatoria_Curso.cs" />
+    <Compile Include="BO\Curso\Convocatorias\Convocatoria_CursoInfo.cs" />
+    <Compile Include="BO\Curso\Convocatorias\Convocatoria_CursoMap.cs" />
+    <Compile Include="BO\Curso\Convocatorias\Convocatoria_Cursos.cs" />
+    <Compile Include="BO\Curso\Curso.cs" />
+    <Compile Include="BO\Curso\CursoInfo.cs" />
+    <Compile Include="BO\Curso\CursoList.cs" />
+    <Compile Include="BO\Curso\CursoMap.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\AlumnoExamenMap.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Alumno_Examen.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Alumno_ExamenInfo.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Alumno_ExamenList.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Alumno_ExamenPrint.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Alumno_Examens.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Respuesta_Alumno_Examen\RespuestaAlumnoExamenMap.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Respuesta_Alumno_Examen\Respuesta_Alumno_Examen.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Respuesta_Alumno_Examen\Respuesta_Alumno_Examenes.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Respuesta_Alumno_Examen\Respuesta_Alumno_ExamenInfo.cs" />
+    <Compile Include="BO\Examen\Alumno_Examen\Respuesta_Alumno_Examen\Respuesta_Alumno_ExamenList.cs" />
+    <Compile Include="BO\Examen\Examen.cs" />
+    <Compile Include="BO\Examen\ExamenInfo.cs" />
+    <Compile Include="BO\Examen\ExamenList.cs" />
+    <Compile Include="BO\Examen\ExamenMap.cs" />
+    <Compile Include="BO\Examen\ExamenPrint.cs" />
+    <Compile Include="BO\Examen\ExamenReportMng.cs" />
+    <Compile Include="BO\Examen\Examens.cs" />
+    <Compile Include="BO\Examen\Examen_Promocion\ExamenPromocion.cs" />
+    <Compile Include="BO\Examen\Examen_Promocion\ExamenPromociones.cs" />
+    <Compile Include="BO\Examen\Examen_Promocion\ExamenPromocionInfo.cs" />
+    <Compile Include="BO\Examen\Examen_Promocion\ExamenPromocionList.cs" />
+    <Compile Include="BO\Examen\Examen_Promocion\ExamenPromocionPrint.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamen.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamenInfo.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamenList.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamenPrint.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamens.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamen.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamenInfo.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamenList.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamenPrint.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamens.cs" />
+    <Compile Include="BO\Examen\Pregunta_Examen\Pregunta_Examen.cs" />
+    <Compile Include="BO\Examen\Pregunta_Examen\Pregunta_ExamenInfo.cs" />
+    <Compile Include="BO\Examen\Pregunta_Examen\Pregunta_ExamenList.cs" />
+    <Compile Include="BO\Examen\Pregunta_Examen\Pregunta_Examens.cs" />
+    <Compile Include="BO\Festivos\Festivo.cs" />
+    <Compile Include="BO\Festivos\Festivos.cs" />
+    <Compile Include="BO\Festivos\FestivoInfo.cs" />
+    <Compile Include="BO\Festivos\FestivoList.cs" />
+    <Compile Include="BO\Festivos\FestivoPrint.cs" />
+    <Compile Include="BO\Festivos\FestivoReportMng.cs" />
+    <Compile Include="BO\Horario\HorarioController.cs" />
+    <Compile Include="BO\Horario\Horario.cs" />
+    <Compile Include="BO\Horario\HorarioInfo.cs" />
+    <Compile Include="BO\Horario\HorarioList.cs" />
+    <Compile Include="BO\Horario\HorarioMap.cs" />
+    <Compile Include="BO\Horario\HorarioPrint.cs" />
+    <Compile Include="BO\Horario\Horarios.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Clase_Parte\ClaseParteMap.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Concepto_Parte\Concepto_ParteMap.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Concepto_Parte\Concepto_Parte.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Concepto_Parte\Conceptos_Partes.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Concepto_Parte\Concepto_ParteInfo.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Concepto_Parte\Concepto_ParteList.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Clase_Parte\Clases_Partes.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Clase_Parte\Clase_Parte.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Clase_Parte\Clase_ParteInfo.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\Clase_Parte\Clase_ParteList.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\ParteAsistencia.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\ParteAsistenciaInfo.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\ParteAsistenciaList.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\ParteAsistenciaMap.cs" />
+    <Compile Include="BO\Horario\Sesion\ParteAsistencia\ParteAsistencias.cs" />
+    <Compile Include="BO\Horario\Sesion\Sesion.cs" />
+    <Compile Include="BO\Horario\Sesion\SesionInfo.cs" />
+    <Compile Include="BO\Horario\Sesion\SesionList.cs" />
+    <Compile Include="BO\Horario\Sesion\SesionMap.cs" />
+    <Compile Include="BO\Horario\Sesion\SesionPrint.cs" />
+    <Compile Include="BO\Horario\Sesion\Sesions.cs" />
+    <Compile Include="BO\Instructores\CursoFormacion\CursoFormacion.cs" />
+    <Compile Include="BO\Instructores\CursoFormacion\CursoFormacionInfo.cs" />
+    <Compile Include="BO\Instructores\CursoFormacion\CursoFormacionList.cs" />
+    <Compile Include="BO\Instructores\CursoFormacion\CursoFormacionMap.cs" />
+    <Compile Include="BO\Instructores\CursoFormacion\CursoFormacions.cs" />
+    <Compile Include="BO\Instructores\Curso_Instructor\Curso_Instructor.cs" />
+    <Compile Include="BO\Instructores\Curso_Instructor\Curso_InstructorInfo.cs" />
+    <Compile Include="BO\Instructores\Curso_Instructor\Curso_InstructorList.cs" />
+    <Compile Include="BO\Instructores\Curso_Instructor\Curso_InstructorMap.cs" />
+    <Compile Include="BO\Instructores\Curso_Instructor\Curso_Instructors.cs" />
+    <Compile Include="BO\Instructores\Disponibilidad\Disponibilidad.cs" />
+    <Compile Include="BO\Instructores\Disponibilidad\Disponibilidades.cs" />
+    <Compile Include="BO\Instructores\Disponibilidad\DisponibilidadInfo.cs" />
+    <Compile Include="BO\Instructores\Disponibilidad\DisponibilidadList.cs" />
+    <Compile Include="BO\Instructores\Disponibilidad\DisponibilidadMap.cs" />
+    <Compile Include="BO\Instructores\Instructor.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Instructores\Instructores.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Instructores\InstructorInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Instructores\InstructorList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Instructores\InstructorMap.cs" />
+    <Compile Include="BO\Instructores\InstructorPrint.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_Promocion.cs" />
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_Promociones.cs" />
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionInfo.cs" />
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionList.cs" />
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionMap.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulos_Instructores.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_Instructor.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorInfo.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorList.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorMap.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulos_Instructores_Promociones.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_Promocion.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_PromocionInfo.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_PromocionList.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_PromocionMap.cs" />
+    <Compile Include="BO\Modulo\Modulo.cs" />
+    <Compile Include="BO\Modulo\ModuloInfo.cs" />
+    <Compile Include="BO\Modulo\ModuloList.cs" />
+    <Compile Include="BO\Modulo\ModuloMap.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Submodulo.cs" />
+    <Compile Include="BO\Modulo\Submodulo\SubmoduloInfo.cs" />
+    <Compile Include="BO\Modulo\Submodulo\SubmoduloList.cs" />
+    <Compile Include="BO\Modulo\Submodulo\SubmoduloMap.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Submodulos.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Tema\Tema.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Tema\TemaInfo.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Tema\TemaList.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Tema\TemaMap.cs" />
+    <Compile Include="BO\Modulo\Submodulo\Tema\Temas.cs" />
+    <Compile Include="BO\PlanEstudios\ClasePractica\ClasePractica.cs" />
+    <Compile Include="BO\PlanEstudios\ClasePractica\ClasePracticaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\ClasePractica\ClasePracticaList.cs" />
+    <Compile Include="BO\PlanEstudios\ClasePractica\ClasePracticaMap.cs" />
+    <Compile Include="BO\PlanEstudios\ClasePractica\ClasePracticas.cs" />
+    <Compile Include="BO\PlanEstudios\ClasesAuxiliares.cs" />
+    <Compile Include="BO\PlanEstudios\ClaseTeorica\ClaseTeorica.cs" />
+    <Compile Include="BO\PlanEstudios\ClaseTeorica\ClaseTeoricaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\ClaseTeorica\ClaseTeoricaList.cs" />
+    <Compile Include="BO\PlanEstudios\ClaseTeorica\ClaseTeoricaMap.cs" />
+    <Compile Include="BO\PlanEstudios\ClaseTeorica\ClaseTeoricas.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Cronograma.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaList.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaMap.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaPrint.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaReportMng.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Cronogramas.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\CronogramaController.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionCronograma.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaList.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaMap.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaPrint.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\SesionesCronogramas.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\MaterialDocente.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\MaterialDocenteInfo.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\MaterialDocenteList.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\MaterialDocenteMap.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\MaterialDocentes.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\Material_Alumno\Material_Alumno.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\Material_Alumno\Material_AlumnoInfo.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\Material_Alumno\Material_AlumnoList.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\Material_Alumno\Material_AlumnoMap.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\Material_Alumno\Material_Alumnos.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\RevisionMaterial\RevisionMaterial.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\RevisionMaterial\RevisionMaterialInfo.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\RevisionMaterial\RevisionMaterialList.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\RevisionMaterial\RevisionMaterialMap.cs" />
+    <Compile Include="BO\PlanEstudios\MaterialDocente\RevisionMaterial\RevisionMaterials.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_Plan.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_PlanInfo.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_PlanList.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_PlanMap.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_PlanPrint.cs" />
+    <Compile Include="BO\PlanEstudios\Material_Plan\Material_Plans.cs" />
+    <Compile Include="BO\PlanEstudios\PlanEstudios.cs" />
+    <Compile Include="BO\PlanEstudios\PlanEstudiosInfo.cs" />
+    <Compile Include="BO\PlanEstudios\PlanEstudiosList.cs" />
+    <Compile Include="BO\PlanEstudios\PlanEstudiosMap.cs" />
+    <Compile Include="BO\PlanExtra\ClaseExtra.cs" />
+    <Compile Include="BO\PlanExtra\ClaseExtraInfo.cs" />
+    <Compile Include="BO\PlanExtra\ClaseExtraList.cs" />
+    <Compile Include="BO\PlanExtra\ClaseExtraMap.cs" />
+    <Compile Include="BO\PlanExtra\ClaseExtras.cs" />
+    <Compile Include="BO\PlanExtra\PlanExtra.cs" />
+    <Compile Include="BO\PlanExtra\PlanExtraInfo.cs" />
+    <Compile Include="BO\PlanExtra\PlanExtraList.cs" />
+    <Compile Include="BO\PlanExtra\PlanExtraMap.cs" />
+    <Compile Include="BO\PlantillaExamen\PlantillaExamen.cs" />
+    <Compile Include="BO\PlantillaExamen\PlantillaExamenes.cs" />
+    <Compile Include="BO\PlantillaExamen\PlantillaExamenInfo.cs" />
+    <Compile Include="BO\PlantillaExamen\PlantillaExamenList.cs" />
+    <Compile Include="BO\PlantillaExamen\PlantillaExamenMap.cs" />
+    <Compile Include="BO\PlantillaExamen\Preguntas_Plantilla\Preguntas_Plantilla.cs" />
+    <Compile Include="BO\PlantillaExamen\Preguntas_Plantilla\Preguntas_PlantillaInfo.cs" />
+    <Compile Include="BO\PlantillaExamen\Preguntas_Plantilla\Preguntas_PlantillaList.cs" />
+    <Compile Include="BO\PlantillaExamen\Preguntas_Plantilla\Preguntas_Plantillas.cs" />
+    <Compile Include="BO\PlantillaExamen\Preguntas_Plantilla\Preguntas_PlantillaMap.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\PreguntaExamenMap.cs" />
+    <Compile Include="BO\Pregunta\Historia\Historia.cs" />
+    <Compile Include="BO\Pregunta\Historia\HistoriaInfo.cs" />
+    <Compile Include="BO\Pregunta\Historia\HistoriaList.cs" />
+    <Compile Include="BO\Pregunta\Historia\HistoriaMap.cs" />
+    <Compile Include="BO\Pregunta\Historia\HistoriaPrint.cs" />
+    <Compile Include="BO\Pregunta\Historia\Historias.cs" />
+    <Compile Include="BO\Pregunta\Pregunta.cs" />
+    <Compile Include="BO\Pregunta\PreguntaInfo.cs" />
+    <Compile Include="BO\Pregunta\PreguntaList.cs" />
+    <Compile Include="BO\Pregunta\PreguntaMap.cs" />
+    <Compile Include="BO\Pregunta\PreguntaPrint.cs" />
+    <Compile Include="BO\Pregunta\Preguntas.cs" />
+    <Compile Include="BO\Pregunta\Respuesta\Respuesta.cs" />
+    <Compile Include="BO\Pregunta\Respuesta\RespuestaInfo.cs" />
+    <Compile Include="BO\Pregunta\Respuesta\RespuestaList.cs" />
+    <Compile Include="BO\Pregunta\Respuesta\RespuestaMap.cs" />
+    <Compile Include="BO\Pregunta\Respuesta\Respuestas.cs" />
+    <Compile Include="BO\Examen\Pregunta_Examen\Pregunta_ExamenMap.cs" />
+    <Compile Include="BO\Promocion\PromocionMap.cs" />
+    <Compile Include="BO\Promocion\PromocionReportMng.cs" />
+    <Compile Include="BO\Promocion\Sesion_Promocion\Sesiones_Promociones.cs" />
+    <Compile Include="BO\Promocion\Sesion_Promocion\SesionPromocionMap.cs" />
+    <Compile Include="BO\Promocion\Sesion_Promocion\Sesion_Promocion.cs" />
+    <Compile Include="BO\Promocion\Sesion_Promocion\Sesion_PromocionInfo.cs" />
+    <Compile Include="BO\Promocion\Sesion_Promocion\Sesion_PromocionList.cs" />
+    <Compile Include="BO\Promocion\Promocion.cs" />
+    <Compile Include="BO\Promocion\PromocionInfo.cs" />
+    <Compile Include="BO\Promocion\PromocionList.cs" />
+    <Compile Include="BO\Promocion\Promocions.cs" />
+    <Compile Include="BO\Report\Clases\ClaseGenerica.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Report\Clases\ClaseGenericaInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Report\Clases\ClaseGenericaList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BO\Report\Estadistica de Examen\EstadisiticaExamen.cs" />
+    <Compile Include="BO\Report\Estadistica de Examen\EstadisticaExamenInfo.cs" />
+    <Compile Include="BO\Report\Estadistica de Examen\EstadisticaExamenList.cs" />
+    <Compile Include="BO\Report\InformesReportMng.cs" />
+    <Compile Include="BO\Report\Notas de Prácticas\NotaPracticas.cs" />
+    <Compile Include="BO\Report\Notas de Prácticas\NotaPracticasInfo.cs" />
+    <Compile Include="BO\Report\Notas de Prácticas\NotaPracticasList.cs" />
+    <Compile Include="BO\Report\RegistroDisponibilidad\RegistroDisponibilidad.cs" />
+    <Compile Include="BO\Report\RegistroDisponibilidad\RegistroDisponibilidadInfo.cs" />
+    <Compile Include="BO\Report\RegistroDisponibilidad\RegistroDisponibilidadList.cs" />
+    <Compile Include="BO\Report\RegistroFaltas\RegistroFaltas.cs" />
+    <Compile Include="BO\Report\RegistroFaltas\RegistroFaltasInfo.cs" />
+    <Compile Include="BO\Report\RegistroFaltas\RegistroFaltasList.cs" />
+    <Compile Include="BO\Report\Faltas de Alumnos\FaltaAlumno.cs" />
+    <Compile Include="BO\Report\Faltas de Alumnos\FaltaAlumnoInfo.cs" />
+    <Compile Include="BO\Report\Faltas de Alumnos\FaltaAlumnoList.cs" />
+    <Compile Include="BO\Report\MatriculaPrint.cs" />
+    <Compile Include="BO\Examen\PreguntaExamen\RespuestaExamen\RespuestaExamenMap.cs" />
+    <Compile Include="ModuleController.cs" />
+    <Compile Include="ModulePrincipal.cs" />
+    <Compile Include="Modules\Hipatia\AgenteSelector.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Alumno\AlumnosListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AlumnosListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\CertificadoNotasRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CertificadoNotasRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\AlumnosAdmitidosExamenRpt.cs">
+      <DependentUpon>AlumnosAdmitidosExamenRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\FaltasByAlumnoRpt.cs">
+      <DependentUpon>FaltasByAlumnoRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\NotaPracticasAlumnoRpt.cs">
+      <DependentUpon>NotaPracticasAlumnoRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\NotasAlumnoListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasAlumnoListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\RegistroNotasAlumnoRpt.cs">
+      <DependentUpon>RegistroNotasAlumnoRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\NotaPracticasRpt.cs">
+      <DependentUpon>NotaPracticasRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\RegistroFaltasRpt.cs">
+      <DependentUpon>RegistroFaltasRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Alumno\DocumentacionAlumnoSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionAlumnoSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\DocumentacionRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DocumentacionRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\FaltasAlumnosRpt1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaltasAlumnosRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Alumno\MatriculaPromocionRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MatriculaPromocionRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\AsistenciaExamenAlumnosListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsistenciaExamenAlumnosListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\AsistenciaExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AsistenciaExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\RegistroResumenListSubRpt.cs">
+      <DependentUpon>RegistroResumenListSubRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Examen\ResumenAgrupadoExamenRpt.cs">
+      <DependentUpon>ResumenAgrupadoExamenRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Examen\ExamenDesarrolloRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExamenDesarrolloRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\ExamenTestRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExamenTestRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\EstadisticaExamenRpt.cs">
+      <DependentUpon>EstadisticaExamenRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Examen\HojaFirmasPracticaRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaFirmasPracticaRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\HojaFirmasTeoriaRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HojaFirmasTeoriaRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\ListadoPreguntasExamenListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListadoPreguntasExamenListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\NotasExamenAlumnosListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasExamenAlumnosListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\NotasExamenAlumnosListSubRpt2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasExamenAlumnosListSubRpt2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\NotasExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\NotasModuloAlumnoListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotasModuloAlumnoListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PlantillaCorrectoraExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlantillaCorrectoraExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PlantillaRespuestasExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlantillaRespuestasExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PortadaExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PortadaExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PreguntaExamenListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreguntaExamenListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PreguntasDesarrolloRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreguntasDesarrolloRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\PreguntasTestRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreguntasTestRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\RegistroNotasExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RegistroNotasExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\RespuestaExamenListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RespuestaExamenListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\ResumenExamenRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumenExamenRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Horario\ClasesRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClasesRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Horario\FestivosRpt.cs">
+      <DependentUpon>FestivosRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Horario\CronogramaRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CronogramaRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Horario\HorarioRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HorarioRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Horario\SesionCronogramaListSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SesionCronogramaListSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Instructor\FormacionAcademicaSubRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormacionAcademicaSubRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PlanEstudios\ResumenRpt.cs">
+      <DependentUpon>ResumenRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Promocion\ClasesTeoricasDisponiblesRpt.cs">
+      <DependentUpon>ClasesTeoricasDisponiblesRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Promocion\ClasesPracticasDisponiblesRpt.cs">
+      <DependentUpon>ClasesPracticasDisponiblesRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Promocion\ClasesTeoricasImpartidasRpt.cs">
+      <DependentUpon>ClasesTeoricasImpartidasRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Promocion\ClasesPracticasImpartidasRpt.cs">
+      <DependentUpon>ClasesPracticasImpartidasRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Promocion\ComparativaCronogramaRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ComparativaCronogramaRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Defaults.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Defaults.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\ElementosSeguros1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ElementosSeguros.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Enums.Designer.cs">
+      <DependentUpon>Enums.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Messages.Designer.cs">
+      <DependentUpon>Messages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\Paths.Designer.cs">
+      <DependentUpon>Paths.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Resources\Labels.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Structs\Structs.cs" />
+    <Compile Include="Tools\HComboBoxSourceList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Alumno\AlumnosListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AlumnosListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\CertificadoNotasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CertificadoNotasRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\AlumnosAdmitidosExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AlumnosAdmitidosExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\FaltasByAlumnoRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FaltasByAlumnoRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\NotaPracticasAlumnoRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaPracticasAlumnoRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\NotasAlumnoListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasAlumnoListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\RegistroNotasAlumnoRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistroNotasAlumnoRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\NotaPracticasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaPracticasRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\RegistroFaltasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistroFaltasRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\DocumentacionAlumnoSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DocumentacionAlumnoSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\DocumentacionRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DocumentacionRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\FaltasAlumnosRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FaltasAlumnosRpt1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Alumno\MatriculaPromocionRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MatriculaPromocionRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\AsistenciaExamenAlumnosListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsistenciaExamenAlumnosListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\AsistenciaExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AsistenciaExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\RegistroResumenListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistroResumenListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ResumenAgrupadoExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenAgrupadoExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ExamenDesarrolloRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExamenDesarrolloRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ExamenTestRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExamenTestRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\EstadisticaExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstadisticaExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\HojaFirmasPracticaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaFirmasPracticaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\HojaFirmasTeoriaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HojaFirmasTeoriaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ListadoPreguntasExamenListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListadoPreguntasExamenListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\NotasExamenAlumnosListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasExamenAlumnosListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\NotasExamenAlumnosListSubRpt2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasExamenAlumnosListSubRpt2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\NotasExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\NotasModuloAlumnoListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotasModuloAlumnoListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PlantillaCorrectoraExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlantillaCorrectoraExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PlantillaRespuestasExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlantillaRespuestasExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PortadaExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PortadaExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PreguntaExamenListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PreguntaExamenListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PreguntasDesarrolloRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PreguntasDesarrolloRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\PreguntasTestRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PreguntasTestRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\RegistroNotasExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RegistroNotasExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\RespuestaExamenListSubRpt.resx">
+      <DependentUpon>RespuestaExamenListSubRpt.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\RespuestaExamenListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RespuestaExamenListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ResumenExamenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenExamenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Horario\ClasesRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClasesRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Horario\FestivosRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FestivosRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Horario\CronogramaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CronogramaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Horario\HorarioRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HorarioRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Horario\SesionCronogramaListSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SesionCronogramaListSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Instructor\FormacionAcademicaSubRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FormacionAcademicaSubRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PlanEstudios\ResumenRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Promocion\ClasesTeoricasDisponiblesRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClasesTeoricasDisponiblesRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Promocion\ClasesPracticasDisponiblesRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClasesPracticasDisponiblesRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Promocion\ClasesTeoricasImpartidasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClasesTeoricasImpartidasRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Promocion\ClasesPracticasImpartidasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClasesPracticasImpartidasRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Promocion\ComparativaCronogramaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ComparativaCronogramaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Defaults.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Defaults.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ElementosSeguros.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ElementosSeguros1.Designer.cs</LastGenOutput>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Enums.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Paths.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Labels.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SQL\11_Instruction_Create_Detail_Tables.sql" />
+    <None Include="SQL\Update.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Asm\nh0001\Instructor.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Asm\nh0001\MaterialDocente.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Material_Plan.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Modulo.hbm.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Asm\nh0001\ParteAsistencia.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\PlanEstudios.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\PlanExtra.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\PlantillaExamen.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Pregunta.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\PreguntaExamen.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Preguntas_Plantilla.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Pregunta_Examen.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Promocion.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Respuesta.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\RespuestaExamen.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Respuesta_Alumno_Examen.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\RevisionMaterial.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Sesion.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\SesionCronograma.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo_Instructor.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo_Instructor_Promocion.hbm.xml" />
+    <EmbeddedResource Include="Properties\Asm\nh0001\Tema.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.1.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Asm\nh0001\Sesion_Promocion.hbm.xml" />
+    <Content Include="Reports\Alumno\AlumnoPrint.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Alumno\FaltasByAlumno.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Alumno\RegistroNotaAlumno.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Alumno\NotaPracticas.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Alumno\RegistroFaltas.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Alumno\FaltasAlumnos.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Horario\Festivo.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Horario\SesionCronograma.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Promocion\ClasePractica.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Promocion\ClaseTeorica.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Promocion\Promocion.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="SQL\Install\01_Common.sql" />
+    <None Include="SQL\Install\02_Schema.sql" />
+    <None Include="SQL\Install\03_Common_Data.sql" />
+    <None Include="SQL\Install\04_Schema_Data.sql" />
+    <Content Include="SQL\Update\Update 7.4.0.0 .sql" />
+    <Content Include="SQL\Update\Update 7.2.1.1 .sql" />
+    <Content Include="SQL\Update\Update 7.2.0.1 .sql" />
+    <Content Include="SQL\Update\Update 7.1.1.1 .sql" />
+    <Content Include="SQL\Update\Update 7.1.0.1 .sql" />
+    <Content Include="SQL\Update\Update 7.0.0.1 .sql" />
+    <Content Include="SQL\Update\Update 6.6.0.0 .sql" />
+    <Content Include="SQL\Update\Update 6.5.0.0 .sql" />
+    <Content Include="SQL\Update\Update 6.0.0.0 .sql" />
+    <Content Include="SQL\Update\Update 5.3.0.0 .sql" />
+    <Content Include="SQL\Update\Update 5.2.0.0 .sql" />
+    <Content Include="SQL\Update\Update 5.1.0.0 .sql" />
+    <Content Include="SQL\Update\Update 5.0.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.8.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.7.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.6.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.5.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.4.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.3.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.2.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.1.0.0 .sql" />
+    <Content Include="SQL\Update\Update 4.0.0.0 .sql" />
+    <Content Include="SQL\Update\Update 3.11.0.0 .sql" />
+    <Content Include="SQL\Update\Update 3.1.0.0 .sql" />
+    <Content Include="SQL\Update\Update 2.0.0.0 .sql" />
+    <Content Include="SQL\10_Instruction_Create_Detail_Tables.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy ".\*" "..\..\..\..\moleQule\packages\$(ProjectName)\$(PlatformName)\$(ConfigurationName)"  /Y /R /I /E</PostBuildEvent>
+  </PropertyGroup>
+</Project>

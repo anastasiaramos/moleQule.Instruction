@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.Sesion_Promocion" schema="`0001`" table="`Sesion_Promocion`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."Sesion_Promocion_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_PROMOCION`" type="Int64" name="OidPromocion" not-null="true" />
+		<property column="`HORA_INICIO`" type="Time" name="HoraInicio" />
+    <property column="`N_HORAS`" type="Int64" name="NHoras" />
+    <property column="`SABADO`" type="Boolean" name="Sabado" />
+    <property column="`TIPO`" type="Int64" name="Tipo" />
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ALUMNO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Alumno:</value>
+  </data>
+  <data name="ALUMNO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Alumno:</value>
+  </data>
+  <data name="ALUMNO_EXAMEN_ADD_TITLE" xml:space="preserve">
+    <value>Nuevas Respuestas de Alumno:</value>
+  </data>
+  <data name="ALUMNO_EXAMEN_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Respuestas de Alumno:</value>
+  </data>
+  <data name="ALUMNO_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Alumnos:</value>
+  </data>
+  <data name="ALUMNOS" xml:space="preserve">
+    <value>Alumnos</value>
+  </data>
+  <data name="ASISTENCIAS" xml:space="preserve">
+    <value>Partes de Asistencia</value>
+  </data>
+  <data name="CAJA_ADD_TITLE" xml:space="preserve">
+    <value>Añadir Caja</value>
+  </data>
+  <data name="CAJA_DETAIL_TITLE" xml:space="preserve">
+    <value>Detalles de la Caja</value>
+  </data>
+  <data name="CAJA_EDIT_TITLE" xml:space="preserve">
+    <value>Editar Caja</value>
+  </data>
+  <data name="CAPACIDAD_TITLE" xml:space="preserve">
+    <value>Añadir Capacidad:</value>
+  </data>
+  <data name="CLASE_HORARIO_TITLE" xml:space="preserve">
+    <value>Seleccionar Clase:</value>
+  </data>
+  <data name="CLASES_ORDENADAS_VIEW_TITLE" xml:space="preserve">
+    <value>Clases Ordenadas:</value>
+  </data>
+  <data name="CLIENTE_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Cliente:</value>
+  </data>
+  <data name="CLIENTE_DETAIL_TITLE" xml:space="preserve">
+    <value>Detalle de Cliente:</value>
+  </data>
+  <data name="CLIENTE_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Cliente:</value>
+  </data>
+  <data name="CLIENTE_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Clientes:</value>
+  </data>
+  <data name="CLOSE_SESSION" xml:space="preserve">
+    <value>Es preciso cerrar sesión antes de configurar el servidor.  ¿Desea continuar?</value>
+  </data>
+  <data name="COMUNICADO_AUDITORIA_TITLE" xml:space="preserve">
+    <value>Comunicado de Auditoría</value>
+  </data>
+  <data name="CONFIGURE_SERVER" xml:space="preserve">
+    <value>Configurar Servidor:</value>
+  </data>
+  <data name="CONVOCATORIA_ADD_TITLE" xml:space="preserve">
+    <value>Nueva Convocatoria:</value>
+  </data>
+  <data name="CONVOCATORIA_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Convocatoria:</value>
+  </data>
+  <data name="CRONOGRAMA_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Cronograma:</value>
+  </data>
+  <data name="CRONOGRAMA_EDIT_TITLE" xml:space="preserve">
+    <value>Ver Cronograma: </value>
+  </data>
+  <data name="CRONOGRAMAS" xml:space="preserve">
+    <value>Cronogramas</value>
+  </data>
+  <data name="CURSO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Curso:</value>
+  </data>
+  <data name="CURSO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Curso:</value>
+  </data>
+  <data name="CURSO_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Cursos:</value>
+  </data>
+  <data name="CURSOS" xml:space="preserve">
+    <value>Cursos</value>
+  </data>
+  <data name="DISPONIBILIDAD_ADD_TITLE" xml:space="preserve">
+    <value>Modificar Disponibilidad:</value>
+  </data>
+  <data name="DISPONIBILIDAD_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Disponibilidad:</value>
+  </data>
+  <data name="DUPLICAR_CAPACIDAD_TITLE" xml:space="preserve">
+    <value>Duplicar Capacidad:</value>
+  </data>
+  <data name="EMPLEADO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Empleado:</value>
+  </data>
+  <data name="EMPLEADO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Empleado:</value>
+  </data>
+  <data name="EMPLEADO_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Empleados:</value>
+  </data>
+  <data name="EMPLEADOS" xml:space="preserve">
+    <value>Empleados</value>
+  </data>
+  <data name="EXAMEN_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Examen:</value>
+  </data>
+  <data name="EXAMEN_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Examen:</value>
+  </data>
+  <data name="EXAMEN_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Exámenes:</value>
+  </data>
+  <data name="EXAMENES" xml:space="preserve">
+    <value>Exámenes:</value>
+  </data>
+  <data name="EXTRAS_TITLE" xml:space="preserve">
+    <value>Clases Extra:</value>
+  </data>
+  <data name="FALTAS_ALUMNOS_VIEW_TITLE" xml:space="preserve">
+    <value>Ver Faltas de Alumnos:</value>
+  </data>
+  <data name="HORARIO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo horario:</value>
+  </data>
+  <data name="HORARIO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Horario:</value>
+  </data>
+  <data name="HORARIO_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Horarios:</value>
+  </data>
+  <data name="HORARIOS" xml:space="preserve">
+    <value>Horarios</value>
+  </data>
+  <data name="IMAGEN_PREGUNTA_VIEW_TITLE" xml:space="preserve">
+    <value>Ver Imagen de Pregunta:</value>
+  </data>
+  <data name="INSTRUCTOR_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Empleado:</value>
+  </data>
+  <data name="INSTRUCTOR_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Empleado:</value>
+  </data>
+  <data name="INSTRUCTOR_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Empleados:</value>
+  </data>
+  <data name="INSTRUCTORES" xml:space="preserve">
+    <value>Empleados</value>
+  </data>
+  <data name="LINEAPEDIDO_ADD_TITLE" xml:space="preserve">
+    <value>Añadir Línea de Pedido</value>
+  </data>
+  <data name="LINEAPEDIDO_DETAIL_TITLE" xml:space="preserve">
+    <value>Detallar Línea de Pedido</value>
+  </data>
+  <data name="LINEAPEDIDO_EDIT_TITLE" xml:space="preserve">
+    <value>Editar Línea de Pedido</value>
+  </data>
+  <data name="MATERIAL_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Material:</value>
+  </data>
+  <data name="MATERIAL_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Material Docente:</value>
+  </data>
+  <data name="MATERIAL_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Materiales:</value>
+  </data>
+  <data name="MATERIALES" xml:space="preserve">
+    <value>Material Docente</value>
+  </data>
+  <data name="MODULO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Módulo:</value>
+  </data>
+  <data name="MODULO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Módulo:</value>
+  </data>
+  <data name="MODULO_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Módulos:</value>
+  </data>
+  <data name="MODULOS" xml:space="preserve">
+    <value>Módulos</value>
+  </data>
+  <data name="MUNICIPIO_TITLE" xml:space="preserve">
+    <value>Municipios:</value>
+  </data>
+  <data name="NOTA_ALUMNO_TITLE" xml:space="preserve">
+    <value>Modificar Nota de alumno:</value>
+  </data>
+  <data name="NOTAS_ALUMNOS" xml:space="preserve">
+    <value>Notas de Alumnos</value>
+  </data>
+  <data name="ORDENAR_CLASES_TITLE" xml:space="preserve">
+    <value>Cambiar Orden de la Clase:</value>
+  </data>
+  <data name="ORDENAR_PREGUNTAS_EXAMEN_TITLE" xml:space="preserve">
+    <value>Cambiar Orden:</value>
+  </data>
+  <data name="P_ASISTENCIA_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Parte de Asistencia:</value>
+  </data>
+  <data name="P_ASISTENCIA_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Parte de Asistencia:</value>
+  </data>
+  <data name="P_ASISTENCIA_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Partes de Asistencia:</value>
+  </data>
+  <data name="PLAN_DOCENTE_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Plan de Estudios:</value>
+  </data>
+  <data name="PLAN_DOCENTE_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Plan de Estudios:</value>
+  </data>
+  <data name="PLAN_DOCENTE_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Planes de Estudios:</value>
+  </data>
+  <data name="PLAN_EXTRA_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Plan Extra:</value>
+  </data>
+  <data name="PLAN_EXTRA_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Plan Extra:</value>
+  </data>
+  <data name="PLAN_EXTRA_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Planes Extra:</value>
+  </data>
+  <data name="PLANES_ANUALES" xml:space="preserve">
+    <value>Planes Anuales:</value>
+  </data>
+  <data name="PLANES_DOCENTES" xml:space="preserve">
+    <value>Planes de Estudios</value>
+  </data>
+  <data name="PLANES_EXTRA" xml:space="preserve">
+    <value>Planes Extra</value>
+  </data>
+  <data name="PLANTILLA_EXAMEN" xml:space="preserve">
+    <value>Plantillas de Exámenes</value>
+  </data>
+  <data name="PLANTILLA_EXAMEN_ADD_TITLE" xml:space="preserve">
+    <value>Nueva Plantilla de Examen:</value>
+  </data>
+  <data name="PLANTILLA_EXAMEN_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Plantilla de Examen:</value>
+  </data>
+  <data name="PLANTILLA_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Plantillas de Exámenes:</value>
+  </data>
+  <data name="PRACTICAS_TITLE" xml:space="preserve">
+    <value>Clases Prácticas:</value>
+  </data>
+  <data name="PREGUNTA_ADD_TITLE" xml:space="preserve">
+    <value>Nueva Pregunta:</value>
+  </data>
+  <data name="PREGUNTA_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Pregunta:</value>
+  </data>
+  <data name="PREGUNTA_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Preguntas:</value>
+  </data>
+  <data name="PREGUNTAS" xml:space="preserve">
+    <value>Preguntas</value>
+  </data>
+  <data name="PREGUNTAS_PLANTILLA_TITLE" xml:space="preserve">
+    <value>Modificar Preguntas:</value>
+  </data>
+  <data name="PRINT_TITLE" xml:space="preserve">
+    <value>Imprimir</value>
+  </data>
+  <data name="PROMOCION_ADD_TITLE" xml:space="preserve">
+    <value>Nueva Promoción:</value>
+  </data>
+  <data name="PROMOCION_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Promoción:</value>
+  </data>
+  <data name="PROMOCION_FIND_TITLE" xml:space="preserve">
+    <value>Buscar Promociones:</value>
+  </data>
+  <data name="PROMOCIONES" xml:space="preserve">
+    <value>Promociones</value>
+  </data>
+  <data name="RESPUESTAS_TITLE" xml:space="preserve">
+    <value>Respuestas:</value>
+  </data>
+  <data name="RESUMEN_EXAMEN_TITLE" xml:space="preserve">
+    <value>Resumen Examen</value>
+  </data>
+  <data name="REVISION_ADD_TITLE" xml:space="preserve">
+    <value>Nueva Revisión:</value>
+  </data>
+  <data name="REVISION_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Revisión:</value>
+  </data>
+  <data name="REVISION_TITLE" xml:space="preserve">
+    <value>Revisiones:</value>
+  </data>
+  <data name="SELECT_ALUMNOS" xml:space="preserve">
+    <value>Seleccionar alumnos:</value>
+  </data>
+  <data name="SELECT_PLANTILLA" xml:space="preserve">
+    <value>Seleccionar Plantilla de Examen</value>
+  </data>
+  <data name="SELECT_PREGUNTAS" xml:space="preserve">
+    <value>Seleccionar Preguntas:</value>
+  </data>
+  <data name="SERVICIOPROVEEDOR_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Servicio de Proveedor</value>
+  </data>
+  <data name="SERVICIOPROVEEDOR_DETAIL_TITLE" xml:space="preserve">
+    <value>Detalle de Servicio de Proveedor:</value>
+  </data>
+  <data name="SUBMODULO_ADD_TITLE" xml:space="preserve">
+    <value>Nuevo Submódulo:</value>
+  </data>
+  <data name="SUBMODULO_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Submódulo:</value>
+  </data>
+  <data name="SUBMODULO_INSTRUCTOR_PROMOCION_VIEW_TITLE" xml:space="preserve">
+    <value>Ver Asignación de Submódulos por Instructor:</value>
+  </data>
+  <data name="TEMA_TITLE" xml:space="preserve">
+    <value>Temas:</value>
+  </data>
+  <data name="TEORICAS_TITLE" xml:space="preserve">
+    <value>Clases Teóricas:</value>
+  </data>
+  <data name="VER_PREGUNTAS_TITLE" xml:space="preserve">
+    <value>Ver Preguntas:</value>
+  </data>
+  <data name="APTO_LABEL" xml:space="preserve">
+    <value>APTO</value>
+  </data>
+  <data name="NO_APTO_LABEL" xml:space="preserve">
+    <value>NO APTO</value>
+  </data>
+  <data name="FALTA_ASISTENCIA_LABEL" xml:space="preserve">
+    <value>FALTA ASISTENCIA</value>
+  </data>
+  <data name="SIN_CALIFICAR_LABEL" xml:space="preserve">
+    <value>SIN CALIFICAR</value>
+  </data>
+  <data name="DUPLICAR_PREGUNTAS_TEMA_TITLE" xml:space="preserve">
+    <value>Duplicar Preguntas:</value>
+  </data>
+  <data name="FORMULARIO_NOTAS_EDIT_TITLE" xml:space="preserve">
+    <value>Modificar Notas de Prácticas:</value>
+  </data>
+</root>

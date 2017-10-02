@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.0"  assembly="moleQule.Library.Instruction">
+
+	<class name="moleQule.Library.Instruction.MaterialDocente" schema="`0001`" table="`MaterialDocente`" lazy="true">
+
+		<id name="Oid" column="`OID`" type="Int64" unsaved-value="0">
+			<generator class="sequence">				<param name="sequence">"0001"."MaterialDocente_OID_seq"</param>			</generator>
+		</id>
+		<property column="`OID_CURSO`" type="Int64" name="OidCurso" />
+		<property column="`NOMBRE`" type="String" name="Nombre" length="255" not-null="true" />
+		<property column="`OBSERVACIONES`" type="String" name="Observaciones" />
+		<property column="`OID_MODULO`" type="Int64" name="OidModulo" />
+		
+	</class>
+</hibernate-mapping>

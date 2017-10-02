@@ -1,0 +1,11 @@
+/* UPDATE 3.1.0.0*/
+
+SET SEARCH_PATH = "COMMON";
+
+SET SEARCH_PATH = "0001";
+
+ALTER TABLE "Empleado" ADD COLUMN "IRPF" numeric(10,2);
+
+
+
+
