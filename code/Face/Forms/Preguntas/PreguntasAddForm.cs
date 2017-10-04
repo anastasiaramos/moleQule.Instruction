@@ -136,6 +136,14 @@ namespace moleQule.Face.Instruction
         {
             base.FormatControls();
             Datos_Submodulos.DataSource = null;
+            ModeloRespuesta_BT.Visible = false;
+            ModeloRespuesta_BT.Enabled = false;
+            ModeloRespuesta_LB.Visible = false;
+            ModeloRespuesta_LB.Enabled = false;
+            ModeloRespuesta_TB.Visible = false;
+            ModeloRespuesta_TB.Enabled = false;
+            ModeloRespuestaView_BT.Visible = false;
+            ModeloRespuestaView_BT.Enabled = false;
         }
 
         public override void RefreshSecondaryData()
@@ -200,11 +208,36 @@ namespace moleQule.Face.Instruction
                                 {
                                     Tipo_TB.Text = ETipoPregunta.Desarrollo.ToString();
                                     _entity.Tipo = ETipoPregunta.Desarrollo.ToString();
+                                    Respuestas_Grid.Visible = false;
+                                    Respuestas_Grid.Enabled = false;
+                                    Respuestas_BT.Visible = false;
+                                    Respuestas_BT.Enabled = false;
+                                    ModeloRespuesta_TB.Visible = true;
+                                    ModeloRespuesta_TB.Enabled = true;
+                                    ModeloRespuesta_LB.Visible = true;
+                                    ModeloRespuesta_LB.Enabled = true;
+                                    ModeloRespuesta_BT.Visible = true;
+                                    ModeloRespuesta_BT.Enabled = true;
+                                    ModeloRespuestaView_BT.Visible = true;
+                                    ModeloRespuestaView_BT.Enabled = true;
+
                                 }
                                 else
                                 {
                                     Tipo_TB.Text = ETipoPregunta.Test.ToString();
                                     _entity.Tipo = ETipoPregunta.Test.ToString();
+                                    ModeloRespuesta_TB.Visible = false;
+                                    ModeloRespuesta_TB.Enabled = false;
+                                    ModeloRespuesta_LB.Visible = false;
+                                    ModeloRespuesta_LB.Enabled = false;
+                                    ModeloRespuestaView_BT.Visible = false;
+                                    ModeloRespuestaView_BT.Enabled = false;
+                                    ModeloRespuesta_BT.Visible = false;
+                                    ModeloRespuesta_BT.Enabled = false;
+                                    Respuestas_Grid.Visible = true;
+                                    Respuestas_Grid.Enabled = true;
+                                    Respuestas_BT.Visible = true;
+                                    Respuestas_BT.Enabled = true;
                                 }
                             }
                         }
@@ -249,6 +282,10 @@ namespace moleQule.Face.Instruction
 
         }
 
+        protected void SaveModeloRespuesta()
+        {
+            _entity.ModeloRespuesta = ModeloRespuestaBrowser.SafeFileName;
+        }
         #endregion
 
         #region Validation & Format
@@ -290,9 +327,15 @@ namespace moleQule.Face.Instruction
                 {
                     //Si la pregunta tiene imagen, se renombra después de guardar el objeto
                     //con el Oid asignado por la base de datos y se vuelve a guardar
-                    if (_entity.Imagen != string.Empty)
+                    if (_entity.Imagen != string.Empty || _entity.ModeloRespuesta != string.Empty)
                     {
-                        SaveImage(true);
+                        if (_entity.Imagen != string.Empty)
+                            SaveImage(true);
+                        if (_entity.ModeloRespuesta != string.Empty)
+                        {
+                            _entity.ModeloRespuesta = _entity.Oid.ToString("00000") + "_" + ModeloRespuestaBrowser.SafeFileName;
+                            File.Copy(ModeloRespuestaBrowser.FileName, moleQule.Library.Application.AppController.MODELOS_PREGUNTAS_PATH + _entity.ModeloRespuesta, true);
+                        }
                         SaveObject();
                     }
 
@@ -330,6 +373,15 @@ namespace moleQule.Face.Instruction
             Images.Show(_entity.Imagen, moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH, Imagen_PictureBox);
         }
 
+        private void ModeloRespuesta_BT_Click(object sender, EventArgs e)
+        {
+            if (ModeloRespuestaBrowser.ShowDialog() == DialogResult.OK)
+            {
+                SaveModeloRespuesta();
+            }
+
+        }
+
         private void Ninguno_BT_Click(object sender, EventArgs e)
         {
             Images.Delete(_entity.Imagen, moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH);
@@ -362,6 +414,53 @@ namespace moleQule.Face.Instruction
         }
 
         #endregion
+
+        private void PreguntasAddForm_Activated(object sender, EventArgs e)
+        {
+            if (_temas != null && Tema_CB.SelectedItem != null)
+            {
+                TemaInfo tema = _temas.GetItem(((ComboBoxSource)Tema_CB.SelectedItem).Oid);
+                if (tema != null && _entity != null)
+                {
+                    if (tema.Desarrollo)
+                    {
+                        Respuestas_Grid.Visible = false;
+                        Respuestas_Grid.Enabled = false;
+                        Respuestas_BT.Visible = false;
+                        Respuestas_BT.Enabled = false;
+                        ModeloRespuesta_TB.Visible = true;
+                        ModeloRespuesta_TB.Enabled = true;
+                        ModeloRespuesta_LB.Visible = true;
+                        ModeloRespuesta_LB.Enabled = true;
+                        ModeloRespuesta_BT.Visible = true;
+                        ModeloRespuesta_BT.Enabled = true;
+                        ModeloRespuestaView_BT.Visible = true;
+                        ModeloRespuestaView_BT.Enabled = true;
+                        return;
+                    }
+                }
+            }
+
+            ModeloRespuesta_TB.Visible = false;
+            ModeloRespuesta_TB.Enabled = false;
+            ModeloRespuesta_LB.Visible = false;
+            ModeloRespuesta_LB.Enabled = false;
+            ModeloRespuesta_BT.Visible = false;
+            ModeloRespuesta_BT.Enabled = false;
+            ModeloRespuestaView_BT.Visible = false;
+            ModeloRespuestaView_BT.Enabled = false;
+            Respuestas_Grid.Visible = true;
+            Respuestas_Grid.Enabled = true;
+            Respuestas_BT.Visible = true;
+            Respuestas_BT.Enabled = true;
+
+        }
+
+        private void ModeloRespuestaView_BT_Click(object sender, EventArgs e)
+        {
+            if (ModeloRespuestaBrowser.FileName != null)
+                System.Diagnostics.Process.Start(ModeloRespuestaBrowser.FileName);
+        }
 
 
     }

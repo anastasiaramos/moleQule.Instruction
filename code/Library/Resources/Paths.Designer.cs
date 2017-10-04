@@ -97,6 +97,28 @@ namespace moleQule.Library.Instruction.Resources {
         }
 
         /// <summary>
+        ///   Busca una cadena traducida similar a Fotos\Preguntas\.
+        /// </summary>
+        internal static string MODELO_PREGUNTAS
+        {
+            get
+            {
+                return ResourceManager.GetString("MODELO_PREGUNTAS", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fotos\PreguntasExamen\.
+        /// </summary>
+        internal static string MODELO_PREGUNTAS_EXAMENES
+        {
+            get
+            {
+                return ResourceManager.GetString("MODELO_PREGUNTAS_EXAMENES", resourceCulture);
+            }
+        }
+
+        /// <summary>
         ///   Busca una cadena traducida similar a Fotos\PreguntasExamen\.
         /// </summary>
         internal static string RESOURCES_ROOT

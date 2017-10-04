@@ -527,6 +527,17 @@ namespace moleQule.Face.Instruction
 
                     if (Preguntas_CB.Checked) ExportaDOC(empresa);
                 }
+
+                if (ModeloRespuesta_CB.Checked)
+                {
+                    foreach (PreguntaExamenInfo item in _entity.PreguntaExamenes)
+                    {
+                        if (_entity.Emitido)
+                            System.Diagnostics.Process.Start(item.ModeloRespuestaPath);
+                        else
+                            System.Diagnostics.Process.Start(moleQule.Library.Application.AppController.MODELOS_PREGUNTAS_PATH + item.ModeloRespuesta);
+                    }
+                }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
             finally { this.Enabled = true; }

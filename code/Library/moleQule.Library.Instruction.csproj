@@ -736,15 +736,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources\Paths.Designer.cs">
-      <DependentUpon>Paths.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
     <Compile Include="Resources\Labels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Labels.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Paths.Designer.cs">
+      <DependentUpon>Paths.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Structs\Structs.cs" />
     <Compile Include="Tools\HComboBoxSourceList.cs" />
@@ -965,13 +965,13 @@
       <LastGenOutput>Messages.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Paths.resx">
-      <SubType>Designer</SubType>
-      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
-    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Labels.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Labels.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Paths.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ResXFileCodeGenerator</CustomToolNamespace>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -1088,6 +1088,7 @@
     <None Include="SQL\Install\02_Schema.sql" />
     <None Include="SQL\Install\03_Common_Data.sql" />
     <None Include="SQL\Install\04_Schema_Data.sql" />
+    <Content Include="SQL\Update\Update 7.4.0.1 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.0 .sql" />
     <Content Include="SQL\Update\Update 7.2.1.1 .sql" />
     <Content Include="SQL\Update\Update 7.2.0.1 .sql" />

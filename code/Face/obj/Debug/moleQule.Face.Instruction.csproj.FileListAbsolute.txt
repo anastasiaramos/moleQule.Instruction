@@ -598,6 +598,7 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Deb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PreguntasEditForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PreguntasForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PreguntasUIForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PreguntasViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.RespuestasActionForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.ClasesOrdenadasViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PromocionAddForm.resources

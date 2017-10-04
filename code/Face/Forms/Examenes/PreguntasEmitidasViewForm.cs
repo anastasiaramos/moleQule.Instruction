@@ -276,6 +276,38 @@ namespace moleQule.Face.Instruction
 
         #endregion
 
+        private void ModeloRespuestaView_BT_Click(object sender, EventArgs e)
+        {
+            if (_pregunta.ModeloRespuesta != string.Empty)
+                System.Diagnostics.Process.Start(_pregunta.ModeloRespuestaPath);
+        }
+
+        private void PreguntasEmitidasViewForm_Activated(object sender, EventArgs e)
+        {
+            if (_pregunta.Tipo == "Desarrollo")
+            {
+                Respuestas_Grid.Visible = false;
+                Respuestas_Grid.Enabled = false;
+                ModeloRespuesta_LB.Visible = true;
+                ModeloRespuesta_LB.Enabled = true;
+                ModeloRespuesta_TB.Visible = true;
+                ModeloRespuesta_TB.Enabled = true;
+                ModeloRespuestaView_BT.Visible = true;
+                ModeloRespuestaView_BT.Enabled = true;
+            }
+            else
+            {
+                Respuestas_Grid.Visible = true;
+                Respuestas_Grid.Enabled = true;
+                ModeloRespuesta_LB.Visible = false;
+                ModeloRespuesta_LB.Enabled = false;
+                ModeloRespuesta_TB.Visible = false;
+                ModeloRespuesta_TB.Enabled = false;
+                ModeloRespuestaView_BT.Visible = false;
+                ModeloRespuestaView_BT.Enabled = false;
+            }
+        }
+
     }
 }
 

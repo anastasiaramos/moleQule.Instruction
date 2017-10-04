@@ -41,6 +41,7 @@ namespace moleQule.Library.Instruction
         public string Texto { get { return _base.Record.Texto; } }
         public string Tipo { get { return _base.Record.Tipo; } }
         public string Imagen { get { return _base.Record.Imagen; } }
+        public string ModeloRespuesta { get { return _base.Record.ModeloRespuesta; } }
         public string Idioma { get { return _base.Record.Idioma; } }
         public string Observaciones { get { return _base.Record.Observaciones; } }
         public bool ImagenGrande { get { return _base.Record.ImagenGrande; } }
@@ -52,6 +53,7 @@ namespace moleQule.Library.Instruction
 
         //NO ENLAZADOS
         public virtual string ImagenWithPath { get { return ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + OidExamen.ToString("00000") + "\\" + Imagen; } }
+        public virtual string ModeloRespuestaPath { get { return ModuleController.MODELO_PREGUNTAS_EXAMEN_PATH + OidExamen.ToString("00000") + "\\" + ModeloRespuesta; } }
         public virtual string Submodulo { get { return _base.Submodulo; } set { _base.Submodulo = value; } }
         public virtual string NPregunta { get { return _base.NPregunta; } set { _base.NPregunta = value; } }
         public virtual string Tema { get { return _base.Tema; } set { _base.Tema = value; } }
@@ -81,6 +83,7 @@ namespace moleQule.Library.Instruction
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = string.Empty;
+            _base.Record.ModeloRespuesta = source.ModeloRespuesta;
             _base.Record.Idioma = source.Idioma;
             //if (source.Idioma == "Español") _idioma = "Espanol";
             //else

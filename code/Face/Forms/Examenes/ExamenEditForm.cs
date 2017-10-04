@@ -221,6 +221,17 @@ namespace moleQule.Face.Instruction
                                         imagen.Dispose();
                                     }
                                     else destino.Imagen = string.Empty;
+                                    if (origen.ModeloRespuesta != string.Empty && File.Exists(origen.ModeloRespuestaPath))
+                                    {
+                                        string ext = origen.ModeloRespuesta.Substring(origen.ModeloRespuesta.LastIndexOf('.'));
+                                        destino.ModeloRespuesta = destino.Oid.ToString("000000") + ext;
+
+                                        string directorio = destino.ModeloRespuestaPath.Substring(0, destino.ModeloRespuestaPath.Length - destino.ModeloRespuesta.Length);
+                                        if (!Directory.Exists(directorio))
+                                            Directory.CreateDirectory(directorio);
+                                        File.Copy(origen.ModeloRespuestaPath, destino.ModeloRespuestaPath);
+                                    }
+                                    else destino.Imagen = string.Empty;
                                     orden++;
                                     break;
                                 }

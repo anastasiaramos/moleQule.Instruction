@@ -22,7 +22,8 @@ namespace moleQule.Library.Instruction
 			Property(x => x.Texto, map => { map.Column("`TEXTO`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Tipo, map => { map.Column("`TIPO`"); map.NotNullable(false);	map.Length(255);  });
 			Property(x => x.Imagen, map => { map.Column("`IMAGEN`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.Idioma, map => { map.Column("`IDIOMA`"); map.NotNullable(false);	map.Length(255);  });
+            Property(x => x.ModeloRespuesta, map => { map.Column("`MODELO_RESPUESTA`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.Idioma, map => { map.Column("`IDIOMA`"); map.NotNullable(false);	map.Length(255);  });
 			Property(x => x.ImagenGrande, map => { map.Column("`IMAGEN_GRANDE`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Observaciones, map => { map.Column("`OBSERVACIONES`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Orden, map => { map.Column("`ORDEN`"); map.NotNullable(false); map.Length(32768); });

@@ -67,7 +67,6 @@ C:\Users\Anastasia\Documents\VS Projects Git\moleQule.Instruction\code\Library\o
 C:\Users\Anastasia\Documents\VS Projects Git\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.pdb
 C:\Users\Anastasia\Documents\VS Projects Git\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csprojResolveAssemblyReference.cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.dll.config
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.XML
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\Iesi.Collections.dll
@@ -80,7 +79,6 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\Npgsql.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\Npgsql.xml
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\policy.2.0.Npgsql.config
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csprojResolveAssemblyReference.cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.Reports.Examen.RespuestaExamenListSubRpt.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.Resources.Defaults.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.Resources.ElementosSeguros.resources
@@ -91,3 +89,4 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csproj.GenerateResource.Cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.pdb
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.XML

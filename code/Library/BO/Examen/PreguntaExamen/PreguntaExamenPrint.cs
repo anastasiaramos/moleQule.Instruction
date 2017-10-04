@@ -41,6 +41,7 @@ namespace moleQule.Library.Instruction
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = source.Imagen;
+            _base.Record.ModeloRespuesta = source.ModeloRespuesta;
             _base.Record.Idioma = source.Idioma;
             _base.Record.Observaciones = source.Observaciones;
             _base.Record.ImagenGrande = source.ImagenGrande;

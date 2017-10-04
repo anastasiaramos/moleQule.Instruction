@@ -24,7 +24,8 @@ namespace moleQule.Library.Instruction
 		private DateTime _fecha_publicacion;
 		private string _texto = string.Empty;
 		private string _tipo = string.Empty;
-		private string _imagen = string.Empty;
+        private string _imagen = string.Empty;
+        private string _modelo_respuesta = string.Empty;
 		private string _observaciones = string.Empty;
 		private DateTime _fecha_disponibilidad;
 		private string _idioma = string.Empty;
@@ -49,7 +50,8 @@ namespace moleQule.Library.Instruction
 		public virtual DateTime FechaPublicacion { get { return _fecha_publicacion; } set { _fecha_publicacion = value; } }
 		public virtual string Texto { get { return _texto; } set { _texto = value; } }
 		public virtual string Tipo { get { return _tipo; } set { _tipo = value; } }
-		public virtual string Imagen { get { return _imagen; } set { _imagen = value; } }
+        public virtual string Imagen { get { return _imagen; } set { _imagen = value; } }
+        public virtual string ModeloRespuesta { get { return _modelo_respuesta; } set { _modelo_respuesta = value; } }
 		public virtual string Observaciones { get { return _observaciones; } set { _observaciones = value; } }
 		public virtual DateTime FechaDisponibilidad { get { return _fecha_disponibilidad; } set { _fecha_disponibilidad = value; } }
 		public virtual string Idioma { get { return _idioma; } set { _idioma = value; } }
@@ -81,7 +83,8 @@ namespace moleQule.Library.Instruction
 			_fecha_publicacion = Format.DataReader.GetDateTime(source, "FECHA_PUBLICACION");
 			_texto = Format.DataReader.GetString(source, "TEXTO");
 			_tipo = Format.DataReader.GetString(source, "TIPO");
-			_imagen = Format.DataReader.GetString(source, "IMAGEN");
+            _imagen = Format.DataReader.GetString(source, "IMAGEN");
+            _modelo_respuesta = Format.DataReader.GetString(source, "MODELO_RESPUESTA");
 			_observaciones = Format.DataReader.GetString(source, "OBSERVACIONES");
 			_fecha_disponibilidad = Format.DataReader.GetDateTime(source, "FECHA_DISPONIBILIDAD");
 			_idioma = Format.DataReader.GetString(source, "IDIOMA");
@@ -109,6 +112,7 @@ namespace moleQule.Library.Instruction
 			_texto = source.Texto;
 			_tipo = source.Tipo;
 			_imagen = source.Imagen;
+            _modelo_respuesta = source.ModeloRespuesta;
 			_observaciones = source.Observaciones;
 			_fecha_disponibilidad = source.FechaDisponibilidad;
 			_idioma = source.Idioma;
@@ -148,6 +152,7 @@ namespace moleQule.Library.Instruction
         //NO ENLAZADOS
         public virtual bool Disponible { get { return _record.FechaDisponibilidad <= DateTime.Today; } }
         public virtual string ImagenWithPath { get { return ModuleController.FOTOS_PREGUNTAS_PATH + _record.Imagen; } }
+        public virtual string ModeloRespuestaPath { get { return ModuleController.MODELO_PREGUNTAS_PATH + _record.ModeloRespuesta; } }
         public virtual string Modulo { get { return _modulo; } set { _modulo = value; } }
         public virtual string Submodulo { get { return _submodulo; } set { _submodulo = value; } }
         public virtual string Tema { get { return _tema; } set { _tema = value; } }
@@ -408,6 +413,29 @@ namespace moleQule.Library.Instruction
 				}
 			}
 		}
+        public virtual string ModeloRespuesta
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                //CanReadProperty(true);
+                return _base.Record.ModeloRespuesta;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                //CanWriteProperty(true);
+
+                if (value == null) value = string.Empty;
+
+                if (!_base.Record.ModeloRespuesta.Equals(value))
+                {
+                    _base.Record.ModeloRespuesta = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 		public virtual string Observaciones
 		{
 			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
@@ -699,6 +727,7 @@ namespace moleQule.Library.Instruction
         //NO ENLAZADOS
         public virtual bool Disponible { get { return _base.Record.FechaDisponibilidad <= DateTime.Today; } }
         public virtual string ImagenWithPath { get { return ModuleController.FOTOS_PREGUNTAS_PATH + Imagen; } }
+        public virtual string ModeloRespuestaPath { get { return ModuleController.MODELO_PREGUNTAS_PATH + ModeloRespuesta; } }
         public virtual string Modulo { get { return _base.Modulo; } set { _base.Modulo = value; } }
         public virtual string Submodulo { get { return _base.Submodulo; } set { _base.Submodulo = value; } }
         public virtual string Tema { get { return _base.Tema; } set { _base.Tema = value; } }

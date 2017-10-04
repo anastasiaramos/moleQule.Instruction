@@ -71,6 +71,11 @@ namespace moleQule.Face.Instruction
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ModeloRespuesta_TB = new System.Windows.Forms.TextBox();
+            this.ModeloRespuesta_LB = new System.Windows.Forms.Label();
+            this.ModeloRespuesta_BT = new System.Windows.Forms.Button();
+            this.ModeloRespuestaBrowser = new System.Windows.Forms.OpenFileDialog();
+            this.ModeloRespuestaView_BT = new System.Windows.Forms.Button();
             tipoLabel = new System.Windows.Forms.Label();
             activaLabel = new System.Windows.Forms.Label();
             revisadaLabel = new System.Windows.Forms.Label();
@@ -78,12 +83,19 @@ namespace moleQule.Face.Instruction
             fechaDisponibilidadLabel = new System.Windows.Forms.Label();
             fechaAltaLabel = new System.Windows.Forms.Label();
             imagenGrandeLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
             this.PanelesV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Paneles2)).BeginInit();
             this.Paneles2.Panel1.SuspendLayout();
             this.Paneles2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Animation)).BeginInit();
+            this.Progress_Panel.SuspendLayout();
+            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Modulos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -102,6 +114,10 @@ namespace moleQule.Face.Instruction
             // PanelesV.Panel1
             // 
             this.PanelesV.Panel1.AutoScroll = true;
+            this.PanelesV.Panel1.Controls.Add(this.ModeloRespuestaView_BT);
+            this.PanelesV.Panel1.Controls.Add(this.ModeloRespuesta_BT);
+            this.PanelesV.Panel1.Controls.Add(this.ModeloRespuesta_LB);
+            this.PanelesV.Panel1.Controls.Add(this.ModeloRespuesta_TB);
             this.PanelesV.Panel1.Controls.Add(this.Respuestas_Grid);
             this.PanelesV.Panel1.Controls.Add(this.groupBox2);
             this.PanelesV.Panel1.Controls.Add(this.Respuestas_BT);
@@ -120,21 +136,24 @@ namespace moleQule.Face.Instruction
             // 
             this.HelpProvider.SetShowHelp(this.PanelesV.Panel2, true);
             this.HelpProvider.SetShowHelp(this.PanelesV, true);
-            this.PanelesV.Size = new System.Drawing.Size(1030, 669);
-            this.PanelesV.SplitterDistance = 628;
+            this.PanelesV.Size = new System.Drawing.Size(1047, 669);
+            this.PanelesV.SplitterDistance = 614;
             // 
             // Submit_BT
             // 
+            this.Submit_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Submit_BT.Location = new System.Drawing.Point(251, 6);
             this.HelpProvider.SetShowHelp(this.Submit_BT, true);
             // 
             // Cancel_BT
             // 
+            this.Cancel_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Cancel_BT.Location = new System.Drawing.Point(341, 6);
             this.HelpProvider.SetShowHelp(this.Cancel_BT, true);
             // 
             // Paneles2
             // 
+            this.ErrorMng_EP.SetError(this.Paneles2, "F1 Ayuda        ");
             // 
             // Paneles2.Panel1
             // 
@@ -144,16 +163,18 @@ namespace moleQule.Face.Instruction
             // 
             this.HelpProvider.SetShowHelp(this.Paneles2.Panel2, true);
             this.HelpProvider.SetShowHelp(this.Paneles2, true);
-            this.Paneles2.Size = new System.Drawing.Size(1028, 38);
-            this.Paneles2.SplitterDistance = 37;
+            this.Paneles2.Size = new System.Drawing.Size(1045, 52);
+            this.Paneles2.SplitterDistance = 30;
             // 
             // Imprimir_Button
             // 
+            this.Imprimir_Button.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Imprimir_Button.Location = new System.Drawing.Point(161, 6);
             this.HelpProvider.SetShowHelp(this.Imprimir_Button, true);
             // 
             // Docs_BT
             // 
+            this.Docs_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Docs_BT.Location = new System.Drawing.Point(300, 6);
             this.HelpProvider.SetShowHelp(this.Docs_BT, true);
             // 
@@ -161,12 +182,28 @@ namespace moleQule.Face.Instruction
             // 
             this.Datos.DataSource = typeof(moleQule.Library.Instruction.Pregunta);
             // 
+            // Progress_Panel
+            // 
+            this.Progress_Panel.Location = new System.Drawing.Point(344, 90);
+            // 
+            // ProgressBK_Panel
+            // 
+            this.ProgressBK_Panel.Size = new System.Drawing.Size(1047, 669);
+            // 
+            // ProgressInfo_PB
+            // 
+            this.ProgressInfo_PB.Location = new System.Drawing.Point(486, 383);
+            // 
+            // Progress_PB
+            // 
+            this.Progress_PB.Location = new System.Drawing.Point(486, 298);
+            // 
             // tipoLabel
             // 
             tipoLabel.AutoSize = true;
             tipoLabel.Location = new System.Drawing.Point(821, 27);
             tipoLabel.Name = "tipoLabel";
-            tipoLabel.Size = new System.Drawing.Size(34, 13);
+            tipoLabel.Size = new System.Drawing.Size(31, 13);
             tipoLabel.TabIndex = 10;
             tipoLabel.Text = "Tipo:";
             // 
@@ -175,7 +212,7 @@ namespace moleQule.Face.Instruction
             activaLabel.AutoSize = true;
             activaLabel.Location = new System.Drawing.Point(751, 68);
             activaLabel.Name = "activaLabel";
-            activaLabel.Size = new System.Drawing.Size(46, 13);
+            activaLabel.Size = new System.Drawing.Size(41, 13);
             activaLabel.TabIndex = 26;
             activaLabel.Text = "Activa:";
             // 
@@ -184,7 +221,7 @@ namespace moleQule.Face.Instruction
             revisadaLabel.AutoSize = true;
             revisadaLabel.Location = new System.Drawing.Point(867, 68);
             revisadaLabel.Name = "revisadaLabel";
-            revisadaLabel.Size = new System.Drawing.Size(62, 13);
+            revisadaLabel.Size = new System.Drawing.Size(55, 13);
             revisadaLabel.TabIndex = 24;
             revisadaLabel.Text = "Revisada:";
             // 
@@ -193,7 +230,7 @@ namespace moleQule.Face.Instruction
             idiomaLabel.AutoSize = true;
             idiomaLabel.Location = new System.Drawing.Point(530, 68);
             idiomaLabel.Name = "idiomaLabel";
-            idiomaLabel.Size = new System.Drawing.Size(50, 13);
+            idiomaLabel.Size = new System.Drawing.Size(43, 13);
             idiomaLabel.TabIndex = 22;
             idiomaLabel.Text = "Idioma:";
             // 
@@ -202,7 +239,7 @@ namespace moleQule.Face.Instruction
             fechaDisponibilidadLabel.AutoSize = true;
             fechaDisponibilidadLabel.Location = new System.Drawing.Point(256, 68);
             fechaDisponibilidadLabel.Name = "fechaDisponibilidadLabel";
-            fechaDisponibilidadLabel.Size = new System.Drawing.Size(124, 13);
+            fechaDisponibilidadLabel.Size = new System.Drawing.Size(107, 13);
             fechaDisponibilidadLabel.TabIndex = 20;
             fechaDisponibilidadLabel.Text = "Fecha Disponibilidad:";
             // 
@@ -211,7 +248,7 @@ namespace moleQule.Face.Instruction
             fechaAltaLabel.AutoSize = true;
             fechaAltaLabel.Location = new System.Drawing.Point(37, 67);
             fechaAltaLabel.Name = "fechaAltaLabel";
-            fechaAltaLabel.Size = new System.Drawing.Size(69, 13);
+            fechaAltaLabel.Size = new System.Drawing.Size(62, 13);
             fechaAltaLabel.TabIndex = 18;
             fechaAltaLabel.Text = "Fecha Alta:";
             // 
@@ -220,7 +257,7 @@ namespace moleQule.Face.Instruction
             imagenGrandeLabel.AutoSize = true;
             imagenGrandeLabel.Location = new System.Drawing.Point(834, 351);
             imagenGrandeLabel.Name = "imagenGrandeLabel";
-            imagenGrandeLabel.Size = new System.Drawing.Size(98, 13);
+            imagenGrandeLabel.Size = new System.Drawing.Size(85, 13);
             imagenGrandeLabel.TabIndex = 28;
             imagenGrandeLabel.Text = "Imagen Grande:";
             // 
@@ -237,7 +274,7 @@ namespace moleQule.Face.Instruction
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(49, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Módulo:";
             // 
@@ -295,7 +332,7 @@ namespace moleQule.Face.Instruction
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(702, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 34;
             this.label2.Text = "Nivel:";
             // 
@@ -331,7 +368,7 @@ namespace moleQule.Face.Instruction
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(383, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.Size = new System.Drawing.Size(37, 13);
             this.label3.TabIndex = 28;
             this.label3.Text = "Tema:";
             // 
@@ -426,7 +463,7 @@ namespace moleQule.Face.Instruction
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(120, 387);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 30;
             this.label4.Text = "Observaciones:";
             // 
@@ -530,22 +567,68 @@ namespace moleQule.Face.Instruction
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 650;
             // 
+            // ModeloRespuesta_TB
+            // 
+            this.ModeloRespuesta_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "ModeloRespuesta", true));
+            this.ModeloRespuesta_TB.Location = new System.Drawing.Point(219, 508);
+            this.ModeloRespuesta_TB.Name = "ModeloRespuesta_TB";
+            this.ModeloRespuesta_TB.ReadOnly = true;
+            this.ModeloRespuesta_TB.Size = new System.Drawing.Size(665, 21);
+            this.ModeloRespuesta_TB.TabIndex = 33;
+            // 
+            // ModeloRespuesta_LB
+            // 
+            this.ModeloRespuesta_LB.AutoSize = true;
+            this.ModeloRespuesta_LB.Location = new System.Drawing.Point(88, 511);
+            this.ModeloRespuesta_LB.Name = "ModeloRespuesta_LB";
+            this.ModeloRespuesta_LB.Size = new System.Drawing.Size(114, 13);
+            this.ModeloRespuesta_LB.TabIndex = 34;
+            this.ModeloRespuesta_LB.Text = "Modelo de Respuesta:";
+            // 
+            // ModeloRespuesta_BT
+            // 
+            this.ModeloRespuesta_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.select_16;
+            this.ModeloRespuesta_BT.Location = new System.Drawing.Point(891, 508);
+            this.ModeloRespuesta_BT.Name = "ModeloRespuesta_BT";
+            this.ModeloRespuesta_BT.Size = new System.Drawing.Size(60, 23);
+            this.ModeloRespuesta_BT.TabIndex = 35;
+            this.ModeloRespuesta_BT.UseVisualStyleBackColor = true;
+            this.ModeloRespuesta_BT.Click += new System.EventHandler(this.ModeloRespuesta_BT_Click);
+            // 
+            // ModeloRespuestaView_BT
+            // 
+            this.ModeloRespuestaView_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.view_32;
+            this.ModeloRespuestaView_BT.Location = new System.Drawing.Point(957, 508);
+            this.ModeloRespuestaView_BT.Name = "ModeloRespuestaView_BT";
+            this.ModeloRespuestaView_BT.Size = new System.Drawing.Size(60, 23);
+            this.ModeloRespuestaView_BT.TabIndex = 36;
+            this.ModeloRespuestaView_BT.UseVisualStyleBackColor = true;
+            this.ModeloRespuestaView_BT.Click += new System.EventHandler(this.ModeloRespuestaView_BT_Click);
+            // 
             // PreguntasAddForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(1030, 669);
+            this.ClientSize = new System.Drawing.Size(1047, 669);
             this.HelpProvider.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PreguntasAddForm";
             this.HelpProvider.SetShowHelp(this, true);
             this.Text = "PreguntasAddForm";
+            this.Activated += new System.EventHandler(this.PreguntasAddForm_Activated);
             this.PanelesV.Panel1.ResumeLayout(false);
             this.PanelesV.Panel1.PerformLayout();
             this.PanelesV.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).EndInit();
             this.PanelesV.ResumeLayout(false);
             this.Paneles2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Paneles2)).EndInit();
             this.Paneles2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Animation)).EndInit();
+            this.Progress_Panel.ResumeLayout(false);
+            this.Progress_Panel.PerformLayout();
+            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Modulos)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -598,5 +681,10 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Nivel_TB;
         private System.Windows.Forms.TextBox Tipo_TB;
+        private System.Windows.Forms.TextBox ModeloRespuesta_TB;
+        private System.Windows.Forms.Label ModeloRespuesta_LB;
+        private System.Windows.Forms.Button ModeloRespuesta_BT;
+        private System.Windows.Forms.OpenFileDialog ModeloRespuestaBrowser;
+        private System.Windows.Forms.Button ModeloRespuestaView_BT;
     }
 }

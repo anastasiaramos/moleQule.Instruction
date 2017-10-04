@@ -173,6 +173,37 @@ namespace moleQule.Face.Instruction
                 _pregunta = Lista[index + 1];
                 _copia_pregunta = _pregunta.Clone();
                 RefreshMainData();
+
+                if (_pregunta.Tipo == "Desarrollo")
+                {
+                    Respuestas_Grid.Visible = false;
+                    Respuestas_Grid.Enabled = false;
+                    Respuestas_BT.Visible = false;
+                    Respuestas_BT.Enabled = false;
+                    ModeloRespuesta_TB.Visible = true;
+                    ModeloRespuesta_TB.Enabled = true;
+                    ModeloRespuesta_LB.Visible = true;
+                    ModeloRespuesta_LB.Enabled = true;
+                    ModeloRespuesta_BT.Visible = true;
+                    ModeloRespuesta_BT.Enabled = true;
+                    ModeloRespuestaView_BT.Visible = true;
+                    ModeloRespuestaView_BT.Enabled = true;
+                }
+                else
+                {
+                    ModeloRespuesta_TB.Visible = false;
+                    ModeloRespuesta_TB.Enabled = false;
+                    ModeloRespuesta_LB.Visible = false;
+                    ModeloRespuesta_LB.Enabled = false;
+                    ModeloRespuesta_BT.Visible = false;
+                    ModeloRespuesta_BT.Enabled = false;
+                    ModeloRespuestaView_BT.Visible = false;
+                    ModeloRespuestaView_BT.Enabled = false;
+                    Respuestas_Grid.Visible = true;
+                    Respuestas_Grid.Enabled = true;
+                    Respuestas_BT.Visible = true;
+                    Respuestas_BT.Enabled = true;
+                }
             }
             _cambiado = false;
             SetDependentControlSource(Modulo_CB.Name);
@@ -217,6 +248,37 @@ namespace moleQule.Face.Instruction
                 _pregunta = Lista[index - 1];
                 _copia_pregunta = _pregunta.Clone();
                 RefreshMainData();
+
+                if (_pregunta.Tipo == "Desarrollo")
+                {
+                    Respuestas_Grid.Visible = false;
+                    Respuestas_Grid.Enabled = false;
+                    Respuestas_BT.Visible = false;
+                    Respuestas_BT.Enabled = false;
+                    ModeloRespuesta_TB.Visible = true;
+                    ModeloRespuesta_TB.Enabled = true;
+                    ModeloRespuesta_LB.Visible = true;
+                    ModeloRespuesta_LB.Enabled = true;
+                    ModeloRespuesta_BT.Visible = true;
+                    ModeloRespuesta_BT.Enabled = true;
+                    ModeloRespuestaView_BT.Visible = true;
+                    ModeloRespuestaView_BT.Enabled = true;
+                }
+                else
+                {
+                    ModeloRespuesta_TB.Visible = false;
+                    ModeloRespuesta_TB.Enabled = false;
+                    ModeloRespuesta_LB.Visible = false;
+                    ModeloRespuesta_LB.Enabled = false;
+                    ModeloRespuesta_BT.Visible = false;
+                    ModeloRespuesta_BT.Enabled = false;
+                    ModeloRespuestaView_BT.Visible = false;
+                    ModeloRespuestaView_BT.Enabled = false;
+                    Respuestas_Grid.Visible = true;
+                    Respuestas_Grid.Enabled = true;
+                    Respuestas_BT.Visible = true;
+                    Respuestas_BT.Enabled = true;
+                }
             }
             _cambiado = false;
             SetDependentControlSource(Modulo_CB.Name);
@@ -417,6 +479,13 @@ namespace moleQule.Face.Instruction
                     + "; Valor anterior: " + _copia_pregunta.ImagenGrande.ToString() + ";";
             }
 
+            if (_pregunta.ModeloRespuesta != _copia_pregunta.ModeloRespuesta)
+            {
+                historia.Texto = System.Environment.NewLine
+                    + "Modificado el campo Modelo de Respuesta; Usuario: " + AppContext.User.Name
+                    + "; Valor anterior: " + _copia_pregunta.ModeloRespuesta.ToString() + ";";
+            }
+
             if (historia.Texto == string.Empty)
                 _pregunta.Historias.Remove(historia);
 
@@ -445,6 +514,56 @@ namespace moleQule.Face.Instruction
         }
 
         #endregion
+
+        private void PreguntasUIForm_Activated(object sender, EventArgs e)
+        {
+
+            if (_pregunta.Tipo == "Desarrollo")
+            {
+                Respuestas_Grid.Visible = false;
+                Respuestas_Grid.Enabled = false;
+                Respuestas_BT.Visible = false;
+                Respuestas_BT.Enabled = false;
+                ModeloRespuesta_TB.Visible = true;
+                ModeloRespuesta_TB.Enabled = true;
+                ModeloRespuesta_LB.Visible = true;
+                ModeloRespuesta_LB.Enabled = true;
+                ModeloRespuesta_BT.Visible = true;
+                ModeloRespuesta_BT.Enabled = true;
+                ModeloRespuestaView_BT.Visible = true;
+                ModeloRespuestaView_BT.Enabled = true;
+            }
+            else
+            {
+                ModeloRespuesta_TB.Visible = false;
+                ModeloRespuesta_TB.Enabled = false;
+                ModeloRespuesta_LB.Visible = false;
+                ModeloRespuesta_LB.Enabled = false;
+                ModeloRespuesta_BT.Visible = false;
+                ModeloRespuesta_BT.Enabled = false;
+                ModeloRespuestaView_BT.Visible = false;
+                ModeloRespuestaView_BT.Enabled = false;
+                Respuestas_Grid.Visible = true;
+                Respuestas_Grid.Enabled = true;
+                Respuestas_BT.Visible = true;
+                Respuestas_BT.Enabled = true;
+            }
+        }
+
+        private void ModeloRespuesta_BT_Click(object sender, EventArgs e)
+        {
+            if (ModeloRespuestaBrowser.ShowDialog() == DialogResult.OK)
+            {
+                _pregunta.ModeloRespuesta = _pregunta.Oid.ToString("00000") + "_" + ModeloRespuestaBrowser.SafeFileName;
+                File.Copy(ModeloRespuestaBrowser.FileName, moleQule.Library.Application.AppController.MODELOS_PREGUNTAS_PATH + _pregunta.ModeloRespuesta, true);
+            }
+        }
+
+        private void ModeloRespuestaView_BT_Click(object sender, EventArgs e)
+        {
+            if (_pregunta.ModeloRespuesta != string.Empty)
+                System.Diagnostics.Process.Start(moleQule.Library.Application.AppController.MODELOS_PREGUNTAS_PATH + _pregunta.ModeloRespuesta);
+        }
 
     }
 }

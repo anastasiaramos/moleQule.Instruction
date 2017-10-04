@@ -87,7 +87,9 @@ namespace moleQule.Library.Instruction
         public static string FOTOS_ALUMNOS_PATH { get { return AppControllerBase.Reg32GetServerPath() + Paths.RESOURCES_ROOT + Paths.FOTO_ALUMNOS; } }
         public static string FOTOS_PREGUNTAS_PATH { get { return AppControllerBase.Reg32GetServerPath() + Paths.RESOURCES_ROOT + Paths.FOTO_PREGUNTAS; } }
         public static string FOTOS_PREGUNTAS_EXAMEN_PATH { get { return AppControllerBase.Reg32GetServerPath() + Paths.RESOURCES_ROOT + Paths.FOTO_PREGUNTAS_EXAMENES; } }
-
+        public static string MODELO_PREGUNTAS_PATH { get { return AppControllerBase.Reg32GetServerPath() + Paths.RESOURCES_ROOT + Paths.MODELO_PREGUNTAS; } }
+        public static string MODELO_PREGUNTAS_EXAMEN_PATH { get { return AppControllerBase.Reg32GetServerPath() + Paths.RESOURCES_ROOT + Paths.MODELO_PREGUNTAS_EXAMENES; } }
+       
         #endregion
 
 		#region Variables

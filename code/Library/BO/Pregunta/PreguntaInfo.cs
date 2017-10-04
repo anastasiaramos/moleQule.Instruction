@@ -46,6 +46,7 @@ namespace moleQule.Library.Instruction
         public string Texto { get { return _base.Record.Texto; } }
         public string Tipo { get { return _base.Record.Tipo; } }
         public string Imagen { get { return _base.Record.Imagen; } }
+        public string ModeloRespuesta { get { return _base.Record.ModeloRespuesta; } }
         public string Observaciones { get { return _base.Record.Observaciones; } }
         public DateTime FechaDisponibilidad { get { return _base.Record.FechaDisponibilidad; } }
         public string Idioma { get { return _base.Record.Idioma; } }
@@ -65,6 +66,7 @@ namespace moleQule.Library.Instruction
         // NO ENLAZADAS
         public bool Disponible { get { return _base.Record.FechaPublicacion <= DateTime.Today; } }
         public string ImagenWithPath { get { return ModuleController.FOTOS_PREGUNTAS_PATH + Imagen; } }
+        public string ModeloRespuestaPath { get { return ModuleController.MODELO_PREGUNTAS_PATH + ModeloRespuesta; } }
         public string Modulo { get { return _base.Modulo; } }
         public string Submodulo { get { return _base.Submodulo; } }
         public string Tema { get { return _base.Tema; } }
@@ -87,6 +89,7 @@ namespace moleQule.Library.Instruction
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = source.Imagen;
+            _base.Record.ModeloRespuesta = source.ModeloRespuesta;
             _base.Record.Observaciones = source.Observaciones;
             _base.Record.Idioma = source.Idioma;
             _base.Record.ImagenGrande = source.ImagenGrande;
