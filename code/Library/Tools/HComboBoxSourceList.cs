@@ -18,7 +18,7 @@ namespace moleQule.Library.Instruction
             {
                 ComboBoxSource combo = new ComboBoxSource();
 
-                combo.Texto = item.Codigo;
+                combo.Texto = item.Codigo + " " + item.Texto;
                 combo.Oid = item.Oid;
                 combo.OidAjeno = item.OidModulo;
 
@@ -34,9 +34,9 @@ namespace moleQule.Library.Instruction
             {
                 ComboBoxSource combo = new ComboBoxSource();
 
-                combo.Texto = item.Codigo;
+                combo.Texto = item.Codigo + " " + item.Nombre;
                 combo.Oid = item.Oid;
-                combo.OidAjeno = item.OidModulo;
+                combo.OidAjeno = item.OidSubmodulo;
 
                 this.Add(combo);
             }

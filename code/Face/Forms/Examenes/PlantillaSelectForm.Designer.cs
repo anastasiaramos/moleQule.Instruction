@@ -28,23 +28,26 @@ namespace moleQule.Face.Instruction
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Tabla = new System.Windows.Forms.DataGridView();
             this.Titulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NPreguntas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Desarrollo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.SC1)).BeginInit();
             this.SC1.Panel1.SuspendLayout();
             this.SC1.Panel2.SuspendLayout();
             this.SC1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SC2)).BeginInit();
             this.SC2.Panel1.SuspendLayout();
             this.SC2.Panel2.SuspendLayout();
             this.SC2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Animation)).BeginInit();
+            this.Progress_Panel.SuspendLayout();
+            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,9 +86,8 @@ namespace moleQule.Face.Instruction
             this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
-            this.NPreguntas,
-            this.Idioma,
-            this.Desarrollo});
+            this.Nombre,
+            this.NPreguntas});
             this.Tabla.DataSource = this.Datos;
             this.Tabla.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Tabla.Location = new System.Drawing.Point(0, 0);
@@ -121,36 +123,26 @@ namespace moleQule.Face.Instruction
             // Codigo
             // 
             this.Codigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle1;
             this.Codigo.HeaderText = "Código";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
             // 
             // NPreguntas
             // 
             this.NPreguntas.DataPropertyName = "NPreguntas";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.NPreguntas.DefaultCellStyle = dataGridViewCellStyle2;
             this.NPreguntas.HeaderText = "Nº Preguntas";
             this.NPreguntas.Name = "NPreguntas";
             this.NPreguntas.ReadOnly = true;
-            // 
-            // Idioma
-            // 
-            this.Idioma.DataPropertyName = "Idioma";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Idioma.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Idioma.HeaderText = "Idioma";
-            this.Idioma.Name = "Idioma";
-            this.Idioma.ReadOnly = true;
-            // 
-            // Desarrollo
-            // 
-            this.Desarrollo.DataPropertyName = "Desarrollo";
-            this.Desarrollo.HeaderText = "Desarrollo";
-            this.Desarrollo.Name = "Desarrollo";
-            this.Desarrollo.ReadOnly = true;
+            this.NPreguntas.Width = 65;
             // 
             // PlantillaSelectForm
             // 
@@ -162,11 +154,19 @@ namespace moleQule.Face.Instruction
             this.SC1.Panel1.ResumeLayout(false);
             this.SC1.Panel1.PerformLayout();
             this.SC1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SC1)).EndInit();
             this.SC1.ResumeLayout(false);
             this.SC2.Panel1.ResumeLayout(false);
             this.SC2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SC2)).EndInit();
             this.SC2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Animation)).EndInit();
+            this.Progress_Panel.ResumeLayout(false);
+            this.Progress_Panel.PerformLayout();
+            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             this.ResumeLayout(false);
 
@@ -178,8 +178,7 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label Titulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn NPreguntas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Idioma;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Desarrollo;
     }
 }

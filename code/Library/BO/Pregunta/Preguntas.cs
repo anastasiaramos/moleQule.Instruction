@@ -402,7 +402,7 @@ namespace moleQule.Library.Instruction
                 this.RaiseListChangedEvents = true;
             }
         }
-
+        
         #endregion
 
         #region Commands

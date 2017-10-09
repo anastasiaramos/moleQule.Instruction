@@ -158,6 +158,7 @@ namespace moleQule.Face.Instruction
                             {
                                 item.Reservada = false;
                                 item.Bloqueada = true;
+                                item.FechaUltimoExamen = _entity.FechaExamen;
                                 item.FechaDisponibilidad = _entity.FechaExamen.AddMonths(6);
                             }
                             else //si no, se reservan

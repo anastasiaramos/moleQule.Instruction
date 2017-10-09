@@ -133,7 +133,7 @@ namespace moleQule.Face.Instruction
         {
             _promociones = PromocionList.GetList(false);
             Library.Instruction.HComboBoxSourceList _combo_promociones = new Library.Instruction.HComboBoxSourceList(_promociones);
-            ComboBoxSource combo = new ComboBoxSource(-1, "ATCs");
+            ComboBoxSource combo = new ComboBoxSource(-1, "No especificado");
             _combo_promociones.Add(combo);
             Datos_Promociones.DataSource = _combo_promociones;
             //PgMng.Grow(string.Empty, "Promociones");

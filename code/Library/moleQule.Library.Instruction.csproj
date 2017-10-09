@@ -686,6 +686,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\Preguntas\PreguntasListRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PreguntasListRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Promocion\ClasesTeoricasDisponiblesRpt.cs">
       <DependentUpon>ClasesTeoricasDisponiblesRpt.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -926,6 +932,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResumenRpt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Preguntas\PreguntasListRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PreguntasListRpt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Promocion\ClasesTeoricasDisponiblesRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClasesTeoricasDisponiblesRpt.cs</LastGenOutput>
@@ -1075,6 +1085,9 @@
     <Content Include="Reports\Horario\SesionCronograma.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Reports\Preguntas\PreguntaPrint.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Reports\Promocion\ClasePractica.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -1088,6 +1101,7 @@
     <None Include="SQL\Install\02_Schema.sql" />
     <None Include="SQL\Install\03_Common_Data.sql" />
     <None Include="SQL\Install\04_Schema_Data.sql" />
+    <Content Include="SQL\Update\Update 7.4.0.2 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.1 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.0 .sql" />
     <Content Include="SQL\Update\Update 7.2.1.1 .sql" />

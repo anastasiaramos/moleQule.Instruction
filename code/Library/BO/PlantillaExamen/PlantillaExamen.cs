@@ -1052,6 +1052,24 @@ namespace moleQule.Library.Instruction
             return query;
         }
 
+        internal static string SELECT(QueryConditions conditions, bool desarrollo, bool lockTable)
+        {
+            string query = string.Empty;
+
+            query = SELECT_FIELDS() +
+                    JOIN() +
+                    WHERE(conditions);
+
+            if (desarrollo)
+                query += " AND PE.\"DESARROLLO\" = 'true'";
+            else
+                query += " AND PE.\"DESARROLLO\" = 'false'";
+
+            if (lockTable) query += " FOR UPDATE OF PE NOWAIT";
+
+            return query;
+        }
+
         internal static string SELECT(long oid, bool lock_table)
         {
             string pe = nHManager.Instance.GetSQLTable(typeof(PlantillaExamenRecord));

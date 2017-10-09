@@ -469,7 +469,6 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\bin\mol
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\bin\moleQule.Face.Instruction.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\bin\Infralution.Localization.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\bin\iTextSharp.dll
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.csprojResolveAssemblyReference.cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.InstructoresPromocionViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.RegistroNotasAlumnoForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.ClasesPromocionMngForm.resources
@@ -624,3 +623,4 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Deb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.csproj.GenerateResource.Cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.pdb
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.csprojResolveAssemblyReference.cache

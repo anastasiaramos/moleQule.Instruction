@@ -16,9 +16,10 @@ namespace moleQule.Library.Instruction
 			Property(x => x.OidModulo, map => { map.Column("`OID_MODULO`"); map.Length(32768); });
 			Property(x => x.OidTema, map => { map.Column("`OID_TEMA`"); map.Length(32768); });
 			Property(x => x.Nivel, map => { map.Column("`NIVEL`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.FechaAlta, map => { map.Column("`FECHA_ALTA`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.FechaPublicacion, map => { map.Column("`FECHA_PUBLICACION`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.Texto, map => { map.Column("`TEXTO`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.FechaAlta, map => { map.Column("`FECHA_ALTA`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.FechaPublicacion, map => { map.Column("`FECHA_PUBLICACION`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.FechaUltimoExamen, map => { map.Column("`FECHA_ULTIMO_EXAMEN`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.Texto, map => { map.Column("`TEXTO`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Tipo, map => { map.Column("`TIPO`"); map.NotNullable(false);	map.Length(255);  });
             Property(x => x.Imagen, map => { map.Column("`IMAGEN`"); map.NotNullable(false); map.Length(255); });
             Property(x => x.ModeloRespuesta, map => { map.Column("`MODELO_RESPUESTA`"); map.NotNullable(false); map.Length(255); });

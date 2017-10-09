@@ -24,6 +24,7 @@ namespace moleQule.Face.Instruction
         protected override int BarSteps { get { return base.BarSteps; } }
 
         protected Library.Instruction.HComboBoxSourceList _combo_modulos;
+        protected Library.Instruction.HComboBoxSourceList _combo_submodulos;
         protected Library.Instruction.HComboBoxSourceList _combo_tipos; 
         protected TemaList _temas = TemaList.GetList(false);
 
@@ -135,7 +136,6 @@ namespace moleQule.Face.Instruction
         public override void FormatControls()
         {
             base.FormatControls();
-            Datos_Submodulos.DataSource = null;
             ModeloRespuesta_BT.Visible = false;
             ModeloRespuesta_BT.Enabled = false;
             ModeloRespuesta_LB.Visible = false;
@@ -153,10 +153,13 @@ namespace moleQule.Face.Instruction
             PgMng.Grow();
 
             Datos_Modulos.DataSource = _combo_modulos;
+            SubmoduloList submodulos = SubmoduloList.GetList(false);
+            _combo_submodulos = new Library.Instruction.HComboBoxSourceList(submodulos);
+            _combo_modulos.Childs = _combo_submodulos;
             PgMng.Grow();
 
             _temas = TemaList.GetList(false);
-            _combo_modulos.Childs = new Library.Instruction.HComboBoxSourceList(_temas);
+            _combo_modulos.Childs.Childs = new Library.Instruction.HComboBoxSourceList(_temas);
             PgMng.Grow();
 
             //_combo_tipos = new Library.Instruction.HComboBoxSourceList();
@@ -189,9 +192,14 @@ namespace moleQule.Face.Instruction
                 case "Modulo_CB":
                     {
                         if (Datos_Modulos.Current != null && Modulo_CB.SelectedItem != null)
-                            Datos_Temas.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid); 
+                            Datos_Submodulos.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid); 
 
                     } break;
+                case "Submodulo_CB":
+                    {
+                        if (Submodulo_CB.SelectedItem != null && ((ComboBoxSource)Submodulo_CB.SelectedItem).Oid != 0)
+                            Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds(((ComboBoxSource)Submodulo_CB.SelectedItem).Oid);
+                    }break;
 
                 case "Tema_CB":
                     {
@@ -404,6 +412,13 @@ namespace moleQule.Face.Instruction
             SetDependentControlSource(Modulo_CB.Name);
             if (Modulo_CB.SelectedItem != null)
                 _entity.Modulo = (Modulo_CB.SelectedItem as ComboBoxSource).Texto;
+        }
+
+        private void Submodulo_CB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetDependentControlSource(Submodulo_CB.Name);
+            if (Submodulo_CB.SelectedItem != null)
+                _entity.Submodulo = (Submodulo_CB.SelectedItem as ComboBoxSource).Texto;
         }
 
         private void Tema_CB_SelectedIndexChanged(object sender, EventArgs e)

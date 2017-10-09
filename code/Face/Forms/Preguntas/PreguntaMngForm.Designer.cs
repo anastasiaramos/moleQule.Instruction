@@ -58,13 +58,13 @@ namespace moleQule.Face.Instruction
             this.Tabla = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Submodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Idioma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaModificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaUltimoExamen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Revisada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Activa = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Reservada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -155,7 +155,7 @@ namespace moleQule.Face.Instruction
             this.HelpProvider.SetShowHelp(this.PanelesSearch.Panel2, true);
             this.HelpProvider.SetShowHelp(this.PanelesSearch, true);
             this.PanelesSearch.Size = new System.Drawing.Size(864, 540);
-            this.PanelesSearch.SplitterDistance = 75;
+            this.PanelesSearch.SplitterDistance = 25;
             // 
             // Campos_Panel
             // 
@@ -384,8 +384,7 @@ namespace moleQule.Face.Instruction
             // Contenido_Panel.Panel2
             // 
             this.Contenido_Panel.Panel2.Controls.Add(this.Respuestas_Panel);
-            this.Contenido_Panel.Panel2MinSize = 150;
-            this.Contenido_Panel.Size = new System.Drawing.Size(864, 75);
+            this.Contenido_Panel.Size = new System.Drawing.Size(864, 25);
             this.Contenido_Panel.SplitterDistance = 25;
             this.Contenido_Panel.TabIndex = 0;
             // 
@@ -404,7 +403,7 @@ namespace moleQule.Face.Instruction
             // Preguntas_Panel.Panel2
             // 
             this.Preguntas_Panel.Panel2.Controls.Add(this.Tabla);
-            this.Preguntas_Panel.Size = new System.Drawing.Size(1084, 25);
+            this.Preguntas_Panel.Size = new System.Drawing.Size(864, 25);
             this.Preguntas_Panel.SplitterDistance = 25;
             this.Preguntas_Panel.TabIndex = 0;
             // 
@@ -438,13 +437,13 @@ namespace moleQule.Face.Instruction
             this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Modulo,
+            this.Submodulo,
             this.Tema,
             this.Texto,
             this.Tipo,
-            this.Idioma,
             this.FechaAlta,
             this.FechaDisponibilidad,
-            this.FechaModificacion,
+            this.FechaUltimoExamen,
             this.Revisada,
             this.Activa,
             this.Reservada,
@@ -468,7 +467,7 @@ namespace moleQule.Face.Instruction
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Tabla.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Tabla.Size = new System.Drawing.Size(1084, 25);
+            this.Tabla.Size = new System.Drawing.Size(864, 25);
             this.Tabla.TabIndex = 5;
             this.Tabla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Tabla_CellClick);
             this.Tabla.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Tabla_ColumnHeaderMouseClick);
@@ -499,51 +498,52 @@ namespace moleQule.Face.Instruction
             this.Modulo.HeaderText = "Módulo";
             this.Modulo.Name = "Modulo";
             this.Modulo.ReadOnly = true;
-            this.Modulo.Width = 150;
+            this.Modulo.Width = 120;
+            // 
+            // Submodulo
+            // 
+            this.Submodulo.DataPropertyName = "Submodulo";
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Submodulo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Submodulo.HeaderText = "Submódulo";
+            this.Submodulo.Name = "Submodulo";
+            this.Submodulo.ReadOnly = true;
+            this.Submodulo.Width = 120;
             // 
             // Tema
             // 
             this.Tema.DataPropertyName = "Tema";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Tema.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Tema.DefaultCellStyle = dataGridViewCellStyle5;
             this.Tema.HeaderText = "Tema";
             this.Tema.Name = "Tema";
             this.Tema.ReadOnly = true;
-            this.Tema.Width = 65;
+            this.Tema.Width = 120;
             // 
             // Texto
             // 
             this.Texto.DataPropertyName = "Texto";
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Texto.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Texto.DefaultCellStyle = dataGridViewCellStyle6;
             this.Texto.HeaderText = "Texto";
             this.Texto.Name = "Texto";
             this.Texto.ReadOnly = true;
-            this.Texto.Width = 200;
+            this.Texto.Width = 150;
             // 
             // Tipo
             // 
             this.Tipo.DataPropertyName = "Tipo";
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Tipo.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Tipo.DefaultCellStyle = dataGridViewCellStyle7;
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
             this.Tipo.Width = 75;
-            // 
-            // Idioma
-            // 
-            this.Idioma.DataPropertyName = "Idioma";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.Idioma.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Idioma.HeaderText = "Idioma";
-            this.Idioma.Name = "Idioma";
-            this.Idioma.ReadOnly = true;
             // 
             // FechaAlta
             // 
@@ -572,18 +572,18 @@ namespace moleQule.Face.Instruction
             this.FechaDisponibilidad.ReadOnly = true;
             this.FechaDisponibilidad.Width = 75;
             // 
-            // FechaModificacion
+            // FechaUltimoExamen
             // 
-            this.FechaModificacion.DataPropertyName = "FechaModificacion";
+            this.FechaUltimoExamen.DataPropertyName = "FechaUltimoExamen";
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle10.Format = "d";
-            this.FechaModificacion.DefaultCellStyle = dataGridViewCellStyle10;
-            this.FechaModificacion.HeaderText = "Última Modificación";
-            this.FechaModificacion.Name = "FechaModificacion";
-            this.FechaModificacion.ReadOnly = true;
-            this.FechaModificacion.Width = 75;
+            this.FechaUltimoExamen.DefaultCellStyle = dataGridViewCellStyle10;
+            this.FechaUltimoExamen.HeaderText = "Último Examen";
+            this.FechaUltimoExamen.Name = "FechaUltimoExamen";
+            this.FechaUltimoExamen.ReadOnly = true;
+            this.FechaUltimoExamen.Width = 75;
             // 
             // Revisada
             // 
@@ -658,7 +658,7 @@ namespace moleQule.Face.Instruction
             // Respuestas_Panel.Panel2
             // 
             this.Respuestas_Panel.Panel2.Controls.Add(this.Respuestas_Grid);
-            this.Respuestas_Panel.Size = new System.Drawing.Size(1084, 192);
+            this.Respuestas_Panel.Size = new System.Drawing.Size(864, 25);
             this.Respuestas_Panel.SplitterDistance = 25;
             this.Respuestas_Panel.TabIndex = 0;
             // 
@@ -710,7 +710,7 @@ namespace moleQule.Face.Instruction
             this.Respuestas_Grid.ReadOnly = true;
             this.Respuestas_Grid.RowHeadersWidth = 25;
             this.Respuestas_Grid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Respuestas_Grid.Size = new System.Drawing.Size(1084, 163);
+            this.Respuestas_Grid.Size = new System.Drawing.Size(864, 25);
             this.Respuestas_Grid.TabIndex = 6;
             this.Respuestas_Grid.UseWaitCursor = true;
             // 
@@ -931,13 +931,13 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.ComboBox Tema_CB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modulo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Submodulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Texto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Idioma;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDisponibilidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaModificacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaUltimoExamen;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Revisada;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activa;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Reservada;

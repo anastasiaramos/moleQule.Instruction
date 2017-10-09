@@ -32,7 +32,6 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModuloMngForm));
@@ -40,7 +39,6 @@ namespace moleQule.Face.Instruction
             this.Alias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroModulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tabla = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Main_Panel)).BeginInit();
             this.Main_Panel.Panel1.SuspendLayout();
@@ -373,19 +371,6 @@ namespace moleQule.Face.Instruction
             this.NumeroModulo.ReadOnly = true;
             this.NumeroModulo.Width = 75;
             // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "Codigo";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Format = "000";
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 50;
-            // 
             // Tabla
             // 
             this.Tabla.AutoGenerateColumns = false;
@@ -400,7 +385,6 @@ namespace moleQule.Face.Instruction
             this.Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Tabla.ColumnHeadersHeight = 34;
             this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
             this.NumeroModulo,
             this.Texto,
             this.Alias});
@@ -470,7 +454,6 @@ namespace moleQule.Face.Instruction
 
         private System.Windows.Forms.BindingSource DatosLocal_BS;
         private System.Windows.Forms.DataGridView Tabla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumeroModulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Texto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alias;

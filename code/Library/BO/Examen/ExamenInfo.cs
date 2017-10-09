@@ -200,6 +200,30 @@ namespace moleQule.Library.Instruction
             return obj;
         }
 
+        public static DateTime GetUltimoByPreguntaIncluida(long oid_pregunta, DateTime fecha_examen)
+        {
+            CriteriaEx criteria = Examen.GetCriteria(Examen.OpenSession());
+            string e = nHManager.Instance.GetSQLTable(typeof(ExamenRecord));
+            string pe = nHManager.Instance.GetSQLTable(typeof(PreguntaExamenRecord));
+
+            if (nHManager.Instance.UseDirectSQL)
+                criteria.Query = "SELECT MAX(EX.\"FECHA_EXAMEN\") AS \"FECHA_EXAMEN\" " +
+                                    "FROM " + e + " AS EX " +
+                                    "INNER JOIN " + pe + " AS PE ON PE.\"OID_EXAMEN\" = EX.\"OID\" " +
+                                    "WHERE PE.\"OID_PREGUNTA\" = " + oid_pregunta.ToString() + " AND EX.\"FECHA_EXAMEN\" <> '" + fecha_examen.ToString("yyyy-MM-dd") + "'";
+
+            IDataReader reader = null;
+            DateTime fecha = DateTime.MinValue;
+
+            reader = nHManager.Instance.SQLNativeSelect(criteria.Query);
+
+            if (reader.Read())
+                fecha = Format.DataReader.GetDateTime(reader, "FECHA_EXAMEN");
+
+            Examen.CloseSession(criteria.SessionCode);
+            return fecha;
+        }
+
         #endregion
 
         #region Root Data Access

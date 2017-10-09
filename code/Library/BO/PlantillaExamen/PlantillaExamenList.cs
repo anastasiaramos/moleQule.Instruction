@@ -91,12 +91,12 @@ namespace moleQule.Library.Instruction
         /// Retrieve the complete list from db
         /// </summary>
         /// <returns>PlantillaExamenList</returns>
-        public static PlantillaExamenList GetListByModulo(long oid_modulo)
+        public static PlantillaExamenList GetListByModulo(long oid_modulo, bool desarrollo)
         {
             CriteriaEx criteria = PlantillaExamen.GetCriteria(PlantillaExamen.OpenSession());
             criteria.Childs = false;
 
-            criteria.Query = PlantillaExamenList.SELECT_BY_MODULO(oid_modulo);
+            criteria.Query = PlantillaExamenList.SELECT_BY_MODULO(oid_modulo, desarrollo);
 
             PlantillaExamenList list = DataPortal.Fetch<PlantillaExamenList>(criteria);
             CloseSession(criteria.SessionCode);
@@ -369,7 +369,7 @@ namespace moleQule.Library.Instruction
         #region SQL
 
         public static string SELECT() { return PlantillaExamen.SELECT(0, false); }
-        public static string SELECT_BY_MODULO(long oid_modulo) { return PlantillaExamenes.SELECT_BY_MODULO(oid_modulo, false); }
+        public static string SELECT_BY_MODULO(long oid_modulo, bool desarrollo) { return PlantillaExamenes.SELECT_BY_MODULO(oid_modulo, desarrollo, false); }
 
         /// <summary>
         /// Construye la tabla 

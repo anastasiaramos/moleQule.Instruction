@@ -110,8 +110,7 @@ namespace moleQule.Face.Instruction
             if (Tabla != null)
             {
                 visibles.Add(Codigo.Name);
-                visibles.Add(Desarrollo.Name);
-                visibles.Add(Idioma.Name);
+                visibles.Add(Nombre.Name);
                 visibles.Add(NPreguntas.Name);
 
                 ControlTools.ShowDataGridColumns(Tabla, visibles);
@@ -121,10 +120,9 @@ namespace moleQule.Face.Instruction
                 int rowWidth = (int)(Tabla.Width - vs.Width
                                                     - Tabla.RowHeadersWidth);
 
-                Tabla.Columns[Codigo.Name].Width = (int)(rowWidth * 0.245);
-                Tabla.Columns[Desarrollo.Name].Width = (int)(rowWidth * 0.245);
-                Tabla.Columns[Idioma.Name].Width = (int)(rowWidth * 0.245);
-                Tabla.Columns[NPreguntas.Name].Width = (int)(rowWidth * 0.245);
+                Tabla.Columns[Codigo.Name].Width = (int)(rowWidth * 0.15);
+                Tabla.Columns[Nombre.Name].Width = (int)(rowWidth * 0.65);
+                Tabla.Columns[NPreguntas.Name].Width = (int)(rowWidth * 0.2);
             }
 
         }
@@ -144,7 +142,7 @@ namespace moleQule.Face.Instruction
             Titulo.Text = "| " + _modulo.Texto;
             PgMng.Grow();
 
-            Plantillas = PlantillaExamenList.GetListByModulo(_modulo.Oid);
+            Plantillas = PlantillaExamenList.GetListByModulo(_modulo.Oid, _entity.Desarrollo);
             PgMng.Grow();
 
             Datos.DataSource = Plantillas;

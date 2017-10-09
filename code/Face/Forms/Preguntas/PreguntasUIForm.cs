@@ -328,8 +328,8 @@ namespace moleQule.Face.Instruction
                         {
                             if (Modulo_CB.SelectedItem != null && ((ComboBoxSource)Modulo_CB.SelectedItem).Oid != 0)
                             {
-                                Datos_Temas.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid);
-                                Tema_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta.OidTema);
+                                Datos_Submodulos.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid);
+                                //Submodulo_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta.OidSubmodulo);
                             }
 
                         }
@@ -337,8 +337,29 @@ namespace moleQule.Face.Instruction
                         {
                             if (Modulo_CB.SelectedValue != null && (long)Modulo_CB.SelectedValue != 0)
                             {
-                                Datos_Temas.DataSource = _combo_modulos.GetFilteredChilds((long)Modulo_CB.SelectedValue);
-                                Tema_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta.OidTema);
+                                Datos_Submodulos.DataSource = _combo_modulos.GetFilteredChilds((long)Modulo_CB.SelectedValue);
+                                Submodulo_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta.OidSubmodulo);
+                            }
+                        }
+
+                    } break;
+                case "Submodulo_CB":
+                    {
+                        if (!_cambiado)
+                        {
+                            if (Submodulo_CB.SelectedItem != null && ((ComboBoxSource)Submodulo_CB.SelectedItem).Oid != 0)
+                            {
+                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds(((ComboBoxSource)Submodulo_CB.SelectedItem).Oid);
+                                //Tema_CB.SelectedItem = _combo_modulos.Childs.Childs.Buscar(_pregunta.OidTema);
+                            }
+
+                        }
+                        else
+                        {
+                            if (Submodulo_CB.SelectedValue != null && (long)Submodulo_CB.SelectedValue != 0)
+                            {
+                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds((long)Submodulo_CB.SelectedValue);
+                                Tema_CB.SelectedItem = _combo_modulos.Childs.Childs.Buscar(_pregunta.OidTema);
                             }
                         }
 
@@ -350,6 +371,7 @@ namespace moleQule.Face.Instruction
                             if (Tema_CB.SelectedItem != null && ((ComboBoxSource)Tema_CB.SelectedItem).Oid != 0)
                             {
                                 _pregunta.OidTema = (long)Tema_CB.SelectedValue;
+                                _pregunta.OidSubmodulo = (long)Submodulo_CB.SelectedValue;
                                 _pregunta.OidModulo = (long)Modulo_CB.SelectedValue;
                             }
                         }
@@ -357,13 +379,13 @@ namespace moleQule.Face.Instruction
                         {
                             if (Tema_CB.SelectedValue != null && (long)Tema_CB.SelectedValue != 0)
                             {
-                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds((long)Tema_CB.SelectedValue);
+                                Datos_Temas.DataSource = _combo_submodulos.Childs.GetFilteredChilds((long)Tema_CB.SelectedValue);
                                 if ((long)Tema_CB.SelectedValue != _pregunta.OidTema) Tema_CB.SelectedValue = _pregunta.OidTema;
-                                Tema_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta.OidTema);
+                                Tema_CB.SelectedItem = _combo_submodulos.Childs.Buscar(_pregunta.OidTema);
                             }
                             Modulo_CB.SelectedValue = _pregunta.OidModulo;
                         }
-                        if (_pregunta != null)
+                        if (_pregunta != null && _pregunta.OidTema != 0)
                         {
                             TemaInfo tema = _temas.GetItem(_pregunta.OidTema);
                             Nivel_TB.Text = tema.Nivel.ToString();

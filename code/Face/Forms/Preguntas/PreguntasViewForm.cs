@@ -222,8 +222,29 @@ namespace moleQule.Face.Instruction
                     {
                         if (Modulo_CB.SelectedItem != null && ((ComboBoxSource)Modulo_CB.SelectedItem).Oid != 0)
                         {
-                            Datos_Temas.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid);
-                            Tema_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta_info.OidTema);
+                            Datos_Submodulos.DataSource = _combo_modulos.GetFilteredChilds(((ComboBoxSource)Modulo_CB.SelectedItem).Oid);
+                            Submodulo_CB.SelectedItem = _combo_modulos.Childs.Buscar(_pregunta_info.OidSubmodulo);
+                        }
+
+                    } break;
+                case "Submodulo_CB":
+                    {
+                        if (!_cambiado)
+                        {
+                            if (Submodulo_CB.SelectedItem != null && ((ComboBoxSource)Submodulo_CB.SelectedItem).Oid != 0)
+                            {
+                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds(((ComboBoxSource)Submodulo_CB.SelectedItem).Oid);
+                                Tema_CB.SelectedItem = _combo_modulos.Childs.Childs.Buscar(_pregunta_info.OidTema);
+                            }
+
+                        }
+                        else
+                        {
+                            if (Submodulo_CB.SelectedValue != null && (long)Submodulo_CB.SelectedValue != 0)
+                            {
+                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds((long)Submodulo_CB.SelectedValue);
+                                Tema_CB.SelectedItem = _combo_modulos.Childs.Childs.Buscar(_pregunta_info.OidTema);
+                            }
                         }
 
                     } break;

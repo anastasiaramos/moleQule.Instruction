@@ -8,6 +8,7 @@ using moleQule.Library;
 using moleQule.Library.Common;
 using moleQule.Library.Reports;
 using moleQule.Library.Instruction.Reports.Examen;
+using moleQule.Library.Instruction.Reports.Preguntas;
 
 namespace moleQule.Library.Instruction
 {
@@ -169,7 +170,29 @@ namespace moleQule.Library.Instruction
             if (preguntas_examen.Count <= 0)
                 return null;
 
-            doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(preguntas);
+           // doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(preguntas);
+
+            return doc;
+        }
+
+        public PreguntasListRpt GetPreguntasListReport(PreguntaList preguntas)
+        {
+            if (preguntas == null) return null;
+            PreguntasListRpt doc = new PreguntasListRpt();
+
+            List<PreguntaPrint> pList = new List<PreguntaPrint>();
+
+            foreach (PreguntaInfo item in preguntas)
+            {
+                pList.Add(item.GetPrintObject(1));
+            }
+
+            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+            if (pList.Count <= 0)
+                return null;
+
+            doc.SetDataSource(pList);
+            // doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(preguntas);
 
             return doc;
         }

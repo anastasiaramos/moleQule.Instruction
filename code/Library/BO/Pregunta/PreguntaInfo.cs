@@ -42,6 +42,7 @@ namespace moleQule.Library.Instruction
         public long OidTema { get { return _base.Record.OidTema; } }
         public long Nivel { get { return _base.Record.Nivel; } }
         public DateTime FechaAlta { get { return _base.Record.FechaAlta; } }
+        public DateTime FechaUltimoExamen { get { return _base.Record.FechaUltimoExamen; } }
         public DateTime FechaPublicacion { get { return _base.Record.FechaPublicacion; } }
         public string Texto { get { return _base.Record.Texto; } }
         public string Tipo { get { return _base.Record.Tipo; } }

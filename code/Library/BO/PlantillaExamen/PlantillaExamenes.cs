@@ -77,11 +77,11 @@ namespace moleQule.Library.Instruction
         /// </summary>
         /// <param name="get_childs">retrieving the childs</param>
         /// <returns></returns>
-        public static PlantillaExamenes GetModuloList(long oid_modulo)
+        public static PlantillaExamenes GetModuloList(long oid_modulo, bool desarrollo)
         {
             PlantillaExamenes lista = PlantillaExamenes.NewChildList();
 
-            string query = PlantillaExamenes.SELECT_BY_MODULO(oid_modulo);
+            string query = PlantillaExamenes.SELECT_BY_MODULO(oid_modulo, desarrollo);
             IDataReader reader = nHManager.Instance.SQLNativeSelect(query);
             int session_code = PlantillaExamen.OpenSession();
 
@@ -203,8 +203,8 @@ namespace moleQule.Library.Instruction
             return query;
         }
 
-        public static string SELECT_BY_MODULO(long oid_modulo) { return SELECT_BY_MODULO(oid_modulo, true); }
-        public static string SELECT_BY_MODULO(long oid_modulo, bool lockTable)
+        public static string SELECT_BY_MODULO(long oid_modulo, bool desarrollo) { return SELECT_BY_MODULO(oid_modulo, desarrollo, true); }
+        public static string SELECT_BY_MODULO(long oid_modulo, bool desarrollo, bool lockTable)
         {
             QueryConditions conditions = new QueryConditions()
             {
@@ -213,7 +213,7 @@ namespace moleQule.Library.Instruction
 
             conditions.Modulo.Oid = oid_modulo;
 
-            return PlantillaExamen.SELECT(conditions, lockTable);
+            return PlantillaExamen.SELECT(conditions, desarrollo, lockTable);
         }
 
         #endregion

@@ -20,7 +20,8 @@ namespace moleQule.Library.Instruction
 		private long _oid_modulo;
 		private long _oid_tema;
 		private long _nivel;
-		private DateTime _fecha_alta;
+        private DateTime _fecha_alta;
+        private DateTime _fecha_ultimo_examen;
 		private DateTime _fecha_publicacion;
 		private string _texto = string.Empty;
 		private string _tipo = string.Empty;
@@ -43,10 +44,11 @@ namespace moleQule.Library.Instruction
 		
 		#region Properties
 		
-				public virtual long OidModulo { get { return _oid_modulo; } set { _oid_modulo = value; } }
+		public virtual long OidModulo { get { return _oid_modulo; } set { _oid_modulo = value; } }
 		public virtual long OidTema { get { return _oid_tema; } set { _oid_tema = value; } }
 		public virtual long Nivel { get { return _nivel; } set { _nivel = value; } }
-		public virtual DateTime FechaAlta { get { return _fecha_alta; } set { _fecha_alta = value; } }
+        public virtual DateTime FechaAlta { get { return _fecha_alta; } set { _fecha_alta = value; } }
+        public virtual DateTime FechaUltimoExamen { get { return _fecha_ultimo_examen; } set { _fecha_ultimo_examen = value; } }
 		public virtual DateTime FechaPublicacion { get { return _fecha_publicacion; } set { _fecha_publicacion = value; } }
 		public virtual string Texto { get { return _texto; } set { _texto = value; } }
 		public virtual string Tipo { get { return _tipo; } set { _tipo = value; } }
@@ -79,7 +81,8 @@ namespace moleQule.Library.Instruction
 			_oid_modulo = Format.DataReader.GetInt64(source, "OID_MODULO");
 			_oid_tema = Format.DataReader.GetInt64(source, "OID_TEMA");
 			_nivel = Format.DataReader.GetInt64(source, "NIVEL");
-			_fecha_alta = Format.DataReader.GetDateTime(source, "FECHA_ALTA");
+            _fecha_alta = Format.DataReader.GetDateTime(source, "FECHA_ALTA");
+            _fecha_ultimo_examen = Format.DataReader.GetDateTime(source, "FECHA_ULTIMO_EXAMEN");
 			_fecha_publicacion = Format.DataReader.GetDateTime(source, "FECHA_PUBLICACION");
 			_texto = Format.DataReader.GetString(source, "TEXTO");
 			_tipo = Format.DataReader.GetString(source, "TIPO");
@@ -107,7 +110,8 @@ namespace moleQule.Library.Instruction
 			_oid_modulo = source.OidModulo;
 			_oid_tema = source.OidTema;
 			_nivel = source.Nivel;
-			_fecha_alta = source.FechaAlta;
+            _fecha_alta = source.FechaAlta;
+            _fecha_ultimo_examen = source.FechaUltimoExamen;
 			_fecha_publicacion = source.FechaPublicacion;
 			_texto = source.Texto;
 			_tipo = source.Tipo;
@@ -323,6 +327,27 @@ namespace moleQule.Library.Instruction
 				}
 			}
 		}
+        public virtual DateTime FechaUltimoExamen
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                //CanReadProperty(true);
+                return _base.Record.FechaUltimoExamen;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                //CanWriteProperty(true);
+
+                if (!_base.Record.FechaUltimoExamen.Equals(value))
+                {
+                    _base.Record.FechaUltimoExamen = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 		public virtual DateTime FechaPublicacion
 		{
 			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
@@ -1751,8 +1776,8 @@ namespace moleQule.Library.Instruction
 
             query = "SELECT P.*," +
                     "       (M.\"NUMERO_MODULO\" || ' ' || M.\"TEXTO\") AS \"MODULO\"," +
-                    "       S.\"CODIGO\", S.\"TEXTO\" AS \"SUBMODULO\"," +
-                    "       T.\"CODIGO\" AS \"TEMA\"," +
+                    "       S.\"CODIGO\", (S.\"CODIGO\" || ' ' || S.\"TEXTO\") AS \"SUBMODULO\"," +
+                    "       (T.\"CODIGO\" || ' ' || T.\"NOMBRE\") AS \"TEMA\"," +
                     "       T.\"CODIGO_ORDEN\" AS \"ORDEN\", " +
                     "       COALESCE(\"LAST_UPDATE\", \"FECHA_ALTA\") AS \"FECHA_MODIFICACION\"";
 

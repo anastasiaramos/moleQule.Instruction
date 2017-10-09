@@ -38,9 +38,14 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.Label imagenGrandeLabel;
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label5;
+            System.Windows.Forms.Label label7;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PreguntasForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.UltimoExamen_DTP = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Submodulo_CB = new System.Windows.Forms.ComboBox();
+            this.Datos_Submodulos = new System.Windows.Forms.BindingSource(this.components);
             this.Numero_TB = new System.Windows.Forms.TextBox();
             this.Nivel_TB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,7 +62,6 @@ namespace moleQule.Face.Instruction
             this.label1 = new System.Windows.Forms.Label();
             this.Modulo_CB = new System.Windows.Forms.ComboBox();
             this.Datos_Modulos = new System.Windows.Forms.BindingSource(this.components);
-            this.Datos_Submodulos = new System.Windows.Forms.BindingSource(this.components);
             this.observacionesTextBox = new System.Windows.Forms.TextBox();
             this.textoTextBox = new System.Windows.Forms.TextBox();
             this.Pregunta_GB = new System.Windows.Forms.GroupBox();
@@ -93,6 +97,7 @@ namespace moleQule.Face.Instruction
             imagenGrandeLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
@@ -107,11 +112,11 @@ namespace moleQule.Face.Instruction
             this.ProgressBK_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Temas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Idiomas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Tipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Modulos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).BeginInit();
             this.Pregunta_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen_PictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -211,7 +216,7 @@ namespace moleQule.Face.Instruction
             // tipoLabel
             // 
             tipoLabel.AutoSize = true;
-            tipoLabel.Location = new System.Drawing.Point(821, 27);
+            tipoLabel.Location = new System.Drawing.Point(176, 55);
             tipoLabel.Name = "tipoLabel";
             tipoLabel.Size = new System.Drawing.Size(34, 13);
             tipoLabel.TabIndex = 6;
@@ -220,7 +225,7 @@ namespace moleQule.Face.Instruction
             // fechaAltaLabel
             // 
             fechaAltaLabel.AutoSize = true;
-            fechaAltaLabel.Location = new System.Drawing.Point(37, 67);
+            fechaAltaLabel.Location = new System.Drawing.Point(37, 82);
             fechaAltaLabel.Name = "fechaAltaLabel";
             fechaAltaLabel.Size = new System.Drawing.Size(69, 13);
             fechaAltaLabel.TabIndex = 8;
@@ -229,7 +234,7 @@ namespace moleQule.Face.Instruction
             // fechaDisponibilidadLabel
             // 
             fechaDisponibilidadLabel.AutoSize = true;
-            fechaDisponibilidadLabel.Location = new System.Drawing.Point(222, 67);
+            fechaDisponibilidadLabel.Location = new System.Drawing.Point(463, 80);
             fechaDisponibilidadLabel.Name = "fechaDisponibilidadLabel";
             fechaDisponibilidadLabel.Size = new System.Drawing.Size(124, 13);
             fechaDisponibilidadLabel.TabIndex = 10;
@@ -238,7 +243,7 @@ namespace moleQule.Face.Instruction
             // idiomaLabel
             // 
             idiomaLabel.AutoSize = true;
-            idiomaLabel.Location = new System.Drawing.Point(465, 67);
+            idiomaLabel.Location = new System.Drawing.Point(346, 55);
             idiomaLabel.Name = "idiomaLabel";
             idiomaLabel.Size = new System.Drawing.Size(50, 13);
             idiomaLabel.TabIndex = 12;
@@ -247,7 +252,7 @@ namespace moleQule.Face.Instruction
             // revisadaLabel
             // 
             revisadaLabel.AutoSize = true;
-            revisadaLabel.Location = new System.Drawing.Point(741, 67);
+            revisadaLabel.Location = new System.Drawing.Point(622, 55);
             revisadaLabel.Name = "revisadaLabel";
             revisadaLabel.Size = new System.Drawing.Size(62, 13);
             revisadaLabel.TabIndex = 14;
@@ -256,7 +261,7 @@ namespace moleQule.Face.Instruction
             // activaLabel
             // 
             activaLabel.AutoSize = true;
-            activaLabel.Location = new System.Drawing.Point(657, 67);
+            activaLabel.Location = new System.Drawing.Point(542, 55);
             activaLabel.Name = "activaLabel";
             activaLabel.Size = new System.Drawing.Size(46, 13);
             activaLabel.TabIndex = 16;
@@ -274,7 +279,7 @@ namespace moleQule.Face.Instruction
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(714, 27);
+            label2.Location = new System.Drawing.Point(69, 55);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(37, 13);
             label2.TabIndex = 20;
@@ -283,14 +288,27 @@ namespace moleQule.Face.Instruction
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(846, 70);
+            label5.Location = new System.Drawing.Point(727, 55);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(54, 13);
             label5.TabIndex = 22;
             label5.Text = "Número:";
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new System.Drawing.Point(242, 82);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(95, 13);
+            label7.TabIndex = 25;
+            label7.Text = "Último Examen:";
+            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(label7);
+            this.groupBox1.Controls.Add(this.UltimoExamen_DTP);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.Submodulo_CB);
             this.groupBox1.Controls.Add(label5);
             this.groupBox1.Controls.Add(this.Numero_TB);
             this.groupBox1.Controls.Add(label2);
@@ -317,10 +335,47 @@ namespace moleQule.Face.Instruction
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // UltimoExamen_DTP
+            // 
+            this.UltimoExamen_DTP.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.Datos, "FechaUltimoExamen", true));
+            this.UltimoExamen_DTP.Enabled = false;
+            this.UltimoExamen_DTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.UltimoExamen_DTP.Location = new System.Drawing.Point(343, 78);
+            this.UltimoExamen_DTP.Name = "UltimoExamen_DTP";
+            this.UltimoExamen_DTP.Size = new System.Drawing.Size(100, 21);
+            this.UltimoExamen_DTP.TabIndex = 26;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(374, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Submódulo:";
+            // 
+            // Submodulo_CB
+            // 
+            this.Submodulo_CB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.Datos, "OidSubmodulo", true));
+            this.Submodulo_CB.DataSource = this.Datos_Submodulos;
+            this.Submodulo_CB.DisplayMember = "Texto";
+            this.Submodulo_CB.DropDownWidth = 500;
+            this.Submodulo_CB.FormattingEnabled = true;
+            this.Submodulo_CB.Location = new System.Drawing.Point(453, 20);
+            this.Submodulo_CB.Name = "Submodulo_CB";
+            this.Submodulo_CB.Size = new System.Drawing.Size(240, 21);
+            this.Submodulo_CB.TabIndex = 23;
+            this.Submodulo_CB.ValueMember = "Oid";
+            this.Submodulo_CB.SelectedIndexChanged += new System.EventHandler(this.Submodulo_CB_SelectedIndexChanged);
+            // 
+            // Datos_Submodulos
+            // 
+            this.Datos_Submodulos.DataSource = typeof(moleQule.Library.Application.HComboBoxSourceList);
+            // 
             // Numero_TB
             // 
             this.Numero_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "Codigo", true));
-            this.Numero_TB.Location = new System.Drawing.Point(906, 66);
+            this.Numero_TB.Location = new System.Drawing.Point(787, 52);
             this.Numero_TB.Multiline = true;
             this.Numero_TB.Name = "Numero_TB";
             this.Numero_TB.ReadOnly = true;
@@ -329,7 +384,7 @@ namespace moleQule.Face.Instruction
             // 
             // Nivel_TB
             // 
-            this.Nivel_TB.Location = new System.Drawing.Point(757, 23);
+            this.Nivel_TB.Location = new System.Drawing.Point(112, 51);
             this.Nivel_TB.Multiline = true;
             this.Nivel_TB.Name = "Nivel_TB";
             this.Nivel_TB.ReadOnly = true;
@@ -339,7 +394,7 @@ namespace moleQule.Face.Instruction
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(386, 26);
+            this.label3.Location = new System.Drawing.Point(709, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 19;
@@ -352,7 +407,7 @@ namespace moleQule.Face.Instruction
             this.Tema_CB.DisplayMember = "Texto";
             this.Tema_CB.DropDownWidth = 500;
             this.Tema_CB.FormattingEnabled = true;
-            this.Tema_CB.Location = new System.Drawing.Point(434, 24);
+            this.Tema_CB.Location = new System.Drawing.Point(757, 20);
             this.Tema_CB.Name = "Tema_CB";
             this.Tema_CB.Size = new System.Drawing.Size(240, 21);
             this.Tema_CB.TabIndex = 18;
@@ -366,7 +421,7 @@ namespace moleQule.Face.Instruction
             // Activa_CB
             // 
             this.Activa_CB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.Datos, "Activa", true));
-            this.Activa_CB.Location = new System.Drawing.Point(709, 62);
+            this.Activa_CB.Location = new System.Drawing.Point(590, 50);
             this.Activa_CB.Name = "Activa_CB";
             this.Activa_CB.Size = new System.Drawing.Size(20, 24);
             this.Activa_CB.TabIndex = 17;
@@ -374,7 +429,7 @@ namespace moleQule.Face.Instruction
             // Revisada_CB
             // 
             this.Revisada_CB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.Datos, "Revisada", true));
-            this.Revisada_CB.Location = new System.Drawing.Point(809, 62);
+            this.Revisada_CB.Location = new System.Drawing.Point(690, 50);
             this.Revisada_CB.Name = "Revisada_CB";
             this.Revisada_CB.Size = new System.Drawing.Size(15, 24);
             this.Revisada_CB.TabIndex = 15;
@@ -385,7 +440,7 @@ namespace moleQule.Face.Instruction
             this.Idioma_CB.DataSource = this.Datos_Idiomas;
             this.Idioma_CB.DisplayMember = "Texto";
             this.Idioma_CB.FormattingEnabled = true;
-            this.Idioma_CB.Location = new System.Drawing.Point(521, 64);
+            this.Idioma_CB.Location = new System.Drawing.Point(402, 51);
             this.Idioma_CB.Name = "Idioma_CB";
             this.Idioma_CB.Size = new System.Drawing.Size(121, 21);
             this.Idioma_CB.TabIndex = 13;
@@ -400,7 +455,7 @@ namespace moleQule.Face.Instruction
             this.FechaDisponibilidad_DTP.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.Datos, "FechaDisponibilidad", true));
             this.FechaDisponibilidad_DTP.Enabled = false;
             this.FechaDisponibilidad_DTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaDisponibilidad_DTP.Location = new System.Drawing.Point(352, 63);
+            this.FechaDisponibilidad_DTP.Location = new System.Drawing.Point(593, 76);
             this.FechaDisponibilidad_DTP.Name = "FechaDisponibilidad_DTP";
             this.FechaDisponibilidad_DTP.Size = new System.Drawing.Size(100, 21);
             this.FechaDisponibilidad_DTP.TabIndex = 11;
@@ -410,7 +465,7 @@ namespace moleQule.Face.Instruction
             this.FechaAlta_DTP.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.Datos, "FechaAlta", true));
             this.FechaAlta_DTP.Enabled = false;
             this.FechaAlta_DTP.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.FechaAlta_DTP.Location = new System.Drawing.Point(112, 63);
+            this.FechaAlta_DTP.Location = new System.Drawing.Point(112, 78);
             this.FechaAlta_DTP.Name = "FechaAlta_DTP";
             this.FechaAlta_DTP.Size = new System.Drawing.Size(100, 21);
             this.FechaAlta_DTP.TabIndex = 9;
@@ -422,7 +477,7 @@ namespace moleQule.Face.Instruction
             this.Tipo_CB.DisplayMember = "Texto";
             this.Tipo_CB.Enabled = false;
             this.Tipo_CB.FormattingEnabled = true;
-            this.Tipo_CB.Location = new System.Drawing.Point(861, 23);
+            this.Tipo_CB.Location = new System.Drawing.Point(216, 51);
             this.Tipo_CB.Name = "Tipo_CB";
             this.Tipo_CB.Size = new System.Drawing.Size(121, 21);
             this.Tipo_CB.TabIndex = 7;
@@ -435,7 +490,7 @@ namespace moleQule.Face.Instruction
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 27);
+            this.label1.Location = new System.Drawing.Point(59, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 13);
             this.label1.TabIndex = 1;
@@ -448,7 +503,7 @@ namespace moleQule.Face.Instruction
             this.Modulo_CB.DisplayMember = "Texto";
             this.Modulo_CB.DropDownWidth = 500;
             this.Modulo_CB.FormattingEnabled = true;
-            this.Modulo_CB.Location = new System.Drawing.Point(106, 23);
+            this.Modulo_CB.Location = new System.Drawing.Point(112, 20);
             this.Modulo_CB.Name = "Modulo_CB";
             this.Modulo_CB.Size = new System.Drawing.Size(240, 21);
             this.Modulo_CB.TabIndex = 0;
@@ -458,10 +513,6 @@ namespace moleQule.Face.Instruction
             // Datos_Modulos
             // 
             this.Datos_Modulos.DataSource = typeof(moleQule.Library.Application.HComboBoxSourceList);
-            // 
-            // Datos_Submodulos
-            // 
-            this.Datos_Submodulos.DataSource = typeof(moleQule.Library.Application.HComboBoxSourceList);
             // 
             // observacionesTextBox
             // 
@@ -719,11 +770,11 @@ namespace moleQule.Face.Instruction
             ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Temas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Idiomas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Tipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Modulos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulos)).EndInit();
             this.Pregunta_GB.ResumeLayout(false);
             this.Pregunta_GB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Imagen_PictureBox)).EndInit();
@@ -783,6 +834,9 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.Label ModeloRespuesta_LB;
         protected System.Windows.Forms.TextBox ModeloRespuesta_TB;
         protected System.Windows.Forms.OpenFileDialog ModeloRespuestaBrowser;
+        protected System.Windows.Forms.DateTimePicker UltimoExamen_DTP;
+        private System.Windows.Forms.Label label6;
+        protected System.Windows.Forms.ComboBox Submodulo_CB;
         //protected System.Windows.Forms.BindingSource Datos_Respuestas;
     }
 }

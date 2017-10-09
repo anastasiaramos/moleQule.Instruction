@@ -1382,7 +1382,7 @@ namespace moleQule.Library.Instruction
             query = "SELECT E.*," +
                     "       (EM.\"APELLIDOS\" || ', ' || EM.\"NOMBRE_PROPIO\") AS \"INSTRUCTOR\"," +
                     "       (M.\"NUMERO_MODULO\" || ' ' || M.\"TEXTO\") AS \"MODULO\"," +
-                    "       COALESCE(P.\"NOMBRE\", 'ATCs') AS \"PROMOCION\"";
+                    "       COALESCE(P.\"NOMBRE\", '') AS \"PROMOCION\"";
 
             return query;
         }

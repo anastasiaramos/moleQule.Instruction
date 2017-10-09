@@ -43,7 +43,7 @@ namespace moleQule.Library.Instruction.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.2")]
         public string MODULE_VERSION {
             get {
                 return ((string)(this["MODULE_VERSION"]));
@@ -172,7 +172,7 @@ namespace moleQule.Library.Instruction.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.2")]
         public string DB_VERSION {
             get {
                 return ((string)(this["DB_VERSION"]));

@@ -24,6 +24,7 @@ namespace moleQule.Face.Instruction
         protected override int BarSteps { get { return base.BarSteps + 4; } }
 
         protected Library.Instruction.HComboBoxSourceList _combo_modulos;
+        protected Library.Instruction.HComboBoxSourceList _combo_submodulos;
         //protected Library.Instruction.HComboBoxSourceList _combo_tipo;
         //protected Library.Instruction.HComboBoxSourceList _combo_idioma;
         protected bool _cambiado = false;
@@ -76,7 +77,7 @@ namespace moleQule.Face.Instruction
 
             _temas = TemaList.GetList(false);
             Library.Instruction.HComboBoxSourceList _combo_temas = new Library.Instruction.HComboBoxSourceList(_temas);
-            _combo_modulos.Childs = _combo_temas;
+            _combo_submodulos.Childs = _combo_temas;
             PgMng.Grow();
 
             //_combo_tipo = new Library.Instruction.HComboBoxSourceList();
@@ -157,6 +158,11 @@ namespace moleQule.Face.Instruction
         private void Modulo_CB_SelectedIndexChanged(object sender, EventArgs e)
         {
             SetDependentControlSource(Modulo_CB.Name);
+        }
+
+        private void Submodulo_CB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SetDependentControlSource(Submodulo_CB.Name);
         }
 
         private void Tema_CB_SelectedValueChanged(object sender, EventArgs e)

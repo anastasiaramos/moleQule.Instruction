@@ -49,7 +49,7 @@ namespace moleQule.Face.Instruction
         {
             InitializeComponent();
             SetView(molView.Normal);
-            _sort_property = Codigo.DataPropertyName;
+            _sort_property = NumeroModulo.DataPropertyName;
 
             // Parche para poder abrir el formulario en modo diseño y no perder la configuracion de columnas
             DatosLocal_BS = Datos;
@@ -57,7 +57,7 @@ namespace moleQule.Face.Instruction
 
             SetMainDataGridView(Tabla);
             Datos.DataSource = ModuloList.NewList().GetSortedList();
-            base.SortProperty = Codigo.DataPropertyName;
+            base.SortProperty = NumeroModulo.DataPropertyName;
         }
 
         #endregion
@@ -145,13 +145,13 @@ namespace moleQule.Face.Instruction
 
             ControlsMng.MaximizeColumns(Tabla, cols);
 
-            ControlsMng.OrderByColumn(Tabla, Codigo, ListSortDirection.Descending);
+            ControlsMng.OrderByColumn(Tabla, NumeroModulo, ListSortDirection.Ascending);
             SetGridFormat();
             ControlsMng.MarkGridColumn(Tabla, ControlsMng.GetCurrentColumn(Tabla));
 
-            Fields_CB.Text = Codigo.HeaderText;
+            Fields_CB.Text = NumeroModulo.HeaderText;
 
-            SetColumnActive(ControlsMng.GetColumn(Tabla, Codigo.DataPropertyName));
+            SetColumnActive(ControlsMng.GetColumn(Tabla, NumeroModulo.DataPropertyName));
 
         }
 

@@ -17,6 +17,7 @@ namespace moleQule.Library.Instruction
         public int Orden {get{return _orden;} }
         public string Tema { get { return _tema; } }
         public string Submodulo { get { return _submodulo; } }
+        public string Modulo { get { return _modulo; } }
 
         #endregion
 

@@ -310,12 +310,23 @@ namespace moleQule.Face.Instruction
                     _preguntas_examen = Preguntas.GetPreguntasByList(lista_preguntas, _entity.SessionCode);
                     foreach (Pregunta item in _preguntas_examen)
                     {
+                        DateTime fecha = ExamenInfo.GetUltimoByPreguntaIncluida(item.Oid, Entity.FechaExamen);
+                        if (fecha != DateTime.MinValue)
+                        {
+                            item.FechaDisponibilidad = fecha.AddMonths(6);
+                            item.FechaUltimoExamen = fecha;
+                        }
+                        else
+                        {
+                            item.FechaDisponibilidad = item.FechaAlta;
+                            item.FechaUltimoExamen = item.FechaAlta.AddMonths(-6);
+                        }
                         item.Bloqueada = false;
                         item.Reservada = true;
 
                         PgMng.Grow();
                     }
-                    //_preguntas_examen.CloseSession();
+                    _preguntas_examen.Save();
                 }
 
                 Entity.FechaEmision = DateTime.MaxValue;
@@ -329,7 +340,7 @@ namespace moleQule.Face.Instruction
                 MessageBox.Show("El examen ha sido liberado correctamente.");
 
                 SaveAction();
-                Scripts.FormatFechaDisponibilidad();
+                //Scripts.FormatFechaDisponibilidad();
             }
             else
                 MessageBox.Show("No se puede liberar un examen que ya se ha celebrado.");
