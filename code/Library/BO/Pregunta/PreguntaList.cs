@@ -251,6 +251,28 @@ namespace moleQule.Library.Instruction
             return flist;
         }
 
+        public static PreguntaList GetOrderedPrintList(IList<Pregunta> list)
+        {
+            CriteriaEx criteria = Pregunta.GetCriteria(Pregunta.OpenSession());
+
+            string lista_preguntas = "(";
+
+            foreach (Pregunta item in list)
+                lista_preguntas += item.Oid + ",";
+
+            if (lista_preguntas.EndsWith(","))
+                lista_preguntas = lista_preguntas.Substring(0, lista_preguntas.Length - 1) + ")";
+
+            Pregunta.BeginTransaction(criteria.SessionCode);
+            criteria.Query = PreguntaList.SELECT_LISTADO_ORDENADO(lista_preguntas);
+            criteria.Childs = false;
+
+            CloseSession(criteria.SessionCode);
+
+            //No criteria. Retrieve all de List
+            return DataPortal.Fetch<PreguntaList>(criteria);
+        }
+
         public static PreguntaList GetList(PreguntaExamenList lista)
         {
             PreguntaList list = new PreguntaList();
@@ -455,6 +477,23 @@ namespace moleQule.Library.Instruction
             PreguntaList preguntas = PreguntaList.GetList(false);
             return preguntas.GetPreguntasFiltradas(oid_modulo, oid_tema, 0, string.Empty, string.Empty, DateTime.MinValue, DateTime.MinValue,
                                          true, true, string.Empty, false, false, 0);
+        }
+
+        /// <summary>
+        /// Retrieve the complete list from db
+        /// </summary>
+        /// <returns>PreguntaList</returns>
+        public static PreguntaList GetPreguntasDisponiblesTema(long oid_tema, bool desarrollo, DateTime fecha_examen, long limit)
+        {
+            CriteriaEx criteria = Pregunta.GetCriteria(Pregunta.OpenSession());
+            criteria.Childs = false;
+            criteria.Query = PreguntaList.SELECT_DISPONIBLES_BY_TEMA(oid_tema, desarrollo, fecha_examen, limit);
+            //No criteria. Retrieve all de List
+            PreguntaList list = DataPortal.Fetch<PreguntaList>(criteria);
+
+            CloseSession(criteria.SessionCode);
+
+            return list;
         }
 
         /// <summary>
@@ -769,6 +808,27 @@ namespace moleQule.Library.Instruction
             return query;
         }
 
+        public static string SELECT_DISPONIBLES_BY_TEMA(long oid_tema, bool desarrollo, DateTime fecha_examen, long limit = 0)
+        {
+            string subquery = string.Empty;
+
+            if (oid_tema > 0) subquery += " AND P.\"OID_TEMA\" = " + oid_tema.ToString()
+                                        + " AND P.\"ACTIVA\" = 'true' AND P.\"RESERVADA\" = 'false'"
+                                        + " AND P.\"FECHA_DISPONIBILIDAD\" <= '" + fecha_examen.ToString("yyyy-MM-dd") + "'";
+
+            if (desarrollo)
+                subquery += " AND P.\"TIPO\" = 'Desarrollo'";
+            else
+                subquery += " AND P.\"TIPO\" = 'Test'";
+
+            subquery += " ORDER BY RANDOM()";
+            if (limit > 0) subquery += " LIMIT " + limit.ToString();
+
+            string query = Pregunta.SELECT(0, false, subquery);
+
+            return query;
+        }
+
         public static string SELECT_BY_TEMA_DUPLICADAS(long oid_tema)
         {
             string subquery = string.Empty;
@@ -820,6 +880,38 @@ namespace moleQule.Library.Instruction
                     //"WHERE p.\"OID\" NOT IN (" + lista_preguntas + ") AND p.\"OID_MODULO\" = " + oid.ToString() + " " +
                     "WHERE p.\"OID_MODULO\" = " + oid.ToString() + " " +
                     "ORDER BY \"ORDEN\", \"SERIAL\"";
+
+            return query;
+        }
+
+        public static string SELECT_LISTADO_ORDENADO(string lista_preguntas)
+        {
+            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
+            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
+            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
+            string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
+            string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
+            string h = nHManager.Instance.GetSQLTable(typeof(HistoriaRecord));
+
+            string query;
+
+            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
+
+            query = "SELECT " + 
+                    "       p.*, (m.\"NUMERO\" || ' ' || m.\"TEXTO\") AS \"MODULO\"," +
+                    "       (s.\"CODIGO\" || ' ' || s.\"TEXTO\") AS \"SUBMODULO\", s.\"CODIGO\"," +
+                    "       (t.\"CODIGO\" || ' ' || t.\"NOMBRE\") AS \"TEMA\"," +
+                    "       m.\"NUMERO_MODULO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
+                    "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
+                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
+                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
+                    "WHERE p.\"OID\" = IN " + lista_preguntas + " " +
+                    "ORDER BY m.\"NUMERO_ORDEN\", s.\"CODIGO_ORDEN\", t.\"NIVEL\"";
 
             return query;
         }

@@ -1057,7 +1057,7 @@ namespace moleQule.Library.Instruction
             for (int i = 1; i < 3; i++)
             {
                 if (i == 1 && alumnos.Count == 0)
-                    practicas.Add(ClasePracticaList.GetClasesOrdenadasPlanList(promocion.OidPlan, promocion.Oid, 0));
+                    practicas.Add(ClasePracticaList.GetClasesOrdenadasPlanList(promocion.Oid != 0 ? promocion.OidPlan : OidPlan, promocion.Oid, 0));
                 else
                     practicas.Add(ClasePracticaList.GetClasesOrdenadasPlanList(promocion.OidPlan, promocion.Oid, i));
             }

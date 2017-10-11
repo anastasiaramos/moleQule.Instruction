@@ -201,20 +201,35 @@ namespace moleQule.Face.Instruction
                 {
                     long count = item.NPreguntas;
 
-                    foreach (PreguntaInfo info in _preguntas)
-                    {
-                        if (count == 0) break;
-                        if (info.OidTema == item.OidTema
-                            && info.FechaDisponibilidad.Date <= DateTime.Today.Date
-                            && !info.Reservada
-                            && ((info.Tipo == ETipoPregunta.Desarrollo.ToString() && _entity.Desarrollo)
-                            || (info.Tipo == ETipoPregunta.Test.ToString() && !_entity.Desarrollo))
-                            && info.Activa)
+                    PreguntaList preguntas_tema = PreguntaList.GetPreguntasDisponiblesTema(item.OidTema, _entity.Desarrollo, _entity.FechaExamen, count);
+
+                    //foreach (PreguntaInfo info in _preguntas)
+                    //{
+                    //    if (count == 0) break;
+                    //    if (info.OidTema == item.OidTema
+                    //        && info.FechaDisponibilidad.Date <= DateTime.Today.Date
+                    //        && !info.Reservada
+                    //        && ((info.Tipo == ETipoPregunta.Desarrollo.ToString() && _entity.Desarrollo)
+                    //        || (info.Tipo == ETipoPregunta.Test.ToString() && !_entity.Desarrollo))
+                    //        && info.Activa)
+                    //    {
+                    //        Pregunta_Examen pregunta = Pregunta_Examen.NewChild(_entity);
+                    //        pregunta.OidPregunta = info.Oid;
+                    //        _entity.Pregunta_Examens.AddItem(pregunta);
+                    //        //_entity.MemoPreguntas += info.Oid.ToString() + ";";
+                    //        count--;
+                    //    }
+                    //}
+
+                    if (preguntas_tema != null)
+                    { 
+                        foreach (PreguntaInfo info in preguntas_tema)
                         {
+                            if (count == 0) break;
+                            
                             Pregunta_Examen pregunta = Pregunta_Examen.NewChild(_entity);
                             pregunta.OidPregunta = info.Oid;
                             _entity.Pregunta_Examens.AddItem(pregunta);
-                            //_entity.MemoPreguntas += info.Oid.ToString() + ";";
                             count--;
                         }
                     }

@@ -30,7 +30,7 @@ namespace moleQule.Face.Instruction
         protected Library.Instruction.HComboBoxSourceList _combo_modulos;
         protected Library.Instruction.HComboBoxSourceList _combo_tipo;
         protected Library.Instruction.HComboBoxSourceList _combo_idioma;
-        protected TemaList _temas = null;
+        protected SubmoduloList _submodulos = null;
 
         private new Preguntas List 
         { 
@@ -218,9 +218,9 @@ namespace moleQule.Face.Instruction
             Datos_Modulos.DataSource = _combo_modulos;
             PgMng.Grow(string.Empty, "Modulos");
 
-            _temas = TemaList.GetList(false);
-            _combo_modulos.Childs = new Library.Instruction.HComboBoxSourceList(_temas);
-            PgMng.Grow(string.Empty, "Temas");
+            _submodulos = SubmoduloList.GetList(false);
+            _combo_modulos.Childs = new Library.Instruction.HComboBoxSourceList(_submodulos);
+            PgMng.Grow(string.Empty, "Submodulos");
 
             if (_combo_modulos.Count > 1) Modulo_CB.SelectedItem = _combo_modulos[0];
         }
@@ -453,101 +453,112 @@ namespace moleQule.Face.Instruction
         {
             //Separamos las preguntas tipo test de las de desarrollo
             //PreguntaList _all = null;
+            SelectPreguntasReportForm select_report = new SelectPreguntasReportForm();
 
-            PreguntaList List = PreguntaList.GetList(Datos.List as IList<Pregunta>);
-            //_all = List;
-
-            //PreguntaList test = PreguntaList.SeparaPreguntasTest(_all);
-            //PreguntaList desarrollo = PreguntaList.SeparaPreguntasDesarrollo(_all);
-
-            //PreguntaExamens p_test = PreguntaExamens.NewChildList();
-            //PreguntaExamens p_desarrollo = PreguntaExamens.NewChildList();
-
-            //Preguntas preguntas = Preguntas.NewChildList();
-
-            //long orden = 1;
-
-            bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
-            CompanyInfo empresa = null;
-
-            if (defecto)
-                empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
-            while (empresa == null)
+            DialogResult select_result = select_report.ShowDialog();
+            if (select_result == DialogResult.OK)
             {
-                moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
-                DialogResult result = form.ShowDialog();
-
-                try
+                if (select_report.Source == PrintSource.All)
                 {
-                    if (result == DialogResult.OK)
-                        empresa = form.Selected as CompanyInfo;
+                    PreguntaList List = PreguntaList.GetList(Datos.List as IList<Pregunta>);
+                    //_all = List;
+
+                    //PreguntaList test = PreguntaList.SeparaPreguntasTest(_all);
+                    //PreguntaList desarrollo = PreguntaList.SeparaPreguntasDesarrollo(_all);
+
+                    //PreguntaExamens p_test = PreguntaExamens.NewChildList();
+                    //PreguntaExamens p_desarrollo = PreguntaExamens.NewChildList();
+
+                    //Preguntas preguntas = Preguntas.NewChildList();
+
+                    //long orden = 1;
+
+                    bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
+                    CompanyInfo empresa = null;
+
+                    if (defecto)
+                        empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
+                    while (empresa == null)
+                    {
+                        moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
+                        DialogResult result = form.ShowDialog();
+
+                        try
+                        {
+                            if (result == DialogResult.OK)
+                                empresa = form.Selected as CompanyInfo;
+                        }
+                        catch
+                        { empresa = null; }
+                    }
+
+                    //foreach (PreguntaInfo item in test)
+                    //{
+                    //    PreguntaExamen pexamen = PreguntaExamen.New();
+                    //    Pregunta pregunta_examen = Pregunta.New();
+                    //    pexamen.CopyValues(item);
+                    //    pregunta_examen.Base.CopyValues(item);
+                    //    pexamen.Orden = orden;
+                    //    orden++;
+                    //    p_test.AddItem(pexamen);
+                    //    pregunta_examen.MarkItemChild();
+                    //    preguntas.AddItem(pregunta_examen);
+                    //    foreach (RespuestaInfo res in item.Respuestas)
+                    //    {
+                    //        if (res.OidPregunta == item.Oid)
+                    //        {
+                    //            RespuestaExamen rexamen = RespuestaExamen.NewChild(pexamen);
+                    //            rexamen.CopyValues(res);
+                    //            pexamen.RespuestaExamens.AddItem(rexamen);
+                    //        }
+                    //    }
+                    //}
+
+                    //foreach (PreguntaInfo item in desarrollo)
+                    //{
+                    //    PreguntaExamen pexamen = PreguntaExamen.New();
+                    //    Pregunta pregunta_examen = Pregunta.New();
+                    //    pexamen.CopyValues(item);
+                    //    pregunta_examen.Base.CopyValues(item);
+                    //    pexamen.Orden = orden;
+                    //    orden++;
+                    //    p_desarrollo.AddItem(pexamen);
+                    //    pregunta_examen.MarkItemChild();
+                    //    preguntas.AddItem(pregunta_examen);
+                    //}
+
+                    ExamenReportMng reportMng = new ExamenReportMng(AppContext.ActiveSchema);
+
+                    if (List.Count > 0)
+                    {
+                        Library.Instruction.Reports.Preguntas.PreguntasListRpt report = reportMng.GetPreguntasListReport(List);
+                        report.SetParameterValue("Empresa", empresa.Name);
+                        if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                        ReportViewer.SetReport(report);
+                        ReportViewer.ShowDialog();
+                    }
+                    /*if (p_test.Count > 0)
+                    {
+                        Library.Instruction.Reports.Examen.PreguntasTestRpt r_test = reportMng.GetDetailPreguntasTestReport(p_test, preguntas);
+                        r_test.SetParameterValue("Empresa", empresa.Name);
+                        if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(r_test.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                        ReportViewer.SetReport(r_test);
+                        ReportViewer.ShowDialog();
+                    }
+
+                    if (p_desarrollo.Count > 0)
+                    {
+                        Library.Instruction.Reports.Examen.PreguntasDesarrolloRpt r_desarrollo = reportMng.GetDetailPreguntasDesarrolloReport(p_desarrollo, preguntas);
+                        r_desarrollo.SetParameterValue("Empresa", empresa.Name);
+                        if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(r_desarrollo.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                        ReportViewer.SetReport(r_desarrollo);
+                        ReportViewer.ShowDialog();
+                    }*/
                 }
-                catch
-                { empresa = null; }
+                else
+                { 
+                }
             }
-
-            //foreach (PreguntaInfo item in test)
-            //{
-            //    PreguntaExamen pexamen = PreguntaExamen.New();
-            //    Pregunta pregunta_examen = Pregunta.New();
-            //    pexamen.CopyValues(item);
-            //    pregunta_examen.Base.CopyValues(item);
-            //    pexamen.Orden = orden;
-            //    orden++;
-            //    p_test.AddItem(pexamen);
-            //    pregunta_examen.MarkItemChild();
-            //    preguntas.AddItem(pregunta_examen);
-            //    foreach (RespuestaInfo res in item.Respuestas)
-            //    {
-            //        if (res.OidPregunta == item.Oid)
-            //        {
-            //            RespuestaExamen rexamen = RespuestaExamen.NewChild(pexamen);
-            //            rexamen.CopyValues(res);
-            //            pexamen.RespuestaExamens.AddItem(rexamen);
-            //        }
-            //    }
-            //}
-
-            //foreach (PreguntaInfo item in desarrollo)
-            //{
-            //    PreguntaExamen pexamen = PreguntaExamen.New();
-            //    Pregunta pregunta_examen = Pregunta.New();
-            //    pexamen.CopyValues(item);
-            //    pregunta_examen.Base.CopyValues(item);
-            //    pexamen.Orden = orden;
-            //    orden++;
-            //    p_desarrollo.AddItem(pexamen);
-            //    pregunta_examen.MarkItemChild();
-            //    preguntas.AddItem(pregunta_examen);
-            //}
-
-            ExamenReportMng reportMng = new ExamenReportMng(AppContext.ActiveSchema);
-
-            if (List.Count > 0)
-            {
-                Library.Instruction.Reports.Preguntas.PreguntasListRpt report = reportMng.GetPreguntasListReport(List);
-                report.SetParameterValue("Empresa", empresa.Name);
-                if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
-                ReportViewer.SetReport(report);
-                ReportViewer.ShowDialog();
-            }
-            /*if (p_test.Count > 0)
-            {
-                Library.Instruction.Reports.Examen.PreguntasTestRpt r_test = reportMng.GetDetailPreguntasTestReport(p_test, preguntas);
-                r_test.SetParameterValue("Empresa", empresa.Name);
-                if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(r_test.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
-                ReportViewer.SetReport(r_test);
-                ReportViewer.ShowDialog();
-            }
-
-            if (p_desarrollo.Count > 0)
-            {
-                Library.Instruction.Reports.Examen.PreguntasDesarrolloRpt r_desarrollo = reportMng.GetDetailPreguntasDesarrolloReport(p_desarrollo, preguntas);
-                r_desarrollo.SetParameterValue("Empresa", empresa.Name);
-                if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(r_desarrollo.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
-                ReportViewer.SetReport(r_desarrollo);
-                ReportViewer.ShowDialog();
-            }*/
         }
 
         protected override bool DoFind(object value)
@@ -792,7 +803,7 @@ namespace moleQule.Face.Instruction
             {
                 if (CurrentTema != string.Empty)
                 {
-                    if (DoFilterByProperty(CurrentTema, Tema.Name))
+                    if (DoFilterByProperty(CurrentTema, Submodulo.Name))
                     {
                         _filter_type = IFilterType.Filter;
                         SetFilter(true);

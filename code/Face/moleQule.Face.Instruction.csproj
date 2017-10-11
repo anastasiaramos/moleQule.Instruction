@@ -1033,6 +1033,12 @@
     <Compile Include="Forms\Preguntas\RespuestasActionForm.Designer.cs">
       <DependentUpon>RespuestasActionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Preguntas\SelectPreguntasReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Preguntas\SelectPreguntasReportForm.Designer.cs">
+      <DependentUpon>SelectPreguntasReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Promociones\ClasesOrdenadasViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1664,6 +1670,9 @@
     <EmbeddedResource Include="Forms\Preguntas\RespuestasActionForm.resx">
       <DependentUpon>RespuestasActionForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Preguntas\SelectPreguntasReportForm.resx">
+      <DependentUpon>SelectPreguntasReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Promociones\ClasesOrdenadasViewForm.resx">
       <DependentUpon>ClasesOrdenadasViewForm.cs</DependentUpon>

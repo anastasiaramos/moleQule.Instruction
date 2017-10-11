@@ -783,20 +783,20 @@ namespace moleQule.Face.Instruction
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label3.Location = new System.Drawing.Point(562, 9);
+            this.label3.Location = new System.Drawing.Point(517, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
+            this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 145;
-            this.label3.Text = "Tema:";
+            this.label3.Text = "Submódulo:";
             // 
             // Tema_CB
             // 
             this.Tema_CB.DataSource = this.Datos_Temas;
             this.Tema_CB.DisplayMember = "Texto";
             this.Tema_CB.FormattingEnabled = true;
-            this.Tema_CB.Location = new System.Drawing.Point(600, 6);
+            this.Tema_CB.Location = new System.Drawing.Point(585, 6);
             this.Tema_CB.Name = "Tema_CB";
-            this.Tema_CB.Size = new System.Drawing.Size(78, 21);
+            this.Tema_CB.Size = new System.Drawing.Size(250, 21);
             this.Tema_CB.TabIndex = 144;
             this.Tema_CB.ValueMember = "Oid";
             this.Tema_CB.SelectedIndexChanged += new System.EventHandler(this.Tema_CB_SelectedIndexChanged);
@@ -810,7 +810,7 @@ namespace moleQule.Face.Instruction
             this.Modulos_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Modulos_BT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.Modulos_BT.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Modulos_BT.Location = new System.Drawing.Point(518, 5);
+            this.Modulos_BT.Location = new System.Drawing.Point(473, 5);
             this.Modulos_BT.Name = "Modulos_BT";
             this.HelpProvider.SetShowHelp(this.Modulos_BT, true);
             this.Modulos_BT.Size = new System.Drawing.Size(22, 22);
@@ -822,7 +822,7 @@ namespace moleQule.Face.Instruction
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.label2.Location = new System.Drawing.Point(183, 8);
+            this.label2.Location = new System.Drawing.Point(138, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 1;
@@ -833,7 +833,7 @@ namespace moleQule.Face.Instruction
             this.Modulo_CB.DataSource = this.Datos_Modulos;
             this.Modulo_CB.DisplayMember = "Texto";
             this.Modulo_CB.FormattingEnabled = true;
-            this.Modulo_CB.Location = new System.Drawing.Point(230, 5);
+            this.Modulo_CB.Location = new System.Drawing.Point(185, 5);
             this.Modulo_CB.Name = "Modulo_CB";
             this.Modulo_CB.Size = new System.Drawing.Size(287, 21);
             this.Modulo_CB.TabIndex = 0;

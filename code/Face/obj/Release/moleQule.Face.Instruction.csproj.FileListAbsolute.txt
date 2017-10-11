@@ -624,3 +624,4 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Rel
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.csproj.GenerateResource.Cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.pdb
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.SelectPreguntasReportForm.resources
