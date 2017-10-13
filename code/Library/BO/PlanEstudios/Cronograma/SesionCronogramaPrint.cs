@@ -64,10 +64,10 @@ namespace moleQule.Library.Instruction
                     _base.Modulo = modulo.NumeroModulo + " " + modulo.Texto;
             }
 
-            if (_base.Record.OidClaseTeorica != 0)
-                _base.Duracion = "1";
-            else
-                _base.Duracion = "5";
+            //if (_base.Record.OidClaseTeorica != 0)
+            //    _base.Duracion = "1";
+            //else
+            //    _base.Duracion = "5";
 
         }
 

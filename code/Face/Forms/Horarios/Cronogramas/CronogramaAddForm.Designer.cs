@@ -34,7 +34,7 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.Label observacionesLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CronogramaAddForm));
             this.Plan_CB = new System.Windows.Forms.ComboBox();
             this.Datos_Planes = new System.Windows.Forms.BindingSource(this.components);
@@ -55,6 +55,7 @@ namespace moleQule.Face.Instruction
             this.CLB_2 = new System.Windows.Forms.CheckedListBox();
             this.Semana_NUD = new System.Windows.Forms.NumericUpDown();
             this.Generar_BT = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             oidPlanLabel = new System.Windows.Forms.Label();
             oidPromocionLabel = new System.Windows.Forms.Label();
             observacionesLabel = new System.Windows.Forms.Label();
@@ -83,6 +84,7 @@ namespace moleQule.Face.Instruction
             this.Sabado_GB.SuspendLayout();
             this.Semana_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Semana_NUD)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelesV
@@ -172,11 +174,11 @@ namespace moleQule.Face.Instruction
             // oidPromocionLabel
             // 
             oidPromocionLabel.AutoSize = true;
-            oidPromocionLabel.Location = new System.Drawing.Point(29, 61);
+            oidPromocionLabel.Location = new System.Drawing.Point(50, 61);
             oidPromocionLabel.Name = "oidPromocionLabel";
-            oidPromocionLabel.Size = new System.Drawing.Size(60, 13);
+            oidPromocionLabel.Size = new System.Drawing.Size(39, 13);
             oidPromocionLabel.TabIndex = 2;
-            oidPromocionLabel.Text = "Promoción:";
+            oidPromocionLabel.Text = "Curso:";
             // 
             // observacionesLabel
             // 
@@ -250,7 +252,7 @@ namespace moleQule.Face.Instruction
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.Sesiones_Grid);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.Practicas_NUD);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(this.Sabado_GB);
@@ -277,7 +279,7 @@ namespace moleQule.Face.Instruction
             this.HoraInicio_CBC,
             this.nHorasDataGridViewTextBoxColumn});
             this.Sesiones_Grid.DataSource = this.Datos_Sesiones;
-            this.Sesiones_Grid.Location = new System.Drawing.Point(363, 148);
+            this.Sesiones_Grid.Location = new System.Drawing.Point(10, 26);
             this.Sesiones_Grid.Name = "Sesiones_Grid";
             this.Sesiones_Grid.Size = new System.Drawing.Size(203, 125);
             this.Sesiones_Grid.TabIndex = 25;
@@ -302,8 +304,8 @@ namespace moleQule.Face.Instruction
             // nHorasDataGridViewTextBoxColumn
             // 
             this.nHorasDataGridViewTextBoxColumn.DataPropertyName = "NHoras";
-            dataGridViewCellStyle1.NullValue = null;
-            this.nHorasDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.NullValue = null;
+            this.nHorasDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.nHorasDataGridViewTextBoxColumn.HeaderText = "Nº Horas";
             this.nHorasDataGridViewTextBoxColumn.Name = "nHorasDataGridViewTextBoxColumn";
             this.nHorasDataGridViewTextBoxColumn.Width = 70;
@@ -327,7 +329,7 @@ namespace moleQule.Face.Instruction
             // Sabado_GB
             // 
             this.Sabado_GB.Controls.Add(this.CLB_3);
-            this.Sabado_GB.Location = new System.Drawing.Point(242, 138);
+            this.Sabado_GB.Location = new System.Drawing.Point(232, 138);
             this.Sabado_GB.Name = "Sabado_GB";
             this.Sabado_GB.Size = new System.Drawing.Size(115, 164);
             this.Sabado_GB.TabIndex = 21;
@@ -412,6 +414,16 @@ namespace moleQule.Face.Instruction
             this.Generar_BT.UseVisualStyleBackColor = true;
             this.Generar_BT.Click += new System.EventHandler(this.Generar_BT_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.Sesiones_Grid);
+            this.groupBox2.Location = new System.Drawing.Point(351, 138);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(220, 163);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Distribución horas";
+            // 
             // CronogramaAddForm
             // 
             this.ClientSize = new System.Drawing.Size(596, 487);
@@ -446,6 +458,7 @@ namespace moleQule.Face.Instruction
             this.Sabado_GB.ResumeLayout(false);
             this.Semana_GB.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Semana_NUD)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -471,5 +484,6 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.DataGridView Sesiones_Grid;
         private System.Windows.Forms.DataGridViewComboBoxColumn HoraInicio_CBC;
         private System.Windows.Forms.DataGridViewTextBoxColumn nHorasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

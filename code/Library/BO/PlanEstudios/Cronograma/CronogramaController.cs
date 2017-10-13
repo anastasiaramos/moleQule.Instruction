@@ -68,7 +68,8 @@ namespace moleQule.Library.Instruction
             _n_practicas = practicas_semana;
             _practicas_semana = practicas_semana;
 
-            _duracion_sesiones = cronograma.RellenaHorasSemana(activas_dia, activas_sabado);
+            if (cronograma.Configuracion != null || cronograma.Configuracion.Count == 0)
+                _duracion_sesiones = cronograma.RellenaHorasSemana(activas_dia, activas_sabado);
 
             for (int i = 0; i < _practicas.Count; i++)
             {
@@ -231,11 +232,11 @@ namespace moleQule.Library.Instruction
         /// <param name="index">índice de la sesión en la que se va a insertar la clase práctica</param>
         /// <param name="incompatible">campo Incompatible de la práctica</param>
         /// <returns></returns>
-        public bool LaboratorioLibre(int index, long laboratorio, ListaSesiones lista_sesiones)
+        public bool LaboratorioLibre(int index, long laboratorio, ListaSesiones lista_sesiones, long duracion)
         {
             //se comprueba el horario actual, por si el otro grupo tuviera una práctica
             //con el mismo valor de campo Incompatible
-            for (int i = index; i < index + 5; i++)
+            for (int i = index; i < index + duracion; i++)
             {
                 if (lista_sesiones[i].Laboratorio == laboratorio)
                     return false;
@@ -419,9 +420,10 @@ namespace moleQule.Library.Instruction
         }
 
         public bool AsignaSesionPractica(int hora_inicial,
-                                        int n_horas, ListaSesiones lista_sesiones, long sesiones_asignadas)
+                                        out int n_horas, ListaSesiones lista_sesiones, long sesiones_asignadas)
         {
             int n_grupo = GetGrupoConMenosPracticas();
+            n_horas = 5;
 
             for (int i = 1; i < _practicas.Count; i++)
             {
@@ -444,14 +446,15 @@ namespace moleQule.Library.Instruction
                             !PosibleAsignarPractica(clase, lista_sesiones) || !PosibleAsignarModulo(clase) ||
                             !PosibleAsignarSubmodulo(clase) || !PosibleAsignarClase(clase) ||
                             (clase.Laboratorio > 0 &&
-                            !LaboratorioLibre(hora_inicial, clase.Laboratorio, lista_sesiones)))
+                            !LaboratorioLibre(hora_inicial, clase.Laboratorio, lista_sesiones, clase.Duracion)))
                         {
                             indice_practica++;
                             continue;
                         }
 
-                        if (AsignaInstructorPractica(clase, hora_inicial, n_horas, lista_sesiones, sesiones_asignadas))
+                        if (AsignaInstructorPractica(clase, hora_inicial + (5 - (int)clase.Duracion), (int)clase.Duracion, lista_sesiones, sesiones_asignadas))
                         {
+                            n_horas = (int)clase.Duracion;
                             _practicas_programadas_grupo[n_grupo]++;
                             break;
                         }
@@ -610,7 +613,7 @@ namespace moleQule.Library.Instruction
                         if (sesion.OidClasePractica > 0)
                         {
                             ClasePracticaInfo practica = _practicas[(int)lista[i].Grupo].GetItem(sesion.OidClasePractica);
-                            sesion.Duracion = "5:00";
+                            sesion.Duracion = practica.Duracion.ToString() + ":00";
                             sesion.Texto = practica.Alias + "G" + lista[i].Grupo.ToString();
                             sesion.Clase = practica.Alias + "G" + lista[i].Grupo.ToString();
                             sesion.Modulo = practica.Modulo;
@@ -628,6 +631,8 @@ namespace moleQule.Library.Instruction
 
                 }
                 semana++;
+                while (inicio_semana.DayOfWeek != DayOfWeek.Monday)
+                    inicio_semana = inicio_semana.AddDays(-1);
                 inicio_semana = inicio_semana.AddDays(7);
                 if (inicio_semana > _fin_cronograma) break;
             }
@@ -752,27 +757,32 @@ namespace moleQule.Library.Instruction
                 total_asignadas = num_sesiones_asignadas;
 
                 //CLASES PRACTICAS
-                practica_asignada = true;
-
-                while (!PracticasTotalesAsignadas() && practica_asignada)
+                if (semana >= _comienzo_practicas)
                 {
-                    //Sesión del sábado
-                    if (SesionDisponible(70, 5, lista_sesiones))
-                    {
-                        practica_asignada = AsignaSesionPractica(70, 5, lista_sesiones, sesiones_asignadas);
-                    }
+                    practica_asignada = true;
 
-                    //Resto de sesiones
-                    int hora_incial = BuscaSesionPracticaLibre(5, lista_sesiones);
-                    if (hora_incial != -1)
+                    while (!PracticasTotalesAsignadas() && practica_asignada)
                     {
-                        practica_asignada = AsignaSesionPractica(hora_incial, 5, lista_sesiones, sesiones_asignadas);
-                    }
-                    else
-                        practica_asignada = false;
+                        int n_horas = 0;
 
-                    if (practica_asignada)
-                        num_sesiones_asignadas += 5;
+                        //Sesión del sábado
+                        if (SesionDisponible(70, 5, lista_sesiones))
+                        {
+                            practica_asignada = AsignaSesionPractica(70, out n_horas, lista_sesiones, sesiones_asignadas);
+                        }
+
+                        //Resto de sesiones
+                        int hora_incial = BuscaSesionPracticaLibre(5, lista_sesiones);
+                        if (hora_incial != -1)
+                        {
+                            practica_asignada = AsignaSesionPractica(hora_incial, out n_horas, lista_sesiones, sesiones_asignadas);
+                        }
+                        else
+                            practica_asignada = false;
+
+                        if (practica_asignada)
+                            num_sesiones_asignadas += n_horas;
+                    }
                 }
 
                 //TEORICAS
@@ -782,7 +792,7 @@ namespace moleQule.Library.Instruction
                     int n_horas = 0;
                     hora_inicial = GetSiguienteSesionLibre(out n_horas, hora_inicial, lista_sesiones);
 
-                    if (n_horas == 1 && (hora_inicial+1) < lista_sesiones.Count && lista_sesiones[hora_inicial +1].OidClasePractica != 0) continue;
+                    //if (n_horas == 1 && (hora_inicial+1) < lista_sesiones.Count && lista_sesiones[hora_inicial +1].OidClasePractica != 0) continue;
 
                     if (hora_inicial == -1) break;
                     teorica_asignada = AsignaSesionTeorica(hora_inicial, n_horas, lista_sesiones, sesiones_asignadas, true);

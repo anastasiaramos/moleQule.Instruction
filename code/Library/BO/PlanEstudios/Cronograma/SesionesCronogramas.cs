@@ -196,14 +196,14 @@ namespace moleQule.Library.Instruction
             string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
             esquema = "\"" + esquema + "\"";
 
-            query = "SELECT s.*, '5:00' AS DURACION, p.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
+            query = "SELECT s.*, p.\"DURACION\" AS DURACION, p.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
                     "FROM " + esquema + ".\"" + sesion_cronograma + "\" AS s " +
                         "INNER JOIN " + esquema + ".\"" + practica + "\" AS p ON (s.\"OID_CLASE_PRACTICA\" = p.\"OID\") " +
                         "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (p.\"OID_MODULO\" = m.\"OID\") " +
                     "WHERE \"OID_CRONOGRAMA\" = " + oid_cronograma.ToString() + " " +
                     "AND \"OID_CLASE_PRACTICA\" <> 0 " +
                     "UNION " +
-                    "SELECT s.*, '1:00' AS DURACION, t.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
+                    "SELECT s.*, t.\"DURACION\" AS DURACION, t.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
                     "FROM " + esquema + ".\"" + sesion_cronograma + "\" AS s " +
                         "INNER JOIN " + esquema + ".\"" + teorica + "\" AS t ON (s.\"OID_CLASE_TEORICA\" = t.\"OID\") " +
                         "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (t.\"OID_MODULO\" = m.\"OID\") " +

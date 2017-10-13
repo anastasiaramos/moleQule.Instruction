@@ -38,20 +38,26 @@
             this.Promocion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCreacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.Main_Panel)).BeginInit();
             this.Main_Panel.Panel1.SuspendLayout();
             this.Main_Panel.Panel2.SuspendLayout();
             this.Main_Panel.SuspendLayout();
             this.Letras_Panel.SuspendLayout();
             this.Campos_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Content_Panel)).BeginInit();
             this.Content_Panel.Panel1.SuspendLayout();
             this.Content_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Search_Panel)).BeginInit();
             this.Search_Panel.Panel1.SuspendLayout();
             this.Search_Panel.Panel2.SuspendLayout();
             this.Search_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosSearch)).BeginInit();
-            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animation)).BeginInit();
+            this.Progress_Panel.SuspendLayout();
+            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosLocal_BS)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             this.SuspendLayout();
@@ -276,7 +282,7 @@
             this.HelpProvider.SetShowHelp(this.Content_Panel.Panel2, true);
             this.HelpProvider.SetShowHelp(this.Content_Panel, true);
             this.Content_Panel.Size = new System.Drawing.Size(1008, 586);
-            this.Content_Panel.SplitterDistance = 560;
+            this.Content_Panel.SplitterDistance = 557;
             // 
             // AdvSearch_BT
             // 
@@ -285,9 +291,38 @@
             // Search_Panel
             // 
             // 
+            // Search_Panel.Panel1
+            // 
+            this.HelpProvider.SetShowHelp(this.Search_Panel.Panel1, true);
+            // 
+            // Search_Panel.Panel2
+            // 
+            this.HelpProvider.SetShowHelp(this.Search_Panel.Panel2, true);
+            this.HelpProvider.SetShowHelp(this.Search_Panel, true);
+            // 
+            // Filters_LB
+            // 
+            this.HelpProvider.SetShowHelp(this.Filters_LB, true);
+            // 
+            // ValorIni_TB
+            // 
+            this.HelpProvider.SetShowHelp(this.ValorIni_TB, true);
+            // 
+            // ValorFin_TB
+            // 
+            this.HelpProvider.SetShowHelp(this.ValorFin_TB, true);
+            // 
             // ProgressBK_Panel
             // 
-            this.ProgressBK_Panel.Location = new System.Drawing.Point(300, 274);
+            this.ProgressBK_Panel.Size = new System.Drawing.Size(1008, 702);
+            // 
+            // ProgressInfo_PB
+            // 
+            this.ProgressInfo_PB.Location = new System.Drawing.Point(472, 404);
+            // 
+            // Progress_PB
+            // 
+            this.Progress_PB.Location = new System.Drawing.Point(472, 319);
             // 
             // DatosLocal_BS
             // 
@@ -328,7 +363,7 @@
             this.Tabla.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.Tabla.RowHeadersWidth = 25;
             this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Tabla.Size = new System.Drawing.Size(1008, 560);
+            this.Tabla.Size = new System.Drawing.Size(1008, 557);
             this.Tabla.TabIndex = 2;
             // 
             // PlanEstudios
@@ -341,7 +376,7 @@
             // Promocion
             // 
             this.Promocion.DataPropertyName = "Promocion";
-            this.Promocion.HeaderText = "Promoción";
+            this.Promocion.HeaderText = "Curso";
             this.Promocion.Name = "Promocion";
             this.Promocion.ReadOnly = true;
             // 
@@ -371,25 +406,34 @@
             this.Name = "CronogramaMngForm";
             this.HelpProvider.SetShowHelp(this, true);
             this.Text = "Cronogramas:";
+            this.Controls.SetChildIndex(this.ProgressInfo_PB, 0);
+            this.Controls.SetChildIndex(this.Progress_PB, 0);
             this.Controls.SetChildIndex(this.ProgressBK_Panel, 0);
             this.Controls.SetChildIndex(this.Main_Panel, 0);
             this.Main_Panel.Panel1.ResumeLayout(false);
             this.Main_Panel.Panel1.PerformLayout();
             this.Main_Panel.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Main_Panel)).EndInit();
             this.Main_Panel.ResumeLayout(false);
             this.Letras_Panel.ResumeLayout(false);
             this.Letras_Panel.PerformLayout();
             this.Campos_Panel.ResumeLayout(false);
             this.Campos_Panel.PerformLayout();
             this.Content_Panel.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Content_Panel)).EndInit();
             this.Content_Panel.ResumeLayout(false);
             this.Search_Panel.Panel1.ResumeLayout(false);
             this.Search_Panel.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Search_Panel)).EndInit();
             this.Search_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosSearch)).EndInit();
-            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animation)).EndInit();
+            this.Progress_Panel.ResumeLayout(false);
+            this.Progress_Panel.PerformLayout();
+            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DatosLocal_BS)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             this.ResumeLayout(false);

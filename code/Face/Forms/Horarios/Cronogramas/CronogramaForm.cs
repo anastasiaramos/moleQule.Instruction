@@ -71,6 +71,8 @@ namespace moleQule.Face.Instruction
             visibles.Add(Duracion.Name);
             visibles.Add(Ordenar.Name);
             visibles.Add(Indice.Name);
+            visibles.Add(Fecha.Name);
+            visibles.Add(Hora.Name);
 
             ControlTools.ShowDataGridColumns(Sesiones_Grid, visibles);
 
@@ -84,7 +86,9 @@ namespace moleQule.Face.Instruction
                                                 - Sesiones_Grid.Columns[Numero.Name].Width
                                                 - Sesiones_Grid.Columns[Ordenar.Name].Width
                                                 - Sesiones_Grid.Columns[Indice.Name].Width
-                                                - Sesiones_Grid.Columns[Duracion.Name].Width);
+                                                - Sesiones_Grid.Columns[Duracion.Name].Width
+                                                - Sesiones_Grid.Columns[Fecha.Name].Width
+                                                - Sesiones_Grid.Columns[Hora.Name].Width);
 
             Sesiones_Grid.Columns[Clase.Name].Width = (int)(rowWidth * 0.995);
         }

@@ -343,13 +343,26 @@ namespace moleQule.Face.Instruction
 
                 if (clases_sabado > 0) total_dias = 6;
 
+                _entity.Configuracion = Sesiones_Promociones.NewChildList();
+
+                for (int row_index = 0; row_index < Datos_Sesiones.List.Count; row_index++)
+                {
+                    Sesion_Promocion sp = Sesion_Promocion.NewChild(_entity);
+                    Sesion_Promocion sp_row = ((Sesion_Promocion)Datos_Sesiones.List[row_index]);
+                    sp.Hora = sp_row.Hora;
+                    sp.HoraInicio = sp_row.HoraInicio;
+                    sp.NHoras = sp_row.NHoras;
+                    _entity.Configuracion.Add(sp);
+                }
+
                 moleQule.Library.Timer t = new moleQule.Library.Timer();
                 //t.Start();
                 //t.Record("inicio");
                 PromocionInfo promocion = PromocionInfo.Get(_entity.OidPromocion, false);
+                PlanEstudiosInfo plan = PlanEstudiosInfo.Get(_entity.OidPlan, false);
                 if (promocion != null)
                 {
-                    if (_entity.GeneraCronograma(promocion.FechaInicio, DateTime.MaxValue, (int)Semana_NUD.Value, clases_dia, clases_sabado, total_dias, (int)Practicas_NUD.Value, t, activas_dia, activas_sabado))
+                    if (_entity.GeneraCronograma(promocion.Oid != 0 ? promocion.FechaInicio : plan.Fecha, DateTime.MaxValue, (int)Semana_NUD.Value, clases_dia, clases_sabado, total_dias, (int)Practicas_NUD.Value, t, activas_dia, activas_sabado))
                     {
                         //t.Record("fin");
                         //MessageBox.Show(t.GetCronos());

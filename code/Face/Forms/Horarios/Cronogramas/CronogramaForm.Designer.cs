@@ -31,6 +31,8 @@ namespace moleQule.Face.Instruction
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CronogramaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +45,8 @@ namespace moleQule.Face.Instruction
             this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Semana = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asignatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Duracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -98,6 +102,7 @@ namespace moleQule.Face.Instruction
             // 
             // Paneles2
             // 
+            this.ErrorMng_EP.SetError(this.Paneles2, "F1 Ayuda        ");
             // 
             // Paneles2.Panel1
             // 
@@ -128,7 +133,7 @@ namespace moleQule.Face.Instruction
             // 
             // Progress_Panel
             // 
-            this.Progress_Panel.Location = new System.Drawing.Point(409, 251);
+            this.Progress_Panel.Location = new System.Drawing.Point(409, 103);
             // 
             // ProgressBK_Panel
             // 
@@ -136,11 +141,11 @@ namespace moleQule.Face.Instruction
             // 
             // ProgressInfo_PB
             // 
-            this.ProgressInfo_PB.Location = new System.Drawing.Point(557, 409);
+            this.ProgressInfo_PB.Location = new System.Drawing.Point(551, 409);
             // 
             // Progress_PB
             // 
-            this.Progress_PB.Location = new System.Drawing.Point(557, 324);
+            this.Progress_PB.Location = new System.Drawing.Point(551, 324);
             // 
             // groupBox1
             // 
@@ -177,11 +182,11 @@ namespace moleQule.Face.Instruction
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 61);
+            this.label2.Location = new System.Drawing.Point(59, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Promoción:";
+            this.label2.Text = "Curso:";
             // 
             // Promocion_TB
             // 
@@ -216,6 +221,8 @@ namespace moleQule.Face.Instruction
             this.Indice,
             this.Semana,
             this.Dia,
+            this.Fecha,
+            this.Hora,
             this.Asignatura,
             this.Numero,
             this.Duracion,
@@ -236,7 +243,7 @@ namespace moleQule.Face.Instruction
             this.Indice.DefaultCellStyle = dataGridViewCellStyle1;
             this.Indice.HeaderText = "Índice";
             this.Indice.Name = "Indice";
-            this.Indice.Width = 70;
+            this.Indice.Width = 50;
             // 
             // Semana
             // 
@@ -251,6 +258,28 @@ namespace moleQule.Face.Instruction
             this.Dia.HeaderText = "Día";
             this.Dia.Name = "Dia";
             this.Dia.Width = 40;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "Fecha";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.Fecha.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.Width = 80;
+            // 
+            // Hora
+            // 
+            this.Hora.DataPropertyName = "Hora";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "t";
+            dataGridViewCellStyle3.NullValue = null;
+            this.Hora.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.Width = 60;
             // 
             // Asignatura
             // 
@@ -269,10 +298,10 @@ namespace moleQule.Face.Instruction
             // 
             // Duracion
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = "1";
-            this.Duracion.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = "1";
+            this.Duracion.DefaultCellStyle = dataGridViewCellStyle4;
             this.Duracion.HeaderText = "Duración";
             this.Duracion.Name = "Duracion";
             this.Duracion.ReadOnly = true;
@@ -281,7 +310,7 @@ namespace moleQule.Face.Instruction
             // Clase
             // 
             this.Clase.DataPropertyName = "Texto";
-            this.Clase.HeaderText = "Tema";
+            this.Clase.HeaderText = "Clase";
             this.Clase.Name = "Clase";
             // 
             // Ordenar
@@ -334,15 +363,17 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.TextBox Plan_TB;
         protected System.Windows.Forms.BindingSource Datos_Sesiones;
         protected System.Windows.Forms.DataGridView Sesiones_Grid;
+        private System.Windows.Forms.Label label3;
+        protected System.Windows.Forms.TextBox Observaciones_TB;
         private System.Windows.Forms.DataGridViewTextBoxColumn Semana;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asignatura;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clase;
         private System.Windows.Forms.DataGridViewImageColumn Ordenar;
         protected System.Windows.Forms.DataGridViewTextBoxColumn Indice;
         protected System.Windows.Forms.DataGridViewTextBoxColumn Duracion;
-        private System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.TextBox Observaciones_TB;
     }
 }

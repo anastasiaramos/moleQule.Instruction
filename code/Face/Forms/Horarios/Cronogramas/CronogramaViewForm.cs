@@ -113,7 +113,7 @@ namespace moleQule.Face.Instruction
                                 if (info.OidClasePractica != 0)
                                 {
                                     row.DefaultCellStyle.BackColor = Color.RoyalBlue;
-                                    row.Cells[Duracion.Name].Value = 5;
+                                    row.Cells[Duracion.Name].Value = info.Duracion;
                                 }
                                 else
                                 {

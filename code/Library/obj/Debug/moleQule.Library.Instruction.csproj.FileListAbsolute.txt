@@ -90,4 +90,3 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\moleQule.Library.Instruction.XML
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csprojResolveAssemblyReference.cache
