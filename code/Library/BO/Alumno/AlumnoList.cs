@@ -672,16 +672,14 @@ namespace moleQule.Library.Instruction
             query += @" AND A.""OID"" NOT IN (
                             SELECT ""OID_ALUMNO""
                             FROM (
-	                            SELECT  DISTINCT MAX(xi.""FECHA_EXAMEN"") AS ""FECHA_EXAMEN"", COUNT(xi.""FECHA_EXAMEN"") AS ""PRESENTADOS"", ""OID_ALUMNO""
-                                FROM    (	SELECT AE.""OID"", AE.""OID_ALUMNO"", EX.""FECHA_EXAMEN""
+	                            SELECT  xi.""PRESENTADOS"", ""OID_ALUMNO""
+                                FROM    (	SELECT AE.""OID_ALUMNO"",COUNT(AE.""OID_ALUMNO"") AS ""PRESENTADOS""
 						                    FROM " + alumno_examen + @" AS AE
 						                    INNER JOIN " + examen + @" AS EX ON AE.""OID_EXAMEN"" = EX.""OID""
-						                    WHERE AE.""PRESENTADO"" = 'TRUE' AND EX.""OID_MODULO"" = " + oid_modulo.ToString() + @" AND EX.""FECHA_EXAMEN"" > '2012-08-31' AND EX.""FECHA_EXAMEN"" < '" + fecha_examen.ToString("yyyy-MM-dd") + @"' AND EX.""DESARROLLO"" = " + desarrollo.ToString() + @") xi
-				                            GROUP BY ""OID_ALUMNO""
-				                            ORDER BY ""FECHA_EXAMEN""
+						                    WHERE AE.""PRESENTADO"" = 'TRUE' AND EX.""OID_MODULO"" = " + oid_modulo.ToString() + @" AND EX.""FECHA_EXAMEN"" > '" + fecha_examen.Year.ToString() + @"-01-01' AND EX.""FECHA_EXAMEN"" < '" + fecha_examen.ToString("yyyy-MM-dd") + @"' AND EX.""DESARROLLO"" = " + desarrollo.ToString() 
+                                            + @" GROUP BY ""OID_ALUMNO"") xi
 	                      ) AS Q
-                            WHERE ""PRESENTADOS"" % 3 = 0 AND ""FECHA_EXAMEN"" != '9999-12-31'
-	                            AND date '" + fecha_examen.ToString("yyyy-MM-dd") + @"' - interval '1 year' <= ""FECHA_EXAMEN"")";
+                            WHERE ""PRESENTADOS"" >= 3)";
 
 
             if (oid_examen > 0)
