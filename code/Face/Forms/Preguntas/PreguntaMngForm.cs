@@ -556,7 +556,48 @@ namespace moleQule.Face.Instruction
                     }*/
                 }
                 else
-                { 
+                {
+                    PreguntaList preguntas = PreguntaList.GetList(Datos.List as IList<Pregunta>);
+                    string lista_preguntas = "(";
+                    foreach (PreguntaInfo item in preguntas)
+                        lista_preguntas += item.Oid.ToString() + ",";
+                    if (lista_preguntas.IndexOf(",") > 0)
+                        lista_preguntas = lista_preguntas.Substring(0, lista_preguntas.LastIndexOf(","));
+                    lista_preguntas += ")";
+
+                    InformePreguntasList List = InformePreguntasList.GetList(lista_preguntas);
+
+                    ExamenReportMng reportMng = new ExamenReportMng(AppContext.ActiveSchema);
+
+                    if (List.Count > 0)
+                    {
+
+                        bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
+                        CompanyInfo empresa = null;
+
+                        if (defecto)
+                            empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
+                        while (empresa == null)
+                        {
+                            moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
+                            DialogResult result = form.ShowDialog();
+
+                            try
+                            {
+                                if (result == DialogResult.OK)
+                                    empresa = form.Selected as CompanyInfo;
+                            }
+                            catch
+                            { empresa = null; }
+                        }
+
+                        moleQule.Library.Instruction.Reports.Preguntas.InformePreguntasRpt report = reportMng.GetInformePreguntasReport(List);
+                        report.SetParameterValue("Empresa", empresa.Name);
+                        if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                        ReportViewer.SetReport(report);
+                        ReportViewer.ShowDialog();
+                    }
+
                 }
             }
         }

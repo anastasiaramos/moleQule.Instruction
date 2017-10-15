@@ -53,24 +53,32 @@ namespace moleQule.Face.Instruction
             this.Modulo_TB = new System.Windows.Forms.TextBox();
             this.Arbol_TV = new System.Windows.Forms.TreeView();
             this.Iconos_IL = new System.Windows.Forms.ImageList(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
             this.PanelesV.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Paneles2)).BeginInit();
             this.Paneles2.Panel1.SuspendLayout();
             this.Paneles2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).BeginInit();
-            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animation)).BeginInit();
+            this.Progress_Panel.SuspendLayout();
+            this.ProgressBK_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).BeginInit();
             this.Leyenda_GB.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SC1)).BeginInit();
             this.SC1.Panel1.SuspendLayout();
             this.SC1.Panel2.SuspendLayout();
             this.SC1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SC2)).BeginInit();
             this.SC2.Panel1.SuspendLayout();
             this.SC2.Panel2.SuspendLayout();
             this.SC2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SC3)).BeginInit();
             this.SC3.Panel1.SuspendLayout();
             this.SC3.Panel2.SuspendLayout();
             this.SC3.SuspendLayout();
@@ -94,20 +102,23 @@ namespace moleQule.Face.Instruction
             this.HelpProvider.SetShowHelp(this.PanelesV.Panel2, true);
             this.HelpProvider.SetShowHelp(this.PanelesV, true);
             this.PanelesV.Size = new System.Drawing.Size(894, 792);
-            this.PanelesV.SplitterDistance = 751;
+            this.PanelesV.SplitterDistance = 737;
             // 
             // Submit_BT
             // 
+            this.Submit_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Submit_BT.Location = new System.Drawing.Point(251, 6);
             this.HelpProvider.SetShowHelp(this.Submit_BT, true);
             // 
             // Cancel_BT
             // 
+            this.Cancel_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Cancel_BT.Location = new System.Drawing.Point(341, 6);
             this.HelpProvider.SetShowHelp(this.Cancel_BT, true);
             // 
             // Paneles2
             // 
+            this.ErrorMng_EP.SetError(this.Paneles2, "F1 Ayuda        ");
             // 
             // Paneles2.Panel1
             // 
@@ -117,16 +128,20 @@ namespace moleQule.Face.Instruction
             // 
             this.HelpProvider.SetShowHelp(this.Paneles2.Panel2, true);
             this.HelpProvider.SetShowHelp(this.Paneles2, true);
-            this.Paneles2.Size = new System.Drawing.Size(892, 38);
-            this.Paneles2.SplitterDistance = 37;
+            this.Paneles2.Size = new System.Drawing.Size(892, 52);
+            this.Paneles2.SplitterDistance = 30;
             // 
             // Imprimir_Button
             // 
+            this.Imprimir_Button.Enabled = true;
+            this.Imprimir_Button.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Imprimir_Button.Location = new System.Drawing.Point(161, 6);
             this.HelpProvider.SetShowHelp(this.Imprimir_Button, true);
+            this.Imprimir_Button.Visible = true;
             // 
             // Docs_BT
             // 
+            this.Docs_BT.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Docs_BT.Location = new System.Drawing.Point(300, 6);
             this.HelpProvider.SetShowHelp(this.Docs_BT, true);
             // 
@@ -134,9 +149,21 @@ namespace moleQule.Face.Instruction
             // 
             this.Datos.DataSource = typeof(moleQule.Library.Instruction.PlantillaExamen);
             // 
+            // Progress_Panel
+            // 
+            this.Progress_Panel.Location = new System.Drawing.Point(268, 96);
+            // 
             // ProgressBK_Panel
             // 
-            this.ProgressBK_Panel.Location = new System.Drawing.Point(238, 314);
+            this.ProgressBK_Panel.Size = new System.Drawing.Size(894, 792);
+            // 
+            // ProgressInfo_PB
+            // 
+            this.ProgressInfo_PB.Location = new System.Drawing.Point(410, 444);
+            // 
+            // Progress_PB
+            // 
+            this.Progress_PB.Location = new System.Drawing.Point(410, 359);
             // 
             // Leyenda_GB
             // 
@@ -230,8 +257,8 @@ namespace moleQule.Face.Instruction
             // 
             this.SC1.Panel2.Controls.Add(this.Leyenda_GB);
             this.SC1.Panel2MinSize = 67;
-            this.SC1.Size = new System.Drawing.Size(892, 749);
-            this.SC1.SplitterDistance = 675;
+            this.SC1.Size = new System.Drawing.Size(892, 735);
+            this.SC1.SplitterDistance = 662;
             this.SC1.TabIndex = 0;
             // 
             // SC2
@@ -250,8 +277,8 @@ namespace moleQule.Face.Instruction
             // SC2.Panel2
             // 
             this.SC2.Panel2.Controls.Add(this.Arbol_TV);
-            this.SC2.Size = new System.Drawing.Size(892, 675);
-            this.SC2.SplitterDistance = 182;
+            this.SC2.Size = new System.Drawing.Size(892, 662);
+            this.SC2.SplitterDistance = 178;
             this.SC2.TabIndex = 0;
             // 
             // SC3
@@ -274,7 +301,7 @@ namespace moleQule.Face.Instruction
             this.SC3.Panel2.Controls.Add(this.groupBox1);
             this.SC3.Panel2.Controls.Add(this.Preguntas_GB);
             this.SC3.Panel2.Controls.Add(this.Modulo_GB);
-            this.SC3.Size = new System.Drawing.Size(892, 182);
+            this.SC3.Size = new System.Drawing.Size(892, 178);
             this.SC3.SplitterDistance = 47;
             this.SC3.TabIndex = 0;
             // 
@@ -392,7 +419,7 @@ namespace moleQule.Face.Instruction
             this.Arbol_TV.Location = new System.Drawing.Point(0, 0);
             this.Arbol_TV.Name = "Arbol_TV";
             this.Arbol_TV.SelectedImageIndex = 0;
-            this.Arbol_TV.Size = new System.Drawing.Size(892, 489);
+            this.Arbol_TV.Size = new System.Drawing.Size(892, 480);
             this.Arbol_TV.TabIndex = 0;
             this.Arbol_TV.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.Arbol_TV_NodeMouseDoubleClick);
             // 
@@ -414,12 +441,18 @@ namespace moleQule.Face.Instruction
             this.Text = "PlantillaForm";
             this.PanelesV.Panel1.ResumeLayout(false);
             this.PanelesV.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).EndInit();
             this.PanelesV.ResumeLayout(false);
             this.Paneles2.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Paneles2)).EndInit();
             this.Paneles2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Datos)).EndInit();
-            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorMng_EP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animation)).EndInit();
+            this.Progress_Panel.ResumeLayout(false);
+            this.Progress_Panel.PerformLayout();
+            this.ProgressBK_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Progress_PB)).EndInit();
             this.Leyenda_GB.ResumeLayout(false);
             this.Leyenda_GB.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -427,13 +460,16 @@ namespace moleQule.Face.Instruction
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.SC1.Panel1.ResumeLayout(false);
             this.SC1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SC1)).EndInit();
             this.SC1.ResumeLayout(false);
             this.SC2.Panel1.ResumeLayout(false);
             this.SC2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SC2)).EndInit();
             this.SC2.ResumeLayout(false);
             this.SC3.Panel1.ResumeLayout(false);
             this.SC3.Panel1.PerformLayout();
             this.SC3.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SC3)).EndInit();
             this.SC3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Idiomas)).EndInit();

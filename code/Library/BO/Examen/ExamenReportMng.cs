@@ -197,6 +197,42 @@ namespace moleQule.Library.Instruction
             return doc;
         }
 
+        public InformePreguntasRpt GetInformePreguntasReport(InformePreguntasList lista)
+        {
+            if (lista == null) return null;
+            InformePreguntasRpt doc = new InformePreguntasRpt();
+
+
+            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+            if (lista.Count <= 0)
+                return null;
+
+            doc.SetDataSource(lista);
+            // doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(preguntas);
+
+            return doc;
+        }
+         
+        public InformePlantillaRpt GetInformePlantillaReport(PlantillaExamenInfo item, InformePlantillaList lista)
+        {
+            if (lista == null) return null;
+            InformePlantillaRpt doc = new InformePlantillaRpt();
+
+
+            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+            if (lista.Count <= 0)
+                return null;
+
+            List<PlantillaExamenInfo> pList = new List<PlantillaExamenInfo>();
+
+            pList.Add(item);
+
+            doc.SetDataSource(pList);
+            doc.Subreports[0].SetDataSource(lista);
+
+            return doc;
+        }
+
         public PortadaExamenRpt GetPortadaReport(ExamenInfo item, CompanyInfo empresa)
         {
             if (item == null) return null;

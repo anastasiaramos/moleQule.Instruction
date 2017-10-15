@@ -259,6 +259,42 @@ namespace moleQule.Face.Instruction
             _action_result = SaveObject() ? DialogResult.OK : DialogResult.Ignore;
         }
 
+        protected override void PrintAction()
+        {
+            InformePlantillaList List = InformePlantillaList.GetList(_entity.Oid);
+
+            ExamenReportMng reportMng = new ExamenReportMng(AppContext.ActiveSchema);
+
+            if (List.Count > 0)
+            {
+
+                bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
+                CompanyInfo empresa = null;
+
+                if (defecto)
+                    empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
+                while (empresa == null)
+                {
+                    moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
+                    DialogResult result = form.ShowDialog();
+
+                    try
+                    {
+                        if (result == DialogResult.OK)
+                            empresa = form.Selected as CompanyInfo;
+                    }
+                    catch
+                    { empresa = null; }
+                }
+
+                moleQule.Library.Instruction.Reports.Examen.InformePlantillaRpt report = reportMng.GetInformePlantillaReport(EntityInfo, List);
+                report.SetParameterValue("Empresa", empresa.Name);
+                if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                ReportViewer.SetReport(report);
+                ReportViewer.ShowDialog();
+            }
+        }
+
         #endregion
 
         #region Events

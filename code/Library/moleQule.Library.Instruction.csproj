@@ -404,6 +404,12 @@
     <Compile Include="BO\Report\Estadistica de Examen\EstadisiticaExamen.cs" />
     <Compile Include="BO\Report\Estadistica de Examen\EstadisticaExamenInfo.cs" />
     <Compile Include="BO\Report\Estadistica de Examen\EstadisticaExamenList.cs" />
+    <Compile Include="BO\Report\InformePlantilla\InformePlantilla.cs" />
+    <Compile Include="BO\Report\InformePlantilla\InformePlantillaInfo.cs" />
+    <Compile Include="BO\Report\InformePlantilla\InformePlantillaList.cs" />
+    <Compile Include="BO\Report\InformePreguntas\InformePreguntasList.cs" />
+    <Compile Include="BO\Report\InformePreguntas\InformePreguntasInfo.cs" />
+    <Compile Include="BO\Report\InformePreguntas\InformePreguntas.cs" />
     <Compile Include="BO\Report\InformesReportMng.cs" />
     <Compile Include="BO\Report\Notas de Prácticas\NotaPracticas.cs" />
     <Compile Include="BO\Report\Notas de Prácticas\NotaPracticasInfo.cs" />
@@ -517,6 +523,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AsistenciaExamenRpt.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Examen\InformePlantillaRpt.cs">
+      <DependentUpon>InformePlantillaRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Reports\Examen\RegistroResumenListSubRpt.cs">
       <DependentUpon>RegistroResumenListSubRpt.rpt</DependentUpon>
@@ -686,6 +698,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reports\Preguntas\InformePreguntasRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InformePreguntasRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Preguntas\PreguntasListRpt.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -816,6 +834,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AsistenciaExamenRpt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\InformePlantillaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformePlantillaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Examen\RegistroResumenListSubRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegistroResumenListSubRpt.cs</LastGenOutput>
@@ -931,6 +953,10 @@
     <EmbeddedResource Include="Reports\PlanEstudios\ResumenRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResumenRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Preguntas\InformePreguntasRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformePreguntasRpt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Preguntas\PreguntasListRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1079,10 +1105,19 @@
     <Content Include="Reports\Alumno\FaltasAlumnos.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Reports\Examen\InformePlantilla.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Examen\PlantillaExamenInfo.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Reports\Horario\Festivo.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Reports\Horario\SesionCronograma.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Preguntas\InformePreguntas.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Reports\Preguntas\PreguntaPrint.xml">

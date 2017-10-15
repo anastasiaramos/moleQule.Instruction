@@ -1,0 +1,28 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+<xs:schema id="PlantillaExamenInfoDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+<xs:element name="PlantillaExamenInfoDataSet" msdata:IsDataSet="true"
+msdata:MainDataTable="PlantillaExamenInfo" msdata:UseCurrentLocale="true">
+<xs:complexType>
+<xs:choice minOccurs="0" maxOccurs="unbounded">
+<xs:element name="PlantillaExamenInfo">
+<xs:complexType>
+<xs:sequence>
+  <xs:element name="Oid" type="xs:positiveInteger" />
+  <xs:element name="OidModulo" type="xs:positiveInteger" />
+  <xs:element name="Codigo" type="xs:string" minOccurs="0" />
+  <xs:element name="Serial" type="xs:positiveInteger" />
+  <xs:element name="Idioma" type="xs:string" minOccurs="0" />
+  <xs:element name="Desarrollo" type="xs:boolean" />
+  <xs:element name="NPreguntas" type="xs:positiveInteger" />
+  <xs:element name="Nombre" type="xs:positiveInteger" />
+  <xs:element name="Modulo" type="xs:positiveInteger" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:choice>
+</xs:complexType>
+</xs:element>
+</xs:schema>
+</NewDataSet>
