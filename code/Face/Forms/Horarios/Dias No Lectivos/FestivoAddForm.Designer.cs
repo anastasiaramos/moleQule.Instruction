@@ -104,7 +104,7 @@
             this.HelpProvider.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Name = "FestivoAddForm";
             this.HelpProvider.SetShowHelp(this, true);
-            this.Text = "Nuevo Festivo";
+            this.Text = "Nuevo Día No Lectivo";
             this.PanelesV.Panel1.ResumeLayout(false);
             this.PanelesV.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).EndInit();

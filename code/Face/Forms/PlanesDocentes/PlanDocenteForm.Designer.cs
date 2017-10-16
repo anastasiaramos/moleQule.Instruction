@@ -32,18 +32,16 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.Label observacionesLabel;
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label label16;
-            System.Windows.Forms.Label label17;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanDocenteForm));
             this.observacionesTextBox = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -82,17 +80,9 @@ namespace moleQule.Face.Instruction
             this.OrdenSecundario_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrdenTerciario_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Facturacion_TP = new System.Windows.Forms.TabPage();
-            this.FacturacionInstruccion_GB = new System.Windows.Forms.GroupBox();
-            this.ProductoInstruccion_BT = new System.Windows.Forms.Button();
-            this.ProductoInstruccion_TB = new System.Windows.Forms.TextBox();
-            this.SerieInstruccion_TB = new System.Windows.Forms.TextBox();
-            this.SerieInstruccion_BT = new System.Windows.Forms.Button();
             observacionesLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
-            label16 = new System.Windows.Forms.Label();
-            label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
@@ -117,8 +107,6 @@ namespace moleQule.Face.Instruction
             this.Practicas_TP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Practicas_Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Incompatible)).BeginInit();
-            this.Facturacion_TP.SuspendLayout();
-            this.FacturacionInstruccion_GB.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelesV
@@ -227,26 +215,6 @@ namespace moleQule.Face.Instruction
             nombreLabel.TabIndex = 8;
             nombreLabel.Text = "Nombre*:";
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label16.Location = new System.Drawing.Point(88, 43);
-            label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(41, 13);
-            label16.TabIndex = 56;
-            label16.Text = "Serie*:";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label17.Location = new System.Drawing.Point(70, 76);
-            label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(60, 13);
-            label17.TabIndex = 59;
-            label17.Text = "Producto*:";
-            // 
             // observacionesTextBox
             // 
             this.observacionesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "Observaciones", true));
@@ -340,7 +308,6 @@ namespace moleQule.Face.Instruction
             // 
             this.Clases_TC.Controls.Add(this.Teoricas_TP);
             this.Clases_TC.Controls.Add(this.Practicas_TP);
-            this.Clases_TC.Controls.Add(this.Facturacion_TP);
             this.Clases_TC.Location = new System.Drawing.Point(7, 111);
             this.Clases_TC.Name = "Clases_TC";
             this.Clases_TC.SelectedIndex = 0;
@@ -389,8 +356,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Modulo_CBC.DataPropertyName = "OidModulo";
             this.Modulo_CBC.DataSource = this.Datos_Modulos;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Modulo_CBC.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Modulo_CBC.DefaultCellStyle = dataGridViewCellStyle1;
             this.Modulo_CBC.DisplayMember = "Texto";
             this.Modulo_CBC.HeaderText = "Módulo";
             this.Modulo_CBC.Name = "Modulo_CBC";
@@ -406,8 +373,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Submodulo_CBC.DataPropertyName = "SubModulo";
             this.Submodulo_CBC.DataSource = this.Datos_Submodulos;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Submodulo_CBC.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Submodulo_CBC.DefaultCellStyle = dataGridViewCellStyle2;
             this.Submodulo_CBC.DisplayMember = "Texto";
             this.Submodulo_CBC.HeaderText = "Submódulo";
             this.Submodulo_CBC.Name = "Submodulo_CBC";
@@ -429,8 +396,8 @@ namespace moleQule.Face.Instruction
             // Alias
             // 
             this.Alias.DataPropertyName = "Alias";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Alias.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Alias.DefaultCellStyle = dataGridViewCellStyle3;
             this.Alias.HeaderText = "Alias";
             this.Alias.Name = "Alias";
             this.Alias.Width = 80;
@@ -438,8 +405,8 @@ namespace moleQule.Face.Instruction
             // TotalClases
             // 
             this.TotalClases.DataPropertyName = "TotalClases";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TotalClases.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TotalClases.DefaultCellStyle = dataGridViewCellStyle4;
             this.TotalClases.HeaderText = "Total";
             this.TotalClases.Name = "TotalClases";
             this.TotalClases.Width = 60;
@@ -447,8 +414,8 @@ namespace moleQule.Face.Instruction
             // OrdenPrimario
             // 
             this.OrdenPrimario.DataPropertyName = "OrdenPrimario";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenPrimario.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenPrimario.DefaultCellStyle = dataGridViewCellStyle5;
             this.OrdenPrimario.HeaderText = "Orden Módulo";
             this.OrdenPrimario.Name = "OrdenPrimario";
             this.OrdenPrimario.Width = 60;
@@ -456,8 +423,8 @@ namespace moleQule.Face.Instruction
             // OrdenSecundario
             // 
             this.OrdenSecundario.DataPropertyName = "OrdenSecundario";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenSecundario.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenSecundario.DefaultCellStyle = dataGridViewCellStyle6;
             this.OrdenSecundario.HeaderText = "Orden Submódulo";
             this.OrdenSecundario.Name = "OrdenSecundario";
             this.OrdenSecundario.Width = 65;
@@ -465,8 +432,8 @@ namespace moleQule.Face.Instruction
             // OrdenTerciario
             // 
             this.OrdenTerciario.DataPropertyName = "OrdenTerciario";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenTerciario.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenTerciario.DefaultCellStyle = dataGridViewCellStyle7;
             this.OrdenTerciario.HeaderText = "Orden Clase";
             this.OrdenTerciario.Name = "OrdenTerciario";
             this.OrdenTerciario.Width = 60;
@@ -548,8 +515,8 @@ namespace moleQule.Face.Instruction
             // Alias_P
             // 
             this.Alias_P.DataPropertyName = "Alias";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Alias_P.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Alias_P.DefaultCellStyle = dataGridViewCellStyle8;
             this.Alias_P.HeaderText = "Alias";
             this.Alias_P.Name = "Alias_P";
             this.Alias_P.Width = 80;
@@ -557,9 +524,9 @@ namespace moleQule.Face.Instruction
             // Duracion
             // 
             this.Duracion.DataPropertyName = "Duracion";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.Format = "N0";
-            this.Duracion.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "N0";
+            this.Duracion.DefaultCellStyle = dataGridViewCellStyle9;
             this.Duracion.HeaderText = "Duración";
             this.Duracion.Name = "Duracion";
             this.Duracion.Width = 60;
@@ -568,8 +535,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Incompatible.DataPropertyName = "Incompatible";
             this.Incompatible.DataSource = this.Datos_Incompatible;
-            dataGridViewCellStyle20.Format = "N0";
-            this.Incompatible.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Format = "N0";
+            this.Incompatible.DefaultCellStyle = dataGridViewCellStyle10;
             this.Incompatible.DisplayMember = "Texto";
             this.Incompatible.HeaderText = "Incompatible";
             this.Incompatible.Name = "Incompatible";
@@ -609,70 +576,6 @@ namespace moleQule.Face.Instruction
             this.Observaciones_P.Name = "Observaciones_P";
             this.Observaciones_P.Width = 120;
             // 
-            // Facturacion_TP
-            // 
-            this.Facturacion_TP.Controls.Add(this.FacturacionInstruccion_GB);
-            this.Facturacion_TP.Location = new System.Drawing.Point(4, 22);
-            this.Facturacion_TP.Name = "Facturacion_TP";
-            this.Facturacion_TP.Padding = new System.Windows.Forms.Padding(3);
-            this.Facturacion_TP.Size = new System.Drawing.Size(1225, 598);
-            this.Facturacion_TP.TabIndex = 2;
-            this.Facturacion_TP.Text = "Facturación";
-            this.Facturacion_TP.UseVisualStyleBackColor = true;
-            // 
-            // FacturacionInstruccion_GB
-            // 
-            this.FacturacionInstruccion_GB.Controls.Add(this.ProductoInstruccion_BT);
-            this.FacturacionInstruccion_GB.Controls.Add(this.ProductoInstruccion_TB);
-            this.FacturacionInstruccion_GB.Controls.Add(this.SerieInstruccion_TB);
-            this.FacturacionInstruccion_GB.Controls.Add(label16);
-            this.FacturacionInstruccion_GB.Controls.Add(this.SerieInstruccion_BT);
-            this.FacturacionInstruccion_GB.Controls.Add(label17);
-            this.FacturacionInstruccion_GB.Location = new System.Drawing.Point(402, 234);
-            this.FacturacionInstruccion_GB.Name = "FacturacionInstruccion_GB";
-            this.FacturacionInstruccion_GB.Size = new System.Drawing.Size(420, 132);
-            this.FacturacionInstruccion_GB.TabIndex = 61;
-            this.FacturacionInstruccion_GB.TabStop = false;
-            this.FacturacionInstruccion_GB.Text = "Facturación Albaranes de Instructor";
-            // 
-            // ProductoInstruccion_BT
-            // 
-            this.ProductoInstruccion_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.select_16;
-            this.ProductoInstruccion_BT.Location = new System.Drawing.Point(318, 72);
-            this.ProductoInstruccion_BT.Name = "ProductoInstruccion_BT";
-            this.ProductoInstruccion_BT.Size = new System.Drawing.Size(33, 21);
-            this.ProductoInstruccion_BT.TabIndex = 57;
-            this.ProductoInstruccion_BT.UseVisualStyleBackColor = true;
-            this.ProductoInstruccion_BT.Click += new System.EventHandler(this.ProductoInstruccion_BT_Click);
-            // 
-            // ProductoInstruccion_TB
-            // 
-            this.ProductoInstruccion_TB.Location = new System.Drawing.Point(130, 73);
-            this.ProductoInstruccion_TB.Name = "ProductoInstruccion_TB";
-            this.ProductoInstruccion_TB.ReadOnly = true;
-            this.ProductoInstruccion_TB.Size = new System.Drawing.Size(182, 21);
-            this.ProductoInstruccion_TB.TabIndex = 58;
-            this.ProductoInstruccion_TB.TabStop = false;
-            // 
-            // SerieInstruccion_TB
-            // 
-            this.SerieInstruccion_TB.Location = new System.Drawing.Point(130, 40);
-            this.SerieInstruccion_TB.Name = "SerieInstruccion_TB";
-            this.SerieInstruccion_TB.ReadOnly = true;
-            this.SerieInstruccion_TB.Size = new System.Drawing.Size(182, 21);
-            this.SerieInstruccion_TB.TabIndex = 55;
-            this.SerieInstruccion_TB.TabStop = false;
-            // 
-            // SerieInstruccion_BT
-            // 
-            this.SerieInstruccion_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.select_16;
-            this.SerieInstruccion_BT.Location = new System.Drawing.Point(318, 39);
-            this.SerieInstruccion_BT.Name = "SerieInstruccion_BT";
-            this.SerieInstruccion_BT.Size = new System.Drawing.Size(33, 21);
-            this.SerieInstruccion_BT.TabIndex = 54;
-            this.SerieInstruccion_BT.UseVisualStyleBackColor = true;
-            this.SerieInstruccion_BT.Click += new System.EventHandler(this.SerieInstruccion_BT_Click);
-            // 
             // PlanDocenteForm
             // 
             this.ClientSize = new System.Drawing.Size(1249, 781);
@@ -711,9 +614,6 @@ namespace moleQule.Face.Instruction
             this.Practicas_TP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Practicas_Grid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Incompatible)).EndInit();
-            this.Facturacion_TP.ResumeLayout(false);
-            this.FacturacionInstruccion_GB.ResumeLayout(false);
-            this.FacturacionInstruccion_GB.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -736,12 +636,6 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.TabControl Clases_TC;
         protected System.Windows.Forms.BindingSource Datos_Incompatible;
         protected System.Windows.Forms.Button Resumen_BT;
-        private System.Windows.Forms.TabPage Facturacion_TP;
-        private System.Windows.Forms.GroupBox FacturacionInstruccion_GB;
-        protected System.Windows.Forms.Button ProductoInstruccion_BT;
-        protected System.Windows.Forms.TextBox ProductoInstruccion_TB;
-        protected System.Windows.Forms.TextBox SerieInstruccion_TB;
-        protected System.Windows.Forms.Button SerieInstruccion_BT;
         private System.Windows.Forms.DataGridViewComboBoxColumn Modulo_CBC;
         private System.Windows.Forms.DataGridViewComboBoxColumn Submodulo_CBC;
         private System.Windows.Forms.DataGridViewTextBoxColumn Titulo;

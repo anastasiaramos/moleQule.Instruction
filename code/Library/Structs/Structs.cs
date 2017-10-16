@@ -93,7 +93,7 @@ namespace moleQule.Library.Instruction
     public enum ETipoListadoClases { Todas = 0, Restantes = 1, TeoricasImpartidas = 2, TeoricasNoImpartidas = 3, PracticasImpartidas = 4, PracticasNoImpartidas = 5,
                                     TodasCronograma = 6, RestantesCronograma = 7, ComparativaCronograma = 8}
 
-    public enum ETipoDiaNoLectivo { Todos = 0, FestivoNacional = 1, FestivoLocal = 2, Vacaciones = 3, Examenes = 4, Otros = 5 }
+    public enum ETipoDiaNoLectivo { Todos = 0, FestivoNacional = 1, FestivoLocal = 2, Vacaciones = 3, Examenes = 4, Contingencias = 5, Otros = 6 }
 
     public enum Perfil
     {

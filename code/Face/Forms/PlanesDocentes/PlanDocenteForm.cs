@@ -262,31 +262,31 @@ namespace moleQule.Face.Instruction
             ResumenAction();
         }
 
-        private void SerieInstruccion_BT_Click(object sender, EventArgs e)
-        {
-            SerieSelectForm form = new SerieSelectForm(this, _series);
+        //private void SerieInstruccion_BT_Click(object sender, EventArgs e)
+        //{
+        //    SerieSelectForm form = new SerieSelectForm(this, _series);
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                SerieInfo serie = form.Selected as SerieInfo;
-                Entity.OidSerie = serie.Oid;
-                SerieInstruccion_TB.Text = serie.Nombre;
-            }
+        //    if (form.ShowDialog() == DialogResult.OK)
+        //    {
+        //        SerieInfo serie = form.Selected as SerieInfo;
+        //        Entity.OidSerie = serie.Oid;
+        //        SerieInstruccion_TB.Text = serie.Nombre;
+        //    }
 
-        }
+        //}
 
-        private void ProductoInstruccion_BT_Click(object sender, EventArgs e)
-        {
-            ProductSelectForm form = new ProductSelectForm(this, _productos);
+        //private void ProductoInstruccion_BT_Click(object sender, EventArgs e)
+        //{
+        //    ProductSelectForm form = new ProductSelectForm(this, _productos);
 
-            if (form.ShowDialog() == DialogResult.OK)
-            {
-                ProductInfo producto = form.Selected as ProductInfo;
-                Entity.OidProducto = producto.Oid;
-                ProductoInstruccion_TB.Text = producto.Nombre;
-            }
+        //    if (form.ShowDialog() == DialogResult.OK)
+        //    {
+        //        ProductInfo producto = form.Selected as ProductInfo;
+        //        Entity.OidProducto = producto.Oid;
+        //        ProductoInstruccion_TB.Text = producto.Nombre;
+        //    }
 
-        }
+        //}
 
         #endregion
 

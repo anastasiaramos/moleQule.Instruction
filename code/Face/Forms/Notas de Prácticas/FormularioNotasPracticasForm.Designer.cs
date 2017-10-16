@@ -176,7 +176,7 @@ namespace moleQule.Face.Instruction
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(60, 13);
             nombreLabel.TabIndex = 0;
-            nombreLabel.Text = "Promoción:";
+            nombreLabel.Text = "Curso:";
             // 
             // fechaLabel
             // 

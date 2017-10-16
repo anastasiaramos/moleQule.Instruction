@@ -811,7 +811,7 @@ namespace moleQule.Face.Instruction
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 146;
-            this.label6.Text = "PROMOCIONES";
+            this.label6.Text = "CURSOS";
             // 
             // Promociones_Grid
             // 
@@ -832,7 +832,7 @@ namespace moleQule.Face.Instruction
             this.Promocion_CBC.DataPropertyName = "OidPromocion";
             this.Promocion_CBC.DataSource = this.Datos_Promociones;
             this.Promocion_CBC.DisplayMember = "Texto";
-            this.Promocion_CBC.HeaderText = "Promoción";
+            this.Promocion_CBC.HeaderText = "Curso";
             this.Promocion_CBC.Name = "Promocion_CBC";
             this.Promocion_CBC.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Promocion_CBC.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;

@@ -183,7 +183,7 @@ namespace moleQule.Face.Instruction
             this.groupBox5.Size = new System.Drawing.Size(545, 115);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Promociones";
+            this.groupBox5.Text = "Cursos";
             // 
             // groupBox6
             // 

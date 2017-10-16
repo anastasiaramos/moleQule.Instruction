@@ -445,7 +445,7 @@ namespace moleQule.Face.Instruction
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PromocionMngForm";
             this.HelpProvider.SetShowHelp(this, true);
-            this.Text = "Promociones";
+            this.Text = "Cursos";
             this.Controls.SetChildIndex(this.ProgressBK_Panel, 0);
             this.Controls.SetChildIndex(this.ProgressInfo_PB, 0);
             this.Controls.SetChildIndex(this.Progress_PB, 0);

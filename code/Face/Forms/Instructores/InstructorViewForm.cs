@@ -182,21 +182,21 @@ namespace moleQule.Face.Instruction
                         }
 
                     } break;
-                case "Autorizados_Grid":
-                    {
-                        foreach (DataGridViewRow row in Autorizados_Grid.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-                            if (lista_sources_a.Count >= row.Index + 1) continue;
-                            Submodulo_InstructorInfo info = (Submodulo_InstructorInfo)row.DataBoundItem;
-                            if ((info != null) && (_combo_modulos != null))
-                            {
-                                lista_sources_a.Add(_combo_modulos.GetFilteredChilds(info.OidModulo));
-                                ((DataGridViewComboBoxCell)row.Cells["SubmoduloA_CBC"]).DataSource = lista_sources_a[row.Index];
-                            }
-                        }
+                //case "Autorizados_Grid":
+                //    {
+                //        foreach (DataGridViewRow row in Autorizados_Grid.Rows)
+                //        {
+                //            if (row.IsNewRow) continue;
+                //            if (lista_sources_a.Count >= row.Index + 1) continue;
+                //            Submodulo_InstructorInfo info = (Submodulo_InstructorInfo)row.DataBoundItem;
+                //            if ((info != null) && (_combo_modulos != null))
+                //            {
+                //                lista_sources_a.Add(_combo_modulos.GetFilteredChilds(info.OidModulo));
+                //                ((DataGridViewComboBoxCell)row.Cells["SubmoduloA_CBC"]).DataSource = lista_sources_a[row.Index];
+                //            }
+                //        }
 
-                    } break;
+                //    } break;
             }
         }
 		
@@ -236,8 +236,8 @@ namespace moleQule.Face.Instruction
 
         protected override void ChangeFicha()
         {
-            if ((Ficha_TP.SelectedTab == Capacitacion_TP) ||
-                (Ficha_TP.SelectedTab == Autorizados_TP))
+            if (Ficha_TP.SelectedTab == Capacitacion_TP)
+                //||(Ficha_TP.SelectedTab == Autorizados_TP))
             {
                 if (_modulos == null)
                 {
@@ -265,7 +265,7 @@ namespace moleQule.Face.Instruction
                 }
 
                 if (Ficha_TP.SelectedTab == Capacitacion_TP) LoadChildsAction(typeof(Submodulo_Instructor_PromocionInfo));
-                if (Ficha_TP.SelectedTab == Autorizados_TP) LoadChildsAction(typeof(Submodulo_InstructorInfo));
+                //if (Ficha_TP.SelectedTab == Autorizados_TP) LoadChildsAction(typeof(Submodulo_InstructorInfo));
             }
         }
 

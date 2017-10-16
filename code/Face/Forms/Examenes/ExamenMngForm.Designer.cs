@@ -358,7 +358,7 @@ namespace moleQule.Face.Instruction
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 145;
-            this.label3.Text = "Promoción:";
+            this.label3.Text = "Curso:";
             // 
             // Promocion_CB
             // 
@@ -500,7 +500,7 @@ namespace moleQule.Face.Instruction
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.Promocion.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Promocion.HeaderText = "Promoción";
+            this.Promocion.HeaderText = "Curso";
             this.Promocion.Name = "Promocion";
             this.Promocion.ReadOnly = true;
             this.Promocion.Width = 120;

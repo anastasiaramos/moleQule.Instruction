@@ -119,12 +119,12 @@ namespace moleQule.Face.Instruction
 
             Promociones_Grid.Columns[Promocion_CBC.Name].Width = (int)(rowWidth * 0.995);
 
-            if (Library.Instruction.ModulePrincipal.GetMostrarInstructoresAutorizadosSetting()
-                && Ficha_TP.TabPages.Contains(Autorizados_TP))
-            {
-                Ficha_TP.TabPages.Remove(Autorizados_TP);
-                MTOE_CB.Visible = false;
-            }
+            //if (Library.Instruction.ModulePrincipal.GetMostrarInstructoresAutorizadosSetting()
+            //    && Ficha_TP.TabPages.Contains(Autorizados_TP))
+            //{
+            //    Ficha_TP.TabPages.Remove(Autorizados_TP);
+            //    MTOE_CB.Visible = false;
+            //}
         }
 
         public override void RefreshSecondaryData()
@@ -327,48 +327,48 @@ namespace moleQule.Face.Instruction
             //No hace nada
         }
         
-        private void Autorizados_Grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (this is InstructorUIForm)
-            {
-                switch (Autorizados_Grid.Columns[e.ColumnIndex].Name)
-                {
-                    case ("ModuloA_CBC"):
-                        {
-                            if (Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value != null)
-                            {
-                                //se está modificando una línea ya existente
-                                if (lista_sources_a.Count > e.RowIndex)
-                                    lista_sources_a[e.RowIndex] = _combo_modulos.GetFilteredChilds((long)Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value);
-                                else //hay que añadir un nuevo datasource a la lista
-                                    lista_sources_a.Add(_combo_modulos.GetFilteredChilds((long)Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value));
-                                ((DataGridViewComboBoxCell)(Autorizados_Grid["SubmoduloA_CBC", e.RowIndex])).DataSource = lista_sources_a[e.RowIndex];
+        //private void Autorizados_Grid_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (this is InstructorUIForm)
+        //    {
+        //        switch (Autorizados_Grid.Columns[e.ColumnIndex].Name)
+        //        {
+        //            case ("ModuloA_CBC"):
+        //                {
+        //                    if (Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value != null)
+        //                    {
+        //                        //se está modificando una línea ya existente
+        //                        if (lista_sources_a.Count > e.RowIndex)
+        //                            lista_sources_a[e.RowIndex] = _combo_modulos.GetFilteredChilds((long)Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value);
+        //                        else //hay que añadir un nuevo datasource a la lista
+        //                            lista_sources_a.Add(_combo_modulos.GetFilteredChilds((long)Autorizados_Grid["ModuloA_CBC", e.RowIndex].Value));
+        //                        ((DataGridViewComboBoxCell)(Autorizados_Grid["SubmoduloA_CBC", e.RowIndex])).DataSource = lista_sources_a[e.RowIndex];
 
-                            }
-                        }
-                        break;
-                    case ("SubmoduloA_CBC"):
-                        {
-                            Submodulos_Instructores lista = Entity.Submodulos;
-                            if (lista.Count <= e.RowIndex)
-                                lista.Add((Submodulo_Instructor)Autorizados_Grid.Rows[e.RowIndex].DataBoundItem);
+        //                    }
+        //                }
+        //                break;
+        //            case ("SubmoduloA_CBC"):
+        //                {
+        //                    Submodulos_Instructores lista = Entity.Submodulos;
+        //                    if (lista.Count <= e.RowIndex)
+        //                        lista.Add((Submodulo_Instructor)Autorizados_Grid.Rows[e.RowIndex].DataBoundItem);
 
-                        }
-                        break;
-                }
-            }
-        }
+        //                }
+        //                break;
+        //        }
+        //    }
+        //}
         
-        private void Autorizados_Grid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            if (this is InstructorViewForm) return;
-            SetCellsDataSource(Autorizados_Grid.Name);
-        }
+        //private void Autorizados_Grid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    if (this is InstructorViewForm) return;
+        //    SetCellsDataSource(Autorizados_Grid.Name);
+        //}
 
-        protected void Autorizados_Grid_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            //No hace nada
-        }
+        //protected void Autorizados_Grid_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        //{
+        //    //No hace nada
+        //}
         
         private void Examinador_CB_CheckedChanged(object sender, EventArgs e)
         {
@@ -548,16 +548,16 @@ namespace moleQule.Face.Instruction
             DeleteProductoAction();
         }
 
-        private void Productos_DGW_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (Productos_DGW.CurrentRow == null) return;
-            if (e.ColumnIndex == -1) return;
+        //private void Productos_DGW_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (Productos_DGW.CurrentRow == null) return;
+        //    if (e.ColumnIndex == -1) return;
 
-            if (Productos_DGW.Columns[e.ColumnIndex].Name == Impuesto.Name)
-            {
-                SetImpuestoProductoAction();
-            }
-        }
+        //    if (Productos_DGW.Columns[e.ColumnIndex].Name == Impuesto.Name)
+        //    {
+        //        SetImpuestoProductoAction();
+        //    }
+        //}
 
         private void Promociones_Grid_CellClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -1284,7 +1284,7 @@ namespace moleQule.Library.Instruction
             string query;
 
             query = "SELECT CP.*," +
-                    "       S.\"CODIGO\" AS \"SUBMODULO\", S.\"CODIGO_ORDEN\"," +
+                    "       (S.\"CODIGO\" || ' ' || S.\"TEXTO\") AS \"SUBMODULO\", S.\"CODIGO_ORDEN\"," +
                     "       M.\"NUMERO_MODULO\", M.\"TEXTO\" AS \"MODULO\"," +
                     "       0 AS \"GRUPO\"," +
                     "       1 AS \"ESTADO\"," +

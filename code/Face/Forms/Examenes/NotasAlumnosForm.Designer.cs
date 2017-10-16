@@ -169,7 +169,7 @@ namespace moleQule.Face.Instruction
             this.Submodulo.Size = new System.Drawing.Size(378, 59);
             this.Submodulo.TabIndex = 6;
             this.Submodulo.TabStop = false;
-            this.Submodulo.Text = "Promoción";
+            this.Submodulo.Text = "Curso";
             // 
             // Promocion_CB
             // 

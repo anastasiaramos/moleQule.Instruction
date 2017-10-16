@@ -175,7 +175,7 @@ namespace moleQule.Face.Instruction
             oidPromocionLabel.Name = "oidPromocionLabel";
             oidPromocionLabel.Size = new System.Drawing.Size(60, 13);
             oidPromocionLabel.TabIndex = 2;
-            oidPromocionLabel.Text = "Promoción:";
+            oidPromocionLabel.Text = "Curso:";
             // 
             // oidProfesorLabel
             // 
@@ -376,7 +376,7 @@ namespace moleQule.Face.Instruction
             this.groupBox5.Size = new System.Drawing.Size(545, 115);
             this.groupBox5.TabIndex = 9;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Promociones";
+            this.groupBox5.Text = "Cursos";
             // 
             // ClearPromociones_BT
             // 

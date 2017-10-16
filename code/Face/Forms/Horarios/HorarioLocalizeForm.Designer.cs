@@ -89,7 +89,7 @@ namespace moleQule.Face.Instruction
             this.Promocion_RB.Size = new System.Drawing.Size(85, 17);
             this.Promocion_RB.TabIndex = 8;
             this.Promocion_RB.TabStop = true;
-            this.Promocion_RB.Text = "Promoción";
+            this.Promocion_RB.Text = "Curso";
             this.Promocion_RB.UseVisualStyleBackColor = true;
             // 
             // Plan_RB

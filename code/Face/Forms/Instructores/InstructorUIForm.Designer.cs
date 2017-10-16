@@ -226,7 +226,7 @@ namespace moleQule.Face.Instruction
             this.Docs_BT.Location = new System.Drawing.Point(493, 7);
             this.HelpProvider.SetShowHelp(this.Docs_BT, true);
 
-            this.FormaPago_CB.SelectedIndexChanged += new System.EventHandler(this.FormaPago_CB_SelectedIndexChanged);
+            //this.FormaPago_CB.SelectedIndexChanged += new System.EventHandler(this.FormaPago_CB_SelectedIndexChanged);
 
             // 
             // InstructorUIForm

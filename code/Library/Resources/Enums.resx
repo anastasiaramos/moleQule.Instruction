@@ -156,6 +156,9 @@
   <data name="ETipoClase_Teorica" xml:space="preserve">
     <value>Teórica</value>
   </data>
+  <data name="ETipoDiaNoLectivo_Contingencias" xml:space="preserve">
+    <value>Contingencias</value>
+  </data>
   <data name="ETipoDiaNoLectivo_Examenes" xml:space="preserve">
     <value>Exámenes</value>
   </data>

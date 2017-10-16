@@ -343,7 +343,7 @@
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             dataGridViewCellStyle2.Format = "N0";
             this.Promocion.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Promocion.HeaderText = "Promoción";
+            this.Promocion.HeaderText = "Curso";
             this.Promocion.Name = "Promocion";
             this.Promocion.ReadOnly = true;
             this.Promocion.Width = 120;

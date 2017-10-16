@@ -608,7 +608,7 @@ namespace moleQule.Face.Instruction
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 13);
             this.label5.TabIndex = 26;
-            this.label5.Text = "Promociones: ";
+            this.label5.Text = "Cursos: ";
             // 
             // textBox1
             // 
@@ -742,7 +742,7 @@ namespace moleQule.Face.Instruction
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Promoción: ";
+            this.label3.Text = "Curso: ";
             // 
             // fechaCreacionDateTimePicker
             // 

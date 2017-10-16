@@ -281,7 +281,7 @@ namespace moleQule.Face.Instruction
                 oTable.Columns[2].Cells[2].Range.Paragraphs.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
                 oTable.Columns[2].Cells[2].Range.Font.Name = "Arial";
 
-                oTable.Columns[2].Cells[3].Range.Text = "PROMOCIÓN : " + examen.Promocion;
+                oTable.Columns[2].Cells[3].Range.Text = "CURSO : " + examen.Promocion;
                 oTable.Columns[2].Cells[3].Range.Font.Bold = 1;
                 oTable.Columns[2].Cells[3].Range.Font.Size = 11;
                 oTable.Columns[2].Cells[3].VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;

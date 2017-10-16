@@ -101,10 +101,10 @@ namespace moleQule.Face.Instruction
             //_timer.Record("RefreshMainData begin");
 
             Datos.DataSource = _entity;
-            if (_entity.OidProducto > 0)
-                ProductoInstruccion_TB.Text = _productos.GetItem(_entity.OidProducto).Nombre;
-            if (_entity.OidSerie > 0)
-                SerieInstruccion_TB.Text = _series.GetItem(_entity.OidSerie).Nombre;
+            //if (_entity.OidProducto > 0)
+            //    ProductoInstruccion_TB.Text = _productos.GetItem(_entity.OidProducto).Nombre;
+            //if (_entity.OidSerie > 0)
+            //    SerieInstruccion_TB.Text = _series.GetItem(_entity.OidSerie).Nombre;
             PgMng.Grow();
 
             Datos_Teoricas.DataSource = _entity.CTeoricas;

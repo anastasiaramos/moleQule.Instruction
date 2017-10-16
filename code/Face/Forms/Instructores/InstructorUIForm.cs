@@ -262,21 +262,21 @@ namespace moleQule.Face.Instruction
                         }
 
                     } break;
-                case "Autorizados_Grid":
-                    {
-                        foreach (DataGridViewRow row in Autorizados_Grid.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-                            if (lista_sources_a.Count >= row.Index + 1) continue;
-                            Submodulo_Instructor info = (Submodulo_Instructor)row.DataBoundItem;
-                            if ((info != null) && (_combo_modulos != null))
-                            {
-                                lista_sources_a.Add(_combo_modulos.GetFilteredChilds(info.OidModulo));
-                                ((DataGridViewComboBoxCell)row.Cells["SubmoduloA_CBC"]).DataSource = lista_sources_a[row.Index];
-                            }
-                        }
+                //case "Autorizados_Grid":
+                //    {
+                //        foreach (DataGridViewRow row in Autorizados_Grid.Rows)
+                //        {
+                //            if (row.IsNewRow) continue;
+                //            if (lista_sources_a.Count >= row.Index + 1) continue;
+                //            Submodulo_Instructor info = (Submodulo_Instructor)row.DataBoundItem;
+                //            if ((info != null) && (_combo_modulos != null))
+                //            {
+                //                lista_sources_a.Add(_combo_modulos.GetFilteredChilds(info.OidModulo));
+                //                ((DataGridViewComboBoxCell)row.Cells["SubmoduloA_CBC"]).DataSource = lista_sources_a[row.Index];
+                //            }
+                //        }
 
-                    } break;
+                //    } break;
             }
         }
 
@@ -385,8 +385,9 @@ namespace moleQule.Face.Instruction
 
         protected override void ChangeFicha()
         {
-            if ((Ficha_TP.SelectedTab == Capacitacion_TP) ||
-                   (Ficha_TP.SelectedTab == Autorizados_TP))
+            if (Ficha_TP.SelectedTab == Capacitacion_TP) 
+                //||
+                //   (Ficha_TP.SelectedTab == Autorizados_TP))
             {
                 if (_modulos == null)
                 {
@@ -414,26 +415,26 @@ namespace moleQule.Face.Instruction
                 }
 
                 if (Ficha_TP.SelectedTab == Capacitacion_TP) LoadChildsAction(typeof(Submodulo_Instructor_Promocion));
-                if (Ficha_TP.SelectedTab == Autorizados_TP) LoadChildsAction(typeof(Submodulo_Instructor));
+                //if (Ficha_TP.SelectedTab == Autorizados_TP) LoadChildsAction(typeof(Submodulo_Instructor));
             }
         }
 
-        protected override void SetImpuestoAction()
-        {
-            ImpuestoSelectForm form = new ImpuestoSelectForm(this);
-            if (form.ShowDialog(this) == DialogResult.OK)
-            {
-                ImpuestoInfo item = form.Selected as ImpuestoInfo;
-                Entity.SetImpuesto(item);
-                Impuesto_TB.Text = Entity.Impuesto;
-            }
-        }
+        //protected override void SetImpuestoAction()
+        //{
+        //    ImpuestoSelectForm form = new ImpuestoSelectForm(this);
+        //    if (form.ShowDialog(this) == DialogResult.OK)
+        //    {
+        //        ImpuestoInfo item = form.Selected as ImpuestoInfo;
+        //        Entity.SetImpuesto(item);
+        //        Impuesto_TB.Text = Entity.Impuesto;
+        //    }
+        //}
 
-        protected override void SetImpuestoDefectoAction()
-        {
-            Entity.SetImpuesto(null);
-            Impuesto_TB.Text = Entity.Impuesto;
-        }
+        //protected override void SetImpuestoDefectoAction()
+        //{
+        //    Entity.SetImpuesto(null);
+        //    Impuesto_TB.Text = Entity.Impuesto;
+        //}
 
         protected override void SetCuentaAsociadaAction()
         {
@@ -634,26 +635,26 @@ namespace moleQule.Face.Instruction
 
         #region Events
 
-        private void FormaPago_CB_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (FormaPago_CB.SelectedItem == null) return;
+        //private void FormaPago_CB_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    if (FormaPago_CB.SelectedItem == null) return;
 
-            ComboBoxSource item = FormaPago_CB.SelectedItem as ComboBoxSource;
+        //    ComboBoxSource item = FormaPago_CB.SelectedItem as ComboBoxSource;
 
-            switch ((EFormaPago)item.Oid)
-            {
-                case EFormaPago.Contado:
-                    DiasPago_NTB.Enabled = false;
-                    _entity.DiasPago = 0;
-                    break;
-                case EFormaPago.XDiasFechaFactura:
-                    DiasPago_NTB.Enabled = true;
-                    break;
-                case EFormaPago.XDiasMes:
-                    DiasPago_NTB.Enabled = true;
-                    break;
-            }
-        }
+        //    switch ((EFormaPago)item.Oid)
+        //    {
+        //        case EFormaPago.Contado:
+        //            DiasPago_NTB.Enabled = false;
+        //            _entity.DiasPago = 0;
+        //            break;
+        //        case EFormaPago.XDiasFechaFactura:
+        //            DiasPago_NTB.Enabled = true;
+        //            break;
+        //        case EFormaPago.XDiasMes:
+        //            DiasPago_NTB.Enabled = true;
+        //            break;
+        //    }
+        //}
 
         private void MunicipioP_CB_SelectedIndexChanged(object sender, EventArgs e)
         {

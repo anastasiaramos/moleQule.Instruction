@@ -353,7 +353,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.promocionDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.promocionDataGridViewTextBoxColumn.HeaderText = "Promoción";
+            this.promocionDataGridViewTextBoxColumn.HeaderText = "Curso";
             this.promocionDataGridViewTextBoxColumn.Name = "promocionDataGridViewTextBoxColumn";
             this.promocionDataGridViewTextBoxColumn.ReadOnly = true;
             // 

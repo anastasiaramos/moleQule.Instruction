@@ -1243,7 +1243,7 @@ namespace moleQule.Library.Instruction
             string query;
 
             query = "SELECT CT.*," +
-                    "       S.\"CODIGO\" AS \"SUBMODULO\", S.\"CODIGO_ORDEN\"," +
+                    "       (S.\"CODIGO\" || ' ' || S.\"TEXTO\") AS \"SUBMODULO\", S.\"CODIGO_ORDEN\"," +
                     "       M.\"NUMERO_MODULO\", M.\"TEXTO\" AS \"MODULO\"," +
                     "       1 AS \"ESTADO\"," +
                     "       S.\"CODIGO_ORDEN\" AS \"CODIGO_ORDEN\"," +

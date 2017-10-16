@@ -29,15 +29,7 @@ namespace moleQule.Face.Instruction
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label16;
-            System.Windows.Forms.Label label18;
-            System.Windows.Forms.Label label13;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorForm));
             this.Datos_Municipios_F = new System.Windows.Forms.BindingSource(this.components);
             this.Browser = new System.Windows.Forms.OpenFileDialog();
@@ -51,26 +43,8 @@ namespace moleQule.Face.Instruction
             this.Datos_Submodulo_Instructor_Promocion = new System.Windows.Forms.BindingSource(this.components);
             this.Datos_Instructores = new System.Windows.Forms.BindingSource(this.components);
             this.Datos_Submodulo_Instructor = new System.Windows.Forms.BindingSource(this.components);
-            this.Productos_TP = new System.Windows.Forms.TabPage();
-            this.Productos_Panel = new System.Windows.Forms.SplitContainer();
-            this.Productos_TS = new System.Windows.Forms.ToolStrip();
-            this.AddProducto_TI = new System.Windows.Forms.ToolStripButton();
-            this.EditProducto_TI = new System.Windows.Forms.ToolStripButton();
-            this.DeleteProducto_TI = new System.Windows.Forms.ToolStripButton();
-            this.Productos_DGW = new System.Windows.Forms.DataGridView();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Impuesto = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.PImpuestos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datos_ProductoProveedor = new System.Windows.Forms.BindingSource(this.components);
             this.miniToolStrip = new System.Windows.Forms.ToolStrip();
-            this.Autorizados_TP = new System.Windows.Forms.TabPage();
-            this.Autorizados_Grid = new System.Windows.Forms.DataGridView();
-            this.ModuloA_CBC = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.SubmoduloA_CBC = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Suplente_CBC = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.FechaInicio = new CalendarColumn();
-            this.FechaFin = new CalendarColumn();
             this.Capacitacion_TP = new System.Windows.Forms.TabPage();
             this.Add_BT = new System.Windows.Forms.Button();
             this.Duplicar_BT = new System.Windows.Forms.Button();
@@ -93,24 +67,6 @@ namespace moleQule.Face.Instruction
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRenovacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Financieros_TP = new System.Windows.Forms.TabPage();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.IRPF_TB = new System.Windows.Forms.TextBox();
-            this.DefectoVenta_BT = new System.Windows.Forms.Button();
-            this.Impuesto_BT = new System.Windows.Forms.Button();
-            this.Impuesto_TB = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.MedioPago_CB = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CuentaAsociada_BT = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.FormaPago_CB = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.DiasPago_NTB = new moleQule.Face.Controls.NumericTextBox();
-            this.CuentaAjena_TB = new System.Windows.Forms.TextBox();
-            this.diasPagoLabel = new System.Windows.Forms.Label();
-            this.CuentaPropia_TB = new System.Windows.Forms.TextBox();
             this.General_TP = new System.Windows.Forms.TabPage();
             this.MTOE_CB = new System.Windows.Forms.CheckBox();
             this.Codigo_TB = new System.Windows.Forms.TextBox();
@@ -169,9 +125,6 @@ namespace moleQule.Face.Instruction
             this.provinciaLabel = new System.Windows.Forms.Label();
             this.Ficha_TP = new System.Windows.Forms.TabControl();
             this.customAdapter1 = new moleQule.Library.Application.Tools.CustomAdapter();
-            label16 = new System.Windows.Forms.Label();
-            label18 = new System.Windows.Forms.Label();
-            label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
@@ -196,23 +149,12 @@ namespace moleQule.Face.Instruction
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulo_Instructor_Promocion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Instructores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulo_Instructor)).BeginInit();
-            this.Productos_TP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Productos_Panel)).BeginInit();
-            this.Productos_Panel.Panel1.SuspendLayout();
-            this.Productos_Panel.Panel2.SuspendLayout();
-            this.Productos_Panel.SuspendLayout();
-            this.Productos_TS.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Productos_DGW)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_ProductoProveedor)).BeginInit();
-            this.Autorizados_TP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Autorizados_Grid)).BeginInit();
             this.Capacitacion_TP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Promociones_Grid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Submodulo_Instructor_Grid)).BeginInit();
             this.Formacion_TP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CursosF_Grid)).BeginInit();
-            this.Financieros_TP.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.General_TP.SuspendLayout();
             this.Perfil_GB.SuspendLayout();
             this.ID_GB.SuspendLayout();
@@ -298,36 +240,6 @@ namespace moleQule.Face.Instruction
             // 
             this.Progress_PB.Location = new System.Drawing.Point(452, 349);
             // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label16.Location = new System.Drawing.Point(44, 192);
-            label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(92, 13);
-            label16.TabIndex = 149;
-            label16.Text = "Cuenta Contable:";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label18.Location = new System.Drawing.Point(42, 249);
-            label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(56, 13);
-            label18.TabIndex = 150;
-            label18.Text = "Impuesto:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label13.Location = new System.Drawing.Point(300, 249);
-            label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(53, 13);
-            label13.TabIndex = 153;
-            label13.Text = "IRPF(%):";
-            // 
             // Datos_Municipios_F
             // 
             this.Datos_Municipios_F.DataSource = typeof(moleQule.Library.Common.HComboBoxSourceList);
@@ -376,140 +288,6 @@ namespace moleQule.Face.Instruction
             // 
             this.Datos_Submodulo_Instructor.DataSource = typeof(moleQule.Library.Instruction.Submodulo_Instructor);
             // 
-            // Productos_TP
-            // 
-            this.Productos_TP.AutoScroll = true;
-            this.Productos_TP.Controls.Add(this.Productos_Panel);
-            this.Productos_TP.Location = new System.Drawing.Point(4, 22);
-            this.Productos_TP.Name = "Productos_TP";
-            this.Productos_TP.Padding = new System.Windows.Forms.Padding(3);
-            this.Productos_TP.Size = new System.Drawing.Size(946, 643);
-            this.Productos_TP.TabIndex = 6;
-            this.Productos_TP.Text = "Productos";
-            this.Productos_TP.UseVisualStyleBackColor = true;
-            // 
-            // Productos_Panel
-            // 
-            this.Productos_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Productos_Panel.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.Productos_Panel.Location = new System.Drawing.Point(3, 3);
-            this.Productos_Panel.Name = "Productos_Panel";
-            this.Productos_Panel.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // Productos_Panel.Panel1
-            // 
-            this.Productos_Panel.Panel1.Controls.Add(this.Productos_TS);
-            this.Productos_Panel.Panel1MinSize = 39;
-            // 
-            // Productos_Panel.Panel2
-            // 
-            this.Productos_Panel.Panel2.Controls.Add(this.Productos_DGW);
-            this.Productos_Panel.Size = new System.Drawing.Size(940, 637);
-            this.Productos_Panel.SplitterDistance = 39;
-            this.Productos_Panel.SplitterWidth = 1;
-            this.Productos_Panel.TabIndex = 4;
-            // 
-            // Productos_TS
-            // 
-            this.Productos_TS.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.Productos_TS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.AddProducto_TI,
-            this.EditProducto_TI,
-            this.DeleteProducto_TI});
-            this.Productos_TS.Location = new System.Drawing.Point(0, 0);
-            this.Productos_TS.Name = "Productos_TS";
-            this.HelpProvider.SetShowHelp(this.Productos_TS, true);
-            this.Productos_TS.Size = new System.Drawing.Size(940, 39);
-            this.Productos_TS.TabIndex = 5;
-            this.Productos_TS.Text = "Imprimir";
-            // 
-            // AddProducto_TI
-            // 
-            this.AddProducto_TI.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.AddProducto_TI.Image = global::moleQule.Face.Instruction.Properties.Resources.Add1;
-            this.AddProducto_TI.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddProducto_TI.Name = "AddProducto_TI";
-            this.AddProducto_TI.Size = new System.Drawing.Size(36, 36);
-            this.AddProducto_TI.Text = "Nuevo";
-            this.AddProducto_TI.Click += new System.EventHandler(this.AddProducto_TI_Click);
-            // 
-            // EditProducto_TI
-            // 
-            this.EditProducto_TI.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.EditProducto_TI.Image = global::moleQule.Face.Instruction.Properties.Resources.Edit1;
-            this.EditProducto_TI.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.EditProducto_TI.Name = "EditProducto_TI";
-            this.EditProducto_TI.Size = new System.Drawing.Size(36, 36);
-            this.EditProducto_TI.Text = "Editar";
-            this.EditProducto_TI.Visible = false;
-            this.EditProducto_TI.Click += new System.EventHandler(this.EditProducto_TI_Click);
-            // 
-            // DeleteProducto_TI
-            // 
-            this.DeleteProducto_TI.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.DeleteProducto_TI.Image = global::moleQule.Face.Instruction.Properties.Resources.delete1;
-            this.DeleteProducto_TI.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.DeleteProducto_TI.Name = "DeleteProducto_TI";
-            this.DeleteProducto_TI.Size = new System.Drawing.Size(36, 36);
-            this.DeleteProducto_TI.Text = "Borrar";
-            this.DeleteProducto_TI.Click += new System.EventHandler(this.DeleteProducto_TI_Click);
-            // 
-            // Productos_DGW
-            // 
-            this.Productos_DGW.AllowUserToAddRows = false;
-            this.Productos_DGW.AllowUserToDeleteRows = false;
-            this.Productos_DGW.AllowUserToOrderColumns = true;
-            this.Productos_DGW.AllowUserToResizeRows = false;
-            this.Productos_DGW.AutoGenerateColumns = false;
-            this.Productos_DGW.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Producto,
-            this.Impuesto,
-            this.PImpuestos,
-            this.precioDataGridViewTextBoxColumn});
-            this.Productos_DGW.DataSource = this.Datos_ProductoProveedor;
-            this.Productos_DGW.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Productos_DGW.Location = new System.Drawing.Point(0, 0);
-            this.Productos_DGW.Name = "Productos_DGW";
-            this.Productos_DGW.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Productos_DGW.Size = new System.Drawing.Size(940, 597);
-            this.Productos_DGW.TabIndex = 0;
-            this.Productos_DGW.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Productos_DGW_CellClick);
-            // 
-            // Producto
-            // 
-            this.Producto.DataPropertyName = "Producto";
-            this.Producto.HeaderText = "Producto";
-            this.Producto.Name = "Producto";
-            this.Producto.ReadOnly = true;
-            this.Producto.Width = 450;
-            // 
-            // Impuesto
-            // 
-            this.Impuesto.DataPropertyName = "Impuesto";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.NullValue = null;
-            this.Impuesto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Impuesto.HeaderText = "Impuesto";
-            this.Impuesto.Name = "Impuesto";
-            this.Impuesto.Width = 200;
-            // 
-            // PImpuestos
-            // 
-            this.PImpuestos.DataPropertyName = "PImpuestos";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.PImpuestos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.PImpuestos.HeaderText = "% Impuestos";
-            this.PImpuestos.Name = "PImpuestos";
-            // 
-            // precioDataGridViewTextBoxColumn
-            // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.Width = 110;
-            // 
             // Datos_ProductoProveedor
             // 
             this.Datos_ProductoProveedor.DataSource = typeof(moleQule.Library.Store.ProductoProveedor);
@@ -526,90 +304,6 @@ namespace moleQule.Face.Instruction
             this.HelpProvider.SetShowHelp(this.miniToolStrip, true);
             this.miniToolStrip.Size = new System.Drawing.Size(940, 25);
             this.miniToolStrip.TabIndex = 5;
-            // 
-            // Autorizados_TP
-            // 
-            this.Autorizados_TP.Controls.Add(this.Autorizados_Grid);
-            this.Autorizados_TP.Location = new System.Drawing.Point(4, 22);
-            this.Autorizados_TP.Name = "Autorizados_TP";
-            this.Autorizados_TP.Padding = new System.Windows.Forms.Padding(3);
-            this.Autorizados_TP.Size = new System.Drawing.Size(946, 643);
-            this.Autorizados_TP.TabIndex = 3;
-            this.Autorizados_TP.Text = "Autorizados";
-            this.Autorizados_TP.UseVisualStyleBackColor = true;
-            // 
-            // Autorizados_Grid
-            // 
-            this.Autorizados_Grid.AllowUserToOrderColumns = true;
-            this.Autorizados_Grid.AutoGenerateColumns = false;
-            this.Autorizados_Grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Autorizados_Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ModuloA_CBC,
-            this.SubmoduloA_CBC,
-            this.Suplente_CBC,
-            this.FechaInicio,
-            this.FechaFin});
-            this.Autorizados_Grid.DataSource = this.Datos_Submodulo_Instructor;
-            this.Autorizados_Grid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Autorizados_Grid.Location = new System.Drawing.Point(3, 3);
-            this.Autorizados_Grid.Name = "Autorizados_Grid";
-            this.Autorizados_Grid.Size = new System.Drawing.Size(940, 637);
-            this.Autorizados_Grid.TabIndex = 0;
-            this.Autorizados_Grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Autorizados_Grid_CellValueChanged);
-            this.Autorizados_Grid.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.Autorizados_Grid_CellValueChanged);
-            this.Autorizados_Grid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Autorizados_Grid_DataBindingComplete);
-            this.Autorizados_Grid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Autorizados_Grid_DataError);
-            // 
-            // ModuloA_CBC
-            // 
-            this.ModuloA_CBC.DataPropertyName = "OidModulo";
-            this.ModuloA_CBC.DataSource = this.Datos_Modulos;
-            this.ModuloA_CBC.DisplayMember = "Texto";
-            this.ModuloA_CBC.HeaderText = "Módulo";
-            this.ModuloA_CBC.Name = "ModuloA_CBC";
-            this.ModuloA_CBC.ValueMember = "Oid";
-            this.ModuloA_CBC.Width = 280;
-            // 
-            // SubmoduloA_CBC
-            // 
-            this.SubmoduloA_CBC.DataPropertyName = "OidSubmodulo";
-            this.SubmoduloA_CBC.DataSource = this.Datos_Submodulos;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.SubmoduloA_CBC.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SubmoduloA_CBC.DisplayMember = "Texto";
-            this.SubmoduloA_CBC.HeaderText = "Submódulo";
-            this.SubmoduloA_CBC.Name = "SubmoduloA_CBC";
-            this.SubmoduloA_CBC.ValueMember = "Oid";
-            this.SubmoduloA_CBC.Width = 160;
-            // 
-            // Suplente_CBC
-            // 
-            this.Suplente_CBC.DataPropertyName = "OidInstructorSuplente";
-            this.Suplente_CBC.DataSource = this.Datos_Instructores;
-            this.Suplente_CBC.DisplayMember = "Texto";
-            this.Suplente_CBC.HeaderText = "Instructor Autorizado";
-            this.Suplente_CBC.Name = "Suplente_CBC";
-            this.Suplente_CBC.ValueMember = "Oid";
-            this.Suplente_CBC.Width = 300;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            dataGridViewCellStyle5.Format = "d";
-            this.FechaInicio.DefaultCellStyle = dataGridViewCellStyle5;
-            this.FechaInicio.HeaderText = "Fecha Inicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.Width = 70;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.DataPropertyName = "FechaFin";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.FechaFin.DefaultCellStyle = dataGridViewCellStyle6;
-            this.FechaFin.HeaderText = "Fecha Fin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.Width = 70;
             // 
             // Capacitacion_TP
             // 
@@ -678,7 +372,7 @@ namespace moleQule.Face.Instruction
             this.Promocion_CBC.DataPropertyName = "OidPromocion";
             this.Promocion_CBC.DataSource = this.Datos_Promociones_CB;
             this.Promocion_CBC.DisplayMember = "Texto";
-            this.Promocion_CBC.HeaderText = "Promoción";
+            this.Promocion_CBC.HeaderText = "Curso";
             this.Promocion_CBC.Name = "Promocion_CBC";
             this.Promocion_CBC.ValueMember = "Oid";
             this.Promocion_CBC.Width = 300;
@@ -688,9 +382,9 @@ namespace moleQule.Face.Instruction
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(173, 403);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(82, 13);
+            this.label7.Size = new System.Drawing.Size(48, 13);
             this.label7.TabIndex = 4;
-            this.label7.Text = "PROMOCIONES";
+            this.label7.Text = "CURSOS";
             // 
             // Submodulo_Instructor_Grid
             // 
@@ -734,9 +428,9 @@ namespace moleQule.Face.Instruction
             // Prioridad
             // 
             this.Prioridad.DataPropertyName = "Prioridad";
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.Prioridad.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "N0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Prioridad.DefaultCellStyle = dataGridViewCellStyle1;
             this.Prioridad.HeaderText = "Prioridad";
             this.Prioridad.Name = "Prioridad";
             // 
@@ -832,205 +526,6 @@ namespace moleQule.Face.Instruction
             this.Observaciones.HeaderText = "Observaciones";
             this.Observaciones.Name = "Observaciones";
             this.Observaciones.Width = 200;
-            // 
-            // Financieros_TP
-            // 
-            this.Financieros_TP.Controls.Add(this.groupBox2);
-            this.Financieros_TP.Location = new System.Drawing.Point(4, 22);
-            this.Financieros_TP.Name = "Financieros_TP";
-            this.Financieros_TP.Padding = new System.Windows.Forms.Padding(3);
-            this.Financieros_TP.Size = new System.Drawing.Size(946, 643);
-            this.Financieros_TP.TabIndex = 4;
-            this.Financieros_TP.Text = "Financieros";
-            this.Financieros_TP.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(label13);
-            this.groupBox2.Controls.Add(this.IRPF_TB);
-            this.groupBox2.Controls.Add(this.DefectoVenta_BT);
-            this.groupBox2.Controls.Add(this.Impuesto_BT);
-            this.groupBox2.Controls.Add(label18);
-            this.groupBox2.Controls.Add(this.Impuesto_TB);
-            this.groupBox2.Controls.Add(label16);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.MedioPago_CB);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.CuentaAsociada_BT);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.FormaPago_CB);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.DiasPago_NTB);
-            this.groupBox2.Controls.Add(this.CuentaAjena_TB);
-            this.groupBox2.Controls.Add(this.diasPagoLabel);
-            this.groupBox2.Controls.Add(this.CuentaPropia_TB);
-            this.groupBox2.Location = new System.Drawing.Point(204, 168);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(539, 307);
-            this.groupBox2.TabIndex = 9;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Financieros";
-            // 
-            // IRPF_TB
-            // 
-            this.IRPF_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "PIRPF", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.IRPF_TB.Location = new System.Drawing.Point(303, 267);
-            this.IRPF_TB.Name = "IRPF_TB";
-            this.IRPF_TB.Size = new System.Drawing.Size(140, 21);
-            this.IRPF_TB.TabIndex = 152;
-            this.IRPF_TB.TabStop = false;
-            // 
-            // DefectoVenta_BT
-            // 
-            this.DefectoVenta_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.close_16;
-            this.DefectoVenta_BT.Location = new System.Drawing.Point(227, 267);
-            this.DefectoVenta_BT.Name = "DefectoVenta_BT";
-            this.DefectoVenta_BT.Size = new System.Drawing.Size(29, 21);
-            this.DefectoVenta_BT.TabIndex = 151;
-            this.DefectoVenta_BT.UseVisualStyleBackColor = true;
-            this.DefectoVenta_BT.Click += new System.EventHandler(this.Defecto_BT_Click);
-            // 
-            // Impuesto_BT
-            // 
-            this.Impuesto_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.select_16;
-            this.Impuesto_BT.Location = new System.Drawing.Point(192, 267);
-            this.Impuesto_BT.Name = "Impuesto_BT";
-            this.Impuesto_BT.Size = new System.Drawing.Size(29, 21);
-            this.Impuesto_BT.TabIndex = 148;
-            this.Impuesto_BT.UseVisualStyleBackColor = true;
-            this.Impuesto_BT.Click += new System.EventHandler(this.Impuesto_BT_Click);
-            // 
-            // Impuesto_TB
-            // 
-            this.Impuesto_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "Impuesto", true));
-            this.Impuesto_TB.Location = new System.Drawing.Point(45, 267);
-            this.Impuesto_TB.Name = "Impuesto_TB";
-            this.Impuesto_TB.ReadOnly = true;
-            this.Impuesto_TB.Size = new System.Drawing.Size(140, 21);
-            this.Impuesto_TB.TabIndex = 147;
-            this.Impuesto_TB.TabStop = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "CuentaContable", true));
-            this.textBox5.Location = new System.Drawing.Point(45, 210);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(130, 21);
-            this.textBox5.TabIndex = 146;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(42, 58);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(81, 13);
-            this.label12.TabIndex = 121;
-            this.label12.Text = "Medio de Pago:";
-            // 
-            // MedioPago_CB
-            // 
-            this.MedioPago_CB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.Datos, "MedioPago", true));
-            this.MedioPago_CB.DataSource = this.Datos_MedioPago;
-            this.MedioPago_CB.DisplayMember = "Texto";
-            this.MedioPago_CB.FormattingEnabled = true;
-            this.MedioPago_CB.Location = new System.Drawing.Point(129, 55);
-            this.MedioPago_CB.Name = "MedioPago_CB";
-            this.MedioPago_CB.Size = new System.Drawing.Size(192, 21);
-            this.MedioPago_CB.TabIndex = 2;
-            this.MedioPago_CB.ValueMember = "Oid";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(42, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(83, 13);
-            this.label9.TabIndex = 35;
-            this.label9.Text = "Forma de Pago:";
-            // 
-            // CuentaAsociada_BT
-            // 
-            this.CuentaAsociada_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.select_16;
-            this.CuentaAsociada_BT.Location = new System.Drawing.Point(327, 152);
-            this.CuentaAsociada_BT.Name = "CuentaAsociada_BT";
-            this.CuentaAsociada_BT.Size = new System.Drawing.Size(29, 21);
-            this.CuentaAsociada_BT.TabIndex = 5;
-            this.CuentaAsociada_BT.UseVisualStyleBackColor = true;
-            this.CuentaAsociada_BT.Click += new System.EventHandler(this.CuentaAsociada_BT_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(42, 88);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(185, 13);
-            this.label10.TabIndex = 24;
-            this.label10.Text = "Cuenta Bancaria (Ingreso en cuenta)";
-            // 
-            // FormaPago_CB
-            // 
-            this.FormaPago_CB.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.Datos, "FormaPago", true));
-            this.FormaPago_CB.DataSource = this.Datos_FormaPago;
-            this.FormaPago_CB.DisplayMember = "Texto";
-            this.FormaPago_CB.FormattingEnabled = true;
-            this.FormaPago_CB.Location = new System.Drawing.Point(129, 22);
-            this.FormaPago_CB.Name = "FormaPago_CB";
-            this.FormaPago_CB.Size = new System.Drawing.Size(192, 21);
-            this.FormaPago_CB.TabIndex = 0;
-            this.FormaPago_CB.ValueMember = "Oid";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(42, 136);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(179, 13);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "Cuenta Asociada (Cargo en cuenta)";
-            // 
-            // DiasPago_NTB
-            // 
-            this.DiasPago_NTB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "DiasPago", true));
-            this.DiasPago_NTB.Location = new System.Drawing.Point(417, 22);
-            this.DiasPago_NTB.Name = "DiasPago_NTB";
-            this.DiasPago_NTB.Size = new System.Drawing.Size(44, 21);
-            this.DiasPago_NTB.TabIndex = 1;
-            this.DiasPago_NTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.DiasPago_NTB.TextIsCurrency = false;
-            this.DiasPago_NTB.TextIsInteger = true;
-            // 
-            // CuentaAjena_TB
-            // 
-            this.CuentaAjena_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "CuentaAsociada", true));
-            this.CuentaAjena_TB.Location = new System.Drawing.Point(45, 152);
-            this.CuentaAjena_TB.Name = "CuentaAjena_TB";
-            this.CuentaAjena_TB.ReadOnly = true;
-            this.CuentaAjena_TB.Size = new System.Drawing.Size(276, 21);
-            this.CuentaAjena_TB.TabIndex = 4;
-            // 
-            // diasPagoLabel
-            // 
-            this.diasPagoLabel.AutoSize = true;
-            this.diasPagoLabel.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diasPagoLabel.Location = new System.Drawing.Point(353, 25);
-            this.diasPagoLabel.Name = "diasPagoLabel";
-            this.diasPagoLabel.Size = new System.Drawing.Size(58, 13);
-            this.diasPagoLabel.TabIndex = 35;
-            this.diasPagoLabel.Text = "Días Pago:";
-            // 
-            // CuentaPropia_TB
-            // 
-            this.CuentaPropia_TB.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.Datos, "CuentaBancaria", true));
-            this.CuentaPropia_TB.Location = new System.Drawing.Point(45, 104);
-            this.CuentaPropia_TB.Name = "CuentaPropia_TB";
-            this.CuentaPropia_TB.Size = new System.Drawing.Size(276, 21);
-            this.CuentaPropia_TB.TabIndex = 3;
             // 
             // General_TP
             // 
@@ -1653,11 +1148,8 @@ namespace moleQule.Face.Instruction
             // Ficha_TP
             // 
             this.Ficha_TP.Controls.Add(this.General_TP);
-            this.Ficha_TP.Controls.Add(this.Financieros_TP);
-            this.Ficha_TP.Controls.Add(this.Productos_TP);
             this.Ficha_TP.Controls.Add(this.Formacion_TP);
             this.Ficha_TP.Controls.Add(this.Capacitacion_TP);
-            this.Ficha_TP.Controls.Add(this.Autorizados_TP);
             this.Ficha_TP.Location = new System.Drawing.Point(11, 11);
             this.Ficha_TP.Name = "Ficha_TP";
             this.Ficha_TP.SelectedIndex = 0;
@@ -1698,18 +1190,7 @@ namespace moleQule.Face.Instruction
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulo_Instructor_Promocion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Instructores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_Submodulo_Instructor)).EndInit();
-            this.Productos_TP.ResumeLayout(false);
-            this.Productos_Panel.Panel1.ResumeLayout(false);
-            this.Productos_Panel.Panel1.PerformLayout();
-            this.Productos_Panel.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Productos_Panel)).EndInit();
-            this.Productos_Panel.ResumeLayout(false);
-            this.Productos_TS.ResumeLayout(false);
-            this.Productos_TS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Productos_DGW)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Datos_ProductoProveedor)).EndInit();
-            this.Autorizados_TP.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Autorizados_Grid)).EndInit();
             this.Capacitacion_TP.ResumeLayout(false);
             this.Capacitacion_TP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Promociones_Grid)).EndInit();
@@ -1717,9 +1198,6 @@ namespace moleQule.Face.Instruction
             this.Formacion_TP.ResumeLayout(false);
             this.Formacion_TP.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CursosF_Grid)).EndInit();
-            this.Financieros_TP.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.General_TP.ResumeLayout(false);
             this.General_TP.PerformLayout();
             this.Perfil_GB.ResumeLayout(false);
@@ -1806,31 +1284,6 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.Label telefonoLabel;
         private System.Windows.Forms.Label localidadLabel;
         private System.Windows.Forms.Label provinciaLabel;
-        protected System.Windows.Forms.TabPage Financieros_TP;
-        private System.Windows.Forms.GroupBox groupBox2;
-        protected System.Windows.Forms.TextBox IRPF_TB;
-        protected System.Windows.Forms.Button DefectoVenta_BT;
-        protected System.Windows.Forms.Button Impuesto_BT;
-        protected System.Windows.Forms.TextBox Impuesto_TB;
-        protected System.Windows.Forms.TextBox textBox5;
-        protected System.Windows.Forms.Label label12;
-        protected System.Windows.Forms.ComboBox MedioPago_CB;
-        protected System.Windows.Forms.Label label9;
-        protected System.Windows.Forms.Button CuentaAsociada_BT;
-        protected System.Windows.Forms.Label label10;
-        protected System.Windows.Forms.ComboBox FormaPago_CB;
-        protected System.Windows.Forms.Label label11;
-        protected Controls.NumericTextBox DiasPago_NTB;
-        protected System.Windows.Forms.TextBox CuentaAjena_TB;
-        private System.Windows.Forms.Label diasPagoLabel;
-        protected System.Windows.Forms.TextBox CuentaPropia_TB;
-        protected System.Windows.Forms.TabPage Productos_TP;
-        protected System.Windows.Forms.SplitContainer Productos_Panel;
-        protected System.Windows.Forms.ToolStrip Productos_TS;
-        protected System.Windows.Forms.ToolStripButton AddProducto_TI;
-        protected System.Windows.Forms.ToolStripButton EditProducto_TI;
-        protected System.Windows.Forms.ToolStripButton DeleteProducto_TI;
-        protected System.Windows.Forms.DataGridView Productos_DGW;
         protected System.Windows.Forms.TabPage Formacion_TP;
         private System.Windows.Forms.Label label2;
         protected System.Windows.Forms.DataGridView CursosF_Grid;
@@ -1852,21 +1305,10 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.DataGridViewTextBoxColumn oidSubmoduloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prioridadDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label3;
-        protected System.Windows.Forms.TabPage Autorizados_TP;
-        protected System.Windows.Forms.DataGridView Autorizados_Grid;
         protected System.Windows.Forms.ToolStrip miniToolStrip;
         protected System.Windows.Forms.BindingSource Datos_ProductoProveedor;
         private Library.Application.Tools.CustomAdapter customAdapter1;
         protected System.Windows.Forms.DataGridViewComboBoxColumn Promocion_CBC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewButtonColumn Impuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PImpuestos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ModuloA_CBC;
-        private System.Windows.Forms.DataGridViewComboBoxColumn SubmoduloA_CBC;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Suplente_CBC;
-        private CalendarColumn FechaInicio;
-        private CalendarColumn FechaFin;
         private System.Windows.Forms.CheckBox MTOE_CB;
     }
 }

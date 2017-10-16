@@ -159,7 +159,7 @@ namespace moleQule.Face.Instruction
             this.Promocion_GB.Size = new System.Drawing.Size(568, 51);
             this.Promocion_GB.TabIndex = 32;
             this.Promocion_GB.TabStop = false;
-            this.Promocion_GB.Text = "Promociones";
+            this.Promocion_GB.Text = "Cursos";
             // 
             // TodosPromocion_CkB
             // 

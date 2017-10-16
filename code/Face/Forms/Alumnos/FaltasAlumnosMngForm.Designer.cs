@@ -393,7 +393,7 @@
             // Promocion
             // 
             this.Promocion.DataPropertyName = "Promocion";
-            this.Promocion.HeaderText = "Promoción";
+            this.Promocion.HeaderText = "Curso";
             this.Promocion.Name = "Promocion";
             this.Promocion.ReadOnly = true;
             // 

@@ -249,7 +249,7 @@
             this.groupBox2.Size = new System.Drawing.Size(414, 100);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Festivo";
+            this.groupBox2.Text = "Día No Lectivo";
             // 
             // groupBox3
             // 
