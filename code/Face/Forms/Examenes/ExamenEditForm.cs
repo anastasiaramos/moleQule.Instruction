@@ -241,13 +241,14 @@ namespace moleQule.Face.Instruction
                             PgMng.Grow();
                         }
                         temp = _entity.Clone();
-                        _preguntas_examen.Save();
-                        _entity = temp.Save();
+                        //_preguntas_examen.Save();
+                        //_entity = temp.Save();
                     }
 
                     PgMng.Grow("Guardando examen...");
 
-                    //_preguntas_examen.Save();
+                    _preguntas_examen.Save();
+                    _entity = temp.Save();
                     //_preguntas_examen.CloseSession();
 
                     PgMng.FillUp();
@@ -420,6 +421,7 @@ namespace moleQule.Face.Instruction
                 {
                     if (!item.Activa)
                         inactivas += item.Serial.ToString() + ", ";
+
                 }
 
                 if (inactivas != string.Empty)
@@ -435,6 +437,18 @@ namespace moleQule.Face.Instruction
             Datos_Preguntas.DataSource = _preguntas_examen;
 
             Preguntas_TB.Text = Datos_Preguntas.Count.ToString();
+
+            TimeSpan duracion = TimeSpan.Zero;
+            TimeSpan tiempo_pregunta;
+
+            if (_entity.Desarrollo)
+                tiempo_pregunta = moleQule.Library.Instruction.ModulePrincipal.GetTiempoPreguntasTipoDesarrolloSetting().TimeOfDay;
+            else
+                tiempo_pregunta = moleQule.Library.Instruction.ModulePrincipal.GetTiempoPreguntasTipoTestSetting().TimeOfDay;
+            
+            duracion = TimeSpan.FromSeconds(tiempo_pregunta.TotalSeconds * Datos_Preguntas.Count);
+            _entity.Duracion = Convert.ToDateTime(duracion.ToString());
+            Duracion_MTB.Text = _entity.Duracion.Hour.ToString("00") + ":" + _entity.Duracion.Minute.ToString("00");
         }
 
         #endregion

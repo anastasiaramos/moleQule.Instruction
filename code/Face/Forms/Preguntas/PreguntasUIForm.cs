@@ -372,7 +372,7 @@ namespace moleQule.Face.Instruction
                             {
                                 _pregunta.OidTema = (long)Tema_CB.SelectedValue;
                                 _pregunta.OidSubmodulo = (long)Submodulo_CB.SelectedValue;
-                                _pregunta.OidModulo = (long)Modulo_CB.SelectedValue;
+                                _pregunta.OidModulo = (long)Modulo_CB.SelectedValue; 
                             }
                         }
                         else
@@ -390,9 +390,10 @@ namespace moleQule.Face.Instruction
                             TemaInfo tema = _temas.GetItem(_pregunta.OidTema);
                             Nivel_TB.Text = tema.Nivel.ToString();
                             if (tema.Desarrollo)
-                                Tipo_CB.SelectedItem = ETipoPregunta.Desarrollo.ToString();//_combo_tipo.Buscar(1);
+                                _pregunta.Tipo = ETipoPregunta.Desarrollo.ToString();//_combo_tipo.Buscar(1);
                             else
-                                Tipo_CB.SelectedItem = ETipoPregunta.Test.ToString();// _combo_tipo.Buscar(2);
+                                _pregunta.Tipo = ETipoPregunta.Test.ToString();// _combo_tipo.Buscar(2);
+                            Tipo_CB.SelectedItem = _pregunta.Tipo;
                         }
 
                     } break;

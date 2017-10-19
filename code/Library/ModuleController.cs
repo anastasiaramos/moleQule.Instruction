@@ -144,6 +144,8 @@ namespace moleQule.Library.Instruction
                     typeof(FestivoMap),
 					typeof(HistoriaMap),
 					typeof(HorarioMap),
+                    typeof(IncidenciaCronogramaMap),
+                    typeof(IncidenciaSesionCronogramaMap),
 					typeof(InstructorMap),
 					typeof(Instructor_PromocionMap),
 					typeof(Material_AlumnoMap),
@@ -202,6 +204,8 @@ namespace moleQule.Library.Instruction
             recordEntities.Add(typeof(Festivo), typeof(FestivoRecord));
             recordEntities.Add(typeof(Historia), typeof(HistoriaRecord));
             recordEntities.Add(typeof(Horario), typeof(HorarioRecord));
+            recordEntities.Add(typeof(IncidenciaCronograma), typeof(IncidenciaCronogramaRecord));
+            recordEntities.Add(typeof(IncidenciaSesionCronograma), typeof(IncidenciaSesionCronogramaRecord));
             recordEntities.Add(typeof(Instructor), typeof(InstructorRecord));
             recordEntities.Add(typeof(Instructor_Promocion), typeof(Instructor_PromocionRecord));
             recordEntities.Add(typeof(Material_Alumno), typeof(Material_AlumnoRecord));

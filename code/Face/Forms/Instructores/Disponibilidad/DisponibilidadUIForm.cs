@@ -27,6 +27,8 @@ namespace moleQule.Face.Instruction
         public override Instructor Entity { get { return _entity; } set { _entity = value; } }
         public override InstructorInfo EntityInfo { get { return (_entity != null) ? _entity.GetInfo(false) : null; } }
 
+        protected bool _has_parent = false;
+
         #endregion
 
         #region Factory Methods
@@ -48,6 +50,8 @@ namespace moleQule.Face.Instruction
             {
 
                 this.Datos.RaiseListChangedEvents = false;
+
+                if (_has_parent) return true;
 
                 Instructor temp = _entity;
                 temp.ApplyEdit();

@@ -385,6 +385,9 @@ namespace moleQule.Face.Instruction
                 PreguntasEditForm form = new PreguntasEditForm(ActiveItem, ActiveList, true);
                 if (form.Lista != null)
                     AddForm(form);
+                List = Preguntas.GetList(false, List.SessionCode);
+                RefreshSources();
+                ExecuteAction(molAction.FilterAll);
             }
             catch (Csla.DataPortalException ex)
             {
@@ -433,7 +436,7 @@ namespace moleQule.Face.Instruction
                                         "que aún no se ha celebrado.");
                     else
                     {
-                        Pregunta.Delete(oid);
+                        //Pregunta.Delete(oid);
                         List.Remove(pregunta);
 
                         _action_result = DialogResult.OK;

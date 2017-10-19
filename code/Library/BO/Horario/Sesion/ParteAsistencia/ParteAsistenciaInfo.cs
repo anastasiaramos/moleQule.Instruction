@@ -22,7 +22,7 @@ namespace moleQule.Library.Instruction
         protected ParteAsistenciaBase _base = new ParteAsistenciaBase();
         
         private Alumno_ParteList _alumnos = null;
-        private Concepto_ParteList _conceptos = null;
+        //private Concepto_ParteList _conceptos = null;
         private Alumno_PracticaList _alumnos_practicas = null;
         private Clase_ParteList _clases = null;
 
@@ -46,7 +46,7 @@ namespace moleQule.Library.Instruction
         public bool Confirmada { get { return _base.Record.Confirmada; } }
 
         public virtual Alumno_ParteList Alumno_Partes { get { return _alumnos; } }
-        public virtual Concepto_ParteList Conceptos { get { return _conceptos; } }
+        //public virtual Concepto_ParteList Conceptos { get { return _conceptos; } }
         public virtual Alumno_PracticaList Alumnos_Practicas { get { return _alumnos_practicas; } }
         public virtual Clase_ParteList Clases { get { return _clases; } }
 
@@ -82,7 +82,7 @@ namespace moleQule.Library.Instruction
             if (copy_childs)
             {
                 _alumnos = (item.Alumno_Partes != null) ? Alumno_ParteList.GetChildList(item.Alumno_Partes) : null;
-                _conceptos = (item.Conceptos != null) ? Concepto_ParteList.GetChildList(item.Conceptos) : null;
+                //_conceptos = (item.Conceptos != null) ? Concepto_ParteList.GetChildList(item.Conceptos) : null;
                 _alumnos_practicas = (item.Alumnos_Practicas != null) ? Alumno_PracticaList.GetChildList(item.Alumnos_Practicas) : null;
                 _clases = (item.Clases != null) ? Clase_ParteList.GetChildList(item.Clases) : null;
             }
@@ -161,9 +161,9 @@ namespace moleQule.Library.Instruction
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
                         _alumnos = Alumno_ParteList.GetChildList(reader);
 
-                        query = Concepto_ParteList.SELECT(this);
-                        reader = nHManager.Instance.SQLNativeSelect(query, Session());
-                        _conceptos = Concepto_ParteList.GetChildList(reader);
+                        //query = Concepto_ParteList.SELECT(this);
+                        //reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                        //_conceptos = Concepto_ParteList.GetChildList(reader);
 
                         query = Instruction.Alumno_PracticaList.SELECT(this);
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
@@ -194,9 +194,9 @@ namespace moleQule.Library.Instruction
                     IDataReader reader = nHManager.Instance.SQLNativeSelect(query, Session());
                     _alumnos = Alumno_ParteList.GetChildList(reader);
 
-                    query = Concepto_ParteList.SELECT(this);
-                    reader = nHManager.Instance.SQLNativeSelect(query, Session());
-                    _conceptos = Concepto_ParteList.GetChildList(reader);
+                    //query = Concepto_ParteList.SELECT(this);
+                    //reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                    //_conceptos = Concepto_ParteList.GetChildList(reader);
 
                     query = Instruction.Alumno_PracticaList.SELECT(this);
                     reader = nHManager.Instance.SQLNativeSelect(query, Session());

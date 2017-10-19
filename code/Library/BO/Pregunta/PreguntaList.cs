@@ -483,6 +483,23 @@ namespace moleQule.Library.Instruction
         /// Retrieve the complete list from db
         /// </summary>
         /// <returns>PreguntaList</returns>
+        public static PreguntaList GetPreguntasDisponiblesModulo(long oid_modulo, bool desarrollo, DateTime fecha_examen, long limit)
+        {
+            CriteriaEx criteria = Pregunta.GetCriteria(Pregunta.OpenSession());
+            criteria.Childs = false;
+            criteria.Query = PreguntaList.SELECT_DISPONIBLES_BY_MODULO(oid_modulo, desarrollo, fecha_examen, limit);
+            //No criteria. Retrieve all de List
+            PreguntaList list = DataPortal.Fetch<PreguntaList>(criteria);
+
+            CloseSession(criteria.SessionCode);
+
+            return list;
+        }
+
+        /// <summary>
+        /// Retrieve the complete list from db
+        /// </summary>
+        /// <returns>PreguntaList</returns>
         public static PreguntaList GetPreguntasDisponiblesTema(long oid_tema, bool desarrollo, DateTime fecha_examen, long limit)
         {
             CriteriaEx criteria = Pregunta.GetCriteria(Pregunta.OpenSession());
@@ -813,6 +830,27 @@ namespace moleQule.Library.Instruction
             string subquery = string.Empty;
 
             if (oid_tema > 0) subquery += " AND P.\"OID_TEMA\" = " + oid_tema.ToString()
+                                        + " AND P.\"ACTIVA\" = 'true' AND P.\"RESERVADA\" = 'false'"
+                                        + " AND P.\"FECHA_DISPONIBILIDAD\" <= '" + fecha_examen.ToString("yyyy-MM-dd") + "'";
+
+            if (desarrollo)
+                subquery += " AND P.\"TIPO\" = 'Desarrollo'";
+            else
+                subquery += " AND P.\"TIPO\" = 'Test'";
+
+            subquery += " ORDER BY RANDOM()";
+            if (limit > 0) subquery += " LIMIT " + limit.ToString();
+
+            string query = Pregunta.SELECT(0, false, subquery);
+
+            return query;
+        }
+
+        public static string SELECT_DISPONIBLES_BY_MODULO(long oid_modulo, bool desarrollo, DateTime fecha_examen, long limit = 0)
+        {
+            string subquery = string.Empty;
+
+            if (oid_modulo > 0) subquery += " AND P.\"OID_MODULO\" = " + oid_modulo.ToString() 
                                         + " AND P.\"ACTIVA\" = 'true' AND P.\"RESERVADA\" = 'false'"
                                         + " AND P.\"FECHA_DISPONIBILIDAD\" <= '" + fecha_examen.ToString("yyyy-MM-dd") + "'";
 

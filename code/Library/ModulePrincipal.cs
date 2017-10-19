@@ -105,6 +105,26 @@ namespace moleQule.Library.Instruction
             SettingsMng.Instance.SchemaSettings.SetValue(Settings.Default.SETTING_NAME_CRITERIO_PORCENTAJE_MINIMO_EXAMEN_APROBADO, value.ToString());
         }
 
+        //Tiempo Preguntas
+        public static DateTime GetTiempoPreguntasTipoDesarrolloSetting()
+        {
+            try { return Convert.ToDateTime(SettingsMng.Instance.SchemaSettings.GetValue(Settings.Default.SETTING_NAME_TIEMPO_PREGUNTA_DESARROLLO)); }
+            catch { return Convert.ToDateTime(false); }
+        }
+        public static void SetTiempoPreguntasTipoDesarrolloSetting(DateTime value)
+        {
+            SettingsMng.Instance.SchemaSettings.SetValue(Settings.Default.SETTING_NAME_TIEMPO_PREGUNTA_DESARROLLO, value.ToString());
+        }
+        public static DateTime GetTiempoPreguntasTipoTestSetting()
+        {
+            try { return Convert.ToDateTime(SettingsMng.Instance.SchemaSettings.GetValue(Settings.Default.SETTING_NAME_TIEMPO_PREGUNTA_TEST)); }
+            catch { return Convert.ToDateTime(false); }
+        }
+        public static void SetTiempoPreguntasTipoTestSetting(DateTime value)
+        {
+            SettingsMng.Instance.SchemaSettings.SetValue(Settings.Default.SETTING_NAME_TIEMPO_PREGUNTA_TEST, value.ToString());
+        }
+
         //Cuadro de Disponibilidad
         public static long GetHoraInicioDisponibilidadMananaSetting()
         {

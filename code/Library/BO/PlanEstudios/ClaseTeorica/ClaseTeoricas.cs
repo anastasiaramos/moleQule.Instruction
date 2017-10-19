@@ -363,7 +363,7 @@ namespace moleQule.Library.Instruction
                        "AND c.\"OID_PLAN\" = " + oid_plan_extra.ToString() + " " +
                        "AND s.\"ESTADO\" = 3 ) " +
                     "AND cl.\"OID_PLAN\" = " + oid_plan_extra.ToString() + " " +
-                   "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"";
+                   "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\"";//, \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"
 
             return query;
         }

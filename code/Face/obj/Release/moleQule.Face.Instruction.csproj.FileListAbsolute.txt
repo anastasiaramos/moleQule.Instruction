@@ -625,3 +625,5 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Rel
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.SelectPreguntasReportForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloViewForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloEditForm.resources

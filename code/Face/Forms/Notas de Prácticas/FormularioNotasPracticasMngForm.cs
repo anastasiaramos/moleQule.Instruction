@@ -351,13 +351,13 @@ namespace moleQule.Face.Instruction
             //{
                 try
                 {
-                    ParteAsistenciaInfo parte = ParteAsistenciaInfo.Get(oid, true);
-                    if (parte.Conceptos.Count > 0)
-                    {
-                        PgMng.ShowInfoException(Resources.Messages.PARTE_CON_CONCEPTOS_ASOCIADOS);
-                        _action_result = DialogResult.Ignore;
-                        return;
-                    }
+                    //ParteAsistenciaInfo parte = ParteAsistenciaInfo.Get(oid, true);
+                    //if (parte.Conceptos.Count > 0)
+                    //{
+                    //    PgMng.ShowInfoException(Resources.Messages.PARTE_CON_CONCEPTOS_ASOCIADOS);
+                    //    _action_result = DialogResult.Ignore;
+                    //    return;
+                    //}
                     ParteAsistencia.Delete(oid);
                     _action_result = DialogResult.OK;
 

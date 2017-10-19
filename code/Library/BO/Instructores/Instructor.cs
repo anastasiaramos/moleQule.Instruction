@@ -210,7 +210,7 @@ namespace moleQule.Library.Instruction
         
         private Payments _pagos = Payments.NewChildList();
 		private CursoFormacions _cursos_formacion = CursoFormacions.NewChildList();
-		private Submodulos_Instructores _submodulos = Submodulos_Instructores.NewChildList();
+		//private Submodulos_Instructores _submodulos = Submodulos_Instructores.NewChildList();
 		private Disponibilidades _disponibilidades = Disponibilidades.NewChildList();
 		private Instructor_Promociones _promociones = Instructor_Promociones.NewChildList();
 
@@ -1084,20 +1084,20 @@ namespace moleQule.Library.Instruction
 				_cursos_formacion = value;
 			}
 		}
-        public virtual Submodulos_Instructores Submodulos
-        {
-            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-            get
-            {
-                CanReadProperty(true);
-                return _submodulos;
-            }
+        //public virtual Submodulos_Instructores Submodulos
+        //{
+        //    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        //    get
+        //    {
+        //        CanReadProperty(true);
+        //        return _submodulos;
+        //    }
 
-            set
-            {
-                _submodulos = value;
-            }
-        }
+        //    set
+        //    {
+        //        _submodulos = value;
+        //    }
+        //}
 		public virtual Disponibilidades Disponibilidades
 		{
 			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
@@ -1148,7 +1148,7 @@ namespace moleQule.Library.Instruction
                                 && _cursos_formacion.IsValid 
                                 && _disponibilidades.IsValid 
                                 && _promociones.IsValid 
-                                && _submodulos.IsValid
+                                //&& _submodulos.IsValid
                                 && _base.ProviderBase._producto_proveedores.IsValid
                                 && _base.ProviderBase._pagos.IsValid;
             }
@@ -1160,7 +1160,7 @@ namespace moleQule.Library.Instruction
                                 || _cursos_formacion.IsDirty 
                                 || _disponibilidades.IsDirty 
                                 || _promociones.IsDirty 
-                                || _submodulos.IsDirty
+                                //|| _submodulos.IsDirty
                                 || _base.ProviderBase._producto_proveedores.IsDirty
                                 || _base.ProviderBase._pagos.IsDirty;
             }
@@ -1184,7 +1184,7 @@ namespace moleQule.Library.Instruction
 			clon.MarkNew();
             clon.Pagos.MarkAsNew();
 			clon.CursosFormacion.MarkAsNew();
-			clon.Submodulos.MarkAsNew();
+			//clon.Submodulos.MarkAsNew();
 			clon.Disponibilidades.MarkAsNew();
 			clon.Promociones.MarkAsNew();
 
@@ -1466,7 +1466,7 @@ namespace moleQule.Library.Instruction
 
                 _pagos.Update(this);
                 _cursos_formacion.Update(this);
-                _submodulos.Update(this);
+                //_submodulos.Update(this);
 
                 bool autorizados = ModulePrincipal.GetMostrarInstructoresAutorizadosSetting();
 
@@ -1507,7 +1507,7 @@ namespace moleQule.Library.Instruction
             GetNewCode();
 
 			_cursos_formacion = CursoFormacions.NewChildList();
-			_submodulos = Submodulos_Instructores.NewChildList();
+			//_submodulos = Submodulos_Instructores.NewChildList();
 			_disponibilidades = Disponibilidades.NewChildList();
 			_promociones = Instructor_Promociones.NewChildList();
 		}
@@ -1550,10 +1550,10 @@ namespace moleQule.Library.Instruction
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
                         _cursos_formacion = CursoFormacions.GetChildList(reader);
 
-                        Submodulo_Instructor.DoLOCK(Session());
-                        query = Submodulos_Instructores.SELECT_BY_INSTRUCTOR(this.Oid);
-                        reader = nHManager.Instance.SQLNativeSelect(query, Session());
-                        _submodulos = Submodulos_Instructores.GetChildList(reader);
+                        //Submodulo_Instructor.DoLOCK(Session());
+                        //query = Submodulos_Instructores.SELECT_BY_INSTRUCTOR(this.Oid);
+                        //reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                        //_submodulos = Submodulos_Instructores.GetChildList(reader);
 
                         bool autorizados = ModulePrincipal.GetMostrarInstructoresAutorizadosSetting();
                         if (!autorizados || (autorizados && MTOE))
@@ -1741,7 +1741,7 @@ namespace moleQule.Library.Instruction
                 _base.ProviderBase._producto_proveedores.Update(this);
                 _base.ProviderBase._pagos.Update(this);
                 _cursos_formacion.Update(this);
-                _submodulos.Update(this);
+                //_submodulos.Update(this);
                 _disponibilidades.Update(this);
                 _promociones.Update(this);
             }

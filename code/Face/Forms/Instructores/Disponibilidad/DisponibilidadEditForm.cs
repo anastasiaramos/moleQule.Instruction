@@ -12,6 +12,12 @@ namespace moleQule.Face.Instruction
 
         #region Factory Methods
 
+        public DisponibilidadEditForm(InstructorUIForm form)
+            : this(true) 
+        {
+            _has_parent = true;
+        }
+
         public DisponibilidadEditForm()
             : this(true) { }
 

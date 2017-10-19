@@ -312,6 +312,16 @@
     <Compile Include="BO\PlanEstudios\Cronograma\CronogramaReportMng.cs" />
     <Compile Include="BO\PlanEstudios\Cronograma\Cronogramas.cs" />
     <Compile Include="BO\PlanEstudios\Cronograma\CronogramaController.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaCronograma.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaCronogramaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaCronogramaList.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaCronogramaMap.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciasCronogramas.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaSesionCronograma.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaSesionCronogramaInfo.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaSesionCronogramaList.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaSesionCronogramaMap.cs" />
+    <Compile Include="BO\PlanEstudios\Cronograma\Incidencias\IncidenciaSesionesCronogramas.cs" />
     <Compile Include="BO\PlanEstudios\Cronograma\SesionCronograma.cs" />
     <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaInfo.cs" />
     <Compile Include="BO\PlanEstudios\Cronograma\SesionCronogramaList.cs" />
@@ -1086,6 +1096,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="SQL\Update\Update 7.4.0.5 .sql" />
     <EmbeddedResource Include="Properties\Asm\nh0001\Sesion_Promocion.hbm.xml" />
     <Content Include="Reports\Alumno\AlumnoPrint.xml">
       <SubType>Designer</SubType>
@@ -1136,6 +1147,7 @@
     <None Include="SQL\Install\02_Schema.sql" />
     <None Include="SQL\Install\03_Common_Data.sql" />
     <None Include="SQL\Install\04_Schema_Data.sql" />
+    <Content Include="SQL\Update\Update 7.4.0.4 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.2 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.1 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.0 .sql" />

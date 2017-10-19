@@ -360,12 +360,12 @@ namespace moleQule.Library.Instruction
         /// <param name="index">índice de la sesión en la que se va a insertar la clase práctica</param>
         /// <param name="incompatible">campo Incompatible de la práctica</param>
         /// <returns></returns>
-        public bool LaboratorioLibre(int index, long laboratorio)
+        public bool LaboratorioLibre(int index, long laboratorio, int n_horas)
         {
             //se comprueban los horarios generados para otras promociones
             foreach (ListaSesiones lista in _instructores_asignados)
             {
-                for (int i = index; i < index + 5; i++)
+                for (int i = index; i < index + n_horas; i++)
                 {
                     if (lista[i].Laboratorio == laboratorio)
                         return false;
@@ -374,7 +374,7 @@ namespace moleQule.Library.Instruction
 
             //también se comprueba el horario actual, por si el otro grupo tuviera una práctica
             //con el mismo valor de campo Incompatible
-            for (int i = index; i < index + 5; i++)
+            for (int i = index; i < index + n_horas; i++)
             {
                 if (_lista_sesiones[i].Laboratorio == laboratorio)
                     return false;
@@ -511,15 +511,18 @@ namespace moleQule.Library.Instruction
                 {
                     ClaseTeoricaInfo clase = _teoricas.GetItem(item.OidClaseTeorica);
 
-                    if (clase != null &&
-                        //clase.OidModulo != cl.OidModulo &&
+                    if ((clase != null &&
+                        clase.OidModulo != cl.OidModulo &&
                         (clase.OrdenPrimario > cl.OrdenPrimario
                         || (clase.OrdenPrimario == cl.OrdenPrimario
                         && clase.OrdenSecundario > cl.OrdenSecundario)
                         || (clase.OrdenPrimario == cl.OrdenPrimario
                         && clase.OrdenSecundario == cl.OrdenSecundario
                         && clase.OrdenTerciario >= cl.OrdenTerciario)))
+                        || (clase.OidModulo == cl.OidModulo 
+                            && clase.OrdenPrimario == cl.OrdenPrimario))
                         return true;
+                        
                 }
             }
 
@@ -1645,7 +1648,52 @@ namespace moleQule.Library.Instruction
             int horas_restantes = 0;
 
             if (_rules[(int)TRule.MismoInstructorMismoDia] && (MismoInstructorMismoDia(hora_inicial, instructor.Oid))) return false;
-            if (_rules[(int)TRule.MismoInstructorMismaSesion] && (MismaInstructorMismaSesion(hora_inicial, instructor.Oid))) return false;
+            if (_rules[(int)TRule.MismoInstructorMismaSesion] && (MismaInstructorMismaSesion(hora_inicial, instructor.Oid)))
+            {
+                int inicio_dia = hora_inicial;
+                int fin_dia = hora_inicial;
+
+                while (inicio_dia > 0 && _lista_sesiones[inicio_dia - 1].Fecha.Day == _lista_sesiones[hora_inicial].Fecha.Day)
+                    inicio_dia--;
+                while (fin_dia + n_horas - 1 < _lista_sesiones.Count - 1 && _lista_sesiones[fin_dia + n_horas].Fecha.Day == _lista_sesiones[hora_inicial].Fecha.Day)
+                    fin_dia++;
+
+                DateTime fecha_inicio = _lista_sesiones[hora_inicial].Fecha;
+                while (fecha_inicio.DayOfWeek != DayOfWeek.Monday)
+                    fecha_inicio = fecha_inicio.AddDays(-1);
+
+                for (int i = inicio_dia; i <= fin_dia - n_horas + 1; i++)
+                {
+                    if (i != hora_inicial && _lista_sesiones[i].EEstadoClase == EEstadoClase.Programada 
+                        && (_lista_sesiones[i].OidClaseTeorica > 0 
+                        || _lista_sesiones[i].OidClaseExtra > 0)
+                        && (_profesores.EstaDisponible(_lista_sesiones[i].OidProfesor, hora_inicial, fecha_inicio)
+                        && _profesores.EstaDisponible(instructor.Oid, i, fecha_inicio)
+                        && Horario.ProfesorLibre(_instructores_asignados, hora_inicial, _lista_sesiones[i].OidProfesor, _lista_sesiones, _profesores, hora_inicial, fecha_inicio, _disponibilidades)
+                        && Horario.ProfesorLibre(_instructores_asignados, i, instructor.Oid, _lista_sesiones, _profesores, i, fecha_inicio, _disponibilidades)))
+                    {
+                        for (int ind = 0; ind < n_horas; ind++)
+                        {
+                            if (i + ind == _lista_sesiones.Count
+                                || hora_inicial + ind == _lista_sesiones.Count)
+                                break;
+                            _lista_sesiones[i+ind].IntercambiaSesion(_lista_sesiones[hora_inicial+ind], true);
+                        }
+                        if (QuedanClasesSubmodulo(clase, n_horas, out horas_restantes))
+                        {
+                            AsignaSesion(clase, instructor.Oid, i, n_horas);
+                        }
+                        else
+                        {
+                            AsignaSesion(clase, instructor.Oid, i, horas_restantes);
+                            AsignaSesionesOtrosSubmodulos(i, n_horas, horas_restantes, clase, instructor);
+                        }
+                        return true;
+                    }
+                }
+
+                return false;
+            }
             if (QuedanClasesSubmodulo(clase, n_horas, out horas_restantes))
             {
                 AsignaSesion(clase, instructor.Oid, hora_inicial, n_horas);
@@ -1806,8 +1854,9 @@ namespace moleQule.Library.Instruction
 
         public bool AsignaSesionPractica(List<SesionNoAsignable> no_asignables,
                                         int hora_inicial, 
-                                        int n_horas)
+                                        out int n_horas)
         {
+            n_horas = 5;
             if (!HayInstructoresDisponibles(hora_inicial)) return false;
 
             int n_grupo = GetGrupoConMenosPracticas();
@@ -1831,13 +1880,13 @@ namespace moleQule.Library.Instruction
                             && _lista_sesiones[hora_inicial].Grupo != n_grupo) || 
                             !PosibleAsignarPracticaHorario(clase) || !PosibleAsignarModulo(clase) ||
                             !PosibleAsignarSubmodulo(clase) || (clase.Laboratorio > 0 && 
-                            !LaboratorioLibre(hora_inicial, clase.Laboratorio)))
+                            !LaboratorioLibre(hora_inicial, clase.Laboratorio, (int)clase.Duracion)))
                         {
                             indice_practica++;
                             continue;
                         }
 
-                        if (AsignaInstructorPractica(clase, no_asignables, hora_inicial, n_horas))
+                        if (AsignaInstructorPractica(clase, no_asignables, hora_inicial + (5 - (int)clase.Duracion), (int)clase.Duracion))
                         {
                             _practicas_programadas_grupo[n_grupo]++;
                             break;
@@ -1850,7 +1899,7 @@ namespace moleQule.Library.Instruction
                 n_grupo = (n_grupo % (_practicas.Count - 1)) + 1;
 
             }
-            return _lista_sesiones[hora_inicial].EEstadoClase == EEstadoClase.Programada;
+            return _lista_sesiones[hora_inicial + (5 - n_horas)].EEstadoClase == EEstadoClase.Programada;
         }
 
         public int GetHorasSesion(int indice)
@@ -1983,7 +2032,8 @@ namespace moleQule.Library.Instruction
                 ClaseTeoricaInfo clase = _teoricas[indice_teorica];
                 if (clase.EEstadoClase == EEstadoClase.NoProgramada) // aún no está programada
                 {
-                    if (AsignaInstructorTeorica(clase, no_asignables, hora_inicial, n_horas, oid_profesor))
+                    if (!MismoModuloMismoDia(hora_inicial ,clase) 
+                        && AsignaInstructorTeorica(clase, no_asignables, hora_inicial, n_horas, oid_profesor))
                         return true;
                 }
                 indice_teorica++;
@@ -2217,23 +2267,25 @@ namespace moleQule.Library.Instruction
 
                 while (!PracticasTotalesAsignadas() && practica_asignada)
                 {
+                    int n_horas = 0;
+
                     //Sesión del sábado
                     if (SesionDisponible(70, 5))
                     {
-                        practica_asignada = AsignaSesionPractica(no_asignables, 70, 5);
+                        practica_asignada = AsignaSesionPractica(no_asignables, 70, out n_horas);
                     }
 
                     //Resto de sesiones
                     int hora_incial = BuscaSesionPracticaLibre(5);
                     if (hora_incial != -1)
                     {
-                        practica_asignada = AsignaSesionPractica(no_asignables, hora_incial, 5);
+                        practica_asignada = AsignaSesionPractica(no_asignables, hora_incial, out n_horas);
                     }
                     else
                         practica_asignada = false;
 
                     if (practica_asignada)
-                        num_sesiones_asignadas += 5;
+                        num_sesiones_asignadas += n_horas;
                 }
 
                 //TEORICAS

@@ -170,7 +170,7 @@ namespace moleQule.Library.Instruction
 		protected ParteAsistenciaBase _base = new ParteAsistenciaBase();
 
         private Alumno_Partes _alumnos = Alumno_Partes.NewChildList();
-        private Conceptos_Partes _conceptos = Conceptos_Partes.NewChildList();
+        //private Conceptos_Partes _conceptos = Conceptos_Partes.NewChildList();
         private Alumnos_Practicas _alumnos_practicas = Alumnos_Practicas.NewChildList();
         private Clases_Partes _clases = Clases_Partes.NewChildList();
 		
@@ -446,20 +446,20 @@ namespace moleQule.Library.Instruction
                 _alumnos = value;
             }
         }
-        public virtual Conceptos_Partes Conceptos
-        {
-            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-            get
-            {
-                CanReadProperty(true);
-                return _conceptos;
-            }
+        //public virtual Conceptos_Partes Conceptos
+        //{
+        //    [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+        //    get
+        //    {
+        //        CanReadProperty(true);
+        //        return _conceptos;
+        //    }
 
-            set
-            {
-                _conceptos = value;
-            }
-        }
+        //    set
+        //    {
+        //        _conceptos = value;
+        //    }
+        //}
         public virtual Alumnos_Practicas Alumnos_Practicas
         {
             [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
@@ -491,11 +491,11 @@ namespace moleQule.Library.Instruction
 
         public override bool IsValid
         {
-            get { return base.IsValid && _alumnos.IsValid && _conceptos.IsValid && _alumnos_practicas.IsValid && _clases.IsValid; }
+            get { return base.IsValid && _alumnos.IsValid && /*_conceptos.IsValid &&*/ _alumnos_practicas.IsValid && _clases.IsValid; }
         }
         public override bool IsDirty
         {
-            get { return base.IsDirty || _alumnos.IsDirty || _conceptos.IsDirty || _alumnos_practicas.IsDirty || _clases.IsDirty; }
+            get { return base.IsDirty || _alumnos.IsDirty || /*_conceptos.IsDirty ||*/ _alumnos_practicas.IsDirty || _clases.IsDirty; }
         }
 
         public virtual string Instructor { get { return _base.Instructor; } }
@@ -711,7 +711,7 @@ namespace moleQule.Library.Instruction
                 base.Save();
 
                 _alumnos.Update(this);
-                _conceptos.Update(this);
+                //_conceptos.Update(this);
                 _alumnos_practicas.Update(this);
                 _clases.Update(this);
 
@@ -884,9 +884,9 @@ namespace moleQule.Library.Instruction
                 criteria.AddEq("OidParte", this.Oid);
                 _alumnos_practicas = Alumnos_Practicas.GetChildList(criteria.List<Alumno_Practica>());
 
-                criteria = Concepto_Parte.GetCriteria(Session());
-                criteria.AddEq("OidParte", this.Oid);
-                _conceptos = Conceptos_Partes.GetChildList(criteria.List<Concepto_Parte>());
+                //criteria = Concepto_Parte.GetCriteria(Session());
+                //criteria.AddEq("OidParte", this.Oid);
+                //_conceptos = Conceptos_Partes.GetChildList(criteria.List<Concepto_Parte>());
 
                 criteria = Clase_Parte.GetCriteria(Session());
                 criteria.AddEq("OidParte", this.Oid);
@@ -922,11 +922,11 @@ namespace moleQule.Library.Instruction
                     reader = nHManager.Instance.SQLNativeSelect(query, Session(session_code));
                     _alumnos_practicas = Alumnos_Practicas.GetChildList(reader);
 
-                    Concepto_Parte.DoLOCK(Session(session_code));
+                    //Concepto_Parte.DoLOCK(Session(session_code));
 
-                    query = Conceptos_Partes.SELECT_BY_PARTE(this.Oid);
-                    reader = nHManager.Instance.SQLNativeSelect(query, Session(session_code));
-                    _conceptos = Conceptos_Partes.GetChildList(reader);
+                    //query = Conceptos_Partes.SELECT_BY_PARTE(this.Oid);
+                    //reader = nHManager.Instance.SQLNativeSelect(query, Session(session_code));
+                    //_conceptos = Conceptos_Partes.GetChildList(reader);
 
                     Clase_Parte.DoLOCK(Session(session_code));
 
@@ -963,7 +963,7 @@ namespace moleQule.Library.Instruction
                 parent.Session().Save(this.Base.Record);
 
                 _alumnos.Update(this);
-                _conceptos.Update(this);
+                //_conceptos.Update(this);
                 _alumnos_practicas.Update(this);
                 _clases.Update(this);
             }
@@ -997,7 +997,7 @@ namespace moleQule.Library.Instruction
                 parent.Session().Update(obj);
 
                 _alumnos.Update(this);
-                _conceptos.Update(this);
+                //_conceptos.Update(this);
                 _alumnos_practicas.Update(this);
                 _clases.Update(this);
             }
@@ -1066,11 +1066,11 @@ namespace moleQule.Library.Instruction
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
                         _alumnos_practicas = Alumnos_Practicas.GetChildList(reader);
 
-                        Concepto_Parte.DoLOCK(Session());
+                        //Concepto_Parte.DoLOCK(Session());
 
-                        query = Conceptos_Partes.SELECT_BY_PARTE(this.Oid);
-                        reader = nHManager.Instance.SQLNativeSelect(query, Session());
-                        _conceptos = Conceptos_Partes.GetChildList(reader);
+                        //query = Conceptos_Partes.SELECT_BY_PARTE(this.Oid);
+                        //reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                        //_conceptos = Conceptos_Partes.GetChildList(reader);
 
                         Clase_Parte.DoLOCK(Session());
 
@@ -1161,133 +1161,133 @@ namespace moleQule.Library.Instruction
 
         #region Commands
 
-        public virtual bool GeneraAlbaran()
-        {
-            /*VariableList lista = VariableList.GetList();
+        //public virtual bool GeneraAlbaran()
+        //{
+        //    /*VariableList lista = VariableList.GetList();
 
-            VariableInfo v_serie = lista.GetItem(ModuleControler.GetInstruccionSerieVariableName());
-            SerieInfo serie = SerieInfo.Get(Convert.ToInt64(v_serie.Value), false);
-            if (serie.Oid == 0)
-                return false;
+        //    VariableInfo v_serie = lista.GetItem(ModuleControler.GetInstruccionSerieVariableName());
+        //    SerieInfo serie = SerieInfo.Get(Convert.ToInt64(v_serie.Value), false);
+        //    if (serie.Oid == 0)
+        //        return false;
 
-            VariableInfo v_producto = lista.GetItem(ModuleControler.GetInstruccionProductoVariableName());
-            ProductoInfo producto = ProductoInfo.Get(Convert.ToInt64(v_producto.Value), false);
-            if (producto.Oid == 0)
-                return false;*/
+        //    VariableInfo v_producto = lista.GetItem(ModuleControler.GetInstruccionProductoVariableName());
+        //    ProductoInfo producto = ProductoInfo.Get(Convert.ToInt64(v_producto.Value), false);
+        //    if (producto.Oid == 0)
+        //        return false;*/
 
-            SerieInfo serie = null;
-            ProductInfo producto = null;
+        //    SerieInfo serie = null;
+        //    ProductInfo producto = null;
 
-            try
-            {
-                if (Tipo == 1 || Tipo == 2)
-                {
-                    HorarioInfo horario = HorarioInfo.Get(OidHorario, false);
-                    PlanEstudiosInfo plan = PlanEstudiosInfo.Get(horario.OidPlan, false);
-                    serie = SerieInfo.Get(plan.OidSerie, false);
-                    producto = ProductInfo.Get(plan.OidProducto, false);
-                }
-                else
-                {
-                    if (Clases.Count > 0)
-                    {
-                        ClaseExtraInfo clase = ClaseExtraInfo.Get(Clases[0].OidClase);
-                        PlanExtraInfo plan = PlanExtraInfo.Get(clase.OidPlan, false);
-                        serie = SerieInfo.Get(plan.OidSerie, false);
-                        producto = ProductInfo.Get(plan.OidProducto, false);
-                    }
-                }
+        //    try
+        //    {
+        //        if (Tipo == 1 || Tipo == 2)
+        //        {
+        //            HorarioInfo horario = HorarioInfo.Get(OidHorario, false);
+        //            PlanEstudiosInfo plan = PlanEstudiosInfo.Get(horario.OidPlan, false);
+        //            serie = SerieInfo.Get(plan.OidSerie, false);
+        //            producto = ProductInfo.Get(plan.OidProducto, false);
+        //        }
+        //        else
+        //        {
+        //            if (Clases.Count > 0)
+        //            {
+        //                ClaseExtraInfo clase = ClaseExtraInfo.Get(Clases[0].OidClase);
+        //                PlanExtraInfo plan = PlanExtraInfo.Get(clase.OidPlan, false);
+        //                serie = SerieInfo.Get(plan.OidSerie, false);
+        //                producto = ProductInfo.Get(plan.OidProducto, false);
+        //            }
+        //        }
 
-                if (producto == null || serie == null)
-                    return false;
-            }
-            catch { return false; }
+        //        if (producto == null || serie == null)
+        //            return false;
+        //    }
+        //    catch { return false; }
 
 
-            if (Conceptos != null && Conceptos.Count > 0)
-            {
-                foreach (Concepto_Parte item in Conceptos)
-                {
-                    InputDeliveryLineInfo concpt = InputDeliveryLineInfo.Get(item.OidConcepto);
-                    if (concpt != null && concpt.Oid != 0)
-                    {
-                        InputDeliveryInfo info = InputDeliveryInfo.Get(concpt.OidAlbaran, ETipoAcreedor.Instructor);
-                        if (info.Facturado)
-                            return false;
-                        InputDelivery alb = InputDelivery.Get(concpt.OidAlbaran, ETipoAcreedor.Instructor, true, SessionCode);
-                        if (alb != null)
-                        {
-                            alb.Conceptos.Remove(concpt.Oid);
-                            alb.CalculateTotal();
-                            alb.Save();
-                            //alb.CloseSession();
-                        }
+        //    if (Conceptos != null && Conceptos.Count > 0)
+        //    {
+        //        foreach (Concepto_Parte item in Conceptos)
+        //        {
+        //            InputDeliveryLineInfo concpt = InputDeliveryLineInfo.Get(item.OidConcepto);
+        //            if (concpt != null && concpt.Oid != 0)
+        //            {
+        //                InputDeliveryInfo info = InputDeliveryInfo.Get(concpt.OidAlbaran, ETipoAcreedor.Instructor);
+        //                if (info.Facturado)
+        //                    return false;
+        //                InputDelivery alb = InputDelivery.Get(concpt.OidAlbaran, ETipoAcreedor.Instructor, true, SessionCode);
+        //                if (alb != null)
+        //                {
+        //                    alb.Conceptos.Remove(concpt.Oid);
+        //                    alb.CalculateTotal();
+        //                    alb.Save();
+        //                    //alb.CloseSession();
+        //                }
 
-                        if (alb.Conceptos.Count == 0)
-                            InputDelivery.Delete(alb.Oid, alb.ETipoAcreedor);
-                    }
-                }
-            }
+        //                if (alb.Conceptos.Count == 0)
+        //                    InputDelivery.Delete(alb.Oid, alb.ETipoAcreedor);
+        //            }
+        //        }
+        //    }
 
-            this.Conceptos = Conceptos_Partes.NewChildList();
-            Concepto_Parte concepto = this.Conceptos.NewItem(this);
+        //    this.Conceptos = Conceptos_Partes.NewChildList();
+        //    Concepto_Parte concepto = this.Conceptos.NewItem(this);
             
-            InputDeliveryList albaranes = InputDeliveryList.GetListByAcreedor(false, ETipoAcreedor.Instructor, this.OidInstructorEfectivo, ETipoAlbaranes.NoFacturados, 
-                new DateTime(this.Fecha.Year, this.Fecha.Month, 1), new DateTime(this.Fecha.Year, this.Fecha.Month, DateTime.DaysInMonth(this.Fecha.Year, this.Fecha.Month)));
+        //    InputDeliveryList albaranes = InputDeliveryList.GetListByAcreedor(false, ETipoAcreedor.Instructor, this.OidInstructorEfectivo, ETipoAlbaranes.NoFacturados, 
+        //        new DateTime(this.Fecha.Year, this.Fecha.Month, 1), new DateTime(this.Fecha.Year, this.Fecha.Month, DateTime.DaysInMonth(this.Fecha.Year, this.Fecha.Month)));
 
-            long oid_albaran = 0;
+        //    long oid_albaran = 0;
 
-            foreach (InputDeliveryInfo albaran_info in albaranes)
-            {
-                if (albaran_info.Fecha.Month == this.Fecha.Month
-                    && albaran_info.Fecha.Year == this.Fecha.Year
-                    && !albaran_info.Facturado)
-                {
-                    oid_albaran = albaran_info.Oid;
-                    break;
-                }
-            }
+        //    foreach (InputDeliveryInfo albaran_info in albaranes)
+        //    {
+        //        if (albaran_info.Fecha.Month == this.Fecha.Month
+        //            && albaran_info.Fecha.Year == this.Fecha.Year
+        //            && !albaran_info.Facturado)
+        //        {
+        //            oid_albaran = albaran_info.Oid;
+        //            break;
+        //        }
+        //    }
 
-            InputDelivery albaran = null;
+        //    InputDelivery albaran = null;
 
-            InstructorInfo instructor = InstructorInfo.Get(this.OidInstructorEfectivo, true);
+        //    InstructorInfo instructor = InstructorInfo.Get(this.OidInstructorEfectivo, true);
 
-            if (oid_albaran != 0)
-                albaran = InputDelivery.Get(oid_albaran, ETipoAcreedor.Instructor, true, SessionCode);
-            else
-            {
-                albaran = InputDelivery.New();
-                albaran.SessionCode = SessionCode;
-                albaran.ETipoAcreedor = ETipoAcreedor.Instructor;
-                albaran.OidAcreedor = this.OidInstructorEfectivo;
-                albaran.OidSerie = serie.Oid;
-                albaran.Fecha = this.Fecha;
-                albaran.OidAlmacen = 0;
-                while (albaran.Fecha.Day != DateTime.DaysInMonth(albaran.Fecha.Year, albaran.Fecha.Month))
-                    albaran.Fecha = albaran.Fecha.AddDays(1);
+        //    if (oid_albaran != 0)
+        //        albaran = InputDelivery.Get(oid_albaran, ETipoAcreedor.Instructor, true, SessionCode);
+        //    else
+        //    {
+        //        albaran = InputDelivery.New();
+        //        albaran.SessionCode = SessionCode;
+        //        albaran.ETipoAcreedor = ETipoAcreedor.Instructor;
+        //        albaran.OidAcreedor = this.OidInstructorEfectivo;
+        //        albaran.OidSerie = serie.Oid;
+        //        albaran.Fecha = this.Fecha;
+        //        albaran.OidAlmacen = 0;
+        //        while (albaran.Fecha.Day != DateTime.DaysInMonth(albaran.Fecha.Year, albaran.Fecha.Month))
+        //            albaran.Fecha = albaran.Fecha.AddDays(1);
 
-                albaran.PIRPF = instructor.PIRPF;
-            }
+        //        albaran.PIRPF = instructor.PIRPF;
+        //    }
 
-            InputDeliveryLine concepto_albaran = InputDeliveryLine.NewChild(albaran);
+        //    InputDeliveryLine concepto_albaran = InputDeliveryLine.NewChild(albaran);
 
-            concepto_albaran.Compra(albaran, serie, instructor, producto);
-            concepto_albaran.Concepto += " " + this.Fecha.ToShortDateString() + " " + this.HoraInicio + " " + this.Promocion;
-            concepto_albaran.CantidadKilos = Convert.ToDateTime(this.NHoras).Hour;
-            concepto_albaran.CantidadBultos = concepto_albaran.CantidadKilos / producto.KilosBulto;
-            concepto_albaran = albaran.Compra(producto, concepto_albaran);
-            concepto_albaran.OidAlmacen = 0;
-            albaran.CalculateTotal();
-            albaran.Save();
-            //SUPER PARCHE DE LA VIDA!! 
-            if (nHManager.Instance.Sessions.Count > 5)
-                CloseSession(nHManager.Instance.Sessions.Count - 1);
-            //albaran.CloseSession();
+        //    concepto_albaran.Compra(albaran, serie, instructor, producto);
+        //    concepto_albaran.Concepto += " " + this.Fecha.ToShortDateString() + " " + this.HoraInicio + " " + this.Promocion;
+        //    concepto_albaran.CantidadKilos = Convert.ToDateTime(this.NHoras).Hour;
+        //    concepto_albaran.CantidadBultos = concepto_albaran.CantidadKilos / producto.KilosBulto;
+        //    concepto_albaran = albaran.Compra(producto, concepto_albaran);
+        //    concepto_albaran.OidAlmacen = 0;
+        //    albaran.CalculateTotal();
+        //    albaran.Save();
+        //    //SUPER PARCHE DE LA VIDA!! 
+        //    if (nHManager.Instance.Sessions.Count > 5)
+        //        CloseSession(nHManager.Instance.Sessions.Count - 1);
+        //    //albaran.CloseSession();
 
-            concepto.OidConcepto = concepto_albaran.Oid;
+        //    concepto.OidConcepto = concepto_albaran.Oid;
 
-            return true;
-        }
+        //    return true;
+        //}
 
         #endregion
 

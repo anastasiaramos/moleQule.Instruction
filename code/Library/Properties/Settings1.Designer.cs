@@ -43,7 +43,7 @@ namespace moleQule.Library.Instruction.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.5")]
         public string MODULE_VERSION {
             get {
                 return ((string)(this["MODULE_VERSION"]));
@@ -172,10 +172,28 @@ namespace moleQule.Library.Instruction.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7.4.0.5")]
         public string DB_VERSION {
             get {
                 return ((string)(this["DB_VERSION"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TIEMPO_PREGUNTA_DESARROLLO")]
+        public string SETTING_NAME_TIEMPO_PREGUNTA_DESARROLLO {
+            get {
+                return ((string)(this["SETTING_NAME_TIEMPO_PREGUNTA_DESARROLLO"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TIEMPO_PREGUNTA_TEST")]
+        public string SETTING_NAME_TIEMPO_PREGUNTA_TEST {
+            get {
+                return ((string)(this["SETTING_NAME_TIEMPO_PREGUNTA_TEST"]));
             }
         }
     }

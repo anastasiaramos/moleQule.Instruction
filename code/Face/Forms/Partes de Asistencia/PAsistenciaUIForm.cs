@@ -202,16 +202,16 @@ namespace moleQule.Face.Instruction
             if (_entity.OidInstructorEfectivo == 0)
                 _entity.OidInstructorEfectivo = _entity.OidInstructor;
 
-            if (_entity.Confirmada)
-            {
-                if (!_entity.GeneraAlbaran())
-                {
-                    MessageBox.Show(Resources.Messages.ERROR_GENERACION_ALBARAN_INSTRUCTOR);
-                    _action_result = DialogResult.Ignore;
-                    return;
-                }
+            //if (_entity.Confirmada)
+            //{
+            //    if (!_entity.GeneraAlbaran())
+            //    {
+            //        MessageBox.Show(Resources.Messages.ERROR_GENERACION_ALBARAN_INSTRUCTOR);
+            //        _action_result = DialogResult.Ignore;
+            //        return;
+            //    }
 
-            }
+            //}
 
             _entity.UpdateAlumnosPracticas();
 

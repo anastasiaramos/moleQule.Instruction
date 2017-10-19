@@ -178,6 +178,19 @@ namespace moleQule.Face.Instruction
                 _promociones_todas.Add(info.Numero + " - " + info.Nombre, info);
 
             RellenaPromociones();
+
+            TimeSpan duracion = TimeSpan.Zero;
+            TimeSpan tiempo_pregunta;
+
+            if (_entity.Desarrollo)
+                tiempo_pregunta = moleQule.Library.Instruction.ModulePrincipal.GetTiempoPreguntasTipoDesarrolloSetting().TimeOfDay;
+            else
+                tiempo_pregunta = moleQule.Library.Instruction.ModulePrincipal.GetTiempoPreguntasTipoTestSetting().TimeOfDay;
+
+            duracion = TimeSpan.FromSeconds(tiempo_pregunta.TotalSeconds * Datos_Preguntas.Count);
+            _entity.Duracion = Convert.ToDateTime(duracion.ToString());
+            Duracion_MTB.Text = _entity.Duracion.Hour.ToString("00") + ":" + _entity.Duracion.Minute.ToString("00");
+
         }
 
         #endregion

@@ -335,6 +335,9 @@ namespace moleQule.Library.Instruction
 
             item = this.GetItem(oid_instructor);
 
+            if (item.Disponibilidades == null)
+                item.LoadChilds(typeof(Disponibilidad), true);
+
             foreach (DisponibilidadInfo disp in item.Disponibilidades)
             {
                 if (disp.FechaInicio.Date.Equals(fecha.Date))

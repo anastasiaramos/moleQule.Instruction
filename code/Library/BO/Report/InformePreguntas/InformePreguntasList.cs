@@ -215,7 +215,7 @@ namespace moleQule.Library.Instruction
 		                                FROM " + preguntas + @" AS P2 
 		                                INNER JOIN " + submodulo + @" AS S2 ON S2.""OID"" = P2.""OID_SUBMODULO""
 		                                GROUP BY S2.""OID"") AS CS ON CS.""OID"" = S.""OID""
-                                WHERE P.""OID"" IN " + lista_preguntas + @"
+                                WHERE P.""OID"" IN " + lista_preguntas + @" AND P.""ACTIVA"" = 'true' 
                                 GROUP BY ""MODULO"", ""SUBMODULO"", T.""NIVEL"", M.""NUMERO_ORDEN"", S.""CODIGO_ORDEN"", T.""DESARROLLO"", CM.""MODULO_COUNT"", CS.""SUBMODULO_COUNT"", P.""OID_MODULO"", P.""OID_SUBMODULO""
                                 ORDER BY M.""NUMERO_ORDEN"", S.""CODIGO_ORDEN""";
 

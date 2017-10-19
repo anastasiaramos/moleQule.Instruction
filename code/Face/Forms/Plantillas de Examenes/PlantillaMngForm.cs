@@ -192,7 +192,12 @@ namespace moleQule.Face.Instruction
 		{			
 			try
 			{
-				AddForm(new PlantillaViewForm(ActiveOID));
+                PlantillaExamenInfo item = PlantillaExamenInfo.Get(ActiveOID, false);
+
+                if (item.Desarrollo)
+                    AddForm(new PlantillaDesarrolloViewForm(ActiveOID));
+                else
+				    AddForm(new PlantillaViewForm(ActiveOID));
 			}
 			catch (Csla.DataPortalException ex)
 			{
@@ -218,11 +223,25 @@ namespace moleQule.Face.Instruction
         {             
             try
             {
-                PlantillaEditForm form = new PlantillaEditForm(ActiveOID);
-                if (form.Entity != null)
+                PlantillaExamenInfo item = PlantillaExamenInfo.Get(ActiveOID, false);
+
+                if (item.Desarrollo)
                 {
-                    AddForm(form);
-                    _entity = form.Entity;
+                    PlantillaDesarrolloEditForm form = new PlantillaDesarrolloEditForm(ActiveOID);
+                    if (form.Entity != null)
+                    {
+                        AddForm(form);
+                        _entity = form.Entity;
+                    }
+                }
+                else
+                {
+                    PlantillaEditForm form = new PlantillaEditForm(ActiveOID);
+                    if (form.Entity != null)
+                    {
+                        AddForm(form);
+                        _entity = form.Entity;
+                    }
                 }
             }
             catch (Csla.DataPortalException ex)

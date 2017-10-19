@@ -38,6 +38,7 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -62,6 +63,7 @@ namespace moleQule.Face.Instruction
             this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDisponibilidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaUltimoExamen = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -441,6 +443,7 @@ namespace moleQule.Face.Instruction
             this.Tema,
             this.Texto,
             this.Tipo,
+            this.Nivel,
             this.FechaAlta,
             this.FechaDisponibilidad,
             this.FechaUltimoExamen,
@@ -544,6 +547,17 @@ namespace moleQule.Face.Instruction
             this.Tipo.Name = "Tipo";
             this.Tipo.ReadOnly = true;
             this.Tipo.Width = 75;
+            // 
+            // Nivel
+            // 
+            this.Nivel.DataPropertyName = "Nivel";
+            dataGridViewCellStyle71.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.Nivel.DefaultCellStyle = dataGridViewCellStyle71;
+            this.Nivel.HeaderText = "Nivel";
+            this.Nivel.Name = "Nivel";
+            this.Nivel.ReadOnly = true;
+            this.Nivel.Width = 75;
             // 
             // FechaAlta
             // 
@@ -942,6 +956,7 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.DataGridViewCheckBoxColumn Activa;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Reservada;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Disponible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nivel;
         
     }
 }

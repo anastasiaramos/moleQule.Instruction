@@ -32,24 +32,24 @@ namespace moleQule.Face.Instruction
         public override Instructor Entity { get { return _entity; } set { _entity = value; } }
         public override InstructorInfo EntityInfo { get { return (_entity != null) ? _entity.GetInfo(false) : null; } }
 
-        private bool SubmoduloRepetido()
-        {
-            for (int i = 0; i < Entity.Submodulos.Count - 1; i++)
-            {
-                for (int j = i + 1; j < Entity.Submodulos.Count; j++)
-                {
-                    if (Entity.Submodulos[i].OidSubmodulo == Entity.Submodulos[j].OidSubmodulo
-                        && ((Entity.Submodulos[i].FechaInicio <= Entity.Submodulos[j].FechaInicio 
-                        && Entity.Submodulos[j].FechaInicio <= Entity.Submodulos[i].FechaFin)
-                        || (Entity.Submodulos[i].FechaInicio <= Entity.Submodulos[j].FechaFin
-                        && Entity.Submodulos[j].FechaFin <= Entity.Submodulos[i].FechaFin)))
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
+        //private bool SubmoduloRepetido()
+        //{
+        //    for (int i = 0; i < Entity.Submodulos.Count - 1; i++)
+        //    {
+        //        for (int j = i + 1; j < Entity.Submodulos.Count; j++)
+        //        {
+        //            if (Entity.Submodulos[i].OidSubmodulo == Entity.Submodulos[j].OidSubmodulo
+        //                && ((Entity.Submodulos[i].FechaInicio <= Entity.Submodulos[j].FechaInicio 
+        //                && Entity.Submodulos[j].FechaInicio <= Entity.Submodulos[i].FechaFin)
+        //                || (Entity.Submodulos[i].FechaInicio <= Entity.Submodulos[j].FechaFin
+        //                && Entity.Submodulos[j].FechaFin <= Entity.Submodulos[i].FechaFin)))
+        //            {
+        //                return true;
+        //            }
+        //        }
+        //    }
+        //    return false;
+        //}
 
         #endregion
 
@@ -80,11 +80,11 @@ namespace moleQule.Face.Instruction
 
                 this.Datos.RaiseListChangedEvents = false;
 
-                if (SubmoduloRepetido())
-                {
-                    MessageBox.Show("Sólo se puede incluir un profesor titular por submódulo y periodo");
-                    return false;
-                }
+                //if (SubmoduloRepetido())
+                //{
+                //    MessageBox.Show("Sólo se puede incluir un profesor titular por submódulo y periodo");
+                //    return false;
+                //}
 
                 Instructor temp = _entity.Clone();
                 temp.ApplyEdit();
@@ -376,11 +376,11 @@ namespace moleQule.Face.Instruction
                     SetCellsDataSource(Submodulo_Instructor_Grid.Name);
                 }
             }
-            if (type == typeof(Submodulo_Instructor))
-            {
-                Datos_Submodulo_Instructor.DataSource = _entity.Submodulos;
-                PgMng.Grow(string.Empty, "Datos_Submodulo_Instructor");
-            }
+            //if (type == typeof(Submodulo_Instructor))
+            //{
+            //    Datos_Submodulo_Instructor.DataSource = _entity.Submodulos;
+            //    PgMng.Grow(string.Empty, "Datos_Submodulo_Instructor");
+            //}
         }
 
         protected override void ChangeFicha()
@@ -622,7 +622,7 @@ namespace moleQule.Face.Instruction
                 nHManager.Instance.CloseSession(sessCode);
             }*/
 
-            DisponibilidadEditForm edit_form = new DisponibilidadEditForm();
+            DisponibilidadEditForm edit_form = new DisponibilidadEditForm(this);
             edit_form.SeleccionaInstructor(Entity.Oid, Entity.SessionCode);
             edit_form.ShowDialog();
 

@@ -25,6 +25,7 @@ namespace moleQule.Library.Instruction
 
         private SesionCronogramaList _sesiones = null;
         private Sesion_PromocionList _configuracion = null;
+        private IncidenciaCronogramaList _incidencias = null;
 
 
         #endregion
@@ -45,6 +46,7 @@ namespace moleQule.Library.Instruction
 
         public virtual SesionCronogramaList Sesiones { get { return _sesiones; } }
         public virtual Sesion_PromocionList Configuracion { get { return _configuracion; } }
+        public virtual IncidenciaCronogramaList Incidencias { get { return _incidencias; } }
 
 
         #endregion
@@ -80,6 +82,7 @@ namespace moleQule.Library.Instruction
             {
                 _sesiones = (source.Sesiones != null) ? SesionCronogramaList.GetChildList(source.Sesiones) : null;
                 _configuracion = (source.Configuracion != null) ? Sesion_PromocionList.GetChildList(source.Configuracion) : null;
+                _incidencias = (source.Incidencias != null) ? IncidenciaCronogramaList.GetChildList(source.Incidencias) : null;
             }
 		}
 
@@ -174,6 +177,10 @@ namespace moleQule.Library.Instruction
                         query = Sesiones_Promociones.SELECT(this);
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
                         _configuracion = Sesion_PromocionList.GetChildList(reader);
+
+                        query = IncidenciasCronogramas.SELECT_SESIONES_PLAN(this.Oid);
+                        reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                        _incidencias = IncidenciaCronogramaList.GetChildList(reader);
                     }
                 }
                 else
@@ -190,6 +197,10 @@ namespace moleQule.Library.Instruction
                         criteria.AddEq("OidPromocion", this.Oid);
                         criteria.AddEq("Tipo", 2);
                         _configuracion = Sesion_PromocionList.GetChildList(criteria.List<Sesion_Promocion>());
+
+                        criteria = IncidenciaCronograma.GetCriteria(criteria.Session);
+                        criteria.AddEq("OidCronograma", this.Oid);
+                        _incidencias = IncidenciaCronogramaList.GetChildList(criteria.List<IncidenciaCronograma>());
                     }
                 }
 
@@ -220,6 +231,10 @@ namespace moleQule.Library.Instruction
                     query = Sesiones_Promociones.SELECT(this);
                     reader = nHManager.Instance.SQLNativeSelect(query, Session());
                     _configuracion = Sesion_PromocionList.GetChildList(reader);
+
+                    query = IncidenciasCronogramas.SELECT_BY_CRONOGRAMA(this.Oid);
+                    reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                    _incidencias = IncidenciaCronogramaList.GetChildList(reader);
                 }
             }
             catch (Exception ex)

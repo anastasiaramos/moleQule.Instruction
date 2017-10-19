@@ -198,7 +198,7 @@ namespace moleQule.Library.Instruction
                 _base.ProviderBase._producto_proveedores_list = (item.Productos != null) ? ProductoProveedorList.GetChildList(item.Productos) : null;
                 _base.ProviderBase._pagos_list = (item.Pagos != null) ? PaymentList.GetChildList(item.Pagos) : null;
                 _cursos_formacion = (item.CursosFormacion != null) ? CursoFormacionList.GetChildList(item.CursosFormacion) : null;
-                _submodulos = (item.Submodulos != null) ? Submodulo_InstructorList.GetChildList(item.Submodulos) : null;
+                //_submodulos = (item.Submodulos != null) ? Submodulo_InstructorList.GetChildList(item.Submodulos) : null;
                 _disponibilidades = (item.Disponibilidades != null) ? DisponibilidadList.GetChildList(item.Disponibilidades) : null;
                 _promociones = (item.Promociones != null) ? Instructor_PromocionList.GetChildList(item.Promociones) : null;
 

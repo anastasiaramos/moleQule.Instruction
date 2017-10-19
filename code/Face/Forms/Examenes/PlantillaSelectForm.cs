@@ -190,43 +190,54 @@ namespace moleQule.Face.Instruction
         private void Select_Button_Click(object sender, EventArgs e)
         {
             _plantilla = PlantillaExamenInfo.Get(ActiveOID);
-            TemaList temas = TemaList.GetModuloList(_modulo.Oid,false);
-            _guardado = true;
 
-            //_entity.MemoPreguntas = string.Empty;
-
-            if (_plantilla != null)
+            if (_plantilla!=null)
             {
-                foreach (Preguntas_PlantillaInfo item in _plantilla.Preguntas)
+                _guardado = true;
+
+                if (!_plantilla.Desarrollo)
                 {
-                    long count = item.NPreguntas;
+                    TemaList temas = TemaList.GetModuloList(_modulo.Oid, false);
 
-                    PreguntaList preguntas_tema = PreguntaList.GetPreguntasDisponiblesTema(item.OidTema, _entity.Desarrollo, _entity.FechaExamen, count);
+                    foreach (Preguntas_PlantillaInfo item in _plantilla.Preguntas)
+                    {
+                        long count = item.NPreguntas;
 
-                    //foreach (PreguntaInfo info in _preguntas)
-                    //{
-                    //    if (count == 0) break;
-                    //    if (info.OidTema == item.OidTema
-                    //        && info.FechaDisponibilidad.Date <= DateTime.Today.Date
-                    //        && !info.Reservada
-                    //        && ((info.Tipo == ETipoPregunta.Desarrollo.ToString() && _entity.Desarrollo)
-                    //        || (info.Tipo == ETipoPregunta.Test.ToString() && !_entity.Desarrollo))
-                    //        && info.Activa)
-                    //    {
-                    //        Pregunta_Examen pregunta = Pregunta_Examen.NewChild(_entity);
-                    //        pregunta.OidPregunta = info.Oid;
-                    //        _entity.Pregunta_Examens.AddItem(pregunta);
-                    //        //_entity.MemoPreguntas += info.Oid.ToString() + ";";
-                    //        count--;
-                    //    }
-                    //}
+                        PreguntaList preguntas_tema = PreguntaList.GetPreguntasDisponiblesTema(item.OidTema, _entity.Desarrollo, _entity.FechaExamen, count);
 
-                    if (preguntas_tema != null)
-                    { 
-                        foreach (PreguntaInfo info in preguntas_tema)
+                        if (preguntas_tema != null)
+                        {
+                            foreach (PreguntaInfo info in preguntas_tema)
+                            {
+                                if (count == 0) break;
+
+                                Pregunta_Examen pregunta = Pregunta_Examen.NewChild(_entity);
+                                pregunta.OidPregunta = info.Oid;
+                                _entity.Pregunta_Examens.AddItem(pregunta);
+                                count--;
+                            }
+                        }
+
+                        if (count != 0)
+                        {
+
+                            TemaInfo tema = temas.GetItem(item.OidTema);
+                            MessageBox.Show("No hay suficientes preguntas disponibles para el tema " + tema.Codigo);
+                        }
+                    }
+                }
+                else
+                {
+                    long count = _plantilla.NPreguntas;
+
+                    PreguntaList preguntas = PreguntaList.GetPreguntasDisponiblesModulo(_entity.OidModulo, _entity.Desarrollo, _entity.FechaExamen, count);
+
+                    if (preguntas != null)
+                    {
+                        foreach (PreguntaInfo info in preguntas)
                         {
                             if (count == 0) break;
-                            
+
                             Pregunta_Examen pregunta = Pregunta_Examen.NewChild(_entity);
                             pregunta.OidPregunta = info.Oid;
                             _entity.Pregunta_Examens.AddItem(pregunta);
@@ -236,9 +247,7 @@ namespace moleQule.Face.Instruction
 
                     if (count != 0)
                     {
-
-                        TemaInfo tema = temas.GetItem(item.OidTema);
-                        MessageBox.Show("No hay suficientes preguntas disponibles para el tema " + tema.Codigo);
+                        MessageBox.Show("No hay suficientes preguntas disponibles en el submódulo");
                     }
                 }
             }

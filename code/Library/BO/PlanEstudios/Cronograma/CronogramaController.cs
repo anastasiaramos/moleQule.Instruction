@@ -101,7 +101,7 @@ namespace moleQule.Library.Instruction
             {
                 foreach (ClaseTeoricaInfo aux in _teoricas)
                 {
-                    if (aux.OrdenPrimario <= cl.OrdenPrimario &&
+                    if (aux.OrdenPrimario < cl.OrdenPrimario &&
                         aux.OidModulo == cl.OidModulo &&
                         aux.EEstadoClase == EEstadoClase.NoProgramada)
                         return false;
@@ -127,7 +127,7 @@ namespace moleQule.Library.Instruction
             {
                 foreach (ClaseTeoricaInfo aux in _teoricas)
                 {
-                    if (aux.OrdenSecundario <= cl.OrdenSecundario &&
+                    if (aux.OrdenSecundario < cl.OrdenSecundario &&
                         aux.OidModulo == cl.OidModulo &&
                         aux.EEstadoClase == EEstadoClase.NoProgramada)
                         return false;
@@ -152,13 +152,15 @@ namespace moleQule.Library.Instruction
             {
                 if (clase.EEstadoClase == EEstadoClase.Programada)
                 {
-                    if (clase.OidModulo != cl.OidModulo &&
+                    if ((clase.OidModulo != cl.OidModulo &&
                         (clase.OrdenPrimario >= cl.OrdenPrimario
                         || (clase.OrdenPrimario == cl.OrdenPrimario
                         && clase.OrdenSecundario >= cl.OrdenSecundario)
                         || (clase.OrdenPrimario == cl.OrdenPrimario
                         && clase.OrdenSecundario == cl.OrdenSecundario
                         && clase.OrdenTerciario >= cl.OrdenTerciario)))
+                        || (clase.OidModulo == cl.OidModulo 
+                            && clase.OrdenPrimario == cl.OrdenPrimario))
                         return true;
                 }
                 else
@@ -185,7 +187,7 @@ namespace moleQule.Library.Instruction
             {
                 foreach (ClaseTeoricaInfo aux in _teoricas)
                 {
-                    if (aux.OrdenTerciario <= cl.OrdenTerciario &&
+                    if (aux.OrdenTerciario < cl.OrdenTerciario &&
                         aux.OidSubmodulo == cl.OidSubmodulo &&
                         aux.EEstadoClase == EEstadoClase.NoProgramada)
                         return false;
@@ -569,8 +571,9 @@ namespace moleQule.Library.Instruction
             int semana = 1;
             int sesiones = -1;
             DateTime inicio_semana = _inicio_cronograma;
+            int semanas_no_programadas = 0;
 
-            while (_cronograma.Sesiones.Count > sesiones)
+            while (semanas_no_programadas < 8)
             {
                 sesiones = _cronograma.Sesiones.Count;
                 ListaSesiones lista = GeneraHorario(semana, inicio_semana);
@@ -634,6 +637,10 @@ namespace moleQule.Library.Instruction
                 while (inicio_semana.DayOfWeek != DayOfWeek.Monday)
                     inicio_semana = inicio_semana.AddDays(-1);
                 inicio_semana = inicio_semana.AddDays(7);
+                if (sesiones == _cronograma.Sesiones.Count)
+                    semanas_no_programadas++;
+                else
+                    semanas_no_programadas = 0;
                 if (inicio_semana > _fin_cronograma) break;
             }
         }
@@ -751,6 +758,19 @@ namespace moleQule.Library.Instruction
             } while (num_sesiones_asignadas < lista_sesiones.Count - sesiones_asignadas
                 && total_asignadas != num_sesiones_asignadas);*/
 
+            bool teoricas_no_asignadas = false;
+
+            foreach (ClaseTeoricaInfo ct in _teoricas)
+            {
+                if (ct.EEstadoClase == EEstadoClase.NoProgramada)
+                {
+                    teoricas_no_asignadas = true;
+                    break;
+                }
+            }
+
+            if (!teoricas_no_asignadas)
+                _practicas_semana = 5;
 
             do
             {
@@ -841,7 +861,8 @@ namespace moleQule.Library.Instruction
             while (contador < 14 && contador + indice_dia < 75)
             {
                 if (clase.OidModulo == lista_sesiones[indice_dia + contador].OidModulo
-                    && indice_dia + contador != indice_horario)
+                    && indice_dia + contador != indice_horario
+                    && lista_sesiones[indice_dia+contador].OidClaseTeorica > 0)
                     return true;
                 contador++;
             }

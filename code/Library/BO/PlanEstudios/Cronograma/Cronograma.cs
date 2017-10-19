@@ -131,6 +131,7 @@ namespace moleQule.Library.Instruction
 
         private SesionesCronogramas _sesiones = SesionesCronogramas.NewChildList();
         private Sesiones_Promociones _configuracion = Sesiones_Promociones.NewChildList();
+        private IncidenciasCronogramas _incidencias = IncidenciasCronogramas.NewChildList();
 
         public virtual string Plan { get { return _base.Plan; } set { _base.Plan = value; } }
         public virtual string Promocion { get { return _base.Promocion; } set { _base.Promocion = value; } }
@@ -278,14 +279,28 @@ namespace moleQule.Library.Instruction
                 _configuracion = value;
             }
         }
+        public virtual IncidenciasCronogramas Incidencias
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _incidencias;
+            }
+
+            set
+            {
+                _incidencias = value;
+            }
+        }
 
         public override bool IsValid
         {
-            get { return base.IsValid && _sesiones.IsValid && _configuracion.IsValid; }
+            get { return base.IsValid && _sesiones.IsValid && _configuracion.IsValid && _incidencias.IsValid; }
         }
         public override bool IsDirty
         {
-            get { return base.IsDirty || _sesiones.IsDirty || _configuracion.IsDirty; }
+            get { return base.IsDirty || _sesiones.IsDirty || _configuracion.IsDirty || _incidencias.IsDirty; }
         }
 
 
@@ -567,6 +582,7 @@ namespace moleQule.Library.Instruction
 
                 _sesiones.Update(this);
                 _configuracion.Update(this);
+                _incidencias.Update(this);
 
                 if (!SharedTransaction) Transaction().Commit();
                 return this;
@@ -689,6 +705,10 @@ namespace moleQule.Library.Instruction
                 criteria.AddEq("Tipo", 2);
                 _configuracion = Sesiones_Promociones.GetChildList(criteria.List<Sesion_Promocion>());
 
+                criteria = IncidenciaCronograma.GetCriteria(Session());
+                criteria.AddEq("OidCronograma", this.Oid);
+                _incidencias = IncidenciasCronogramas.GetChildList(criteria.List<IncidenciaCronograma>());
+
 
             }
             catch (Exception ex)
@@ -718,6 +738,12 @@ namespace moleQule.Library.Instruction
                     query = Sesiones_Promociones.SELECT(GetInfo(false));
                     reader = nHManager.Instance.SQLNativeSelect(query, Session(session_code));
                     _configuracion = Sesiones_Promociones.GetChildList(reader);
+
+                    IncidenciaCronograma.DoLOCK(Session(session_code));
+
+                    query = IncidenciasCronogramas.SELECT_BY_CRONOGRAMA(this.Oid);
+                    reader = nHManager.Instance.SQLNativeSelect(query, Session(session_code));
+                    _incidencias = IncidenciasCronogramas.GetChildList(session_code, reader);
                 }
             }
             catch (Exception ex)
@@ -749,6 +775,7 @@ namespace moleQule.Library.Instruction
 
                 _sesiones.Update(this);
                 _configuracion.Update(this);
+                _incidencias.Update(this);
             }
             catch (Exception ex)
             {
@@ -781,6 +808,7 @@ namespace moleQule.Library.Instruction
 
                 _sesiones.Update(this);
                 _configuracion.Update(this);
+                _incidencias.Update(this);
             }
             catch (Exception ex)
             {
@@ -832,6 +860,7 @@ namespace moleQule.Library.Instruction
 
                 _sesiones.Update(this);
                 _configuracion.Update(this);
+                _incidencias.Update(this);
             }
             catch (Exception ex)
             {
@@ -864,6 +893,7 @@ namespace moleQule.Library.Instruction
 
                 _sesiones.Update(this);
                 _configuracion.Update(this);
+                _incidencias.Update(this);
             }
             catch (Exception ex)
             {
@@ -930,6 +960,13 @@ namespace moleQule.Library.Instruction
                         query = Sesiones_Promociones.SELECT(GetInfo(false));
                         reader = nHManager.Instance.SQLNativeSelect(query, Session());
                         _configuracion = Sesiones_Promociones.GetChildList(reader);
+
+                        IncidenciaCronograma.DoLOCK(Session());
+
+                        //PENDIENTE
+                        //query = IncidenciasCronogramas.SELECT_SESIONES_PLAN(this.Oid);
+                        //reader = nHManager.Instance.SQLNativeSelect(query, Session());
+                        //_incidencias = IncidenciasCronogramas.GetChildList(this.SessionCode, reader);
                     }
                 }
                 else
@@ -948,6 +985,10 @@ namespace moleQule.Library.Instruction
                         criteria.AddEq("OidPromocion", this.Oid);
                         criteria.AddEq("Tipo", 2);
                         _configuracion = Sesiones_Promociones.GetChildList(criteria.List<Sesion_Promocion>());
+
+                        criteria = IncidenciaCronograma.GetCriteria(Session());
+                        criteria.AddEq("OidCronograma", this.Oid);
+                        _incidencias = IncidenciasCronogramas.GetChildList(criteria.List<IncidenciaCronograma>());
                     }
                 }
             }

@@ -2819,6 +2819,8 @@ namespace moleQule.Library.Instruction
 				// if we're not dirty then don't update the database
 				if (!this.IsDirty) return;
 
+                SessionCode = parent.SessionCode;
+
 				OidInstructor = parent.Oid;
 
 				try
