@@ -142,14 +142,12 @@ namespace moleQule.Library.Instruction
 
         public static string UPDATE_IMAGEN(long oid, string imagen)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string c_imagen = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Imagen");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
+            query = "UPDATE " + pregunta + " " +
                     "SET \"" + c_imagen + "\" = '" + imagen + "' " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";
 
@@ -158,15 +156,13 @@ namespace moleQule.Library.Instruction
 
         private static string UPDATE_CODIGO(long oid, long serial, string codigo)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string c_serial = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Serial");
             string c_codigo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Codigo");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
+            query = "UPDATE " + pregunta + " " +
                     "SET \"" + c_codigo + "\" = '" + codigo + "', " +
                     "\"" + c_serial + "\" = " + serial.ToString() + " " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";
@@ -703,7 +699,7 @@ namespace moleQule.Library.Instruction
                                                         bool activa, string texto, bool filtros, bool reservada,
                                                         long numero)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string fecha = string.Empty;
             fecha = "'" + fecha_alta.Year.ToString() + "-" + fecha_alta.Month.ToString() + "-" + fecha_alta.Day.ToString() + "'";
             string fecha_d = string.Empty;
@@ -711,9 +707,9 @@ namespace moleQule.Library.Instruction
             string fecha_actual = string.Empty;
             fecha_actual = "'" + DateTime.Now.Year.ToString() + "-" + DateTime.Now.Month.ToString() + "-" + DateTime.Now.Day.ToString() + "'";
 
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
             string c_oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string c_oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -721,18 +717,16 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             //query = "SELECT * " +
-            //        "FROM \"" + esquema + "\".\"" + pregunta + "\" " +
+            //        "FROM " + pregunta + "\" " +
             //        "WHERE 1=1 ";
             query = "SELECT p.*, m.\"TEXTO\" AS \"MODULO\", s.\"TEXTO\" AS \"SUBMODULO\", t.\"CODIGO\" AS \"TEMA\", " +
                     "m.\"NUMERO_MODULO\", s.\"CODIGO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + c_oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + c_oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + c_oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN " + tema + " AS t ON (p.\"" + c_oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     "WHERE 1=1 ";
 
@@ -882,10 +876,10 @@ namespace moleQule.Library.Instruction
 
         public static string SELECT_BY_MODULO_LIST(long oid, string lista_preguntas)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -893,28 +887,26 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT " + //'false' AS \"RESERVADA\", 
                     "       p.*, m.\"TEXTO\" AS \"MODULO\"," +
                     "       s.\"TEXTO\" AS \"SUBMODULO\", s.\"CODIGO\"," +
                     "       t.\"CODIGO\" AS \"TEMA\"," +
                     "       m.\"NUMERO_MODULO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN "  + tema + " AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     //"WHERE p.\"OID\" IN (" + lista_preguntas + ") AND p.\"OID_MODULO\" = " + oid.ToString() + " " +
                     //"UNION " +
                     //"SELECT " + //\"RESERVADA\" AS \"RESERVADA\", 
                     //"p.*, m.\"TEXTO\" AS \"MODULO\", s.\"TEXTO\" AS \"SUBMODULO\", t.\"CODIGO\" AS \"TEMA\", " +
                     //"m.\"NUMERO_MODULO\", s.\"CODIGO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\" " +
-                    //"FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    //"INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    //"INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    //"INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    //"FROM " + pregunta + "\" AS p " +
+                    //"INNER JOIN " + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    //"INNER JOIN " + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    //"INNER JOIN " + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     //"WHERE p.\"OID\" NOT IN (" + lista_preguntas + ") AND p.\"OID_MODULO\" = " + oid.ToString() + " " +
                     "WHERE p.\"OID_MODULO\" = " + oid.ToString() + " " +
                     "ORDER BY \"ORDEN\", \"SERIAL\"";
@@ -924,10 +916,10 @@ namespace moleQule.Library.Instruction
 
         public static string SELECT_LISTADO_ORDENADO(string lista_preguntas)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -935,18 +927,16 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT " + 
                     "       p.*, (m.\"NUMERO\" || ' ' || m.\"TEXTO\") AS \"MODULO\"," +
                     "       (s.\"CODIGO\" || ' ' || s.\"TEXTO\") AS \"SUBMODULO\", s.\"CODIGO\"," +
                     "       (t.\"CODIGO\" || ' ' || t.\"NOMBRE\") AS \"TEMA\"," +
                     "       m.\"NUMERO_MODULO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN " + tema + " AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     "WHERE p.\"OID\" = IN " + lista_preguntas + " " +
                     "ORDER BY m.\"NUMERO_ORDEN\", s.\"CODIGO_ORDEN\", t.\"NIVEL\"";
@@ -963,10 +953,10 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_BY_LIST(string lista_preguntas)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -974,15 +964,13 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT p.*, m.\"TEXTO\" AS \"MODULO\", s.\"TEXTO\" AS \"SUBMODULO\", t.\"CODIGO\" AS \"TEMA\", " +
                     "m.\"NUMERO_MODULO\", s.\"CODIGO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN " + tema + " AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     "WHERE p.\"OID\" IN (" + lista_preguntas + ")";
 
@@ -999,10 +987,10 @@ namespace moleQule.Library.Instruction
         public static string SELECT_LISTADO_EXAMEN_NO_EMITIDO(string lista_preguntas)
         {
 
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -1010,15 +998,13 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT p.*, m.\"TEXTO\" AS \"MODULO\", s.\"TEXTO\" AS \"SUBMODULO\", t.\"CODIGO\" AS \"TEMA\", " +
                     "m.\"NUMERO_MODULO\", s.\"CODIGO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\",  p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN " + tema + " AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     "WHERE p.\"OID\" IN (" + lista_preguntas + ") " +
                     "ORDER BY  \"ORDEN\", p.\"SERIAL\"";
@@ -1036,11 +1022,11 @@ namespace moleQule.Library.Instruction
         public static string SELECT_LISTADO_EXAMEN_EMITIDO(long oid_examen)
         {
 
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string tema = nHManager.Instance.Cfg.GetClassMapping(typeof(TemaRecord)).Table.Name;
-            string pregunta_examen = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaExamenRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string tema = nHManager.Instance.GetSQLTable(typeof(TemaRecord));
+            string pregunta_examen = nHManager.Instance.GetSQLTable(typeof(PreguntaExamenRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidModulo");
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidSubmodulo");
             string oid_tema = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "OidTema");
@@ -1050,16 +1036,14 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT p.*, m.\"TEXTO\" AS \"MODULO\", s.\"TEXTO\" AS \"SUBMODULO\", t.\"CODIGO\" AS \"TEMA\", " +
                     "m.\"NUMERO_MODULO\", s.\"CODIGO\", t.\"CODIGO_ORDEN\" AS \"ORDEN\",  " +
                     "COALESCE(\"LAST_UPDATE\", p.\"FECHA_ALTA\") AS \"FECHA_MODIFICACION\" " +
-                    "FROM \"" + esquema + "\".\"" + pregunta + "\" AS p " +
-                    "INNER JOIN \"" + esquema + "\".\"" + pregunta_examen + "\" AS pe ON (pe.\"" + oid_pregunta + "\" = p.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + tema + "\" AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
+                    "FROM " + pregunta + " AS p " +
+                    "INNER JOIN " + pregunta_examen + " AS pe ON (pe.\"" + oid_pregunta + "\" = p.\"OID\") " +
+                    "INNER JOIN " + modulo + " AS m ON (p.\"" + oid_modulo + "\" = m.\"OID\") " +
+                    "INNER JOIN " + submodulo + " AS s ON (p.\"" + oid_submodulo + "\" = s.\"OID\") " +
+                    "INNER JOIN " + tema + " AS t ON (p.\"" + oid_tema + "\" = t.\"OID\") " +
                     "LEFT JOIN ( SELECT MAX(H.\"FECHA\") AS \"LAST_UPDATE\", H.\"OID_PREGUNTA\" FROM " + h + " AS H GROUP BY H.\"OID_PREGUNTA\") AS H ON H.\"OID_PREGUNTA\" = p.\"OID\"" +
                     "WHERE pe.\"" + c_oid_examen + "\" = " + oid_examen.ToString() + " " +
                     "ORDER BY \"ORDEN\", p.\"SERIAL\"";

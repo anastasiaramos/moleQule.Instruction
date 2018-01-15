@@ -68,7 +68,7 @@ namespace moleQule.Face.Instruction
             this.Imagen_PictureBox = new System.Windows.Forms.PictureBox();
             this.Examinar_BT = new System.Windows.Forms.Button();
             this.Ninguno_BT = new System.Windows.Forms.Button();
-            this.Grande_CB = new System.Windows.Forms.CheckBox();
+            //this.Grande_CB = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Respuestas_BT = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -140,7 +140,7 @@ namespace moleQule.Face.Instruction
             this.PanelesV.Panel1.Controls.Add(this.Respuestas_BT);
             this.PanelesV.Panel1.Controls.Add(this.label4);
             this.PanelesV.Panel1.Controls.Add(imagenGrandeLabel);
-            this.PanelesV.Panel1.Controls.Add(this.Grande_CB);
+            //this.PanelesV.Panel1.Controls.Add(this.Grande_CB);
             this.PanelesV.Panel1.Controls.Add(this.Ninguno_BT);
             this.PanelesV.Panel1.Controls.Add(this.Examinar_BT);
             this.PanelesV.Panel1.Controls.Add(this.Historia_GB);
@@ -269,12 +269,12 @@ namespace moleQule.Face.Instruction
             // 
             // imagenGrandeLabel
             // 
-            imagenGrandeLabel.AutoSize = true;
-            imagenGrandeLabel.Location = new System.Drawing.Point(840, 322);
-            imagenGrandeLabel.Name = "imagenGrandeLabel";
-            imagenGrandeLabel.Size = new System.Drawing.Size(98, 13);
-            imagenGrandeLabel.TabIndex = 12;
-            imagenGrandeLabel.Text = "Imagen Grande:";
+            //imagenGrandeLabel.AutoSize = true;
+            //imagenGrandeLabel.Location = new System.Drawing.Point(840, 322);
+            //imagenGrandeLabel.Name = "imagenGrandeLabel";
+            //imagenGrandeLabel.Size = new System.Drawing.Size(98, 13);
+            //imagenGrandeLabel.TabIndex = 12;
+            //imagenGrandeLabel.Text = "Imagen Grande:";
             // 
             // label2
             // 
@@ -575,11 +575,11 @@ namespace moleQule.Face.Instruction
             // 
             // Grande_CB
             // 
-            this.Grande_CB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.Datos, "ImagenGrande", true));
-            this.Grande_CB.Location = new System.Drawing.Point(944, 317);
-            this.Grande_CB.Name = "Grande_CB";
-            this.Grande_CB.Size = new System.Drawing.Size(25, 24);
-            this.Grande_CB.TabIndex = 13;
+            //this.Grande_CB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.Datos, "ImagenGrande", true));
+            //this.Grande_CB.Location = new System.Drawing.Point(944, 317);
+            //this.Grande_CB.Name = "Grande_CB";
+            //this.Grande_CB.Size = new System.Drawing.Size(25, 24);
+            //this.Grande_CB.TabIndex = 13;
             // 
             // label4
             // 
@@ -804,7 +804,7 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.ComboBox Idioma_CB;
         protected System.Windows.Forms.CheckBox Activa_CB;
         protected System.Windows.Forms.CheckBox Revisada_CB;
-        protected System.Windows.Forms.CheckBox Grande_CB;
+        //protected System.Windows.Forms.CheckBox Grande_CB;
         protected System.Windows.Forms.BindingSource Datos_Submodulos;
         protected System.Windows.Forms.BindingSource Datos_Modulos;
         protected System.Windows.Forms.BindingSource Datos_Idiomas;

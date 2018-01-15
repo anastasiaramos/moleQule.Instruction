@@ -389,7 +389,7 @@ namespace moleQule.Face.Instruction
             try
             {
                 Alumno_Examen current = (Alumno_Examen)Examenes_Grid.CurrentRow.DataBoundItem;
-                if (current != null)
+                if (current != null && current.Presentado)
                 {
                     ExamenInfo examen = ExamenInfo.Get(current.OidExamen, false);
                     if (examen != null && !examen.Desarrollo)

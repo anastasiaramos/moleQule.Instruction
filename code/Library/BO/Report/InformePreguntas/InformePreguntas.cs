@@ -33,6 +33,9 @@ namespace moleQule.Library.Instruction
         private int _nivel;
         private int _n_preguntas;
         private bool _desarrollo;
+        private int _disponibles_modulo;
+        private int _disponibles_submodulo;
+        private int _disponibles_nivel;
 					
         #endregion
 
@@ -231,6 +234,69 @@ namespace moleQule.Library.Instruction
                 }
             }
         }
+        public virtual int DisponiblesModulo
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _disponibles_modulo;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (!_disponibles_modulo.Equals(value))
+                {
+                    _disponibles_modulo = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
+        public virtual int DisponiblesSubmodulo
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _disponibles_submodulo;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (!_disponibles_submodulo.Equals(value))
+                {
+                    _disponibles_submodulo = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
+        public virtual int DisponiblesNivel
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _disponibles_nivel;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (!_disponibles_nivel.Equals(value))
+                {
+                    _disponibles_nivel = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 
 		
         #endregion
@@ -275,6 +341,9 @@ namespace moleQule.Library.Instruction
             _nivel = source.Nivel;
             _n_preguntas = source.NPreguntas;
             _desarrollo = source.Desarrollo;
+            _disponibles_modulo = source.DisponiblesModulo;
+            _disponibles_submodulo = source.DisponiblesSubmodulo;
+            _disponibles_nivel = DisponiblesNivel;
 		}
 
 
@@ -296,6 +365,9 @@ namespace moleQule.Library.Instruction
             _nivel = Format.DataReader.GetInt32(reader, "NIVEL");
             _n_preguntas = Format.DataReader.GetInt32(reader, "N_PREGUNTAS");
             _desarrollo = Format.DataReader.GetBool(reader, "DESARROLLO");
+            _disponibles_modulo = Format.DataReader.GetInt32(reader, "DISPONIBLES_MODULO_COUNT");
+            _disponibles_submodulo = Format.DataReader.GetInt32(reader, "DISPONIBLES_SUBMODULO_COUNT");
+            _disponibles_nivel = Format.DataReader.GetInt32(reader, "DISPONIBLES_NIVEL_COUNT");
         }		
 			
 		#endregion

@@ -703,6 +703,7 @@ namespace moleQule.Library.Instruction
             string clase_extra = nHManager.Instance.GetSQLTable(typeof(ClaseExtraRecord));
             string respuesta_alumno_examen = nHManager.Instance.GetSQLTable(typeof(Respuesta_Alumno_ExamenRecord));
             string pregunta_examen = nHManager.Instance.GetSQLTable(typeof(PreguntaExamenRecord));
+            string alumno_parte = nHManager.Instance.GetSQLTable(typeof(AlumnoParteRecord));
 
             string query = "SELECT DISTINCT APR.*, TO_ASCII(A.\"APELLIDOS\", 'LATIN1') AS \"APELLIDOS\", TO_ASCII(A.\"NOMBRE\", 'LATIN1') AS \"NOMBRE\", PR.\"NOMBRE\" AS \"PROMOCION\", A.\"ID\" AS \"DNI\" " +
                         "FROM " + plan_estudios + " AS P " +
@@ -765,7 +766,7 @@ namespace moleQule.Library.Instruction
                         "                    FROM " + plan_estudios + " AS PE         " +
                         "                    INNER JOIN " + clase_teorica + " AS C ON ( C.\"OID_PLAN\" = PE.\"OID\")  " +
                         "                    INNER JOIN " + modulo + " AS MOD ON ( C.\"OID_MODULO\" = MOD.\"OID\")   " +
-                        "                    GROUP BY \"PLAN2\", \"MODULO2\"        ) AS QUERY2, \"0001\".\"Alumno_Parte\" as ap   " +
+                        "                    GROUP BY \"PLAN2\", \"MODULO2\"        ) AS QUERY2, " + alumno_parte + " as ap   " +
                         "                INNER JOIN " + alumno + " as a ON (a.\"OID\" = ap.\"OID_ALUMNO\")      " +
                         "                INNER JOIN " + parte_asistencia + " as p ON (p.\"OID\" = ap.\"OID_PARTE\")      " +
                         "                INNER JOIN " + alumno_promocion + " as apromo ON (apromo.\"OID_ALUMNO\" = a.\"OID\")   " +

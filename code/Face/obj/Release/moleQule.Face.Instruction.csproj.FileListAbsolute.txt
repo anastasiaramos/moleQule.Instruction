@@ -586,6 +586,8 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Rel
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlanExtraUIForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlanExtraViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.ResumenPlanExtraForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloViewForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloEditForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaAddForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaMngForm.resources
@@ -600,6 +602,7 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Rel
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PreguntasUIForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PreguntasViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.RespuestasActionForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.SelectPreguntasReportForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.ClasesOrdenadasViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PromocionAddForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PromocionEditForm.resources
@@ -624,6 +627,4 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Rel
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.csproj.GenerateResource.Cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.pdb
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.SelectPreguntasReportForm.resources
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloViewForm.resources
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.PlantillaDesarrolloEditForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Release\moleQule.Face.Instruction.SelectFechaDisponibilidadForm.resources

@@ -29,6 +29,22 @@ namespace moleQule.Library.Instruction
         {
             Fetch(reader);
         }
+        /// <summary>
+        /// Retrieve the complete list from db
+        /// </summary>
+        /// <returns>PreguntaList</returns>
+        public static Preguntas_PlantillaList GetDisponiblesList(long oid_plantilla, DateTime fecha_disponibilidad)
+        {
+            CriteriaEx criteria = Preguntas_Plantilla.GetCriteria(Preguntas_Plantilla.OpenSession());
+            criteria.Childs = false;
+            criteria.Query = Preguntas_Plantillas.SELECT_DISPONIBLES(oid_plantilla, fecha_disponibilidad);
+            //No criteria. Retrieve all de List
+            Preguntas_PlantillaList list = DataPortal.Fetch<Preguntas_PlantillaList>(criteria);
+
+            CloseSession(criteria.SessionCode);
+
+            return list;
+        }
 
         /// <summary>
         /// Builds a Preguntas_PlantillaList from a IList<!--<Preguntas_PlantillaInfo>-->

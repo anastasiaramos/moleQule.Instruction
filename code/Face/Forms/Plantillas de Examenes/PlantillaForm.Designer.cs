@@ -53,6 +53,7 @@ namespace moleQule.Face.Instruction
             this.Modulo_TB = new System.Windows.Forms.TextBox();
             this.Arbol_TV = new System.Windows.Forms.TreeView();
             this.Iconos_IL = new System.Windows.Forms.ImageList(this.components);
+            this.Disponibles_BT = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
             this.PanelesV.Panel2.SuspendLayout();
@@ -151,7 +152,7 @@ namespace moleQule.Face.Instruction
             // 
             // Progress_Panel
             // 
-            this.Progress_Panel.Location = new System.Drawing.Point(268, 96);
+            this.Progress_Panel.Location = new System.Drawing.Point(268, 121);
             // 
             // ProgressBK_Panel
             // 
@@ -255,6 +256,7 @@ namespace moleQule.Face.Instruction
             // 
             // SC1.Panel2
             // 
+            this.SC1.Panel2.Controls.Add(this.Disponibles_BT);
             this.SC1.Panel2.Controls.Add(this.Leyenda_GB);
             this.SC1.Panel2MinSize = 67;
             this.SC1.Size = new System.Drawing.Size(892, 735);
@@ -431,6 +433,17 @@ namespace moleQule.Face.Instruction
             this.Iconos_IL.Images.SetKeyName(1, "submodulo");
             this.Iconos_IL.Images.SetKeyName(2, "submodulo_verde");
             // 
+            // Disponibles_BT
+            // 
+            this.Disponibles_BT.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.Disponibles_BT.Location = new System.Drawing.Point(647, 19);
+            this.Disponibles_BT.Name = "Disponibles_BT";
+            this.Disponibles_BT.Size = new System.Drawing.Size(199, 32);
+            this.Disponibles_BT.TabIndex = 2;
+            this.Disponibles_BT.Text = "Ver Preguntas Disponibles";
+            this.Disponibles_BT.UseVisualStyleBackColor = true;
+            this.Disponibles_BT.Click += new System.EventHandler(this.Disponibles_BT_Click);
+            // 
             // PlantillaForm
             // 
             this.ClientSize = new System.Drawing.Size(894, 792);
@@ -508,6 +521,7 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.GroupBox groupBox2;
         protected System.Windows.Forms.BindingSource Datos_Idiomas;
         protected System.Windows.Forms.ComboBox Idioma_CB;
+        protected System.Windows.Forms.Button Disponibles_BT;
 
 
     }

@@ -28,7 +28,6 @@ namespace moleQule.Library.Instruction
 			Property(x => x.Idioma, map => { map.Column("`IDIOMA`"); map.NotNullable(false);	map.Length(255);  });
 			Property(x => x.Activa, map => { map.Column("`ACTIVA`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Revisada, map => { map.Column("`REVISADA`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.ImagenGrande, map => { map.Column("`IMAGEN_GRANDE`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.Bloqueada, map => { map.Column("`BLOQUEADA`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.OidSubmodulo, map => { map.Column("`OID_SUBMODULO`"); map.Length(32768); });
 			Property(x => x.OidOld, map => { map.Column("`OID_OLD`"); map.Length(32768); });

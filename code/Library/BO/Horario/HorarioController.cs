@@ -413,7 +413,8 @@ namespace moleQule.Library.Instruction
             while (contador < 14 && indice_dia + contador < 75)
             {
                 if (oid_instructor == _lista_sesiones[indice_dia + contador].OidProfesor
-                    && indice_dia + contador != indice_horario)
+                    && indice_dia + contador != indice_horario
+                    && _lista_sesiones[indice_dia + contador].OidClaseTeorica > 0)
                     return true;
                 contador++;
             }
@@ -433,7 +434,8 @@ namespace moleQule.Library.Instruction
             while (contador < 14 && indice_dia + contador < 75)
             {
                 if (clase.OidModulo == _lista_sesiones[indice_dia + contador].OidModulo
-                    && indice_dia + contador != indice_horario)
+                    && indice_dia + contador != indice_horario
+                    && _lista_sesiones[indice_dia+contador].OidClaseTeorica > 0)
                     return true;
                 contador++;
             }
@@ -1675,7 +1677,8 @@ namespace moleQule.Library.Instruction
                         for (int ind = 0; ind < n_horas; ind++)
                         {
                             if (i + ind == _lista_sesiones.Count
-                                || hora_inicial + ind == _lista_sesiones.Count)
+                                || hora_inicial + ind == _lista_sesiones.Count
+                                || _lista_sesiones[i].OidModulo != _lista_sesiones[hora_inicial+ind].OidModulo)
                                 break;
                             _lista_sesiones[i+ind].IntercambiaSesion(_lista_sesiones[hora_inicial+ind], true);
                         }

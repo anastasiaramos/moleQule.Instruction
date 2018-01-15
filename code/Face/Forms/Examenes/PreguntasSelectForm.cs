@@ -115,7 +115,7 @@ namespace moleQule.Face.Instruction
                         }
                         else
                         {
-                            if (p.FechaDisponibilidad.Date <= DateTime.Today.Date && !p.Reservada)
+                            if (p.FechaDisponibilidad.Date <= _entity.FechaExamen.Date && !p.Reservada)
                             {
                                 nodo_p.ImageKey = Properties.Settings.Default.PREGUNTA_DISPONIBLE_ICON;
                                 _disponibles++;

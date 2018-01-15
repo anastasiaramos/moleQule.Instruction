@@ -36,24 +36,14 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.Label fechaEmisionLabel;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamenEmitidoForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamenEmitidoForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
             this.Preguntas_Grid = new System.Windows.Forms.DataGridView();
-            this.N_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Submodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Anulada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Ordenar_BT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Ver_BT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar_BT = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Eliminar_BT = new System.Windows.Forms.DataGridViewImageColumn();
             this.Datos_Preguntas = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.Cerrar_BT = new System.Windows.Forms.ToolStripButton();
@@ -91,6 +81,13 @@ namespace moleQule.Face.Instruction
             this.tituloTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Preguntas_TB = new System.Windows.Forms.TextBox();
+            this.N_Orden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Submodulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tema = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Texto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Anulada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Ver_BT = new System.Windows.Forms.DataGridViewImageColumn();
             tituloLabel = new System.Windows.Forms.Label();
             desarrolloLabel = new System.Windows.Forms.Label();
             fechaCreacionLabel = new System.Windows.Forms.Label();
@@ -289,10 +286,7 @@ namespace moleQule.Face.Instruction
             this.Numero,
             this.Texto,
             this.Anulada,
-            this.Ordenar_BT,
-            this.Ver_BT,
-            this.Editar_BT,
-            this.Eliminar_BT});
+            this.Ver_BT});
             this.Preguntas_Grid.DataSource = this.Datos_Preguntas;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
@@ -312,90 +306,6 @@ namespace moleQule.Face.Instruction
             this.Preguntas_Grid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Preguntas_Grid_CellContentClick);
             this.Preguntas_Grid.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.Preguntas_Grid_CellEndEdit);
             this.Preguntas_Grid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Preguntas_Grid_DataBindingComplete);
-            // 
-            // N_Orden
-            // 
-            this.N_Orden.DataPropertyName = "Orden";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "000";
-            this.N_Orden.DefaultCellStyle = dataGridViewCellStyle1;
-            this.N_Orden.HeaderText = "Nº Orden";
-            this.N_Orden.Name = "N_Orden";
-            this.N_Orden.ReadOnly = true;
-            this.N_Orden.Width = 50;
-            // 
-            // Submodulo
-            // 
-            this.Submodulo.DataPropertyName = "Submodulo";
-            this.Submodulo.HeaderText = "Submódulo";
-            this.Submodulo.Name = "Submodulo";
-            this.Submodulo.ReadOnly = true;
-            this.Submodulo.Width = 150;
-            // 
-            // Tema
-            // 
-            this.Tema.DataPropertyName = "Tema";
-            this.Tema.HeaderText = "Tema";
-            this.Tema.Name = "Tema";
-            this.Tema.ReadOnly = true;
-            this.Tema.Width = 180;
-            // 
-            // Numero
-            // 
-            this.Numero.DataPropertyName = "NPregunta";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Numero.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Numero.HeaderText = "Nº";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            this.Numero.Width = 50;
-            // 
-            // Texto
-            // 
-            this.Texto.DataPropertyName = "Texto";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Texto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Texto.HeaderText = "Pregunta";
-            this.Texto.Name = "Texto";
-            this.Texto.ReadOnly = true;
-            // 
-            // Anulada
-            // 
-            this.Anulada.DataPropertyName = "Anulada";
-            this.Anulada.HeaderText = "Anulada";
-            this.Anulada.Name = "Anulada";
-            this.Anulada.Width = 50;
-            // 
-            // Ordenar_BT
-            // 
-            this.Ordenar_BT.HeaderText = "Ordenar";
-            this.Ordenar_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.order_32;
-            this.Ordenar_BT.Name = "Ordenar_BT";
-            this.Ordenar_BT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Ordenar_BT.Width = 60;
-            // 
-            // Ver_BT
-            // 
-            this.Ver_BT.HeaderText = "Ver";
-            this.Ver_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.view_32;
-            this.Ver_BT.Name = "Ver_BT";
-            this.Ver_BT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Ver_BT.Width = 60;
-            // 
-            // Editar_BT
-            // 
-            this.Editar_BT.HeaderText = "Editar";
-            this.Editar_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.edit_32;
-            this.Editar_BT.Name = "Editar_BT";
-            this.Editar_BT.Width = 60;
-            // 
-            // Eliminar_BT
-            // 
-            this.Eliminar_BT.HeaderText = "Eliminar";
-            this.Eliminar_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.delete_32;
-            this.Eliminar_BT.Name = "Eliminar_BT";
-            this.Eliminar_BT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Eliminar_BT.Width = 60;
             // 
             // Datos_Preguntas
             // 
@@ -587,7 +497,7 @@ namespace moleQule.Face.Instruction
             this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(15, 87);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 13);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 30;
             this.label5.Text = "Cursos: ";
             // 
@@ -722,7 +632,7 @@ namespace moleQule.Face.Instruction
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(3, 59);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 13);
+            this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Curso: ";
             // 
@@ -772,6 +682,67 @@ namespace moleQule.Face.Instruction
             this.Preguntas_TB.Size = new System.Drawing.Size(40, 21);
             this.Preguntas_TB.TabIndex = 20;
             this.Preguntas_TB.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // N_Orden
+            // 
+            this.N_Orden.DataPropertyName = "Orden";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "000";
+            this.N_Orden.DefaultCellStyle = dataGridViewCellStyle1;
+            this.N_Orden.HeaderText = "Nº Orden";
+            this.N_Orden.Name = "N_Orden";
+            this.N_Orden.ReadOnly = true;
+            this.N_Orden.Width = 50;
+            // 
+            // Submodulo
+            // 
+            this.Submodulo.DataPropertyName = "Submodulo";
+            this.Submodulo.HeaderText = "Submódulo";
+            this.Submodulo.Name = "Submodulo";
+            this.Submodulo.ReadOnly = true;
+            this.Submodulo.Width = 150;
+            // 
+            // Tema
+            // 
+            this.Tema.DataPropertyName = "Tema";
+            this.Tema.HeaderText = "Tema";
+            this.Tema.Name = "Tema";
+            this.Tema.ReadOnly = true;
+            this.Tema.Width = 180;
+            // 
+            // Numero
+            // 
+            this.Numero.DataPropertyName = "NPregunta";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Numero.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Numero.HeaderText = "Nº";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            this.Numero.Width = 50;
+            // 
+            // Texto
+            // 
+            this.Texto.DataPropertyName = "Texto";
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Texto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Texto.HeaderText = "Pregunta";
+            this.Texto.Name = "Texto";
+            this.Texto.ReadOnly = true;
+            // 
+            // Anulada
+            // 
+            this.Anulada.DataPropertyName = "Anulada";
+            this.Anulada.HeaderText = "Anulada";
+            this.Anulada.Name = "Anulada";
+            this.Anulada.Width = 50;
+            // 
+            // Ver_BT
+            // 
+            this.Ver_BT.HeaderText = "Ver";
+            this.Ver_BT.Image = global::moleQule.Face.Instruction.Properties.Resources.view_32;
+            this.Ver_BT.Name = "Ver_BT";
+            this.Ver_BT.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Ver_BT.Width = 60;
             // 
             // ExamenEmitidoForm
             // 
@@ -849,20 +820,17 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.ToolStripButton ResumenPreguntas_BT;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton Estadisticas_BT;
+        protected System.Windows.Forms.CheckedListBox Promociones_CLB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ClearPromociones_BT;
+        private System.Windows.Forms.Button Promocion_BT;
         private System.Windows.Forms.DataGridViewTextBoxColumn N_Orden;
         private System.Windows.Forms.DataGridViewTextBoxColumn Submodulo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tema;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Texto;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Anulada;
-        private System.Windows.Forms.DataGridViewImageColumn Ordenar_BT;
         private System.Windows.Forms.DataGridViewImageColumn Ver_BT;
-        private System.Windows.Forms.DataGridViewImageColumn Editar_BT;
-        private System.Windows.Forms.DataGridViewImageColumn Eliminar_BT;
-        private System.Windows.Forms.ToolStripButton Estadisticas_BT;
-        protected System.Windows.Forms.CheckedListBox Promociones_CLB;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button ClearPromociones_BT;
-        private System.Windows.Forms.Button Promocion_BT;
     }
 }

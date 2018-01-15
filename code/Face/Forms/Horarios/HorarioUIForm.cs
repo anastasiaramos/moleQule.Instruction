@@ -106,7 +106,7 @@ namespace moleQule.Face.Instruction
                 {
                     if (!CrearPartes())
                     {
-                        MessageBox.Show(Resources.Messages.PARTE_INCLUIDO_ALBARAN_FACTURADO);
+                        MessageBox.Show(Resources.Messages.ERROR_CREAR_PARTES);
                         return false;
                     }
                 }

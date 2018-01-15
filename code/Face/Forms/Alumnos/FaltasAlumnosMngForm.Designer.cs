@@ -454,7 +454,7 @@
             // 
             // Recuperaciones
             // 
-            this.Recuperaciones.DataPropertyName = "Recuperaciones";
+            this.Recuperaciones.DataPropertyName = "RecuperacionesPendientes";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.Recuperaciones.DefaultCellStyle = dataGridViewCellStyle1;
             this.Recuperaciones.HeaderText = "A recuperar";

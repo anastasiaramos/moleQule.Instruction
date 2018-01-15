@@ -28,7 +28,7 @@ namespace moleQule.Face.Instruction
 
         protected override void GetFormSourceData(long oid)
         {
-            _entity = ParteAsistencia.Get(oid);
+            _entity = ParteAsistencia.Get(oid, true);
             _entity.BeginEdit();
             _mf_type = ManagerFormType.MFEdit;
         }

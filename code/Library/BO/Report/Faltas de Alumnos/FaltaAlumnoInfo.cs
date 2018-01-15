@@ -37,6 +37,7 @@ namespace moleQule.Library.Instruction
         private decimal _porcentaje_total = 0;
         private long _recuperaciones;
         private decimal _faltas_modulo = 0;
+        private decimal _recuperaciones_pendientes = 0;
 
         public string Nombre { get { return _nombre; } set { _nombre = value; } }
         public string Apellidos { get { return _apellidos; } set { _apellidos = value; } }
@@ -74,7 +75,7 @@ namespace moleQule.Library.Instruction
                 //}
                 //else
                 //    return 0;
-                return (Convert.ToDecimal(Duracion) - Recuperaciones) / TotalClases * 100;
+                return _recuperaciones_pendientes; ;
             }
         } 
 
@@ -102,6 +103,7 @@ namespace moleQule.Library.Instruction
             _total_clases_curso = source.TotalClasesCurso;
             _porcentaje_total = source.PorcentajeTotal;
             _recuperaciones = source.Recuperaciones;
+            _recuperaciones_pendientes = source.RecuperacionesPendientes;
 			
 		}
 			
@@ -126,6 +128,9 @@ namespace moleQule.Library.Instruction
             _porcentaje = Decimal.Round(((decimal)_duracion + (decimal)_recuperaciones) / _total_clases * 100, 2);
             _porcentaje_total = Decimal.Round((decimal)_total_faltas / _total_clases_curso * 100, 2);
             _recuperaciones = Format.DataReader.GetInt64(reader, "RECUPERACIONES");
+            long porcentaje_maximo = moleQule.Library.Instruction.ModulePrincipal.GetPorcentajeMaximoFaltasModuloSetting();
+            _recuperaciones_pendientes = _duracion - (_total_clases * porcentaje_maximo / 100);
+            if (_recuperaciones_pendientes < 0) _recuperaciones_pendientes = 0;
             Oid = Convert.ToInt64(Format.DataReader.GetInt64(reader, "OID_PROMOCION").ToString("0000") +
                                     Format.DataReader.GetInt64(reader, "OID_ALUMNO").ToString("0000") +
                                     Format.DataReader.GetInt64(reader, "OID_MODULO").ToString("0000"));

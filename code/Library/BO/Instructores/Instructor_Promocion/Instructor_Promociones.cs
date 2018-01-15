@@ -178,8 +178,8 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_BY_FIELD(string schema, string oid_instructor, long oid)
         {
-            string instructor_promocion = nHManager.Instance.Cfg.GetClassMapping(typeof(Instructor_PromocionRecord)).Table.Name;
-            string promocion = nHManager.Instance.Cfg.GetClassMapping(typeof(PromocionRecord)).Table.Name;
+            string instructor_promocion = nHManager.Instance.GetSQLTable(typeof(Instructor_PromocionRecord));
+            string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
             string oid_promocion = nHManager.Instance.GetTableField(typeof(Instructor_PromocionRecord), "OidPromocion");
             string _oid = nHManager.Instance.GetTableField(typeof(Submodulo_Instructor_PromocionRecord), oid_instructor);
 
@@ -188,8 +188,8 @@ namespace moleQule.Library.Instruction
             string esquema = Convert.ToInt32(schema).ToString("0000");
 
             query = "SELECT * " +
-                    "FROM \"" + esquema + "\".\"" + instructor_promocion + "\" " +
-                    "INNER JOIN \"" + esquema + "\".\"" + promocion + "\" AS p ON (\"" + oid_promocion + "\" = p.\"OID\") " +
+                    "FROM " + instructor_promocion + " " +
+                    "INNER JOIN " + promocion + " AS p ON (\"" + oid_promocion + "\" = p.\"OID\") " +
                     "WHERE \"" + _oid + "\" = " + oid.ToString() + " " +
                     "ORDER BY p.\"NOMBRE\";";
 

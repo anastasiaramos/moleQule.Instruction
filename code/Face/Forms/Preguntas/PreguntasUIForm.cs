@@ -294,26 +294,27 @@ namespace moleQule.Face.Instruction
 
         protected override void SaveImage(bool replace)
         {
-            Bitmap imagen = new Bitmap(Browser.FileName);
+            string path = Browser.FileName;
+            //Image imagen = Image.FromFile(Browser.FileName);
 
-            string ext = string.Empty;
+            //string ext = string.Empty;
 
-            if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                ext = ".jpg";
-            else
-            {
-                if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                    ext = ".bmp";
-                else
-                {
-                    if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                        ext = ".png";
-                }
-            }
+            //if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
+            //    ext = ".jpg";
+            //else
+            //{
+            //    if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
+            //        ext = ".bmp";
+            //    else
+            //    {
+            //        if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
+            //            ext = ".png";
+            //    }
+            //}
 
-            imagen.Dispose();
+            //imagen.Dispose();
 
-            _pregunta.Imagen = _pregunta.Oid.ToString("00000") + ext;
+            _pregunta.Imagen = _pregunta.Oid.ToString("00000") + path.Substring(path.LastIndexOf("."));
             File.Copy(Browser.FileName, _pregunta.ImagenWithPath, true);
 
         }
@@ -379,9 +380,9 @@ namespace moleQule.Face.Instruction
                         {
                             if (Tema_CB.SelectedValue != null && (long)Tema_CB.SelectedValue != 0)
                             {
-                                Datos_Temas.DataSource = _combo_submodulos.Childs.GetFilteredChilds((long)Tema_CB.SelectedValue);
+                                Datos_Temas.DataSource = _combo_modulos.Childs.GetFilteredChilds((long)Submodulo_CB.SelectedValue);
                                 if ((long)Tema_CB.SelectedValue != _pregunta.OidTema) Tema_CB.SelectedValue = _pregunta.OidTema;
-                                Tema_CB.SelectedItem = _combo_submodulos.Childs.Buscar(_pregunta.OidTema);
+                                Tema_CB.SelectedItem = _combo_modulos.Childs.Childs.Buscar(_pregunta.OidTema);
                             }
                             Modulo_CB.SelectedValue = _pregunta.OidModulo;
                         }
@@ -423,6 +424,14 @@ namespace moleQule.Face.Instruction
         {
             RespuestasActionForm form = new RespuestasActionForm(_pregunta);
             form.ShowDialog();
+        }
+
+        protected override void CancelAction()
+        {
+            if (!_pregunta.SharedTransaction)
+                base.CancelAction();
+            else
+                Close();
         }
 
         #endregion
@@ -494,12 +503,6 @@ namespace moleQule.Face.Instruction
                 historia.Texto = System.Environment.NewLine
                     + "Modificado el campo Revisada; Usuario: " + AppContext.User.Name
                     + "; Valor anterior: " + _copia_pregunta.Revisada.ToString() + ";";
-            }
-            if (_pregunta.ImagenGrande != _copia_pregunta.ImagenGrande)
-            {
-                historia.Texto = System.Environment.NewLine
-                    + "Modificado el campo Imagen Grande; Usuario: " + AppContext.User.Name
-                    + "; Valor anterior: " + _copia_pregunta.ImagenGrande.ToString() + ";";
             }
 
             if (_pregunta.ModeloRespuesta != _copia_pregunta.ModeloRespuesta)

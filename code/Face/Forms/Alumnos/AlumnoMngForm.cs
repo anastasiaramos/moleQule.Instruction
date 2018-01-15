@@ -248,7 +248,31 @@ namespace moleQule.Face.Instruction
                     AlumnoInfo alumno = AlumnoInfo.Get(oid, true);
                     if (alumno.AlumnoPartes.Count > 0)
                     {
-                        MessageBox.Show(Resources.Messages.ALUMNO_CON_PARTES_DE_FALTAS);
+                        foreach (Alumno_ParteInfo item in alumno.AlumnoPartes)
+                        {
+                            if (item.Falta || item.Retraso)
+                            {
+                                MessageBox.Show(Resources.Messages.ALUMNO_CON_PARTES_DE_FALTAS);
+                                _action_result = DialogResult.Ignore;
+                                return;
+                            }
+                        }
+                    }
+                    if (alumno.AlumnosPracticas.Count > 0)
+                    {
+                        foreach (Alumno_PracticaInfo item in alumno.AlumnosPracticas)
+                        {
+                            if (item.Calificacion != "SIN CALIFICAR")
+                            {
+                                MessageBox.Show(Resources.Messages.ALUMNO_CON_PRACTICAS);
+                                _action_result = DialogResult.Ignore;
+                                return;
+                            }
+                        }
+                    }
+                    if (alumno.AlumnoExamens.Count > 0)
+                    {
+                        MessageBox.Show(Resources.Messages.ALUMNO_CON_EXAMENES);
                         _action_result = DialogResult.Ignore;
                         return;
                     }

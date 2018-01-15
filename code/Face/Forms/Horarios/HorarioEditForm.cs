@@ -375,10 +375,6 @@ namespace moleQule.Face.Instruction
                 //guarda la lista de partes de asistencia anterior
                 ParteAsistencias partes = _entity.Asistencias.Clone();
 
-                InputDeliveryList albaranes = InputDeliveryList.GetList(true
-                                                                , ETipoAcreedor.Instructor
-                                                                , new DateTime(_entity.FechaInicial.Year, _entity.FechaInicial.Month, 1, 0, 0, 0)
-                                                                , new DateTime(_entity.FechaFinal.Year, _entity.FechaFinal.Month, DateTime.DaysInMonth(_entity.FechaFinal.Year, _entity.FechaFinal.Month), 0,0,0));
                 PgMng.Grow();
 
                 ParteAsistencias nueva = ParteAsistencias.NewChildList();

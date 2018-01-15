@@ -32,7 +32,6 @@ namespace moleQule.Library.Instruction
 		private string _idioma = string.Empty;
 		private bool _activa = false;
 		private bool _revisada = false;
-		private bool _imagen_grande = false;
 		private bool _bloqueada = false;
 		private long _oid_submodulo;
 		private long _oid_old;
@@ -59,7 +58,6 @@ namespace moleQule.Library.Instruction
 		public virtual string Idioma { get { return _idioma; } set { _idioma = value; } }
 		public virtual bool Activa { get { return _activa; } set { _activa = value; } }
 		public virtual bool Revisada { get { return _revisada; } set { _revisada = value; } }
-		public virtual bool ImagenGrande { get { return _imagen_grande; } set { _imagen_grande = value; } }
 		public virtual bool Bloqueada { get { return _bloqueada; } set { _bloqueada = value; } }
 		public virtual long OidSubmodulo { get { return _oid_submodulo; } set { _oid_submodulo = value; } }
 		public virtual long OidOld { get { return _oid_old; } set { _oid_old = value; } }
@@ -93,7 +91,6 @@ namespace moleQule.Library.Instruction
 			_idioma = Format.DataReader.GetString(source, "IDIOMA");
 			_activa = Format.DataReader.GetBool(source, "ACTIVA");
 			_revisada = Format.DataReader.GetBool(source, "REVISADA");
-			_imagen_grande = Format.DataReader.GetBool(source, "IMAGEN_GRANDE");
 			_bloqueada = Format.DataReader.GetBool(source, "BLOQUEADA");
 			_oid_submodulo = Format.DataReader.GetInt64(source, "OID_SUBMODULO");
 			_oid_old = Format.DataReader.GetInt64(source, "OID_OLD");
@@ -122,7 +119,6 @@ namespace moleQule.Library.Instruction
 			_idioma = source.Idioma;
 			_activa = source.Activa;
 			_revisada = source.Revisada;
-			_imagen_grande = source.ImagenGrande;
 			_bloqueada = source.Bloqueada;
 			_oid_submodulo = source.OidSubmodulo;
 			_oid_old = source.OidOld;
@@ -566,27 +562,6 @@ namespace moleQule.Library.Instruction
 				if (!_base.Record.Revisada.Equals(value))
 				{
 					_base.Record.Revisada = value;
-					PropertyHasChanged();
-				}
-			}
-		}
-		public virtual bool ImagenGrande
-		{
-			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-			get
-			{
-				//CanReadProperty(true);
-				return _base.Record.ImagenGrande;
-			}
-            
-			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-			set
-			{
-				//CanWriteProperty(true);
-				
-				if (!_base.Record.ImagenGrande.Equals(value))
-				{
-					_base.Record.ImagenGrande = value;
 					PropertyHasChanged();
 				}
 			}
@@ -1709,14 +1684,12 @@ namespace moleQule.Library.Instruction
 
         public static string SET_RESERVADAS_FALSE()
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string c_reservada = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Reservada");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
+            query = "UPDATE " + pregunta + " " +
                     "SET \"" + c_reservada + "\" = 'false';";
 
             return query;
@@ -1724,7 +1697,7 @@ namespace moleQule.Library.Instruction
 
         public static string UPDATE_RESERVADA(long oid)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string c_reservada = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Reservada");
             string c_bloqueada = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "Bloqueada");
             string c_fecha_disponibilidad = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "FechaDisponibilidad");
@@ -1735,9 +1708,7 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
+            query = "UPDATE " + pregunta + " " +
                     "SET \"" + c_fecha_disponibilidad + "\" = '" + fecha + "', " +
                     "\"" + c_reservada + "\" = 'true', " +
                     "\"" + c_bloqueada + "\" = 'false' " +
@@ -1748,7 +1719,7 @@ namespace moleQule.Library.Instruction
 
         public static string UPDATE_DISPONIBILIDAD(long oid, DateTime fecha_disponibilidad)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
             string c_fecha_disponibilidad = nHManager.Instance.GetTableField(typeof(PreguntaRecord), "FechaDisponibilidad");
 
             string fecha = fecha_disponibilidad.Year.ToString() + "-" +
@@ -1757,9 +1728,7 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
+            query = "UPDATE " + pregunta + " " +
                     "SET \"" + c_fecha_disponibilidad + "\" = '" + fecha + "' " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";
 

@@ -1315,6 +1315,12 @@
             ReadOnly Root Collection of Business Objects With Child Collection
             </summary>
         </member>
+        <member name="M:moleQule.Library.Instruction.Preguntas_PlantillaList.GetDisponiblesList(System.Int64,System.DateTime)">
+            <summary>
+            Retrieve the complete list from db
+            </summary>
+            <returns>PreguntaList</returns>
+        </member>
         <member name="M:moleQule.Library.Instruction.Preguntas_PlantillaList.GetChildList(System.Collections.Generic.IList{moleQule.Library.Instruction.Preguntas_PlantillaInfo})">
             <summary>
             Builds a Preguntas_PlantillaList from a IList<!--<Preguntas_PlantillaInfo>-->
@@ -4003,6 +4009,20 @@
             </summary>
         </member>
         <member name="M:moleQule.Library.Instruction.InformePlantillaList.GetList(System.Int64)">
+            <summary>
+            Retrieve the complete list from db
+            </summary>
+            <param name="get_childs">retrieving the childs</param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.InformePlantillaList.GetDisponiblesList(System.Int64,System.DateTime)">
+            <summary>
+            Retrieve the complete list from db
+            </summary>
+            <param name="get_childs">retrieving the childs</param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.InformePlantillaList.GetDisponiblesDesarrolloList(System.Int64,System.DateTime)">
             <summary>
             Retrieve the complete list from db
             </summary>

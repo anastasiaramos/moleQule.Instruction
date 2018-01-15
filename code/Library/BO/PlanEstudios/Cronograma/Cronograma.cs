@@ -1358,16 +1358,14 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         private static string SELECT_CRONOGRAMA(long oid_plan, long oid_promocion)
         {
-            string Cronograma = nHManager.Instance.Cfg.GetClassMapping(typeof(CronogramaRecord)).Table.Name;
+            string Cronograma = nHManager.Instance.GetSQLTable(typeof(CronogramaRecord));
             string plan = nHManager.Instance.GetSQLTable(typeof(PlanEstudiosRecord));
             string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT C.* , PL.\"NOMBRE\" AS \"PLAN\", COALESCE(PR.\"NOMBRE\", '') AS \"PROMOCION\" " +
-                    "FROM \"" + esquema + "\".\"" + Cronograma + "\" AS C " +
+                    "FROM " + Cronograma + " AS C " +
                     "INNER JOIN " + plan + " AS PL ON PL.\"OID\" = C.\"OID_PLAN\" " +
                     "LEFT JOIN " + promocion + " AS PR ON PR.\"OID\" = C.\"OID_PROMOCION\" " +
                     "WHERE C.\"OID_PLAN\" = " + oid_plan.ToString() + " " +
@@ -1378,16 +1376,15 @@ namespace moleQule.Library.Instruction
 
         public new static string SELECT(long oid)
         {
-            string Cronograma = nHManager.Instance.Cfg.GetClassMapping(typeof(CronogramaRecord)).Table.Name;
+            string Cronograma = nHManager.Instance.GetSQLTable(typeof(CronogramaRecord));
             string plan = nHManager.Instance.GetSQLTable(typeof(PlanEstudiosRecord));
             string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
 
             query = "SELECT C.* , PL.\"NOMBRE\" AS \"PLAN\", COALESCE(PR.\"NOMBRE\", '') AS \"PROMOCION\" " +
-                    "FROM \"" + esquema + "\".\"" + Cronograma + "\" AS C " +
+                    "FROM " + Cronograma + " AS C " +
                     "INNER JOIN " + plan + " AS PL ON PL.\"OID\" = C.\"OID_PLAN\" " +
                     "LEFT JOIN " + promocion + " AS PR ON PR.\"OID\" = C.\"OID_PROMOCION\" ";
             if (oid > 0)
@@ -1405,23 +1402,21 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         private static string UNION_CLASES(long oid_plan)
         {
-            string clase_practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
-            string clase_teorica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
+            string clase_practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
+            string clase_teorica = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT \"OID\", \"OID_SUBMODULO\", \"OID_MODULO\" , \"TITULO\",\"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", 0 AS TIPO, 3 AS GRUPO " +
-                    "FROM \"" + esquema + "\".\"" + clase_teorica + "\" " +
+                    "FROM " + clase_teorica + " " +
                     "WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
                     "UNION " +
                     "SELECT \"OID\", \"OID_SUBMODULO\", \"OID_MODULO\" , \"TITULO\",\"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", 1 AS TIPO, 1 AS GRUPO " +
-                    "FROM \"" + esquema + "\".\"" + clase_practica + "\" " +
+                    "FROM " + clase_practica + " " +
                     "WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
                     "UNION " +
                     "SELECT \"OID\", \"OID_SUBMODULO\", \"OID_MODULO\" , \"TITULO\",\"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", 1 AS TIPO, 2 AS GRUPO " +
-                    "FROM \"" + esquema + "\".\"" + clase_practica + "\" " +
+                    "FROM " + clase_practica + " " +
                     "WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
                     "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\";";
 

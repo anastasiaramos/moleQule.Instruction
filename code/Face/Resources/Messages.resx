@@ -277,8 +277,8 @@ Actívelas si desea que aparezcan en el mismo.</value>
   <data name="VALIDATION_MSG" xml:space="preserve">
     <value>Comprobando permisos...</value>
   </data>
-  <data name="PARTE_INCLUIDO_ALBARAN_FACTURADO" xml:space="preserve">
-    <value>El horario que está intentando modificar tiene asociados albaranes de instructor facturados. Debe eliminar los albaranes antes de continuar modificando.</value>
+  <data name="ERROR_CREAR_PARTES" xml:space="preserve">
+    <value>El horario que está intentando modificar no ha podido generar los partes de faltas.</value>
   </data>
   <data name="ALUMNO_CON_PARTES_DE_FALTAS" xml:space="preserve">
     <value>No se puede borrar el alumno porque tiene partes de faltas asociados.</value>
@@ -334,5 +334,11 @@ Por favor, revise antes de guardar.</value>
   </data>
   <data name="HORARIO_EXISTENTE" xml:space="preserve">
     <value>Ya existe un horario generado para la promoción y fecha seleccionadas.</value>
+  </data>
+  <data name="ALUMNO_CON_EXAMENES" xml:space="preserve">
+    <value>No se puede borrar el alumno porque tiene exámenes asociados.</value>
+  </data>
+  <data name="ALUMNO_CON_PRACTICAS" xml:space="preserve">
+    <value>No se puede borrar el alumno porque tiene prácticas asociadas.</value>
   </data>
 </root>

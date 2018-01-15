@@ -53,7 +53,6 @@ namespace moleQule.Library.Instruction
         public string Idioma { get { return _base.Record.Idioma; } }
         public bool Activa { get { return _base.Record.Activa; } }
         public bool Revisada { get { return _base.Record.Revisada; } }
-        public bool ImagenGrande { get { return _base.Record.ImagenGrande; } }
         public bool Bloqueada { get { return _base.Record.Bloqueada; } }
         public long OidSubmodulo { get { return _base.Record.OidSubmodulo; } }
         public long OidOld { get { return _base.Record.OidOld; } }
@@ -86,14 +85,12 @@ namespace moleQule.Library.Instruction
             _base.Record.OidTema = source.OidTema;
             _base.Record.Nivel = source.Nivel;
             _base.Record.FechaAlta = source.FechaAlta;
-            _base.Record.FechaPublicacion = source.FechaPublicacion;
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = source.Imagen;
             _base.Record.ModeloRespuesta = source.ModeloRespuesta;
             _base.Record.Observaciones = source.Observaciones;
             _base.Record.Idioma = source.Idioma;
-            _base.Record.ImagenGrande = source.ImagenGrande;
 
             _submodulo = source.Submodulo;
             _tema = source.Tema;

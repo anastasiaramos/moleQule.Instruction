@@ -255,37 +255,38 @@ namespace moleQule.Face.Instruction
 
         protected void SaveImage(bool replace)
         {
-            Bitmap imagen = new Bitmap(Browser.FileName);
+            string path = Browser.FileName;
+            //Bitmap imagen = new Bitmap(Browser.FileName);
 
-            string ext = string.Empty;
+            //string ext = string.Empty;
 
-            if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                ext = ".jpg";
-            else
-            {
-                if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                    ext = ".bmp";
-                else
-                {
-                    if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                        ext = ".png";
-                }
-            }
+            //if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
+            //    ext = ".jpg";
+            //else
+            //{
+            //    if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
+            //        ext = ".bmp";
+            //    else
+            //    {
+            //        if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
+            //            ext = ".png";
+            //    }
+            //}
 
-            imagen.Dispose();
+            //imagen.Dispose();
 
             if (replace)
             {
-                File.Copy(moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH + _entity.Imagen,
-                            moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH + _entity.Oid.ToString("00000") + ext,
+                File.Copy(_entity.ImagenWithPath,
+                            moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH + _entity.Oid.ToString("00000") + path.Substring(path.LastIndexOf(".")),
                             true);
-                File.Delete(moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH + _entity.Imagen);
-                            _entity.Imagen = _entity.Oid.ToString("00000") + ext;
+                File.Delete(_entity.ImagenWithPath);
+                _entity.Imagen = _entity.Oid.ToString("00000") + path.Substring(path.LastIndexOf("."));
             }
             else
             {
-                _entity.Imagen = _entity.Oid.ToString("00000") + ext;
-                File.Copy(Browser.FileName, moleQule.Library.Application.AppController.FOTOS_PREGUNTAS_PATH + _entity.Imagen, true);
+                _entity.Imagen = _entity.Oid.ToString("00000") + path.Substring(path.LastIndexOf("."));
+                File.Copy(path, _entity.ImagenWithPath, true);
             }
 
         }
@@ -323,6 +324,8 @@ namespace moleQule.Face.Instruction
             {
                 _entity.FechaAlta = DateTime.Now;
                 _entity.FechaDisponibilidad = DateTime.Now;
+                _entity.FechaPublicacion = DateTime.Today;
+                _entity.FechaUltimoExamen = DateTime.Today.AddMonths(-6);
 
                 Historia historia = Historia.NewChild(_entity);
                 historia.Fecha = DateTime.Now.Date;

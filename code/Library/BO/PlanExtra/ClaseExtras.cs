@@ -220,9 +220,7 @@ namespace moleQule.Library.Instruction
         public static string SELECT_CLASES_EXTRAS_PLAN(long oid_plan)
         {
             string query;
-
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
+            
             query = ClaseExtra.SELECT(0) +
                     " WHERE CE.\"OID_PLAN\" = " + oid_plan.ToString();
 
@@ -232,35 +230,32 @@ namespace moleQule.Library.Instruction
         public static string SELECT_CLASES_EXTRAS_DISPONIBLES(long oid_promocion,
                                                                     long oid_horario)
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
-            string horario = nHManager.Instance.Cfg.GetClassMapping(typeof(HorarioRecord)).Table.Name;
-            string clase = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseExtraRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string promocion = nHManager.Instance.Cfg.GetClassMapping(typeof(PromocionRecord)).Table.Name;
-            string plan_extra = nHManager.Instance.Cfg.GetClassMapping(typeof(PlanExtraRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
+            string horario = nHManager.Instance.GetSQLTable(typeof(HorarioRecord));
+            string clase = nHManager.Instance.GetSQLTable(typeof(ClaseExtraRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
+            string plan_extra = nHManager.Instance.GetSQLTable(typeof(PlanExtraRecord));
             string oid_submodulo = nHManager.Instance.GetTableField(typeof(ClaseExtraRecord), "OidSubmodulo");
             string oid_modulo = nHManager.Instance.GetTableField(typeof(ClaseExtraRecord), "OidModulo");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-            esquema = "\"" + esquema + "\"";
-
             query = "SELECT cl.*, 1 AS \"ESTADO\"," +
                     "       sm.\"CODIGO\" AS \"SUBMODULO\"," +
                     "       m.\"TEXTO\" AS \"MODULO\"," +
                     "       sm.\"CODIGO_ORDEN\" AS \"CODIGO_ORDEN\"" +
-                    " FROM " + esquema + ".\"" + clase + "\" AS cl " +
-                        "INNER JOIN " + esquema + ".\"" + submodulo + "\" AS sm ON (cl.\"" + oid_submodulo + "\" = sm.\"OID\") " +
-                        "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (cl.\"" + oid_modulo + "\" = m.\"OID\") " +
-                        "INNER JOIN " + esquema + ".\"" + promocion + "\" AS p ON (p.\"OID\" = " + oid_promocion.ToString() + ") " + 
-                        "INNER JOIN " + esquema + ".\"" + plan_extra + "\" AS pl ON (pl.\"OID\" = p.\"OID_PLAN_EXTRA\" AND pl.\"OID\" = cl.\"OID_PLAN\") " + 
+                    " FROM " + clase + " AS cl " +
+                        "INNER JOIN " + submodulo + " AS sm ON (cl.\"" + oid_submodulo + "\" = sm.\"OID\") " +
+                        "INNER JOIN " + modulo + " AS m ON (cl.\"" + oid_modulo + "\" = m.\"OID\") " +
+                        "INNER JOIN " + promocion + " AS p ON (p.\"OID\" = " + oid_promocion.ToString() + ") " + 
+                        "INNER JOIN " + plan_extra + " AS pl ON (pl.\"OID\" = p.\"OID_PLAN_EXTRA\" AND pl.\"OID\" = cl.\"OID_PLAN\") " + 
                     "WHERE cl.\"OID\" NOT IN ( " +
                         "SELECT c.\"OID\" " +
-                        "FROM " + esquema + ".\"" + sesion + "\" AS s " +
-                            "INNER JOIN " + esquema + ".\"" + horario + "\" AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
-                            "INNER JOIN " + esquema + ".\"" + clase + "\" AS c ON (s.\"OID_CLASE_EXTRA\" = c.\"OID\") " +
+                        "FROM " + sesion + " AS s " +
+                            "INNER JOIN " + horario + " AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
+                            "INNER JOIN " + clase + " AS c ON (s.\"OID_CLASE_EXTRA\" = c.\"OID\") " +
                        "WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + " " +
                        "AND s.\"ESTADO\" > 1 ) " +
                     "UNION " +
@@ -268,13 +263,13 @@ namespace moleQule.Library.Instruction
                     "       sm.\"CODIGO\" AS \"SUBMODULO\"," +
                     "       m.\"TEXTO\" AS \"MODULO\"," + 
                     "       sm.\"CODIGO_ORDEN\" AS \"CODIGO_ORDEN\" " +
-                    "FROM " + esquema + ".\"" + sesion + "\" AS s " +
-                            "INNER JOIN " + esquema + ".\"" + horario + "\" AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
-                            "INNER JOIN " + esquema + ".\"" + clase + "\" AS cl ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
-                            "INNER JOIN " + esquema + ".\"" + submodulo + "\" AS sm ON (cl.\"" + oid_submodulo + "\" = sm.\"OID\") " +
-                            "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (cl.\"" + oid_modulo + "\" = m.\"OID\") " +
-                            "INNER JOIN " + esquema + ".\"" + promocion + "\" AS p ON (p.\"OID\" = h.\"OID_PROMOCION\") " +
-                            "INNER JOIN " + esquema + ".\"" + plan_extra + "\" AS pl ON (pl.\"OID\" = cl.\"OID_PLAN\") " +
+                    "FROM " + sesion + " AS s " +
+                            "INNER JOIN " + horario + " AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
+                            "INNER JOIN " + clase + " AS cl ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
+                            "INNER JOIN " + submodulo + " AS sm ON (cl.\"" + oid_submodulo + "\" = sm.\"OID\") " +
+                            "INNER JOIN " + modulo + " AS m ON (cl.\"" + oid_modulo + "\" = m.\"OID\") " +
+                            "INNER JOIN " + promocion + " AS p ON (p.\"OID\" = h.\"OID_PROMOCION\") " +
+                            "INNER JOIN " + plan_extra + " AS pl ON (pl.\"OID\" = cl.\"OID_PLAN\") " +
                        "WHERE s.\"OID_HORARIO\" = " + oid_horario.ToString() + " " +
                    "ORDER BY \"CODIGO_ORDEN\", \"ORDEN\";";
             return query;

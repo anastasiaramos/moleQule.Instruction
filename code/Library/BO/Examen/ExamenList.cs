@@ -505,15 +505,13 @@ namespace moleQule.Library.Instruction
 
         private static string UPDATE_CODIGO(long oid)
         {
-            string examen = nHManager.Instance.Cfg.GetClassMapping(typeof(ExamenRecord)).Table.Name;
+            string examen = nHManager.Instance.GetSQLTable(typeof(ExamenRecord));
             string numero = nHManager.Instance.GetTableField(typeof(ExamenRecord), "Numero");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + examen + "\" " +
-                    "SET \"" + numero + "\" = " + oid.ToString() + " " +
+            query = "UPDATE " + examen +
+                    " SET \"" + numero + "\" = " + oid.ToString() + " " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";
 
             return query;

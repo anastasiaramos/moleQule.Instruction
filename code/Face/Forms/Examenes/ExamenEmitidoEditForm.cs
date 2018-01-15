@@ -295,65 +295,70 @@ namespace moleQule.Face.Instruction
 
             if (Entity.FechaExamen.Date > DateTime.Today.Date)
             {
-                PgMng.Reset(Entity.PreguntaExamens.Count * 2 + 2, 1, "Eliminando copias de preguntas y respuestas...", this);
-
-                PreguntaExamens preguntas = Entity.PreguntaExamens.Clone();
-                Entity.MemoPreguntas = string.Empty;
-                foreach (PreguntaExamen p in preguntas)
+                if (Entity.Alumnos != null && Entity.Alumnos.Count > 0)
+                    MessageBox.Show("No se puede liberar un examen que tiene alumnos asociados.");
+                else
                 {
-                    Entity.PreguntaExamens.Remove(p.Oid);
-                    Entity.MemoPreguntas += p.OidPregunta.ToString() + ";";
+                    PgMng.Reset(Entity.PreguntaExamens.Count * 2 + 2, 1, "Eliminando copias de preguntas y respuestas...", this);
 
-                    PgMng.Grow();
-                }
-
-                string directorio = Library.Application.AppController.FOTOS_PREGUNTAS_EXAMEN_PATH + Entity.Oid.ToString("00000");
-
-                if (Directory.Exists(directorio))
-                    Directory.Delete(directorio, true);
-
-                PgMng.Grow("Liberando preguntas...");
-
-                if (Entity.MemoPreguntas != string.Empty)
-                {
-                    PgMng.Grow("Liberando preguntas...");
-
-                    string lista_preguntas = Entity.MemoPreguntas.Replace(';', ',').Substring(0, Entity.MemoPreguntas.Length - 1);
-
-                    _preguntas_examen = Preguntas.GetPreguntasByList(lista_preguntas, _entity.SessionCode);
-                    foreach (Pregunta item in _preguntas_examen)
+                    PreguntaExamens preguntas = Entity.PreguntaExamens.Clone();
+                    Entity.MemoPreguntas = string.Empty;
+                    foreach (PreguntaExamen p in preguntas)
                     {
-                        DateTime fecha = ExamenInfo.GetUltimoByPreguntaIncluida(item.Oid, Entity.FechaExamen);
-                        if (fecha != DateTime.MinValue)
-                        {
-                            item.FechaDisponibilidad = fecha.AddMonths(6);
-                            item.FechaUltimoExamen = fecha;
-                        }
-                        else
-                        {
-                            item.FechaDisponibilidad = item.FechaAlta;
-                            item.FechaUltimoExamen = item.FechaAlta.AddMonths(-6);
-                        }
-                        item.Bloqueada = false;
-                        item.Reservada = true;
+                        Entity.PreguntaExamens.Remove(p.Oid);
+                        Entity.MemoPreguntas += p.OidPregunta.ToString() + ";";
 
                         PgMng.Grow();
                     }
-                    _preguntas_examen.Save();
+
+                    string directorio = Library.Application.AppController.FOTOS_PREGUNTAS_EXAMEN_PATH + Entity.Oid.ToString("00000");
+
+                    if (Directory.Exists(directorio))
+                        Directory.Delete(directorio, true);
+
+                    PgMng.Grow("Liberando preguntas...");
+
+                    if (Entity.MemoPreguntas != string.Empty)
+                    {
+                        PgMng.Grow("Liberando preguntas...");
+
+                        string lista_preguntas = Entity.MemoPreguntas.Replace(';', ',').Substring(0, Entity.MemoPreguntas.Length - 1);
+
+                        _preguntas_examen = Preguntas.GetPreguntasByList(lista_preguntas, _entity.SessionCode);
+                        foreach (Pregunta item in _preguntas_examen)
+                        {
+                            DateTime fecha = ExamenInfo.GetUltimoByPreguntaIncluida(item.Oid, Entity.FechaExamen);
+                            if (fecha != DateTime.MinValue)
+                            {
+                                item.FechaDisponibilidad = fecha.AddMonths(6);
+                                item.FechaUltimoExamen = fecha;
+                            }
+                            else
+                            {
+                                item.FechaDisponibilidad = item.FechaAlta;
+                                item.FechaUltimoExamen = item.FechaAlta.AddMonths(-6);
+                            }
+                            item.Bloqueada = false;
+                            item.Reservada = true;
+
+                            PgMng.Grow();
+                        }
+                        _preguntas_examen.Save();
+                    }
+
+                    Entity.FechaEmision = DateTime.MaxValue;
+                    FExamen_DTP.Enabled = true;
+                    Desarrollo_CB.Enabled = true;
+                    Instructor_CB.Enabled = true;
+                    Promocion_CB.Enabled = true;
+                    Tipo_TB.Enabled = true;
+
+                    PgMng.FillUp();
+                    MessageBox.Show("El examen ha sido liberado correctamente.");
+
+                    SaveAction();
+                    //Scripts.FormatFechaDisponibilidad();
                 }
-
-                Entity.FechaEmision = DateTime.MaxValue;
-                FExamen_DTP.Enabled = true;
-                Desarrollo_CB.Enabled = true;
-                Instructor_CB.Enabled = true;
-                Promocion_CB.Enabled = true;
-                Tipo_TB.Enabled = true;
-
-                PgMng.FillUp();
-                MessageBox.Show("El examen ha sido liberado correctamente.");
-
-                SaveAction();
-                //Scripts.FormatFechaDisponibilidad();
             }
             else
                 MessageBox.Show("No se puede liberar un examen que ya se ha celebrado.");

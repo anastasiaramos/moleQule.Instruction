@@ -61,11 +61,29 @@ namespace moleQule.Face.Instruction.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to No se puede borrar el alumno porque tiene exámenes asociados..
+        /// </summary>
+        internal static string ALUMNO_CON_EXAMENES {
+            get {
+                return ResourceManager.GetString("ALUMNO_CON_EXAMENES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No se puede borrar el alumno porque tiene partes de faltas asociados..
         /// </summary>
         internal static string ALUMNO_CON_PARTES_DE_FALTAS {
             get {
                 return ResourceManager.GetString("ALUMNO_CON_PARTES_DE_FALTAS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se puede borrar el alumno porque tiene prácticas asociadas..
+        /// </summary>
+        internal static string ALUMNO_CON_PRACTICAS {
+            get {
+                return ResourceManager.GetString("ALUMNO_CON_PRACTICAS", resourceCulture);
             }
         }
         
@@ -267,6 +285,15 @@ namespace moleQule.Face.Instruction.Resources {
         internal static string ENTERPRISE_NOT_ALLOWED {
             get {
                 return ResourceManager.GetString("ENTERPRISE_NOT_ALLOWED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El horario que está intentando modificar no ha podido generar los partes de faltas..
+        /// </summary>
+        internal static string ERROR_CREAR_PARTES {
+            get {
+                return ResourceManager.GetString("ERROR_CREAR_PARTES", resourceCulture);
             }
         }
         
@@ -548,15 +575,6 @@ namespace moleQule.Face.Instruction.Resources {
         internal static string PARTE_CON_CONCEPTOS_ASOCIADOS {
             get {
                 return ResourceManager.GetString("PARTE_CON_CONCEPTOS_ASOCIADOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to El horario que está intentando modificar tiene asociados albaranes de instructor facturados. Debe eliminar los albaranes antes de continuar modificando..
-        /// </summary>
-        internal static string PARTE_INCLUIDO_ALBARAN_FACTURADO {
-            get {
-                return ResourceManager.GetString("PARTE_INCLUIDO_ALBARAN_FACTURADO", resourceCulture);
             }
         }
         

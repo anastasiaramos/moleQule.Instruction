@@ -160,11 +160,12 @@ namespace moleQule.Library.Instruction
 
         public static string SELECT_BY_PARTE_ORDERED(long oid_parte)
         {
-            string schema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
+            string alumno_parte = nHManager.Instance.GetSQLTable(typeof(AlumnoParteRecord));
+            string alumno = nHManager.Instance.GetSQLTable(typeof(AlumnoRecord));
 
             string query = "SELECT p.*, TO_ASCII(a.\"APELLIDOS\", 'LATIN1') AS AP, TO_ASCII(a.\"NOMBRE\", 'LATIN1') AS NOM " +
-                    "FROM \"" + schema + "\".\"Alumno_Parte\" as p " +
-                    "INNER JOIN \"0001\".\"Alumno\" as a on (a.\"OID\" = p.\"OID_ALUMNO\") " +
+                    "FROM " + alumno_parte + " as p " +
+                    "INNER JOIN "+ alumno + " as a on (a.\"OID\" = p.\"OID_ALUMNO\") " +
                     "WHERE p.\"OID_PARTE\" = " + oid_parte.ToString() + " " +
                     "ORDER BY AP, NOM;";
             return query;

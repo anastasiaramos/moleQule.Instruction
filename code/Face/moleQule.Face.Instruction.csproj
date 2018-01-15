@@ -991,6 +991,12 @@
     <Compile Include="Forms\Plantillas de Examenes\PreguntasPlantillaInputForm.Designer.cs">
       <DependentUpon>PreguntasPlantillaInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\SelectFechaDisponibilidadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Plantillas de Examenes\SelectFechaDisponibilidadForm.Designer.cs">
+      <DependentUpon>SelectFechaDisponibilidadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Preguntas\DuplicarPreguntasTemaActionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1655,6 +1661,9 @@
     <EmbeddedResource Include="Forms\Plantillas de Examenes\PreguntasPlantillaInputForm.resx">
       <DependentUpon>PreguntasPlantillaInputForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Plantillas de Examenes\SelectFechaDisponibilidadForm.resx">
+      <DependentUpon>SelectFechaDisponibilidadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Preguntas\DuplicarPreguntasTemaActionForm.resx">
       <DependentUpon>DuplicarPreguntasTemaActionForm.cs</DependentUpon>

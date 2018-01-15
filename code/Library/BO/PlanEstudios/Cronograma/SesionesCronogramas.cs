@@ -186,27 +186,24 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_SESIONES_PLAN(long oid_cronograma)
         {
-            string sesion_cronograma = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionCronogramaRecord)).Table.Name;
-            string practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
-            string teorica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
+            string sesion_cronograma = nHManager.Instance.GetSQLTable(typeof(SesionCronogramaRecord));
+            string practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
+            string teorica = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-            esquema = "\"" + esquema + "\"";
-
             query = "SELECT s.*, p.\"DURACION\" AS DURACION, p.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
-                    "FROM " + esquema + ".\"" + sesion_cronograma + "\" AS s " +
-                        "INNER JOIN " + esquema + ".\"" + practica + "\" AS p ON (s.\"OID_CLASE_PRACTICA\" = p.\"OID\") " +
-                        "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (p.\"OID_MODULO\" = m.\"OID\") " +
+                    "FROM " + sesion_cronograma + " AS s " +
+                        "INNER JOIN " + practica + " AS p ON (s.\"OID_CLASE_PRACTICA\" = p.\"OID\") " +
+                        "INNER JOIN " + modulo + " AS m ON (p.\"OID_MODULO\" = m.\"OID\") " +
                     "WHERE \"OID_CRONOGRAMA\" = " + oid_cronograma.ToString() + " " +
                     "AND \"OID_CLASE_PRACTICA\" <> 0 " +
                     "UNION " +
                     "SELECT s.*, t.\"DURACION\" AS DURACION, t.\"TITULO\" AS CLASE, m.\"ALIAS\" AS MODULO " +
-                    "FROM " + esquema + ".\"" + sesion_cronograma + "\" AS s " +
-                        "INNER JOIN " + esquema + ".\"" + teorica + "\" AS t ON (s.\"OID_CLASE_TEORICA\" = t.\"OID\") " +
-                        "INNER JOIN " + esquema + ".\"" + modulo + "\" AS m ON (t.\"OID_MODULO\" = m.\"OID\") " +
+                    "FROM " + sesion_cronograma + " AS s " +
+                        "INNER JOIN " + teorica + " AS t ON (s.\"OID_CLASE_TEORICA\" = t.\"OID\") " +
+                        "INNER JOIN " + modulo + " AS m ON (t.\"OID_MODULO\" = m.\"OID\") " +
                     "WHERE \"OID_CRONOGRAMA\" = " + oid_cronograma.ToString() + " " +
                     "AND \"OID_CLASE_TEORICA\" > 0 " +
                     /*"UNION " +

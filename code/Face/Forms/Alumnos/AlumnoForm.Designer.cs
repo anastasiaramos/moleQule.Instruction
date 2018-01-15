@@ -102,24 +102,6 @@ namespace moleQule.Face.Instruction
             this.NuevoExamen_BT = new System.Windows.Forms.Button();
             this.EditarExamen_BT = new System.Windows.Forms.Button();
             this.Examenes_Grid = new System.Windows.Forms.DataGridView();
-            this.Examen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oidAlumnoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oidExamenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calificacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacionesDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.presentadoDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.oidPromocionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moduloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaExamenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.desarrolloDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.calificacionStringDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sessionCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.childsDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.isSelectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.nHMngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datos_Alumno_Examen = new System.Windows.Forms.BindingSource(this.components);
             this.NotasPracticas_TP = new System.Windows.Forms.TabPage();
             this.Practicas_Grid = new System.Windows.Forms.DataGridView();
@@ -144,6 +126,9 @@ namespace moleQule.Face.Instruction
             this.customAdapter2 = new moleQule.Library.Application.Tools.CustomAdapter();
             this.customAdapter3 = new moleQule.Library.Application.Tools.CustomAdapter();
             this.promocionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Examen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Calificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             municipioLabel = new System.Windows.Forms.Label();
             apellidosLabel = new System.Windows.Forms.Label();
@@ -809,7 +794,7 @@ namespace moleQule.Face.Instruction
             this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(365, 40);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 146;
             this.label6.Text = "CURSOS";
             // 
@@ -1009,22 +994,7 @@ namespace moleQule.Face.Instruction
             this.Examenes_Grid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Examen,
             this.Calificacion,
-            this.Observaciones,
-            this.oidAlumnoDataGridViewTextBoxColumn,
-            this.oidExamenDataGridViewTextBoxColumn,
-            this.calificacionDataGridViewTextBoxColumn,
-            this.observacionesDataGridViewTextBoxColumn1,
-            this.presentadoDataGridViewCheckBoxColumn,
-            this.oidPromocionDataGridViewTextBoxColumn,
-            this.moduloDataGridViewTextBoxColumn,
-            this.fechaExamenDataGridViewTextBoxColumn,
-            this.desarrolloDataGridViewCheckBoxColumn,
-            this.calificacionStringDataGridViewTextBoxColumn,
-            this.oidDataGridViewTextBoxColumn,
-            this.sessionCodeDataGridViewTextBoxColumn,
-            this.childsDataGridViewCheckBoxColumn,
-            this.isSelectedDataGridViewCheckBoxColumn,
-            this.nHMngDataGridViewTextBoxColumn});
+            this.Observaciones});
             this.Examenes_Grid.DataSource = this.Datos_Alumno_Examen;
             this.Examenes_Grid.Location = new System.Drawing.Point(0, 0);
             this.Examenes_Grid.Name = "Examenes_Grid";
@@ -1033,133 +1003,6 @@ namespace moleQule.Face.Instruction
             this.Examenes_Grid.TabIndex = 3;
             this.Examenes_Grid.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.Examenes_Grid_DataBindingComplete);
             this.Examenes_Grid.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.Examenes_Grid_DataError);
-            // 
-            // Examen
-            // 
-            this.Examen.HeaderText = "Examen";
-            this.Examen.Name = "Examen";
-            this.Examen.ReadOnly = true;
-            this.Examen.Width = 200;
-            // 
-            // Calificacion
-            // 
-            this.Calificacion.HeaderText = "Calificación";
-            this.Calificacion.Name = "Calificacion";
-            this.Calificacion.ReadOnly = true;
-            this.Calificacion.Width = 150;
-            // 
-            // Observaciones
-            // 
-            this.Observaciones.DataPropertyName = "Observaciones";
-            this.Observaciones.HeaderText = "Observaciones";
-            this.Observaciones.Name = "Observaciones";
-            this.Observaciones.ReadOnly = true;
-            this.Observaciones.Width = 200;
-            // 
-            // oidAlumnoDataGridViewTextBoxColumn
-            // 
-            this.oidAlumnoDataGridViewTextBoxColumn.DataPropertyName = "OidAlumno";
-            this.oidAlumnoDataGridViewTextBoxColumn.HeaderText = "OidAlumno";
-            this.oidAlumnoDataGridViewTextBoxColumn.Name = "oidAlumnoDataGridViewTextBoxColumn";
-            this.oidAlumnoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oidExamenDataGridViewTextBoxColumn
-            // 
-            this.oidExamenDataGridViewTextBoxColumn.DataPropertyName = "OidExamen";
-            this.oidExamenDataGridViewTextBoxColumn.HeaderText = "OidExamen";
-            this.oidExamenDataGridViewTextBoxColumn.Name = "oidExamenDataGridViewTextBoxColumn";
-            this.oidExamenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // calificacionDataGridViewTextBoxColumn
-            // 
-            this.calificacionDataGridViewTextBoxColumn.DataPropertyName = "Calificacion";
-            this.calificacionDataGridViewTextBoxColumn.HeaderText = "Calificacion";
-            this.calificacionDataGridViewTextBoxColumn.Name = "calificacionDataGridViewTextBoxColumn";
-            this.calificacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // observacionesDataGridViewTextBoxColumn1
-            // 
-            this.observacionesDataGridViewTextBoxColumn1.DataPropertyName = "Observaciones";
-            this.observacionesDataGridViewTextBoxColumn1.HeaderText = "Observaciones";
-            this.observacionesDataGridViewTextBoxColumn1.Name = "observacionesDataGridViewTextBoxColumn1";
-            this.observacionesDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // presentadoDataGridViewCheckBoxColumn
-            // 
-            this.presentadoDataGridViewCheckBoxColumn.DataPropertyName = "Presentado";
-            this.presentadoDataGridViewCheckBoxColumn.HeaderText = "Presentado";
-            this.presentadoDataGridViewCheckBoxColumn.Name = "presentadoDataGridViewCheckBoxColumn";
-            this.presentadoDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // oidPromocionDataGridViewTextBoxColumn
-            // 
-            this.oidPromocionDataGridViewTextBoxColumn.DataPropertyName = "OidPromocion";
-            this.oidPromocionDataGridViewTextBoxColumn.HeaderText = "OidPromocion";
-            this.oidPromocionDataGridViewTextBoxColumn.Name = "oidPromocionDataGridViewTextBoxColumn";
-            this.oidPromocionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // moduloDataGridViewTextBoxColumn
-            // 
-            this.moduloDataGridViewTextBoxColumn.DataPropertyName = "Modulo";
-            this.moduloDataGridViewTextBoxColumn.HeaderText = "Modulo";
-            this.moduloDataGridViewTextBoxColumn.Name = "moduloDataGridViewTextBoxColumn";
-            this.moduloDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaExamenDataGridViewTextBoxColumn
-            // 
-            this.fechaExamenDataGridViewTextBoxColumn.DataPropertyName = "FechaExamen";
-            this.fechaExamenDataGridViewTextBoxColumn.HeaderText = "FechaExamen";
-            this.fechaExamenDataGridViewTextBoxColumn.Name = "fechaExamenDataGridViewTextBoxColumn";
-            this.fechaExamenDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // desarrolloDataGridViewCheckBoxColumn
-            // 
-            this.desarrolloDataGridViewCheckBoxColumn.DataPropertyName = "Desarrollo";
-            this.desarrolloDataGridViewCheckBoxColumn.HeaderText = "Desarrollo";
-            this.desarrolloDataGridViewCheckBoxColumn.Name = "desarrolloDataGridViewCheckBoxColumn";
-            this.desarrolloDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // calificacionStringDataGridViewTextBoxColumn
-            // 
-            this.calificacionStringDataGridViewTextBoxColumn.DataPropertyName = "CalificacionString";
-            this.calificacionStringDataGridViewTextBoxColumn.HeaderText = "CalificacionString";
-            this.calificacionStringDataGridViewTextBoxColumn.Name = "calificacionStringDataGridViewTextBoxColumn";
-            this.calificacionStringDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // oidDataGridViewTextBoxColumn
-            // 
-            this.oidDataGridViewTextBoxColumn.DataPropertyName = "Oid";
-            this.oidDataGridViewTextBoxColumn.HeaderText = "Oid";
-            this.oidDataGridViewTextBoxColumn.Name = "oidDataGridViewTextBoxColumn";
-            this.oidDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sessionCodeDataGridViewTextBoxColumn
-            // 
-            this.sessionCodeDataGridViewTextBoxColumn.DataPropertyName = "SessionCode";
-            this.sessionCodeDataGridViewTextBoxColumn.HeaderText = "SessionCode";
-            this.sessionCodeDataGridViewTextBoxColumn.Name = "sessionCodeDataGridViewTextBoxColumn";
-            this.sessionCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // childsDataGridViewCheckBoxColumn
-            // 
-            this.childsDataGridViewCheckBoxColumn.DataPropertyName = "Childs";
-            this.childsDataGridViewCheckBoxColumn.HeaderText = "Childs";
-            this.childsDataGridViewCheckBoxColumn.Name = "childsDataGridViewCheckBoxColumn";
-            this.childsDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // isSelectedDataGridViewCheckBoxColumn
-            // 
-            this.isSelectedDataGridViewCheckBoxColumn.DataPropertyName = "IsSelected";
-            this.isSelectedDataGridViewCheckBoxColumn.HeaderText = "IsSelected";
-            this.isSelectedDataGridViewCheckBoxColumn.Name = "isSelectedDataGridViewCheckBoxColumn";
-            this.isSelectedDataGridViewCheckBoxColumn.ReadOnly = true;
-            // 
-            // nHMngDataGridViewTextBoxColumn
-            // 
-            this.nHMngDataGridViewTextBoxColumn.DataPropertyName = "nHMng";
-            this.nHMngDataGridViewTextBoxColumn.HeaderText = "nHMng";
-            this.nHMngDataGridViewTextBoxColumn.Name = "nHMngDataGridViewTextBoxColumn";
-            this.nHMngDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Datos_Alumno_Examen
             // 
@@ -1339,6 +1182,28 @@ namespace moleQule.Face.Instruction
             // 
             this.promocionesBindingSource.DataSource = this.Datos;
             // 
+            // Examen
+            // 
+            this.Examen.HeaderText = "Examen";
+            this.Examen.Name = "Examen";
+            this.Examen.ReadOnly = true;
+            this.Examen.Width = 200;
+            // 
+            // Calificacion
+            // 
+            this.Calificacion.HeaderText = "Calificación";
+            this.Calificacion.Name = "Calificacion";
+            this.Calificacion.ReadOnly = true;
+            this.Calificacion.Width = 150;
+            // 
+            // Observaciones
+            // 
+            this.Observaciones.DataPropertyName = "Observaciones";
+            this.Observaciones.HeaderText = "Observaciones";
+            this.Observaciones.Name = "Observaciones";
+            this.Observaciones.ReadOnly = true;
+            this.Observaciones.Width = 200;
+            // 
             // AlumnoForm
             // 
             this.ClientSize = new System.Drawing.Size(646, 622);
@@ -1469,20 +1334,5 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.DataGridViewTextBoxColumn Examen;
         private System.Windows.Forms.DataGridViewTextBoxColumn Calificacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oidAlumnoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oidExamenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calificacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn presentadoDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oidPromocionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn moduloDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaExamenDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn desarrolloDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calificacionStringDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sessionCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn childsDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn isSelectedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nHMngDataGridViewTextBoxColumn;
     }
 }

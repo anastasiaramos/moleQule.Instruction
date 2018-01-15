@@ -173,12 +173,12 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_EXAMENES_PENDIENTES(long oid_promocion)
         {
-            string examen = nHManager.Instance.Cfg.GetClassMapping(typeof(ExamenRecord)).Table.Name;
+            string examen = nHManager.Instance.GetSQLTable(typeof(ExamenRecord));
 
             string query;
 
             query = "SELECT e.* " +
-                    "FROM \"0001\".\"Examen\" as e " +
+                    "FROM " + examen + " as e " +
                     "WHERE e.\"OID_PROMOCION\" = " + oid_promocion.ToString() + ";";
 
             return query;

@@ -115,6 +115,22 @@ namespace moleQule.Library.Instruction
             return Preguntas_Plantilla.SELECT(conditions, lockTable);
         }
 
+        internal static string SELECT_DISPONIBLES(long oid_plantilla, DateTime fecha_disponibilidad)
+        {
+            string preg_plantilla = nHManager.Instance.GetSQLTable(typeof(Preguntas_PlantillaRecord));
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+
+            string query = @"SELECT PP.*  , CP.""DISPONIBLES""
+                            FROM   " + preg_plantilla + @"   AS PP  
+                            INNER JOIN (	SELECT COUNT(P.""OID"") AS ""DISPONIBLES"", P.""OID_SUBMODULO"", P.""OID_TEMA""
+		                    FROM " + pregunta + @" AS P
+		                    WHERE P.""FECHA_DISPONIBILIDAD"" <= '" + fecha_disponibilidad.ToString("yyyy-MM-dd") + @"' AND P.""ACTIVA"" = 'TRUE'
+		                    GROUP BY P.""OID_SUBMODULO"", P.""OID_TEMA"") AS CP ON CP.""OID_SUBMODULO"" = PP.""OID_SUBMODULO"" AND PP.""OID_TEMA"" = CP.""OID_TEMA""
+                            WHERE TRUE AND PP.""OID_PLANTILLA"" = " + oid_plantilla.ToString() + ";";
+
+            return query;
+        }
+
         #endregion
 
     }

@@ -22,7 +22,6 @@ namespace moleQule.Library.Instruction
 		private long _oid_tema;
 		private long _nivel;
 		private DateTime _fecha_alta;
-		private DateTime _fecha_publicacion;
 		private string _texto = string.Empty;
 		private string _tipo = string.Empty;
         private string _imagen = string.Empty;
@@ -46,7 +45,6 @@ namespace moleQule.Library.Instruction
 		public virtual long OidTema { get { return _oid_tema; } set { _oid_tema = value; } }
 		public virtual long Nivel { get { return _nivel; } set { _nivel = value; } }
 		public virtual DateTime FechaAlta { get { return _fecha_alta; } set { _fecha_alta = value; } }
-		public virtual DateTime FechaPublicacion { get { return _fecha_publicacion; } set { _fecha_publicacion = value; } }
 		public virtual string Texto { get { return _texto; } set { _texto = value; } }
 		public virtual string Tipo { get { return _tipo; } set { _tipo = value; } }
         public virtual string Imagen { get { return _imagen; } set { _imagen = value; } }
@@ -77,8 +75,13 @@ namespace moleQule.Library.Instruction
 			_oid_tema = Format.DataReader.GetInt64(source, "OID_TEMA");
 			_nivel = Format.DataReader.GetInt64(source, "NIVEL");
 			_fecha_alta = Format.DataReader.GetDateTime(source, "FECHA_ALTA");
-			_fecha_publicacion = Format.DataReader.GetDateTime(source, "FECHA_PUBLICACION");
 			_texto = Format.DataReader.GetString(source, "TEXTO");
+            try
+            {
+                if (_texto == string.Empty && !DBNull.Value.Equals(source["P_DESCUENTO"]))
+                    _texto = Format.DataReader.GetString(source, "P_DESCUENTO");
+            }
+            catch { }
 			_tipo = Format.DataReader.GetString(source, "TIPO");
             _imagen = Format.DataReader.GetString(source, "IMAGEN");
             _modelo_respuesta = Format.DataReader.GetString(source, "MODELO_RESPUESTA");
@@ -103,7 +106,6 @@ namespace moleQule.Library.Instruction
 			_oid_tema = source.OidTema;
 			_nivel = source.Nivel;
 			_fecha_alta = source.FechaAlta;
-			_fecha_publicacion = source.FechaPublicacion;
 			_texto = source.Texto;
 			_tipo = source.Tipo;
             _imagen = source.Imagen;
@@ -324,27 +326,6 @@ namespace moleQule.Library.Instruction
 				if (!_base.Record.FechaAlta.Equals(value))
 				{
 					_base.Record.FechaAlta = value;
-					PropertyHasChanged();
-				}
-			}
-		}
-		public virtual DateTime FechaPublicacion
-		{
-			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-			get
-			{
-				//CanReadProperty(true);
-				return _base.Record.FechaPublicacion;
-			}
-            
-			[System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
-			set
-			{
-				//CanWriteProperty(true);
-				
-				if (!_base.Record.FechaPublicacion.Equals(value))
-				{
-					_base.Record.FechaPublicacion = value;
 					PropertyHasChanged();
 				}
 			}
@@ -684,7 +665,6 @@ namespace moleQule.Library.Instruction
 			OidTema = source.OidTema;
 			Nivel = source.Nivel;
 			FechaAlta = source.FechaAlta;
-			FechaPublicacion = source.FechaPublicacion;
 			Texto = source.Texto;
 			Tipo = source.Tipo;
             Imagen = source.Imagen;
@@ -712,7 +692,6 @@ namespace moleQule.Library.Instruction
             _base.Record.OidPregunta = source.Oid;
             _base.Record.Nivel = source.Nivel;
             _base.Record.FechaAlta = source.FechaAlta;
-            _base.Record.FechaPublicacion = source.FechaPublicacion;
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = string.Empty;
@@ -725,7 +704,6 @@ namespace moleQule.Library.Instruction
             //    else _idioma = source.Idioma;
             //}
             _base.Record.Observaciones = source.Observaciones;
-            _base.Record.ImagenGrande = source.ImagenGrande;
 
             _base.Submodulo = source.Modulo;
             _base.NPregunta = source.Codigo;

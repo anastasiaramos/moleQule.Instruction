@@ -202,7 +202,9 @@ namespace moleQule.Library.Instruction
 
                 string query = @"SELECT (M.""NUMERO"" || ' ' || M.""TEXTO"") AS ""MODULO"", CM.""MODULO_COUNT"" AS ""PREGUNTAS_MODULO"", 
 	                                (S.""CODIGO"" || ' ' || S.""TEXTO"") AS ""SUBMODULO"", CS.""SUBMODULO_COUNT"" AS ""PREGUNTAS_SUBMODULO"",
-	                                T.""NIVEL"", T.""DESARROLLO"", COUNT(P.""OID"") AS ""N_PREGUNTAS"", P.""OID_MODULO"", P.""OID_SUBMODULO""
+	                                T.""NIVEL"", T.""DESARROLLO"", COUNT(P.""OID"") AS ""N_PREGUNTAS"",
+                                    DMC.""DISPONIBLES_MODULO_COUNT"", DSC.""DISPONIBLES_SUBMODULO_COUNT"", DNC.""DISPONIBLES_NIVEL_COUNT"",
+                                    P.""OID_MODULO"", P.""OID_SUBMODULO""
                                 FROM " + preguntas + @" AS P
                                 INNER JOIN " + modulo + @" AS M ON M.""OID"" = P.""OID_MODULO""
                                 INNER JOIN " + submodulo + @" AS S ON S.""OID"" = P.""OID_SUBMODULO""
@@ -210,13 +212,31 @@ namespace moleQule.Library.Instruction
                                 INNER JOIN (	SELECT M1.""OID"", COUNT(M1.""OID"") AS ""MODULO_COUNT""
 		                                FROM " + preguntas + @" AS P1 
 		                                INNER JOIN " + modulo + @" AS M1 ON M1.""OID"" = P1.""OID_MODULO""
+                                        WHERE P1.""ACTIVA"" = 'TRUE' AND P1.""OID"" IN " + lista_preguntas + @"
 		                                GROUP BY M1.""OID"") AS CM ON CM.""OID"" = M.""OID""
                                 INNER JOIN (	SELECT S2.""OID"", COUNT(S2.""OID"") AS ""SUBMODULO_COUNT""
 		                                FROM " + preguntas + @" AS P2 
 		                                INNER JOIN " + submodulo + @" AS S2 ON S2.""OID"" = P2.""OID_SUBMODULO""
+                                        WHERE P2.""ACTIVA"" = 'TRUE' AND P2.""OID"" IN " + lista_preguntas + @"
 		                                GROUP BY S2.""OID"") AS CS ON CS.""OID"" = S.""OID""
-                                WHERE P.""OID"" IN " + lista_preguntas + @" AND P.""ACTIVA"" = 'true' 
-                                GROUP BY ""MODULO"", ""SUBMODULO"", T.""NIVEL"", M.""NUMERO_ORDEN"", S.""CODIGO_ORDEN"", T.""DESARROLLO"", CM.""MODULO_COUNT"", CS.""SUBMODULO_COUNT"", P.""OID_MODULO"", P.""OID_SUBMODULO""
+                                INNER JOIN (	SELECT M3.""OID"", COUNT(P3.""OID"") AS ""DISPONIBLES_MODULO_COUNT""
+		                                FROM " + preguntas + @" AS P3 
+		                                INNER JOIN " + modulo + @" AS M3 ON M3.""OID"" = P3.""OID_MODULO""
+                                        WHERE P3.""FECHA_DISPONIBILIDAD"" <= '" + DateTime.Today.Date.ToString("yyyy-MM-dd") + @"' AND P3.""ACTIVA"" = 'TRUE' AND P3.""OID"" IN " + lista_preguntas + @" 
+		                                GROUP BY M3.""OID"") AS DMC ON DMC.""OID"" = M.""OID""
+                                INNER JOIN (	SELECT S4.""OID"", COUNT(P4.""OID"") AS ""DISPONIBLES_SUBMODULO_COUNT""
+		                                FROM " + preguntas + @" AS P4 
+		                                INNER JOIN " + submodulo + @" AS S4 ON S4.""OID"" = P4.""OID_SUBMODULO""
+                                        WHERE P4.""FECHA_DISPONIBILIDAD"" <= '" + DateTime.Today.Date.ToString("yyyy-MM-dd") + @"' AND P4.""ACTIVA"" = 'TRUE' AND P4.""OID"" IN " + lista_preguntas + @"
+		                                GROUP BY S4.""OID"") AS DSC ON DSC.""OID"" = S.""OID""
+                                INNER JOIN (	SELECT S5.""OID"", T5.""NIVEL"",  COUNT(P5.""OID"") AS ""DISPONIBLES_NIVEL_COUNT""
+		                                FROM " + preguntas + @" AS P5 
+		                                INNER JOIN " + submodulo + @" AS S5 ON S5.""OID"" = P5.""OID_SUBMODULO""
+                                        INNER JOIN " + tema + @" AS T5 ON T5.""OID"" = P5.""OID_TEMA""
+                                        WHERE P5.""FECHA_DISPONIBILIDAD"" <= '" + DateTime.Today.Date.ToString("yyyy-MM-dd") + @"' AND P5.""ACTIVA"" = 'TRUE' AND P5.""OID"" IN " + lista_preguntas + @"
+		                                GROUP BY S5.""OID"", T5.""NIVEL"") AS DNC ON DNC.""OID"" = S.""OID"" AND DNC.""NIVEL"" = T.""NIVEL"" 
+                                WHERE P.""ACTIVA"" = 'true' 
+                                GROUP BY ""MODULO"", ""SUBMODULO"", T.""NIVEL"", M.""NUMERO_ORDEN"", S.""CODIGO_ORDEN"", T.""DESARROLLO"", CM.""MODULO_COUNT"", CS.""SUBMODULO_COUNT"", DMC.""DISPONIBLES_MODULO_COUNT"", DSC.""DISPONIBLES_SUBMODULO_COUNT"", DNC.""DISPONIBLES_NIVEL_COUNT"", P.""OID_MODULO"", P.""OID_SUBMODULO""
                                 ORDER BY M.""NUMERO_ORDEN"", S.""CODIGO_ORDEN""";
 
                 return query;

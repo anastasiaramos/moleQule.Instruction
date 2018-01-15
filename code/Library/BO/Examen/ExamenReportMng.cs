@@ -49,8 +49,9 @@ namespace moleQule.Library.Instruction
             doc.SetDataSource(pList);
 
             doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(respuestas);
+            doc.SetParameterValue("Empresa", empresa.Name);
 
-            //FormatReport(doc);
+            //FormatReport(doc, preguntas);
 
             return doc;
         }
@@ -84,12 +85,12 @@ namespace moleQule.Library.Instruction
             pList.Add(item.GetPrintObject(empresa, string.Empty));
 
             doc.SetDataSource(pList);
-            doc.SetParameterValue("Empresa", empresa.Name);
-            if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(doc.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+            if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.FieldObject)(doc.Section5.ReportObjects["Empresa1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
 
             doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(respuestas);
+            doc.SetParameterValue("Empresa", empresa.Name);
 
-            //FormatReport(doc);
+            //FormatReport(doc, preguntas);
 
             return doc;
         }
@@ -118,6 +119,7 @@ namespace moleQule.Library.Instruction
             if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(doc.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
 
             doc.Subreports["PreguntaExamenListSubRpt"].SetDataSource(preguntas);
+            doc.SetParameterValue("Empresa", empresa.Name);
 
             //FormatReport(doc, empresa.Logo);
 
@@ -217,6 +219,46 @@ namespace moleQule.Library.Instruction
         {
             if (lista == null) return null;
             InformePlantillaRpt doc = new InformePlantillaRpt();
+
+
+            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+            if (lista.Count <= 0)
+                return null;
+
+            List<PlantillaExamenInfo> pList = new List<PlantillaExamenInfo>();
+
+            pList.Add(item);
+
+            doc.SetDataSource(pList);
+            doc.Subreports[0].SetDataSource(lista);
+
+            return doc;
+        }
+
+        public InformeDisponiblesPlantillaRpt GetInformeDisponiblesPlantillaReport(PlantillaExamenInfo item, InformePlantillaList lista)
+        {
+            if (lista == null) return null;
+            InformeDisponiblesPlantillaRpt doc = new InformeDisponiblesPlantillaRpt();
+
+
+            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+            if (lista.Count <= 0)
+                return null;
+
+            List<PlantillaExamenInfo> pList = new List<PlantillaExamenInfo>();
+
+            pList.Add(item);
+
+            doc.SetDataSource(pList);
+            doc.Subreports[0].SetDataSource(lista);
+
+            return doc;
+        }
+
+        public InformeDisponiblesPlantillaDesarrolloRpt GetInformeDisponiblesPlantillaDesarrolloReport(PlantillaExamenInfo item, InformePlantillaList lista)
+        {
+            if (lista == null) return null;
+            InformeDisponiblesPlantillaDesarrolloRpt doc = new InformeDisponiblesPlantillaDesarrolloRpt();
 
 
             //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
@@ -498,15 +540,11 @@ namespace moleQule.Library.Instruction
 
         #region Style
 
-        private static void FormatReport(ExamenTestRpt rpt)
-        {
-            //ReportDefinition report = (ReportDefinition)rpt.Subreports["RespuestaExamenListSubRpt"].ReportDefinition;
-            //int ancho = ((BlobFieldObject)(report.Sections["GroupHeaderSection3"].ReportObjects["Imagen1"])).Width;
-            //int ancho_imagen = report.Sections["GroupHeaderSection3"].ReportObjects["Imagen1"].Width;
-            //int ancho_report = rpt.PrintOptions.PageContentWidth;
-            //int left = (int)((ancho_report - ancho_imagen) / 2);
-            //report.Sections["GroupHeaderSection3"].ReportObjects["Imagen1"].Left = left;
-        }
+        //private static void FormatReport(ExamenTestRpt rpt, List<PreguntaExamenInfo> preguntas)
+        //{
+        //    ReportDefinition report = (ReportDefinition)rpt.Subreports["RespuestaExamenListSubRpt"].ReportDefinition;
+            
+        //}
 
         //private static void FormatReport(ExamenDesarrolloRpt rpt, string logo)
         //{

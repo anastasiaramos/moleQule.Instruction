@@ -32,6 +32,9 @@ namespace moleQule.Library.Instruction
         private int _nivel;
         private int _n_preguntas;
         private bool _desarrollo;
+        private int _disponibles_modulo;
+        private int _disponibles_submodulo;
+        private int _disponibles_nivel;
 
         public long OidModulo { get { return _oid_modulo; } set { _oid_modulo = value; } }
         public string Modulo { get { return _modulo; } set { _modulo = value; } }
@@ -42,6 +45,9 @@ namespace moleQule.Library.Instruction
         public int Nivel { get { return _nivel; } set { _nivel = value; } }
         public int NPreguntas { get { return _n_preguntas; } set { _n_preguntas = value; } }
         public bool Desarrollo { get { return _desarrollo; } set { _desarrollo = value; } }
+        public int DisponiblesModulo { get { return _disponibles_modulo; } set { _disponibles_modulo = value; } }
+        public int DisponiblesSubmodulo { get { return _disponibles_submodulo; } set { _disponibles_submodulo = value; } }
+        public int DisponiblesNivel { get { return _disponibles_nivel; } set { _disponibles_nivel = value; } }
 	
 		/// <summary>
 		/// Copia los atributos del objeto
@@ -62,6 +68,9 @@ namespace moleQule.Library.Instruction
             _nivel = source.Nivel;
             _n_preguntas = source.NPreguntas;
             _desarrollo = source.Desarrollo;
+            _disponibles_modulo = source.DisponiblesModulo;
+            _disponibles_submodulo = source.DisponiblesSubmodulo;
+            _disponibles_nivel = source.DisponiblesNivel;
 		}
 			
 		/// <summary>
@@ -82,6 +91,9 @@ namespace moleQule.Library.Instruction
             _nivel = Format.DataReader.GetInt32(reader, "NIVEL");
             _n_preguntas = Format.DataReader.GetInt32(reader, "N_PREGUNTAS");
             _desarrollo = Format.DataReader.GetBool(reader, "DESARROLLO");
+            _disponibles_modulo = Format.DataReader.GetInt32(reader, "DISPONIBLES_MODULO_COUNT");
+            _disponibles_submodulo = Format.DataReader.GetInt32(reader, "DISPONIBLES_SUBMODULO_COUNT");
+            _disponibles_nivel = Format.DataReader.GetInt32(reader, "DISPONIBLES_NIVEL_COUNT");
         }
 
         public void CopyFrom(InformePreguntas source)
@@ -124,6 +136,9 @@ namespace moleQule.Library.Instruction
             _nivel = item.Nivel;
             _n_preguntas = item.NPreguntas;
             _desarrollo = item.Desarrollo;
+            _disponibles_modulo = item.DisponiblesModulo;
+            _disponibles_submodulo = item.DisponiblesSubmodulo;
+            _disponibles_nivel = item.DisponiblesNivel;
 		}
 		
 		/// <summary>

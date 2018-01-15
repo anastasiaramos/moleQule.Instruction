@@ -620,6 +620,7 @@ namespace moleQule.Library.Instruction
 		                                    INNER JOIN " + ct + @" AS CT ON CT.""OID"" = CP.""OID_CLASE""
 		                                    WHERE AP.""FALTA"" = 'TRUE' AND AP.""RECUPERADA"" = 'FALSE'
 		                                    GROUP BY AP.""OID_ALUMNO"", CT.""OID_PLAN"") AS C4 ON C4.""OID_ALUMNO"" = A.""OID"" AND C4.""OID_PLAN"" = PE.""OID""
+                                
                                 ORDER BY ""PROMOCION"", ""CODIGO_ALUMNO"", ""MODULO""";
                 return query;
             }

@@ -232,12 +232,19 @@ namespace moleQule.Face.Instruction
         {
             if (this is ExamenViewForm) return;
 
-            try
+            if (Entity.Alumnos != null && Entity.Alumnos.Count > 0)
             {
-                Entity.Promociones.RemoveAll();
-                RellenaPromociones();
+                MessageBox.Show("No se pueden eliminar todos los cursos de un examen que tiene alumnos asociados.");
             }
-            catch { throw new iQException("ClearPromociones_BT_Click"); }
+            else
+            {
+                try
+                {
+                    Entity.Promociones.RemoveAll();
+                    RellenaPromociones();
+                }
+                catch { throw new iQException("ClearPromociones_BT_Click"); }
+            }
         }
 
         private void Promociones_CLB_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -253,6 +260,15 @@ namespace moleQule.Face.Instruction
                 if (e.NewValue == CheckState.Unchecked)
                 {
                     ExamenPromocion item = Entity.Promociones.GetItem(new FCriteria<long>("OidPromocion", promo.Oid));
+
+                    foreach (Alumno_Examen alumno in Entity.Alumnos)
+                    {
+                        if (alumno.OidPromocion == promo.Oid)
+                        {
+                            MessageBox.Show("No se puede eliminar un curso que tiene alumnos incluidos en el examen.");
+                            return;
+                        }
+                    }
                     Entity.Promociones.Remove(item);
                     RellenaPromociones();
                 }

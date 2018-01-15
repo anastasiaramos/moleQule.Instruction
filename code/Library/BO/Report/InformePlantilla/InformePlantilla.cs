@@ -23,10 +23,12 @@ namespace moleQule.Library.Instruction
 	{
 	 
 		#region Attributes
-		
+
         private string _submodulo = string.Empty;
+        private string _tema = string.Empty;
         private int _nivel;
         private int _n_preguntas;
+        private int _disponibles;
 					
         #endregion
 
@@ -54,6 +56,29 @@ namespace moleQule.Library.Instruction
 					PropertyHasChanged();
 				}
 			}
+        }
+        public virtual string Tema
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _tema;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (value == null) value = string.Empty;
+
+                if (!_tema.Equals(value))
+                {
+                    _tema = value;
+                    PropertyHasChanged();
+                }
+            }
         }
         public virtual int Nivel
         {
@@ -97,6 +122,27 @@ namespace moleQule.Library.Instruction
                 }
             }
         }
+        public virtual int Disponibles
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _disponibles;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (!_disponibles.Equals(value))
+                {
+                    _disponibles = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 
 		
         #endregion
@@ -135,6 +181,8 @@ namespace moleQule.Library.Instruction
             _submodulo = source.Submodulo;
             _nivel = source.Nivel;
             _n_preguntas = source.NPreguntas;
+            _disponibles = source.Disponibles;
+            _tema = source.Tema;
 		}
 
 
@@ -146,10 +194,12 @@ namespace moleQule.Library.Instruction
         {
             if (reader == null) return;
 
-            Oid = Convert.ToInt64(Format.DataReader.GetString(reader, "OID") + Format.DataReader.GetString(reader, "NIVEL"));
+            Oid = Convert.ToInt64(Format.DataReader.GetString(reader, "OID") + Format.DataReader.GetString(reader, "OID_TEMA"));
             _submodulo = DBNull.Value.Equals(reader["SUBMODULO"]) ? string.Empty : reader["SUBMODULO"].ToString();
+            _tema = DBNull.Value.Equals(reader["TEMA"]) ? string.Empty : reader["TEMA"].ToString();
             _nivel = Format.DataReader.GetInt32(reader, "NIVEL");
             _n_preguntas = Format.DataReader.GetInt32(reader, "N_PREGUNTAS");
+            _disponibles = Format.DataReader.GetInt32(reader, "DISPONIBLES");
         }		
 			
 		#endregion

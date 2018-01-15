@@ -37,7 +37,6 @@ namespace moleQule.Library.Instruction
         public long OidPregunta { get { return _base.Record.OidPregunta; } }
         public long Nivel { get { return _base.Record.Nivel; } }
         public DateTime FechaAlta { get { return _base.Record.FechaAlta; } }
-        public DateTime FechaPublicacion { get { return _base.Record.FechaPublicacion; } }
         public string Texto { get { return _base.Record.Texto; } }
         public string Tipo { get { return _base.Record.Tipo; } }
         public string Imagen { get { return _base.Record.Imagen; } }
@@ -79,7 +78,6 @@ namespace moleQule.Library.Instruction
             _base.Record.OidPregunta = source.Oid;
             _base.Record.Nivel = source.Nivel;
             _base.Record.FechaAlta = source.FechaAlta;
-            _base.Record.FechaPublicacion = source.FechaPublicacion;
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = string.Empty;
@@ -92,7 +90,6 @@ namespace moleQule.Library.Instruction
             //    else _idioma = source.Idioma;
             //}
             _base.Record.Observaciones = source.Observaciones;
-            _base.Record.ImagenGrande = source.ImagenGrande;
 
             _base.Submodulo = source.Modulo;
             _base.NPregunta = source.Codigo;

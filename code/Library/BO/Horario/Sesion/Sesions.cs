@@ -290,10 +290,10 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_SESIONES_PROGRAMADAS(long oid_plan, long oid_promocion)
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
-            string horario = nHManager.Instance.Cfg.GetClassMapping(typeof(HorarioRecord)).Table.Name;
-            string claset = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
-            string clasep = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
+            string horario = nHManager.Instance.GetSQLTable(typeof(HorarioRecord));
+            string claset = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
+            string clasep = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
             string oid_modulo = nHManager.Instance.GetTableField(typeof(ClaseTeoricaRecord), "OidModulo");
             string oid_clase_teorica = nHManager.Instance.GetTableField(typeof(SesionRecord), "OidClaseTeorica");
             string oid_clase_practica = nHManager.Instance.GetTableField(typeof(SesionRecord), "OidClasePractica");
@@ -301,17 +301,15 @@ namespace moleQule.Library.Instruction
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT s.*, s.\"OID_PROFESOR\" AS \"OID_AUTORIZADO\", ct.\"OID_MODULO\" AS \"OID_MODULO\" " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-                    "INNER JOIN \"" + esquema + "\".\"" + horario + "\" AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"" + oid_horario + "\" = h.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + claset + "\" AS ct ON (s.\"" + oid_clase_teorica + "\" > 0 AND s.\"" + oid_clase_teorica + "\" = ct.\"OID\") " +
+                    "FROM " + sesion + " AS s " +
+                    "INNER JOIN " + horario + " AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"" + oid_horario + "\" = h.\"OID\") " +
+                    "INNER JOIN " + claset + " AS ct ON (s.\"" + oid_clase_teorica + "\" > 0 AND s.\"" + oid_clase_teorica + "\" = ct.\"OID\") " +
                     "UNION " +
                     "SELECT s.*, cp.\"OID_MODULO\" AS \"OID_MODULO\" " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-                    "INNER JOIN \"" + esquema + "\".\"" + horario + "\" AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"" + oid_horario + "\" = h.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + clasep + "\" AS cp ON (s.\"" + oid_clase_practica + "\" > 0 AND s.\"" + oid_clase_practica + "\" = cp.\"OID\") " +
+                    "FROM " + sesion + " AS s " +
+                    "INNER JOIN " + horario + " AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"" + oid_horario + "\" = h.\"OID\") " +
+                    "INNER JOIN " + clasep + " AS cp ON (s.\"" + oid_clase_practica + "\" > 0 AND s.\"" + oid_clase_practica + "\" = cp.\"OID\") " +
                     "ORDER BY \"FECHA\", \"HORA\";";
 
             return query;
@@ -326,33 +324,31 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_SESIONES(long oid_plan, long oid_promocion)
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
-            string horario = nHManager.Instance.Cfg.GetClassMapping(typeof(HorarioRecord)).Table.Name;
-            string clase_teorica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
-            string clase_practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
-            string modulo = nHManager.Instance.Cfg.GetClassMapping(typeof(ModuloRecord)).Table.Name;
-            string sub_inst_pr = nHManager.Instance.Cfg.GetClassMapping(typeof(Submodulo_Instructor_PromocionRecord)).Table.Name;
-            string submodulo = nHManager.Instance.Cfg.GetClassMapping(typeof(SubmoduloRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
+            string horario = nHManager.Instance.GetSQLTable(typeof(HorarioRecord));
+            string clase_teorica = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
+            string clase_practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
+            string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string sub_inst_pr = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
+            string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT s.\"OID_PROFESOR\" AS \"OID_INSTRUCTOR\", sub.\"OID\" AS \"OID_MODULO\", false AS \"PRACTICA\", s.\"OID_PROFESOR\" AS \"OID_AUTORIZADO\" " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-                    "INNER JOIN \"" + esquema + "\".\"" + horario + "\" AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"OID_HORARIO\" = h.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + clase_teorica + "\" AS ct ON ( ct.\"OID\" = s.\"OID_CLASE_TEORICA\") " +                    
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (ct.\"OID_MODULO\" = m.\"OID\") " +                    
-                    "INNER JOIN \"" + esquema + "\".\"" + sub_inst_pr + "\" AS sip ON (sip.\"OID_INSTRUCTOR\" = s.\"OID_PROFESOR\" AND sip.\"OID_PROMOCION\" = h.\"OID_PROMOCION\" AND sip.\"PRIORIDAD\" = 1) " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS sub ON (sub.\"OID\" = sip.\"OID_SUBMODULO\" AND sub.\"OID_MODULO\" = m.\"OID\" AND sub.\"OID\" = ct.\"OID_SUBMODULO\") " +
+                    "FROM " + sesion + " AS s " +
+                    "INNER JOIN " + horario + " AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"OID_HORARIO\" = h.\"OID\") " +
+                    "INNER JOIN " + clase_teorica + " AS ct ON ( ct.\"OID\" = s.\"OID_CLASE_TEORICA\") " +                    
+                    "INNER JOIN " + modulo + " AS m ON (ct.\"OID_MODULO\" = m.\"OID\") " +                    
+                    "INNER JOIN " + sub_inst_pr + " AS sip ON (sip.\"OID_INSTRUCTOR\" = s.\"OID_PROFESOR\" AND sip.\"OID_PROMOCION\" = h.\"OID_PROMOCION\" AND sip.\"PRIORIDAD\" = 1) " +
+                    "INNER JOIN " + submodulo + " AS sub ON (sub.\"OID\" = sip.\"OID_SUBMODULO\" AND sub.\"OID_MODULO\" = m.\"OID\" AND sub.\"OID\" = ct.\"OID_SUBMODULO\") " +
                     "UNION " +
                     "SELECT s.\"OID_PROFESOR\" AS \"OID_INSTRUCTOR\", sub.\"OID\" AS \"OID_MODULO\", true AS \"PRACTICA\", s.\"OID_PROFESOR\" AS \"OID_AUTORIZADO\" " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-                    "INNER JOIN \"" + esquema + "\".\"" + horario + "\" AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"OID_HORARIO\" = h.\"OID\") " +
-                    "INNER JOIN \"" + esquema + "\".\"" + clase_practica + "\" AS cp ON ( cp.\"OID\" = s.\"OID_CLASE_PRACTICA\") " +                    
-                    "INNER JOIN \"" + esquema + "\".\"" + modulo + "\" AS m ON (cp.\"OID_MODULO\" = m.\"OID\") " +                    
-                    "INNER JOIN \"" + esquema + "\".\"" + sub_inst_pr + "\" AS sip ON (sip.\"OID_INSTRUCTOR\" = s.\"OID_PROFESOR\" AND sip.\"OID_PROMOCION\" = h.\"OID_PROMOCION\" AND sip.\"PRIORIDAD\" = 1) " +
-                    "INNER JOIN \"" + esquema + "\".\"" + submodulo + "\" AS sub ON (sub.\"OID\" = sip.\"OID_SUBMODULO\" AND sub.\"OID_MODULO\" = m.\"OID\" AND sub.\"OID\" = cp.\"OID_SUBMODULO\");";
+                    "FROM " + sesion + " AS s " +
+                    "INNER JOIN " + horario + " AS h ON (" + oid_plan + " = h.\"OID_PLAN\" AND " + oid_promocion + " = h.\"OID_PROMOCION\" AND s.\"OID_HORARIO\" = h.\"OID\") " +
+                    "INNER JOIN " + clase_practica + " AS cp ON ( cp.\"OID\" = s.\"OID_CLASE_PRACTICA\") " +                    
+                    "INNER JOIN " + modulo + " AS m ON (cp.\"OID_MODULO\" = m.\"OID\") " +                    
+                    "INNER JOIN " + sub_inst_pr + " AS sip ON (sip.\"OID_INSTRUCTOR\" = s.\"OID_PROFESOR\" AND sip.\"OID_PROMOCION\" = h.\"OID_PROMOCION\" AND sip.\"PRIORIDAD\" = 1) " +
+                    "INNER JOIN " + submodulo + " AS sub ON (sub.\"OID\" = sip.\"OID_SUBMODULO\" AND sub.\"OID_MODULO\" = m.\"OID\" AND sub.\"OID\" = cp.\"OID_SUBMODULO\");";
 
             return query;
         }
@@ -366,14 +362,12 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_SESIONES_ORDENADAS()
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT *, \"OID_PROFESOR\" AS \"OID_AUTORIZADO\" " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" " +
+                    "FROM " + sesion + " " +
                     "ORDER BY \"OID_HORARIO\", \"FECHA\", \"HORA\";";
 
             return query;

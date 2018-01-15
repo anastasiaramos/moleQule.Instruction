@@ -88,12 +88,11 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public new static string SELECT()
         {
-            string tabla = nHManager.Instance.Cfg.GetClassMapping(typeof(AlumnoRecord)).Table.Name;
-            string schema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
+            string tabla = nHManager.Instance.GetSQLTable(typeof(AlumnoRecord));
 
             string query = "SELECT * " +
-                            "FROM \"" + schema + "\".\"" + tabla + "\" " +
-                            "ORDER BY \"APELLIDOS\", \"NOMBRE\";";
+                            "FROM " + tabla + 
+                            " ORDER BY \"APELLIDOS\", \"NOMBRE\";";
 
             return query;
         }

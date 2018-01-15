@@ -363,7 +363,7 @@ namespace moleQule.Library.Instruction
                        "AND c.\"OID_PLAN\" = " + oid_plan_extra.ToString() + " " +
                        "AND s.\"ESTADO\" = 3 ) " +
                     "AND cl.\"OID_PLAN\" = " + oid_plan_extra.ToString() + " " +
-                   "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\"";//, \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"
+                   "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"";
 
             return query;
         }
@@ -549,6 +549,7 @@ namespace moleQule.Library.Instruction
              string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
              string instructor = nHManager.Instance.GetSQLTable(typeof(InstructorRecord));
              string submodulo_instructor = nHManager.Instance.GetSQLTable(typeof(Submodulo_InstructorRecord));
+             string clase_extra = nHManager.Instance.GetSQLTable(typeof(ClaseExtraRecord));
 
              bool mostrar_autorizados = moleQule.Library.Instruction.ModulePrincipal.GetMostrarInstructoresAutorizadosSetting();
 
@@ -625,7 +626,7 @@ namespace moleQule.Library.Instruction
                  query1 +=
                      "       i.\"NOMBRE\" AS \"INSTRUCTOR\"";
              query1 +=
-                     " FROM \"0001\".\"ClaseExtra\" AS cl " +
+                     " FROM " + clase_extra + " AS cl " +
                          "INNER JOIN " + submodulo + " AS sm ON (cl.\"OID_SUBMODULO\" = sm.\"OID\") " +
                          "INNER JOIN " + modulo + " AS m ON (cl.\"OID_MODULO\" = m.\"OID\") " +
                          "INNER JOIN " + sesion + " AS s ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
@@ -650,7 +651,7 @@ namespace moleQule.Library.Instruction
                      "       s.\"HORA\" AS \"HORA\"," +
                      "       s.\"ESTADO\" AS \"ESTADO\"," +
                      "       i.\"NOMBRE\" AS \"INSTRUCTOR\"" +
-                     " FROM \"0001\".\"ClaseExtra\" AS cl " +
+                     " FROM " + clase_extra + " AS cl " +
                          "INNER JOIN " + submodulo + " AS sm ON (cl.\"OID_SUBMODULO\" = sm.\"OID\") " +
                          "INNER JOIN " + modulo + " AS m ON (cl.\"OID_MODULO\" = m.\"OID\") " +
                          "INNER JOIN " + sesion + " AS s ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
@@ -678,20 +679,20 @@ namespace moleQule.Library.Instruction
                              "           WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + " AND cl.\"OID_PLAN\" = " + oid_plan.ToString() + " AND s.\"ESTADO\" = 3 " +
                              "           UNION " +
                              "           SELECT DISTINCT cl.\"OID\", cl.\"OID_MODULO\" " +
-                             "           FROM \"0001\".\"ClaseExtra\" AS cl " +
+                             "           FROM " + clase_extra + " AS cl " +
                              "               INNER JOIN " + sesion + "  AS s ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
                              "               INNER JOIN " + horario + "  AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
                              "           WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + "  AND s.\"ESTADO\" = 3) AS Q1 " +
                              "           GROUP BY Q1.\"OID_MODULO\") AS C1, " +
                              "           (SELECT Q2.\"OID_MODULO\", Q2.\"OID_SUBMODULO\", COUNT(Q2.\"OID_SUBMODULO\") AS \"COUNT_SUBMODULO\" " +
                              "           FROM (SELECT DISTINCT cl.\"OID\", cl.\"OID_MODULO\", cl.\"OID_SUBMODULO\" " +
-                             "               FROM \"0001\".\"ClaseTeorica\" AS cl " +
+                             "               FROM " + clase + " AS cl " +
                              "                   INNER JOIN " + sesion + "  AS s ON (s.\"OID_CLASE_TEORICA\" = cl.\"OID\") " +
                              "                   INNER JOIN " + horario + "  AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
                              "               WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + "  AND cl.\"OID_PLAN\" = " + oid_plan.ToString() + "  AND s.\"ESTADO\" = 3 " +
                              "               UNION " +
                              "               SELECT DISTINCT cl.\"OID\", cl.\"OID_MODULO\", cl.\"OID_SUBMODULO\" " +
-                             "               FROM \"0001\".\"ClaseExtra\" AS cl " +
+                             "               FROM " + clase_extra + " AS cl " +
                              "                   INNER JOIN " + sesion + "  AS s ON (s.\"OID_CLASE_EXTRA\" = cl.\"OID\") " +
                              "                   INNER JOIN " + horario + "  AS h ON (s.\"OID_HORARIO\" = h.\"OID\") " +
                              "               WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + "  AND s.\"ESTADO\" = 3) AS Q2 " +

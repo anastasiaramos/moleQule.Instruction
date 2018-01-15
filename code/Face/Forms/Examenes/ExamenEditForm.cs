@@ -196,24 +196,26 @@ namespace moleQule.Face.Instruction
                                 {
                                     if (origen.Imagen != string.Empty && File.Exists(origen.ImagenWithPath))
                                     {
-                                        string ext = string.Empty;
+                                        //string ext = string.Empty;
 
-                                        Bitmap imagen = new Bitmap(Library.Application.AppController.FOTOS_PREGUNTAS_PATH + origen.Imagen);
+                                        Bitmap imagen = new Bitmap(origen.ImagenWithPath);
 
-                                        if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                                            ext = ".jpg";
-                                        else
-                                        {
-                                            if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                                                ext = ".bmp";
-                                            else
-                                            {
-                                                if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                                                    ext = ".png";
-                                            }
-                                        }
+                                        //if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
+                                        //    ext = ".jpg";
+                                        //else
+                                        //{
+                                        //    if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
+                                        //        ext = ".bmp";
+                                        //    else
+                                        //    {
+                                        //        if (imagen.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
+                                        //            ext = ".png";
+                                        //    }
+                                        //}
 
-                                        destino.Imagen = destino.Oid.ToString("000000") + ext;
+                                        string path = origen.ImagenWithPath;
+
+                                        destino.Imagen = destino.Oid.ToString("000000") + path.Substring(path.LastIndexOf("."));
 
                                         int maxHeight = imagen.Height > imagen.Width ? imagen.Height : imagen.Width;
 
@@ -232,7 +234,7 @@ namespace moleQule.Face.Instruction
                                             Directory.CreateDirectory(directorio);
                                         File.Copy(origen.ModeloRespuestaPath, destino.ModeloRespuestaPath);
                                     }
-                                    else destino.Imagen = string.Empty;
+                                    else origen.ModeloRespuesta = string.Empty;
                                     orden++;
                                     break;
                                 }
@@ -246,10 +248,12 @@ namespace moleQule.Face.Instruction
                     }
 
                     PgMng.Grow("Guardando examen...");
-
+                    
                     _preguntas_examen.Save();
+
+                    temp = _entity.Clone();
                     _entity = temp.Save();
-                    //_preguntas_examen.CloseSession();
+                    _entity.BeginEdit();
 
                     PgMng.FillUp();
 
@@ -643,7 +647,6 @@ namespace moleQule.Face.Instruction
                 PreguntaExamen pexamen = _entity.PreguntaExamens.NewItem(_entity);
                 FCriteria<long> criteria = new FCriteria<long>("OidPregunta", p.Oid);
                 pexamen.CopyValues(p);
-                pexamen.FechaPublicacion = _entity.FechaExamen;
                 pexamen.Orden = Convert.ToInt64(row.Cells[N_Orden.Name].Value);
 
                 List<RespuestaInfo> respuestas = _respuestas_modulo.GetSubList(criteria);
@@ -711,12 +714,12 @@ namespace moleQule.Face.Instruction
 
             //se obliga a guardar el examen antes de imprimir por si durante la impresión hubiera algún problema
             //quedan guardadas las modificaciones que pudieran no haberse guardado
-            if (Entity.IsDirty)
-            {
-                DialogResult result = MessageBox.Show(Resources.Messages.GUARDADO_EXAMEN,
-                    moleQule.Face.Resources.Labels.ADVISE_TITLE, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
+            //if (Entity.IsDirty)
+            //{
+                //DialogResult result = MessageBox.Show(Resources.Messages.GUARDADO_EXAMEN,
+                //    moleQule.Face.Resources.Labels.ADVISE_TITLE, MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                //if (result == DialogResult.OK)
+                //{
                     try
                     {
                         ValidateInput();
@@ -729,10 +732,10 @@ namespace moleQule.Face.Instruction
                                         MessageBoxIcon.Warning);
                         return;
                     }
-                }
-                else
-                    return;
-            }
+                //}
+                //else
+                //    return;
+            //}
 
             Entity.PreguntaExamens = PreguntaExamens.NewChildList();
 
@@ -906,7 +909,7 @@ namespace moleQule.Face.Instruction
                         PreguntasModulo = PreguntaList.GetPreguntasModulo(_entity.OidModulo, _entity.MemoPreguntas);
 
                         RellenaPreguntas();
-                        preguntas.CloseSession();
+                        //preguntas.CloseSession();
                         ordenadas.CloseSession();
                     }
                     break;

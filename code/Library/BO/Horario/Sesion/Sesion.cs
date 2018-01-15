@@ -1468,15 +1468,13 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         private static string SELECT_SESION_BY_OID_HORARIO(long oid_horario)
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT *  " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" " +
-                    "WHERE \"OID_HORARIO\" = " + oid_horario.ToString() + ";";
+                    "FROM \"" + sesion +
+                    " WHERE \"OID_HORARIO\" = " + oid_horario.ToString() + ";";
 
             return query;
         }
@@ -1490,16 +1488,14 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         private static string SELECT_SESIONES_SIMULTANEAS(long oid_clase, DateTime fecha, DateTime hora)
         {
-            string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
-            string clase_practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
+            string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
+            string clase_practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT s.*, c.\"INCOMPATIBLE\"  " +
-                    "FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-                    "INNER JOIN \"" + esquema + "\".\"" + clase_practica + "\" AS c " +
+                    "FROM " + sesion + " AS s " +
+                    "INNER JOIN " + clase_practica + " AS c " +
                     "ON (s.\"OID_CLASE_PRACTICA\" = c.\"OID\") " +
                     "WHERE \"OID_CLASE_PRACTICA\" = " + oid_clase.ToString() + ";";
 

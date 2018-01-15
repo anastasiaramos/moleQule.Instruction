@@ -287,7 +287,7 @@ namespace moleQule.Library.Instruction
                     "                                           FROM " + alumno + " AS AL " +
                     "                               			INNER JOIN " + alumno_promo + " AS APR ON APR.\"OID_ALUMNO\" = AL.\"OID\" " +
                     "                               			WHERE APR.\"OID_PROMOCION\" = " + oid_promocion.ToString() + ") " +
-                    "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\"";//, \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"";
+                    "ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\", \"NUMERO_ORDEN\", \"CODIGO_ORDEN\"";
 
             return query;
         }

@@ -160,11 +160,12 @@ namespace moleQule.Library.Instruction
 
         public static string SELECT_BY_PROMOCION_ORDERED(long oid_parte)
         {
-            string schema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
+            string alumno = nHManager.Instance.GetSQLTable(typeof(AlumnoRecord));
+            string alumno_promocion = nHManager.Instance.GetSQLTable(typeof(AlumnoPromocionRecord));
 
             string query = "SELECT p.* " +
-                    "FROM \"" + schema + "\".\"Alumno_Promocion\" as p " +
-                    "INNER JOIN \"0001\".\"Alumno\" as a on (a.\"OID\" = p.\"OID_ALUMNO\") " +
+                    "FROM " + alumno_promocion + " as p " +
+                    "INNER JOIN " + alumno + " as a on (a.\"OID\" = p.\"OID_ALUMNO\") " +
                     "WHERE p.\"OID_PARTE\" = " + oid_parte.ToString() + " " +
                     "ORDER BY a.\"APELLIDOS\", a.\"NOMBRE\";";
             return query;

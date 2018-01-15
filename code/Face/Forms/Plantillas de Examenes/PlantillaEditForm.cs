@@ -57,6 +57,8 @@ namespace moleQule.Face.Instruction
 
             foreach (TemaInfo tema in temas)
             {
+                if (tema.Desarrollo) continue;
+
                 TreeNode pregunta = null;
                 Preguntas_Plantilla p = null;
 

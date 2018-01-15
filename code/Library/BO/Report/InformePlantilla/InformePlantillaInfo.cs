@@ -24,12 +24,16 @@ namespace moleQule.Library.Instruction
 		#region Business Methods
 
         private string _submodulo = string.Empty;
+        private string _tema = string.Empty;
         private int _nivel;
         private int _n_preguntas;
+        private int _disponibles;
 
         public string Submodulo { get { return _submodulo; } set { _submodulo = value; } }
+        public string Tema { get { return _tema; } set { _tema = value; } }
         public int Nivel { get { return _nivel; } set { _nivel = value; } }
         public int NPreguntas { get { return _n_preguntas; } set { _n_preguntas = value; } }
+        public int Disponibles { get { return _disponibles; } set { _disponibles = value; } }
 	
 		/// <summary>
 		/// Copia los atributos del objeto
@@ -41,8 +45,10 @@ namespace moleQule.Library.Instruction
 			
 			Oid = source.Oid;
             _submodulo = source.Submodulo;
+            _tema = source.Tema;
             _nivel = source.Nivel;
             _n_preguntas = source.NPreguntas;
+            _disponibles = source.Disponibles;
 		}
 			
 		/// <summary>
@@ -54,10 +60,12 @@ namespace moleQule.Library.Instruction
             if (reader == null) return;
 
             _submodulo = DBNull.Value.Equals(reader["SUBMODULO"]) ? string.Empty : reader["SUBMODULO"].ToString();
+            _tema = DBNull.Value.Equals(reader["TEMA"]) ? string.Empty : reader["TEMA"].ToString();
             _nivel = Format.DataReader.GetInt32(reader, "NIVEL");
             _n_preguntas = Format.DataReader.GetInt32(reader, "N_PREGUNTAS");
+            _disponibles = Format.DataReader.GetInt32(reader, "DISPONIBLES");
 
-            Oid = Convert.ToInt64(Format.DataReader.GetString(reader, "OID") + Format.DataReader.GetString(reader, "NIVEL"));
+            Oid = Convert.ToInt64(Format.DataReader.GetString(reader, "OID") + Format.DataReader.GetString(reader, "OID_TEMA"));
         }
 
         public void CopyFrom(InformePlantilla source)
@@ -93,6 +101,8 @@ namespace moleQule.Library.Instruction
             _submodulo = item.Submodulo;
             _nivel = item.Nivel;
             _n_preguntas = item.NPreguntas;
+            _disponibles = item.Disponibles;
+            _tema = item.Tema;
 		}
 		
 		/// <summary>

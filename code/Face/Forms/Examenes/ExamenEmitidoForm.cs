@@ -350,12 +350,19 @@ namespace moleQule.Face.Instruction
 
         private void ClearPromociones_BT_Click(object sender, EventArgs e)
         {
-            try
+            if (Entity.Alumnos != null && Entity.Alumnos.Count > 0)
             {
-                Entity.Promociones.RemoveAll();
-                RellenaPromociones();
+                MessageBox.Show("No se pueden eliminar todos los cursos de un examen que tiene alumnos asociados.");
             }
-            catch { throw new iQException("ClearPromociones_BT_Click"); }
+            else
+            {
+                try
+                {
+                    Entity.Promociones.RemoveAll();
+                    RellenaPromociones();
+                }
+                catch { throw new iQException("ClearPromociones_BT_Click"); }
+            }
         }
         
         #endregion

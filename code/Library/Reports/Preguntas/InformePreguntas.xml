@@ -18,6 +18,9 @@ msdata:MainDataTable="InformePreguntasInfo" msdata:UseCurrentLocale="true">
   <xs:element name="Nivel" type="xs:positiveInteger" />
   <xs:element name="NPreguntas" type="xs:positiveInteger" />
   <xs:element name="Desarrollo" type="xs:boolean" />
+  <xs:element name="DisponiblesModulo" type="xs:positiveInteger" />
+  <xs:element name="DisponiblesSubmodulo" type="xs:positiveInteger" />
+  <xs:element name="DisponiblesNivel" type="xs:positiveInteger" />
 </xs:sequence>
 </xs:complexType>
 </xs:element>

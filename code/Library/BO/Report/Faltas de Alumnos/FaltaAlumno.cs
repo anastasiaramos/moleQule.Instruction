@@ -38,6 +38,7 @@ namespace moleQule.Library.Instruction
         private decimal _porcentaje_total = 0;
         private long _recuperaciones;
         private long _faltas_modulo = 0;
+        private decimal _recuperaciones_pendientes = 0;
 					
 #endregion
 
@@ -335,6 +336,27 @@ namespace moleQule.Library.Instruction
                 return _duracion - _recuperaciones;
             }
         }
+        public virtual decimal RecuperacionesPendientes
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                CanReadProperty(true);
+                return _recuperaciones_pendientes;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                ////CanWriteProperty(true);
+
+                if (!_recuperaciones_pendientes.Equals(value))
+                {
+                    _recuperaciones_pendientes = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 		
 #endregion
 
@@ -384,6 +406,7 @@ namespace moleQule.Library.Instruction
             _porcentaje_total = source.PorcentajeTotal;
             _recuperaciones = source.Recuperaciones;
             _faltas_modulo = source.FaltasModulo;
+            _recuperaciones_pendientes = source.RecuperacionesPendientes;
 		}
 
 
@@ -412,6 +435,9 @@ namespace moleQule.Library.Instruction
             _porcentaje_total = Decimal.Round((decimal)_total_faltas / _total_clases_curso * 100, 2); 
             _recuperaciones = Format.DataReader.GetInt64(reader, "RECUPERACIONES");
             _faltas_modulo = _duracion - _recuperaciones;
+            long porcentaje_maximo = moleQule.Library.Instruction.ModulePrincipal.GetPorcentajeMaximoFaltasModuloSetting();
+            _recuperaciones_pendientes = _duracion - (_total_clases * porcentaje_maximo / 100);
+            if (_recuperaciones_pendientes < 0) _recuperaciones_pendientes = 0;
         }		
 			
 		#endregion

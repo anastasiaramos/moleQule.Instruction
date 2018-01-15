@@ -622,13 +622,14 @@ namespace moleQule.Library.Instruction
             return DataPortal.Create<ParteAsistencia>(new CriteriaCs(-1));
         }
 
-        public static ParteAsistencia Get(long oid)
+        public static ParteAsistencia Get(long oid, bool childs)
         {
             if (!CanGetObject())
                 throw new System.Security.SecurityException(
                   moleQule.Library.Resources.Messages.USER_NOT_ALLOWED);
 
             CriteriaEx criteria = ParteAsistencia.GetCriteria(ParteAsistencia.OpenSession());
+            criteria.Childs = childs;
 
             if (nHManager.Instance.UseDirectSQL)
                 criteria.Query = ParteAsistencia.SELECT(oid);

@@ -532,6 +532,7 @@ namespace moleQule.Library.Instruction
             string respuesta_alumno_examen = nHManager.Instance.GetSQLTable(typeof(Respuesta_Alumno_ExamenRecord));
             string pregunta_examen = nHManager.Instance.GetSQLTable(typeof(PreguntaExamenRecord));
             string horario = nHManager.Instance.GetSQLTable(typeof(HorarioRecord));
+            string alumno_parte = nHManager.Instance.GetSQLTable(typeof(AlumnoParteRecord));
 
             string query = "SELECT DISTINCT A.*, TO_ASCII(A.\"APELLIDOS\", 'LATIN1') AS AP, TO_ASCII(A.\"NOMBRE\", 'LATIN1') AS NOM " +
                         "FROM " + plan_estudios + " AS P " +
@@ -594,7 +595,7 @@ namespace moleQule.Library.Instruction
                         "                    FROM " + plan_estudios + " AS PE         " +
                         "                    INNER JOIN " + clase_teorica + " AS C ON ( C.\"OID_PLAN\" = PE.\"OID\")  " +
                         "                    INNER JOIN " + modulo + " AS MOD ON ( C.\"OID_MODULO\" = MOD.\"OID\")   " +
-                        "                    GROUP BY \"PLAN2\", \"MODULO2\"        ) AS QUERY2, \"0001\".\"Alumno_Parte\" as ap   " +
+                        "                    GROUP BY \"PLAN2\", \"MODULO2\"        ) AS QUERY2, " + alumno_parte + " as ap   " +
                         "                INNER JOIN " + alumno + " as a ON (a.\"OID\" = ap.\"OID_ALUMNO\")      " +
                         "                INNER JOIN " + parte_asistencia + " as p ON (p.\"OID\" = ap.\"OID_PARTE\")      " +
                         "                INNER JOIN " + horario + " AS hr ON (hr.\"OID\" = p.\"OID_HORARIO\")   " +
@@ -676,7 +677,7 @@ namespace moleQule.Library.Instruction
                                 FROM    (	SELECT AE.""OID_ALUMNO"",COUNT(AE.""OID_ALUMNO"") AS ""PRESENTADOS""
 						                    FROM " + alumno_examen + @" AS AE
 						                    INNER JOIN " + examen + @" AS EX ON AE.""OID_EXAMEN"" = EX.""OID""
-						                    WHERE AE.""PRESENTADO"" = 'TRUE' AND EX.""OID_MODULO"" = " + oid_modulo.ToString() + @" AND EX.""FECHA_EXAMEN"" > '" + fecha_examen.Year.ToString() + @"-01-01' AND EX.""FECHA_EXAMEN"" < '" + fecha_examen.ToString("yyyy-MM-dd") + @"' AND EX.""DESARROLLO"" = " + desarrollo.ToString() 
+						                    WHERE AE.""PRESENTADO"" = 'TRUE' AND EX.""OID_MODULO"" = " + oid_modulo.ToString() + @" AND EX.""FECHA_EXAMEN"" > '" + fecha_examen.AddYears(-1).ToString("yyyy-MM-dd") + @"' AND EX.""FECHA_EXAMEN"" < '" + fecha_examen.ToString("yyyy-MM-dd") + @"' AND EX.""DESARROLLO"" = " + desarrollo.ToString() 
                                             + @" GROUP BY ""OID_ALUMNO"") xi
 	                      ) AS Q
                             WHERE ""PRESENTADOS"" >= 3)";

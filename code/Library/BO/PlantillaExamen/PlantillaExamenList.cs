@@ -380,14 +380,12 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_PLANTILLAS_FILTRADAS(long oid_modulo, string idioma, bool filtros, bool desarrollo)
         {
-            string plantilla = nHManager.Instance.Cfg.GetClassMapping(typeof(PlantillaExamenRecord)).Table.Name;
+            string plantilla = nHManager.Instance.GetSQLTable(typeof(PlantillaExamenRecord));
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
             query = "SELECT * " +
-                    "FROM \"" + esquema + "\".\"" + plantilla + "\" " +
+                    "FROM " + plantilla + " " +
                     "WHERE 1=1 ";
 
             if (oid_modulo != 0)

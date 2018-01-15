@@ -534,6 +534,24 @@
       <DependentUpon>AsistenciaExamenRpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Examen\InformeDisponiblesPlantillaDesarrolloRpt.cs">
+      <DependentUpon>InformeDisponiblesPlantillaDesarrolloRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Examen\InformeDisponiblesPlantillaRpt.cs">
+      <DependentUpon>InformeDisponiblesPlantillaRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Reports\Examen\ExamenDesarrolloRpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExamenDesarrolloRpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\Examen\InformePlantillaRpt.cs">
       <DependentUpon>InformePlantillaRpt.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -551,12 +569,6 @@
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Reports\Examen\ExamenDesarrolloRpt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ExamenDesarrolloRpt.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Examen\ExamenTestRpt.cs">
       <AutoGen>True</AutoGen>
@@ -844,6 +856,18 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AsistenciaExamenRpt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\InformeDisponiblesPlantillaDesarrolloRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeDisponiblesPlantillaDesarrolloRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\InformeDisponiblesPlantillaRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InformeDisponiblesPlantillaRpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Examen\ExamenDesarrolloRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ExamenDesarrolloRpt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Examen\InformePlantillaRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>InformePlantillaRpt.cs</LastGenOutput>
@@ -855,10 +879,6 @@
     <EmbeddedResource Include="Reports\Examen\ResumenAgrupadoExamenRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResumenAgrupadoExamenRpt.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Examen\ExamenDesarrolloRpt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ExamenDesarrolloRpt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Examen\ExamenTestRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1039,35 +1059,6 @@
     <None Include="SQL\Update.sql" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Properties\Asm\nh0001\Instructor.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Asm\nh0001\MaterialDocente.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Material_Plan.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Modulo.hbm.xml">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Asm\nh0001\ParteAsistencia.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\PlanEstudios.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\PlanExtra.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\PlantillaExamen.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Pregunta.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\PreguntaExamen.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Preguntas_Plantilla.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Pregunta_Examen.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Promocion.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Respuesta.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\RespuestaExamen.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Respuesta_Alumno_Examen.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\RevisionMaterial.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Sesion.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\SesionCronograma.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo_Instructor.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Submodulo_Instructor_Promocion.hbm.xml" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Tema.hbm.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
       <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
@@ -1097,7 +1088,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="SQL\Update\Update 7.4.0.5 .sql" />
-    <EmbeddedResource Include="Properties\Asm\nh0001\Sesion_Promocion.hbm.xml" />
+    <Content Include="SQL\Update\Update 7.4.0.6 .sql" />
     <Content Include="Reports\Alumno\AlumnoPrint.xml">
       <SubType>Designer</SubType>
     </Content>

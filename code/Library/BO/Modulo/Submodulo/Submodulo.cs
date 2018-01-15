@@ -1220,15 +1220,14 @@ namespace moleQule.Library.Instruction
 		/// <returns></returns>
 		private static string SELECT_CLASES_TEORIA(long oid_plan)
 		{
-			string clase_teorica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
+			string clase_teorica = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
 
 			string query;
 
-			string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
 
 			query = "SELECT * " +
-					"FROM \"" + esquema + "\".\"" + clase_teorica + "\" " +
-					"WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
+					"FROM " + clase_teorica + 
+					" WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
 					"ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\"";
 
 			return query;
@@ -1243,14 +1242,12 @@ namespace moleQule.Library.Instruction
 		/// <returns></returns>
 		private static string SELECT_CLASES_PRACTICA(long oid_plan)
 		{
-			string clase_practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
+			string clase_practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
 
 			string query;
 
-			string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
 			query = "SELECT *  " +
-					"FROM \"" + esquema + "\".\"" + clase_practica + "\" " +
+					"FROM " + clase_practica + " " +
 					"WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
 					"ORDER BY \"ORDEN_PRIMARIO\", \"ORDEN_SECUNDARIO\", \"ORDEN_TERCIARIO\"";
 
@@ -1267,24 +1264,22 @@ namespace moleQule.Library.Instruction
 		/// <returns></returns>
 		private static string UNION_CLASES(long oid_plan)
 		{
-			string clase_practica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClasePracticaRecord)).Table.Name;
-			string clase_teorica = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseTeoricaRecord)).Table.Name;
-			string clase_extra = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseExtraRecord)).Table.Name;
+			string clase_practica = nHManager.Instance.GetSQLTable(typeof(ClasePracticaRecord));
+			string clase_teorica = nHManager.Instance.GetSQLTable(typeof(ClaseTeoricaRecord));
+			string clase_extra = nHManager.Instance.GetSQLTable(typeof(ClaseExtraRecord));
 
 			string query;
 
-			string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
 			query = "SELECT \"OID\", \"OID_SUBMODULO\" , \"ALIAS\", 0 AS TIPO " +
-					"FROM \"" + esquema + "\".\"" + clase_teorica + "\" " +
+					"FROM " + clase_teorica + " " +
 					"WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
 					"UNION " +
 					"SELECT \"OID\", \"OID_SUBMODULO\" , \"ALIAS\", 1 AS TIPO " +
-					"FROM \"" + esquema + "\".\"" + clase_practica + "\" " +
+					"FROM " + clase_practica + " " +
 					"WHERE \"OID_PLAN\" = " + oid_plan.ToString() + " " +
 					"UNION " +
 					"SELECT \"OID\", \"OID_SUBMODULO\" , \"ALIAS\", 2 AS TIPO " +
-					"FROM \"" + esquema + "\".\"" + clase_extra + "\" ";
+					"FROM " + clase_extra + " ";
 
 			return query;
 		}
@@ -1300,18 +1295,16 @@ namespace moleQule.Library.Instruction
 		/// <returns></returns>
 		private static string INNER_JOIN_CLASE_SESION(long oid_promocion, long oid_clase, long tipo)
 		{
-			string sesion = nHManager.Instance.Cfg.GetClassMapping(typeof(SesionRecord)).Table.Name;
-			string horario = nHManager.Instance.Cfg.GetClassMapping(typeof(HorarioRecord)).Table.Name;
+			string sesion = nHManager.Instance.GetSQLTable(typeof(SesionRecord));
+			string horario = nHManager.Instance.GetSQLTable(typeof(HorarioRecord));
 			string teoria = "OID_CLASE_TEORICA";
 			string practica = "OID_CLASE_PRACTICA";
 
 			string query;
 
-			string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
 			query = "SELECT s.*, h.\"OID_PROMOCION\"  " +
-					"FROM \"" + esquema + "\".\"" + sesion + "\" AS s " +
-						"INNER JOIN \"" + esquema + "\".\"" + horario + "\" AS h " +
+					"FROM " + sesion + " AS s " +
+						"INNER JOIN " + horario + " AS h " +
 						"ON (s.\"OID_HORARIO\" = h.\"OID\") " +
 				   "WHERE h.\"OID_PROMOCION\" = " + oid_promocion.ToString() + " ";
 			
@@ -1333,14 +1326,12 @@ namespace moleQule.Library.Instruction
 		/// <returns></returns>
 		private static string SELECT_CLASE_EXTRA()
 		{
-			string clase_extra = nHManager.Instance.Cfg.GetClassMapping(typeof(ClaseExtraRecord)).Table.Name;
+			string clase_extra = nHManager.Instance.GetSQLTable(typeof(ClaseExtraRecord));
 
 			string query;
 
-			string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
 			query = "SELECT * " +
-					"FROM \"" + esquema + "\".\"" + clase_extra + "\" ";
+					"FROM " + clase_extra + " ";
 
 			return query;
 		}

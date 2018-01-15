@@ -627,3 +627,4 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Deb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.csprojResolveAssemblyReference.cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PlantillaDesarrolloViewForm.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.PlantillaDesarrolloEditForm.resources
+C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Face\obj\Debug\moleQule.Face.Instruction.SelectFechaDisponibilidadForm.resources

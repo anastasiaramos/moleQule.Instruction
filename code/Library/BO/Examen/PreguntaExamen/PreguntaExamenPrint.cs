@@ -37,7 +37,6 @@ namespace moleQule.Library.Instruction
             _base.Record.OidTema = source.OidTema;
             _base.Record.Nivel = source.Nivel;
             _base.Record.FechaAlta = source.FechaAlta;
-            _base.Record.FechaPublicacion = source.FechaPublicacion;
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = source.Imagen;
@@ -65,8 +64,12 @@ namespace moleQule.Library.Instruction
 
                 if (source.Imagen != string.Empty)
                 {
-                    string path =  source.ImagenWithPath;
+                    if (File.Exists(source.ImagenWithPath))
+                        _base.Record.Imagen = Resize(source.ImagenWithPath);
+                    else
+                        _base.Record.Imagen = string.Empty;
                     
+                    /*string path = source.ImagenWithPath;
                     // Cargamos la imagen en el buffer
                     if (File.Exists(path))
                     {
@@ -117,6 +120,8 @@ namespace moleQule.Library.Instruction
                         br.Close();
                         fs.Close();
                     }
+                    else
+                        _base.Record.Imagen = string.Empty;*/
                 }
                 else
                 {
@@ -126,7 +131,11 @@ namespace moleQule.Library.Instruction
 
                         if (p != null && p.Imagen != string.Empty)
                         {
-                            string path = p.ImagenWithPath;
+                            if (File.Exists(p.ImagenWithPath))
+                                _base.Record.Imagen = Resize(p.ImagenWithPath);
+                            else
+                                _base.Record.Imagen = string.Empty;
+                            /*string path = p.ImagenWithPath;
                             _base.Record.Imagen = p.Imagen;
 
                             // Cargamos la imagen en el buffer
@@ -177,6 +186,8 @@ namespace moleQule.Library.Instruction
                                 br.Close();
                                 fs.Close();
                             }
+                            else
+                                _base.Record.Imagen = string.Empty;*/
                         }
                     }
                 }
@@ -198,7 +209,6 @@ namespace moleQule.Library.Instruction
             _base.Record.OidTema = source.OidTema;
             _base.Record.Nivel = source.Nivel;
             _base.Record.FechaAlta = source.FechaAlta;
-            _base.Record.FechaPublicacion = source.FechaPublicacion;
             _base.Record.Texto = source.Texto;
             _base.Record.Tipo = source.Tipo;
             _base.Record.Imagen = source.Imagen;
@@ -225,7 +235,11 @@ namespace moleQule.Library.Instruction
 
                 if (source.Imagen != string.Empty)
                 {
-                    string path = source.ImagenWithPath;
+                    if (File.Exists(source.ImagenWithPath))
+                        _base.Record.Imagen = Resize(source.ImagenWithPath);
+                    else
+                        _base.Record.Imagen = string.Empty;
+                    /*string path = source.ImagenWithPath;
 
                     // Cargamos la imagen en el buffer
                     if (File.Exists(path))
@@ -277,6 +291,8 @@ namespace moleQule.Library.Instruction
                         br.Close();
                         fs.Close();
                     }
+                    else 
+                       _base.Record.Imagen = string.Empty;*/
                 }
                 else
                 {
@@ -286,7 +302,11 @@ namespace moleQule.Library.Instruction
 
                         if (p != null && p.Imagen != string.Empty)
                         {
-                            string path = p.ImagenWithPath;
+                            if (File.Exists(p.ImagenWithPath))
+                                _base.Record.Imagen = Resize(p.ImagenWithPath);
+                            else
+                                _base.Record.Imagen = string.Empty;
+                            /*string path = p.ImagenWithPath;
                             _base.Record.Imagen = p.Imagen;
 
                             // Cargamos la imagen en el buffer
@@ -337,6 +357,8 @@ namespace moleQule.Library.Instruction
                                 br.Close();
                                 fs.Close();
                             }
+                            else
+                                _base.Record.Imagen = string.Empty;*/
                         }
                     }
                 }
@@ -368,5 +390,45 @@ namespace moleQule.Library.Instruction
         }
 
         #endregion
+
+
+        public static string Resize(string path)
+        {
+            Image imagen = Image.FromFile(path);
+            int width = 550;//ancho de página
+            int height = imagen.Height;
+
+            if (imagen.Width >= width)
+                height = imagen.Height * width / imagen.Width;
+            else
+                return path;
+
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(imagen.HorizontalResolution, imagen.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = System.Drawing.Drawing2D.CompositingMode.SourceCopy;
+                graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+                graphics.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new System.Drawing.Imaging.ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(System.Drawing.Drawing2D.WrapMode.TileFlipXY);
+                    graphics.DrawImage(imagen, destRect, 0, 0, imagen.Width, imagen.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            string resized_path = path.Substring(0, path.LastIndexOf(".")) + "_resized" + path.Substring(path.LastIndexOf("."));
+
+            imagen.Dispose();
+            destImage.Save(resized_path);
+
+            return resized_path;
+        }
     }
 }

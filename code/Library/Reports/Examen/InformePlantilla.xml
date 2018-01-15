@@ -10,8 +10,10 @@ msdata:MainDataTable="InformePlantillaInfo" msdata:UseCurrentLocale="true">
 <xs:complexType>
 <xs:sequence>
   <xs:element name="Submodulo" type="xs:string" minOccurs="0" />
+  <xs:element name="Tema" type="xs:string" minOccurs="0" />
   <xs:element name="Nivel" type="xs:positiveInteger" />
   <xs:element name="NPreguntas" type="xs:positiveInteger" />
+  <xs:element name="Disponibles" type="xs:positiveInteger" />
 </xs:sequence>
 </xs:complexType>
 </xs:element>

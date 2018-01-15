@@ -360,12 +360,20 @@ namespace moleQule.Face.Instruction
 
                     if (horario.Asistencias.Count > 0)
                     {
-                        MessageBox.Show(Resources.Messages.HORARIO_CONFIRMADO,
-                                moleQule.Face.Resources.Labels.ERROR_TITLE,
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Exclamation);
-                        _action_result = DialogResult.Ignore;
-                        return;
+                        foreach (ParteAsistenciaInfo asist in horario.Asistencias)
+                        {
+                            if (asist.Confirmada 
+                                || (asist.Alumno_Partes != null && asist.Alumno_Partes.Count > 0) 
+                                || (asist.Alumnos_Practicas != null && asist.Alumnos_Practicas.Count > 0))
+                            {
+                                MessageBox.Show(Resources.Messages.HORARIO_CONFIRMADO,
+                                        moleQule.Face.Resources.Labels.ERROR_TITLE,
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Exclamation);
+                                _action_result = DialogResult.Ignore;
+                                return;
+                            }
+                        }
                     }
 
                     Horario.Delete(oid);

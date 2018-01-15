@@ -286,15 +286,13 @@ namespace moleQule.Library.Instruction
                 
         public static string UPDATE_IMAGEN(long oid, string imagen)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaExamenRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaExamenRecord));
             string c_imagen = nHManager.Instance.GetTableField(typeof(PreguntaExamenRecord), "Imagen");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + pregunta + "\" " +
-                    "SET \"" + c_imagen + "\" = '" + imagen + "' " +
+            query = "UPDATE " + pregunta +
+                    " SET \"" + c_imagen + "\" = '" + imagen + "' " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";
 
             return query;

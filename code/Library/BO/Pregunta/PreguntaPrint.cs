@@ -45,7 +45,6 @@ namespace moleQule.Library.Instruction
 			_base.Record.Idioma = source.Idioma;
 			_base.Record.Activa = source.Activa;
 			_base.Record.Revisada = source.Revisada;
-			_base.Record.ImagenGrande = source.ImagenGrande;
 			_base.Record.Bloqueada = source.Bloqueada;
             _base.Record.OidOld = source.OidOld;
             _base.Record.Reservada = source.Reservada;

@@ -108,9 +108,11 @@ namespace moleQule.Face.Instruction
             // 
             // Imprimir_Button
             // 
+            this.Imprimir_Button.Enabled = true;
             this.Imprimir_Button.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Imprimir_Button.Location = new System.Drawing.Point(161, 6);
             this.HelpProvider.SetShowHelp(this.Imprimir_Button, true);
+            this.Imprimir_Button.Visible = true;
             // 
             // Docs_BT
             // 
@@ -124,7 +126,7 @@ namespace moleQule.Face.Instruction
             // 
             // Progress_Panel
             // 
-            this.Progress_Panel.Location = new System.Drawing.Point(53, 10);
+            this.Progress_Panel.Location = new System.Drawing.Point(53, 96);
             // 
             // ProgressBK_Panel
             // 

@@ -263,15 +263,13 @@ namespace moleQule.Library.Instruction
 
         private static string UPDATE_CODIGO(long oid, long serial, string codigo)
         {
-            string respuesta = nHManager.Instance.Cfg.GetClassMapping(typeof(RespuestaRecord)).Table.Name;
+            string respuesta = nHManager.Instance.GetSQLTable(typeof(RespuestaRecord));
             string c_serial = nHManager.Instance.GetTableField(typeof(RespuestaRecord), "Serial");
             string c_codigo = nHManager.Instance.GetTableField(typeof(RespuestaRecord), "Codigo");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
-            query = "UPDATE " + "\"" + esquema + "\".\"" + respuesta + "\" " +
+            query = "UPDATE " + respuesta + " " +
                     "SET \"" + c_codigo + "\" = '" + codigo + "', " +
                     "\"" + c_serial + "\" = " + serial.ToString() + " " +
                     "WHERE \"OID\" = " + oid.ToString() + ";";

@@ -241,19 +241,17 @@ namespace moleQule.Library.Instruction
         /// <returns></returns>
         public static string SELECT_BY_LIST(string lista_preguntas)
         {
-            string pregunta = nHManager.Instance.Cfg.GetClassMapping(typeof(PreguntaRecord)).Table.Name;
-            string respuesta = nHManager.Instance.Cfg.GetClassMapping(typeof(RespuestaRecord)).Table.Name;
+            string pregunta = nHManager.Instance.GetSQLTable(typeof(PreguntaRecord));
+            string respuesta = nHManager.Instance.GetSQLTable(typeof(RespuestaRecord));
             string oid_pregunta = nHManager.Instance.GetTableField(typeof(RespuestaRecord), "OidPregunta");
             string opcion = nHManager.Instance.GetTableField(typeof(RespuestaRecord), "Opcion");
 
             string query;
 
-            string esquema = Convert.ToInt32(AppContext.ActiveSchema.Code).ToString("0000");
-
 
             query = "SELECT R.* " +
-                    "FROM \"" + esquema + "\".\"" + respuesta + "\" AS R " + 
-                    "INNER JOIN \"" + esquema + "\".\"" + pregunta + "\" AS p ON (p.\"OID\" = R.\"" + oid_pregunta + "\") " +
+                    "FROM " + respuesta + " AS R " + 
+                    "INNER JOIN " + pregunta + " AS p ON (p.\"OID\" = R.\"" + oid_pregunta + "\") " +
                     "WHERE p.\"OID\" IN (" + lista_preguntas + ") " +
                     "ORDER BY R.\"" + oid_pregunta + "\", R.\"" + opcion + "\" " + ";";
 
