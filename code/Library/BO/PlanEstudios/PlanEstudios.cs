@@ -311,6 +311,8 @@ namespace moleQule.Library.Instruction
 			PlanEstudios.BeginTransaction(clon.SessionCode);
 			
 			clon.MarkNew();
+            clon.CPracticas.MarkAsNew();
+            clon.CTeoricas.MarkAsNew();
 			
 			return clon;
 		}

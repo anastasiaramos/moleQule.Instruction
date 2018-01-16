@@ -642,12 +642,6 @@
       <DependentUpon>PortadaExamenRpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Examen\PreguntaExamenListSubRpt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PreguntaExamenListSubRpt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Reports\Examen\PreguntasDesarrolloRpt.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -664,12 +658,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RegistroNotasExamenRpt.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reports\Examen\RespuestaExamenListSubRpt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RespuestaExamenListSubRpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Examen\ResumenExamenRpt.cs">
@@ -928,10 +916,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PortadaExamenRpt.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Examen\PreguntaExamenListSubRpt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PreguntaExamenListSubRpt.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Examen\PreguntasDesarrolloRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>PreguntasDesarrolloRpt.cs</LastGenOutput>
@@ -943,14 +927,6 @@
     <EmbeddedResource Include="Reports\Examen\RegistroNotasExamenRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RegistroNotasExamenRpt.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Examen\RespuestaExamenListSubRpt.resx">
-      <DependentUpon>RespuestaExamenListSubRpt.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Examen\RespuestaExamenListSubRpt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RespuestaExamenListSubRpt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Examen\ResumenExamenRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
