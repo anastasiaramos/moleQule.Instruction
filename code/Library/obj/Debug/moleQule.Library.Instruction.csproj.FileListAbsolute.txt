@@ -89,4 +89,3 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csproj.GenerateResource.Cache
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.dll
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.pdb
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Debug\moleQule.Library.Instruction.csprojResolveAssemblyReference.cache

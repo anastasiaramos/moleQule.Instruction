@@ -6770,6 +6770,12 @@
             Elimina todos los Planes de Estudio y sus listas
             </summary>
         </member>
+        <member name="M:moleQule.Library.Instruction.PlanEstudios.Merge(System.Int64)">
+            <summary>
+            Función para la unión de dos planes de estudio
+            </summary>
+            <param name="oid"></param>
+        </member>
         <member name="T:moleQule.Library.Instruction.Material_Plans">
             <summary>
             Editable Child Business Object

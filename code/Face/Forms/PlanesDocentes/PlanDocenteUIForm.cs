@@ -323,6 +323,20 @@ namespace moleQule.Face.Instruction
             }
         }
 
+        protected override void MergePlanesAction()
+        {
+            PlanEstudiosSelectForm form = new PlanEstudiosSelectForm(true, this);
+
+            DialogResult result = form.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                PlanEstudiosInfo info = form.Selected as PlanEstudiosInfo;
+
+                _entity.Merge(info.Oid);
+            }
+        }
+
         #endregion
 
     }

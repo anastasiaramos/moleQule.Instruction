@@ -697,6 +697,27 @@ namespace moleQule.Library.Instruction
 
         #region Commands
 
+        /// <summary>
+        /// Función para la unión de dos planes de estudio
+        /// </summary>
+        /// <param name="oid"></param>
+        public virtual void Merge(long oid)
+        {
+            PlanEstudios merge_plan = PlanEstudios.Get(oid, true);
+
+            ClaseTeoricas cteoricas = merge_plan.CTeoricas.Clone();
+
+            foreach (ClaseTeorica ct in cteoricas)
+                CTeoricas.Add(ct);
+
+            ClasePracticas cpracticas = merge_plan.CPracticas.Clone();
+
+            foreach (ClasePractica cp in cpracticas)
+                CPracticas.Add(cp);
+
+            merge_plan.CloseSession();
+        }
+
         #endregion
 
         #region SQL

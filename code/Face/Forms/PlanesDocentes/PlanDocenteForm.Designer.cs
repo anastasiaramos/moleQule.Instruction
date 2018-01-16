@@ -32,16 +32,16 @@ namespace moleQule.Face.Instruction
             System.Windows.Forms.Label observacionesLabel;
             System.Windows.Forms.Label fechaLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PlanDocenteForm));
             this.observacionesTextBox = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -80,6 +80,7 @@ namespace moleQule.Face.Instruction
             this.OrdenSecundario_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.OrdenTerciario_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observaciones_P = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Merge_BT = new System.Windows.Forms.Button();
             observacionesLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -286,7 +287,7 @@ namespace moleQule.Face.Instruction
             // 
             // CTeoricas_Button
             // 
-            this.CTeoricas_Button.Location = new System.Drawing.Point(525, 570);
+            this.CTeoricas_Button.Location = new System.Drawing.Point(454, 570);
             this.CTeoricas_Button.Name = "CTeoricas_Button";
             this.CTeoricas_Button.Size = new System.Drawing.Size(150, 23);
             this.CTeoricas_Button.TabIndex = 11;
@@ -317,6 +318,7 @@ namespace moleQule.Face.Instruction
             // 
             // Teoricas_TP
             // 
+            this.Teoricas_TP.Controls.Add(this.Merge_BT);
             this.Teoricas_TP.Controls.Add(this.Teoricas_Grid);
             this.Teoricas_TP.Controls.Add(this.CTeoricas_Button);
             this.Teoricas_TP.Location = new System.Drawing.Point(4, 22);
@@ -356,8 +358,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Modulo_CBC.DataPropertyName = "OidModulo";
             this.Modulo_CBC.DataSource = this.Datos_Modulos;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Modulo_CBC.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Modulo_CBC.DefaultCellStyle = dataGridViewCellStyle11;
             this.Modulo_CBC.DisplayMember = "Texto";
             this.Modulo_CBC.HeaderText = "Módulo";
             this.Modulo_CBC.Name = "Modulo_CBC";
@@ -373,8 +375,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Submodulo_CBC.DataPropertyName = "SubModulo";
             this.Submodulo_CBC.DataSource = this.Datos_Submodulos;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Submodulo_CBC.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Submodulo_CBC.DefaultCellStyle = dataGridViewCellStyle12;
             this.Submodulo_CBC.DisplayMember = "Texto";
             this.Submodulo_CBC.HeaderText = "Submódulo";
             this.Submodulo_CBC.Name = "Submodulo_CBC";
@@ -396,8 +398,8 @@ namespace moleQule.Face.Instruction
             // Alias
             // 
             this.Alias.DataPropertyName = "Alias";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Alias.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Alias.DefaultCellStyle = dataGridViewCellStyle13;
             this.Alias.HeaderText = "Alias";
             this.Alias.Name = "Alias";
             this.Alias.Width = 80;
@@ -405,8 +407,8 @@ namespace moleQule.Face.Instruction
             // TotalClases
             // 
             this.TotalClases.DataPropertyName = "TotalClases";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.TotalClases.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.TotalClases.DefaultCellStyle = dataGridViewCellStyle14;
             this.TotalClases.HeaderText = "Total";
             this.TotalClases.Name = "TotalClases";
             this.TotalClases.Width = 60;
@@ -414,8 +416,8 @@ namespace moleQule.Face.Instruction
             // OrdenPrimario
             // 
             this.OrdenPrimario.DataPropertyName = "OrdenPrimario";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenPrimario.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenPrimario.DefaultCellStyle = dataGridViewCellStyle15;
             this.OrdenPrimario.HeaderText = "Orden Módulo";
             this.OrdenPrimario.Name = "OrdenPrimario";
             this.OrdenPrimario.Width = 60;
@@ -423,8 +425,8 @@ namespace moleQule.Face.Instruction
             // OrdenSecundario
             // 
             this.OrdenSecundario.DataPropertyName = "OrdenSecundario";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenSecundario.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenSecundario.DefaultCellStyle = dataGridViewCellStyle16;
             this.OrdenSecundario.HeaderText = "Orden Submódulo";
             this.OrdenSecundario.Name = "OrdenSecundario";
             this.OrdenSecundario.Width = 65;
@@ -432,8 +434,8 @@ namespace moleQule.Face.Instruction
             // OrdenTerciario
             // 
             this.OrdenTerciario.DataPropertyName = "OrdenTerciario";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.OrdenTerciario.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.OrdenTerciario.DefaultCellStyle = dataGridViewCellStyle17;
             this.OrdenTerciario.HeaderText = "Orden Clase";
             this.OrdenTerciario.Name = "OrdenTerciario";
             this.OrdenTerciario.Width = 60;
@@ -515,8 +517,8 @@ namespace moleQule.Face.Instruction
             // Alias_P
             // 
             this.Alias_P.DataPropertyName = "Alias";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Alias_P.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Alias_P.DefaultCellStyle = dataGridViewCellStyle18;
             this.Alias_P.HeaderText = "Alias";
             this.Alias_P.Name = "Alias_P";
             this.Alias_P.Width = 80;
@@ -524,9 +526,9 @@ namespace moleQule.Face.Instruction
             // Duracion
             // 
             this.Duracion.DataPropertyName = "Duracion";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "N0";
-            this.Duracion.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Format = "N0";
+            this.Duracion.DefaultCellStyle = dataGridViewCellStyle19;
             this.Duracion.HeaderText = "Duración";
             this.Duracion.Name = "Duracion";
             this.Duracion.Width = 60;
@@ -535,8 +537,8 @@ namespace moleQule.Face.Instruction
             // 
             this.Incompatible.DataPropertyName = "Incompatible";
             this.Incompatible.DataSource = this.Datos_Incompatible;
-            dataGridViewCellStyle10.Format = "N0";
-            this.Incompatible.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Format = "N0";
+            this.Incompatible.DefaultCellStyle = dataGridViewCellStyle20;
             this.Incompatible.DisplayMember = "Texto";
             this.Incompatible.HeaderText = "Incompatible";
             this.Incompatible.Name = "Incompatible";
@@ -575,6 +577,16 @@ namespace moleQule.Face.Instruction
             this.Observaciones_P.HeaderText = "Observaciones";
             this.Observaciones_P.Name = "Observaciones_P";
             this.Observaciones_P.Width = 120;
+            // 
+            // Merge_BT
+            // 
+            this.Merge_BT.Location = new System.Drawing.Point(620, 569);
+            this.Merge_BT.Name = "Merge_BT";
+            this.Merge_BT.Size = new System.Drawing.Size(150, 23);
+            this.Merge_BT.TabIndex = 12;
+            this.Merge_BT.Text = "Añadir Plan de Estudios";
+            this.Merge_BT.UseVisualStyleBackColor = true;
+            this.Merge_BT.Click += new System.EventHandler(this.Merge_BT_Click);
             // 
             // PlanDocenteForm
             // 
@@ -657,6 +669,7 @@ namespace moleQule.Face.Instruction
         private System.Windows.Forms.DataGridViewTextBoxColumn Observaciones_P;
         protected System.Windows.Forms.TabPage Teoricas_TP;
         protected System.Windows.Forms.TabPage Practicas_TP;
+        protected System.Windows.Forms.Button Merge_BT;
 
     }
 }

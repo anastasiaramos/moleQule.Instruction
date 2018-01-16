@@ -231,6 +231,8 @@ namespace moleQule.Face.Instruction
 
         protected virtual void ResumenAction() { }
 
+        protected virtual void MergePlanesAction() { }
+
         #endregion
 
         #region Validation & Format
@@ -260,6 +262,11 @@ namespace moleQule.Face.Instruction
         private void Resumen_BT_Click(object sender, EventArgs e)
         {
             ResumenAction();
+        }
+
+        private void Merge_BT_Click(object sender, EventArgs e)
+        {
+            MergePlanesAction();
         }
 
         //private void SerieInstruccion_BT_Click(object sender, EventArgs e)
