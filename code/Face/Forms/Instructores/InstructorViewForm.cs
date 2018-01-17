@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using moleQule.Library.CslaEx;
 
 using moleQule.Library;
+using moleQule.Library.Common;
 using moleQule.Face;
 using moleQule.Library.Instruction; 
 
@@ -63,7 +64,7 @@ namespace moleQule.Face.Instruction
             Cancel_BT.Enabled = false;
             Cancel_BT.Visible = false;
             base.FormatControls();
-            Disponibilidad_BT.Enabled = true;
+            Disponibilidad_BT.Enabled = false;
         }
 
 		public override void RefreshSecondaryData()
@@ -231,6 +232,45 @@ namespace moleQule.Face.Instruction
             {
                 Datos_Submodulo_Instructor.DataSource = _entity.Submodulos;
                 PgMng.Grow(string.Empty, "Datos_Submodulo_Instructor");
+            }
+        }
+
+        protected override void PrintAction()
+        {
+            if (Ficha_TP.SelectedTab == Capacitacion_TP)
+            {
+                Submodulo_Instructor_PromocionList List = Submodulo_Instructor_PromocionList.GetListByInstructor(EntityInfo.Oid);
+
+                InstructorReportMng reportMng = new InstructorReportMng(AppContext.ActiveSchema);
+
+                if (List.Count > 0)
+                {
+
+                    bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
+                    CompanyInfo empresa = null;
+
+                    if (defecto)
+                        empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
+                    while (empresa == null)
+                    {
+                        moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
+                        DialogResult result = form.ShowDialog();
+
+                        try
+                        {
+                            if (result == DialogResult.OK)
+                                empresa = form.Selected as CompanyInfo;
+                        }
+                        catch
+                        { empresa = null; }
+                    }
+
+                    moleQule.Library.Instruction.Reports.Instructor.CapacitacionInstructorRpt report = reportMng.GetDetailReport(empresa, EntityInfo, List);
+                    report.SetParameterValue("Empresa", empresa.Name);
+                    if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                    ReportViewer.SetReport(report);
+                    ReportViewer.ShowDialog();
+                }
             }
         }
 

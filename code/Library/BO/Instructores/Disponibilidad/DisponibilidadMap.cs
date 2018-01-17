@@ -98,7 +98,8 @@ namespace moleQule.Library.Instruction
 			Property(x => x.NdX, map => { map.Column("`ND_X`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.NdJ, map => { map.Column("`ND_J`"); map.NotNullable(false); map.Length(32768); });
 			Property(x => x.NdV, map => { map.Column("`ND_V`"); map.NotNullable(false); map.Length(32768); });
-			Property(x => x.NdS, map => { map.Column("`ND_S`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.NdS, map => { map.Column("`ND_S`"); map.NotNullable(false); map.Length(32768); });
+            Property(x => x.Predeterminado, map => { map.Column("`PREDETERMINADO`"); map.NotNullable(false); map.Length(32768); });
 					}
 	}
 }

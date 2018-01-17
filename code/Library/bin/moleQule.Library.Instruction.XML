@@ -273,6 +273,45 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:moleQule.Library.Instruction.Instructor_PromocionInfo">
+            <summary>
+            ReadOnly Child Business Object with ReadOnly Childs
+            </summary>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Int64)">
+            <summary>
+            Devuelve un ClienteInfo tras consultar la base de datos
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Int64,System.Boolean)">
+            <summary>
+            Devuelve un ClienteInfo tras consultar la base de datos
+            </summary>
+            <param name="oid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Data.IDataReader)">
+            <summary>
+            Copia los datos al objeto desde un IDataReader 
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Data.IDataReader,System.Boolean)">
+            <summary>
+            Copia los datos al objeto desde un IDataReader 
+            </summary>
+            <param name="reader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Instructor_PromocionPrint.CopyValues(moleQule.Library.Instruction.Instructor_PromocionInfo)">
+            <summary>
+            Copia los atributos del objeto
+            </summary>
+            <param name="source">Objeto origen</param>
+        </member>
         <member name="T:moleQule.Library.Instruction.CursoFormacionList">
             <summary>
             ReadOnly Root Collection of Business Objects With Child Collection
@@ -2124,6 +2163,15 @@
             <param name="sesion"></param>
             <returns></returns>
         </member>
+        <member name="M:moleQule.Library.Instruction.Submodulo_Instructor_PromocionList.SELECT_BY_INSTRUCTOR(System.Int64)">
+            <summary>
+            Construye la tabla 
+            </summary>
+            <param name="type"></param>
+            <param name="schema"></param>
+            <param name="sesion"></param>
+            <returns></returns>
+        </member>
         <member name="T:moleQule.Library.Instruction.Curso_Instructors">
             <summary>
             Editable Child Business Object
@@ -3103,39 +3151,6 @@
             Editable Child Collection
             </summary>
         </member>
-        <member name="T:moleQule.Library.Instruction.Instructor_PromocionInfo">
-            <summary>
-            ReadOnly Child Business Object with ReadOnly Childs
-            </summary>
-        </member>
-        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Int64)">
-            <summary>
-            Devuelve un ClienteInfo tras consultar la base de datos
-            </summary>
-            <param name="oid"></param>
-            <returns></returns>
-        </member>
-        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Int64,System.Boolean)">
-            <summary>
-            Devuelve un ClienteInfo tras consultar la base de datos
-            </summary>
-            <param name="oid"></param>
-            <returns></returns>
-        </member>
-        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Data.IDataReader)">
-            <summary>
-            Copia los datos al objeto desde un IDataReader 
-            </summary>
-            <param name="reader"></param>
-            <returns></returns>
-        </member>
-        <member name="M:moleQule.Library.Instruction.Instructor_PromocionInfo.Get(System.Data.IDataReader,System.Boolean)">
-            <summary>
-            Copia los datos al objeto desde un IDataReader 
-            </summary>
-            <param name="reader"></param>
-            <returns></returns>
-        </member>
         <member name="T:moleQule.Library.Instruction.Alumno_PromocionList">
             <summary>
             ReadOnly Root Collection of Business Objects With Child Collection
@@ -3659,6 +3674,12 @@
             </summary>
             <param name="reader"></param>
             <returns></returns>
+        </member>
+        <member name="M:moleQule.Library.Instruction.Submodulo_Instructor_PromocionPrint.CopyValues(moleQule.Library.Instruction.Submodulo_Instructor_PromocionInfo)">
+            <summary>
+            Copia los atributos del objeto
+            </summary>
+            <param name="source">Objeto origen</param>
         </member>
         <member name="T:moleQule.Library.Instruction.Instructores">
             <summary>

@@ -75,6 +75,9 @@ namespace moleQule.Library.Instruction
 
         //atributos auxiliares
         private long _oid_modulo;
+        private string _modulo = string.Empty;
+        private string _submodulo = string.Empty;
+        private string _promocion = string.Empty;
 		
 		#endregion
 		
@@ -83,6 +86,9 @@ namespace moleQule.Library.Instruction
 		public Submodulo_Instructor_PromocionRecord Record { get { return _record; } }
 
         public virtual long OidModulo { get { return _oid_modulo; } set { _oid_modulo = value; } }
+        public virtual string Modulo { get { return _modulo; } set { _modulo = value; } }
+        public virtual string Submodulo { get { return _submodulo; } set { _submodulo = value; } }
+        public virtual string Promocion { get { return _promocion; } set { _promocion = value; } }
 		
 		#endregion
 		
@@ -95,6 +101,9 @@ namespace moleQule.Library.Instruction
 			_record.CopyValues(source);
 
             _oid_modulo = Convert.ToInt32(source["OID_MODULO"]);
+            _modulo = Convert.ToString(source["MODULO"]);
+            _submodulo = Convert.ToString(source["SUBMODULO"]);
+            _promocion = Convert.ToString(source["PROMOCION"]);
 		}		
 		public void CopyValues(Submodulo_Instructor_Promocion source)
 		{
@@ -103,14 +112,20 @@ namespace moleQule.Library.Instruction
 			_record.CopyValues(source.Base.Record);
 
             _oid_modulo = source.OidModulo;
+            _modulo = source.Modulo;
+            _submodulo = source.Submodulo;
+            _promocion = source.Promocion;
 		}
 		public void CopyValues(Submodulo_Instructor_PromocionInfo source)
 		{
 			if (source == null) return;
 			
 			_record.CopyValues(source.Base.Record);
-            
+
             _oid_modulo = source.OidModulo;
+            _modulo = source.Modulo;
+            _submodulo = source.Submodulo;
+            _promocion = source.Promocion;
 		}
 		
 		#endregion	
@@ -259,7 +274,10 @@ namespace moleQule.Library.Instruction
 			}
 		}
 
-        public virtual long OidModulo { get { return _base.OidModulo; } set { _base.OidModulo = value; } }		
+        public virtual long OidModulo { get { return _base.OidModulo; } set { _base.OidModulo = value; } }
+        public virtual string Modulo { get { return _base.Modulo; } set { _base.Modulo = value; } }
+        public virtual string Submodulo { get { return _base.Submodulo; } set { _base.Submodulo = value; } }
+        public virtual string Promocion { get { return _base.Promocion; } set { _base.Promocion = value; } }
 		
 		#endregion
 		
@@ -291,6 +309,11 @@ namespace moleQule.Library.Instruction
 			Prioridad = source.Prioridad;
 			OidPromocion = source.OidPromocion;
 			OidInstructorPromocion = source.OidInstructorPromocion;
+
+            OidModulo = source.OidModulo;
+            Modulo = source.Modulo;
+            Submodulo = source.Submodulo;
+            Promocion = source.Promocion;
 		}
 		
 			

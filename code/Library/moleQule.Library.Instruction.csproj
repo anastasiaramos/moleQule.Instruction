@@ -264,16 +264,19 @@
     <Compile Include="BO\Instructores\InstructorPrint.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionPrint.cs" />
     <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_Promocion.cs" />
     <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_Promociones.cs" />
     <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionInfo.cs" />
     <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionList.cs" />
     <Compile Include="BO\Instructores\Instructor_Promocion\Instructor_PromocionMap.cs" />
+    <Compile Include="BO\Instructores\InstructorReportMng.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulos_Instructores.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_Instructor.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorInfo.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorList.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor\Submodulo_InstructorMap.cs" />
+    <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_PromocionPrint.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulos_Instructores_Promociones.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_Promocion.cs" />
     <Compile Include="BO\Instructores\Submodulo_Instructor_Promocion\Submodulo_Instructor_PromocionInfo.cs" />
@@ -702,6 +705,12 @@
       <DependentUpon>FormacionAcademicaSubRpt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\Instructor\CapacitacionInstructorRpt.cs">
+      <DependentUpon>CapacitacionInstructorRpt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Reports\PlanEstudios\ResumenRpt.cs">
       <DependentUpon>ResumenRpt.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -956,6 +965,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FormacionAcademicaSubRpt.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Instructor\CapacitacionInstructorRpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CapacitacionInstructorRpt.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\PlanEstudios\ResumenRpt.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ResumenRpt.cs</LastGenOutput>
@@ -1063,6 +1076,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Reports\Instructor\InstructorPrint.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Instructor\Submodulo_Instructor_PromocionPrint.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="SQL\Update\Update 7.4.0.10 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.5 .sql" />
     <Content Include="SQL\Update\Update 7.4.0.6 .sql" />
     <Content Include="Reports\Alumno\AlumnoPrint.xml">

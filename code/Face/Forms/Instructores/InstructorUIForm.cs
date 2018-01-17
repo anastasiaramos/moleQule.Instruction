@@ -383,6 +383,45 @@ namespace moleQule.Face.Instruction
             //}
         }
 
+        protected override void PrintAction()
+        {
+            if (Ficha_TP.SelectedTab == Capacitacion_TP)
+            {
+                Submodulo_Instructor_PromocionList List = Submodulo_Instructor_PromocionList.GetListByInstructor(_entity.Oid);
+
+                InstructorReportMng reportMng = new InstructorReportMng(AppContext.ActiveSchema);
+
+                if (List.Count > 0)
+                {
+
+                    bool defecto = moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultBoolSetting();
+                    CompanyInfo empresa = null;
+
+                    if (defecto)
+                        empresa = CompanyInfo.Get(moleQule.Library.Instruction.ModulePrincipal.GetImpresionEmpresaDefaultOidSetting(), false);
+                    while (empresa == null)
+                    {
+                        moleQule.Face.Common.CompanySelectForm form = new Common.CompanySelectForm(this);
+                        DialogResult result = form.ShowDialog();
+
+                        try
+                        {
+                            if (result == DialogResult.OK)
+                                empresa = form.Selected as CompanyInfo;
+                        }
+                        catch
+                        { empresa = null; }
+                    }
+
+                    moleQule.Library.Instruction.Reports.Instructor.CapacitacionInstructorRpt report = reportMng.GetDetailReport(empresa, EntityInfo, List);
+                    report.SetParameterValue("Empresa", empresa.Name);
+                    if (empresa.Oid == 2) ((CrystalDecisions.CrystalReports.Engine.TextObject)(report.Section5.ReportObjects["Text1"])).Color = System.Drawing.Color.FromArgb(13, 176, 46);
+                    ReportViewer.SetReport(report);
+                    ReportViewer.ShowDialog();
+                }
+            }
+        }
+
         protected override void ChangeFicha()
         {
             if (Ficha_TP.SelectedTab == Capacitacion_TP) 

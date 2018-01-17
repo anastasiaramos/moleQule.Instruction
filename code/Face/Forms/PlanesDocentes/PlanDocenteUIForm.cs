@@ -333,7 +333,8 @@ namespace moleQule.Face.Instruction
             {
                 PlanEstudiosInfo info = form.Selected as PlanEstudiosInfo;
 
-                _entity.Merge(info.Oid);
+                if (info.Oid != _entity.Oid)
+                    _entity.Merge(info.Oid);
             }
         }
 

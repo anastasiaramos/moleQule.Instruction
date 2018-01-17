@@ -158,6 +158,14 @@ namespace moleQule.Face.Instruction
 
         #endregion
 
+        #region Actions
+
+        protected virtual void SetDefaultAction() { }
+
+        protected virtual void LoadDefaultAction() { }
+
+        #endregion
+
         #region Events
 
         private void Fecha_DTP_ValueChanged(object sender, EventArgs e)
@@ -829,8 +837,6 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad != null)
                 _disponibilidad.NdS = ND_S_CB.Checked;
         }
-
-        #endregion         
 
         private void L0_CB_MouseMove(object sender, MouseEventArgs e)
         {
@@ -1772,8 +1778,18 @@ namespace moleQule.Face.Instruction
             Viernes_LB.BackColor = Color.White;
             Hora0_LB.BackColor = Color.White;
         }
-
         
+        private void SetDefault_BT_Click(object sender, EventArgs e)
+        {
+            SetDefaultAction();
+        }
+
+        private void LoadDefault_BT_Click(object sender, EventArgs e)
+        {
+            LoadDefaultAction();
+        }
+
+        #endregion
     }
 }
 

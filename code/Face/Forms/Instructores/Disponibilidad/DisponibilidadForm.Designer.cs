@@ -39,102 +39,108 @@ namespace moleQule.Face.Instruction
             this.Siguiente_BT = new System.Windows.Forms.Button();
             this.Disponibilidad_GB = new System.Windows.Forms.GroupBox();
             this.DisponibilidadGrid = new System.Windows.Forms.TableLayoutPanel();
-            this.S0_CB = new System.Windows.Forms.CheckBox();
-            this.V0_CB = new System.Windows.Forms.CheckBox();
-            this.J0_CB = new System.Windows.Forms.CheckBox();
-            this.X0_CB = new System.Windows.Forms.CheckBox();
-            this.Hora12_LB = new System.Windows.Forms.Label();
-            this.Hora11_LB = new System.Windows.Forms.Label();
-            this.Hora10_LB = new System.Windows.Forms.Label();
-            this.Hora9_LB = new System.Windows.Forms.Label();
-            this.Hora8_LB = new System.Windows.Forms.Label();
-            this.Hora5_LB = new System.Windows.Forms.Label();
-            this.L8_CB = new System.Windows.Forms.CheckBox();
-            this.L9_CB = new System.Windows.Forms.CheckBox();
-            this.M4_CB = new System.Windows.Forms.CheckBox();
-            this.X4_CB = new System.Windows.Forms.CheckBox();
-            this.J4_CB = new System.Windows.Forms.CheckBox();
-            this.V4_CB = new System.Windows.Forms.CheckBox();
-            this.S4_CB = new System.Windows.Forms.CheckBox();
-            this.S3_CB = new System.Windows.Forms.CheckBox();
-            this.V3_CB = new System.Windows.Forms.CheckBox();
-            this.J3_CB = new System.Windows.Forms.CheckBox();
-            this.X3_CB = new System.Windows.Forms.CheckBox();
-            this.M3_CB = new System.Windows.Forms.CheckBox();
-            this.S2_CB = new System.Windows.Forms.CheckBox();
-            this.V2_CB = new System.Windows.Forms.CheckBox();
-            this.J2_CB = new System.Windows.Forms.CheckBox();
-            this.X2_CB = new System.Windows.Forms.CheckBox();
-            this.M2_CB = new System.Windows.Forms.CheckBox();
-            this.L2_CB = new System.Windows.Forms.CheckBox();
-            this.V1_CB = new System.Windows.Forms.CheckBox();
-            this.J1_CB = new System.Windows.Forms.CheckBox();
-            this.X1_CB = new System.Windows.Forms.CheckBox();
-            this.M1_CB = new System.Windows.Forms.CheckBox();
-            this.L3_CB = new System.Windows.Forms.CheckBox();
-            this.L1_CB = new System.Windows.Forms.CheckBox();
-            this.L7_CB = new System.Windows.Forms.CheckBox();
-            this.L4_CB = new System.Windows.Forms.CheckBox();
-            this.L10_CB = new System.Windows.Forms.CheckBox();
-            this.L11_CB = new System.Windows.Forms.CheckBox();
-            this.L12_CB = new System.Windows.Forms.CheckBox();
-            this.M12_CB = new System.Windows.Forms.CheckBox();
             this.Lunes_LB = new System.Windows.Forms.Label();
             this.Martes_LB = new System.Windows.Forms.Label();
             this.Miercoles_LB = new System.Windows.Forms.Label();
             this.Jueves_LB = new System.Windows.Forms.Label();
             this.Viernes_LB = new System.Windows.Forms.Label();
             this.Sabado_LB = new System.Windows.Forms.Label();
-            this.Hora2_LB = new System.Windows.Forms.Label();
-            this.Hora3_LB = new System.Windows.Forms.Label();
-            this.Hora4_LB = new System.Windows.Forms.Label();
-            this.S1_CB = new System.Windows.Forms.CheckBox();
-            this.L0_CB = new System.Windows.Forms.CheckBox();
-            this.Hora6_LB = new System.Windows.Forms.Label();
-            this.Hora13_LB = new System.Windows.Forms.Label();
-            this.Hora7_LB = new System.Windows.Forms.Label();
-            this.L5_CB = new System.Windows.Forms.CheckBox();
-            this.L6_CB = new System.Windows.Forms.CheckBox();
-            this.M5_CB = new System.Windows.Forms.CheckBox();
-            this.M6_CB = new System.Windows.Forms.CheckBox();
-            this.M8_CB = new System.Windows.Forms.CheckBox();
-            this.M7_CB = new System.Windows.Forms.CheckBox();
-            this.M11_CB = new System.Windows.Forms.CheckBox();
-            this.M10_CB = new System.Windows.Forms.CheckBox();
-            this.M9_CB = new System.Windows.Forms.CheckBox();
-            this.X5_CB = new System.Windows.Forms.CheckBox();
-            this.X6_CB = new System.Windows.Forms.CheckBox();
-            this.X7_CB = new System.Windows.Forms.CheckBox();
-            this.X8_CB = new System.Windows.Forms.CheckBox();
-            this.X9_CB = new System.Windows.Forms.CheckBox();
-            this.X10_CB = new System.Windows.Forms.CheckBox();
-            this.X11_CB = new System.Windows.Forms.CheckBox();
-            this.X12_CB = new System.Windows.Forms.CheckBox();
-            this.J5_CB = new System.Windows.Forms.CheckBox();
-            this.J6_CB = new System.Windows.Forms.CheckBox();
-            this.J7_CB = new System.Windows.Forms.CheckBox();
-            this.J8_CB = new System.Windows.Forms.CheckBox();
-            this.J9_CB = new System.Windows.Forms.CheckBox();
-            this.J10_CB = new System.Windows.Forms.CheckBox();
-            this.J11_CB = new System.Windows.Forms.CheckBox();
-            this.V5_CB = new System.Windows.Forms.CheckBox();
-            this.V6_CB = new System.Windows.Forms.CheckBox();
-            this.V7_CB = new System.Windows.Forms.CheckBox();
-            this.V8_CB = new System.Windows.Forms.CheckBox();
-            this.V9_CB = new System.Windows.Forms.CheckBox();
-            this.V10_CB = new System.Windows.Forms.CheckBox();
-            this.J12_CB = new System.Windows.Forms.CheckBox();
-            this.V11_CB = new System.Windows.Forms.CheckBox();
-            this.V12_CB = new System.Windows.Forms.CheckBox();
-            this.M0_CB = new System.Windows.Forms.CheckBox();
-            this.Hora1_LB = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.ND_L_CB = new System.Windows.Forms.CheckBox();
+            this.L12_CB = new System.Windows.Forms.CheckBox();
+            this.L11_CB = new System.Windows.Forms.CheckBox();
+            this.L10_CB = new System.Windows.Forms.CheckBox();
+            this.L9_CB = new System.Windows.Forms.CheckBox();
+            this.L8_CB = new System.Windows.Forms.CheckBox();
+            this.L7_CB = new System.Windows.Forms.CheckBox();
+            this.L6_CB = new System.Windows.Forms.CheckBox();
+            this.L5_CB = new System.Windows.Forms.CheckBox();
+            this.L4_CB = new System.Windows.Forms.CheckBox();
+            this.L3_CB = new System.Windows.Forms.CheckBox();
+            this.L2_CB = new System.Windows.Forms.CheckBox();
+            this.L1_CB = new System.Windows.Forms.CheckBox();
+            this.L0_CB = new System.Windows.Forms.CheckBox();
             this.ND_M_CB = new System.Windows.Forms.CheckBox();
             this.ND_X_CB = new System.Windows.Forms.CheckBox();
             this.ND_J_CB = new System.Windows.Forms.CheckBox();
             this.ND_V_CB = new System.Windows.Forms.CheckBox();
             this.ND_S_CB = new System.Windows.Forms.CheckBox();
+            this.V12_CB = new System.Windows.Forms.CheckBox();
+            this.V11_CB = new System.Windows.Forms.CheckBox();
+            this.V10_CB = new System.Windows.Forms.CheckBox();
+            this.V9_CB = new System.Windows.Forms.CheckBox();
+            this.V8_CB = new System.Windows.Forms.CheckBox();
+            this.V7_CB = new System.Windows.Forms.CheckBox();
+            this.V6_CB = new System.Windows.Forms.CheckBox();
+            this.V5_CB = new System.Windows.Forms.CheckBox();
+            this.V4_CB = new System.Windows.Forms.CheckBox();
+            this.V3_CB = new System.Windows.Forms.CheckBox();
+            this.V2_CB = new System.Windows.Forms.CheckBox();
+            this.V1_CB = new System.Windows.Forms.CheckBox();
+            this.V0_CB = new System.Windows.Forms.CheckBox();
+            this.S4_CB = new System.Windows.Forms.CheckBox();
+            this.S3_CB = new System.Windows.Forms.CheckBox();
+            this.S2_CB = new System.Windows.Forms.CheckBox();
+            this.S1_CB = new System.Windows.Forms.CheckBox();
+            this.S0_CB = new System.Windows.Forms.CheckBox();
+            this.J12_CB = new System.Windows.Forms.CheckBox();
+            this.J11_CB = new System.Windows.Forms.CheckBox();
+            this.J10_CB = new System.Windows.Forms.CheckBox();
+            this.J9_CB = new System.Windows.Forms.CheckBox();
+            this.J8_CB = new System.Windows.Forms.CheckBox();
+            this.J7_CB = new System.Windows.Forms.CheckBox();
+            this.J6_CB = new System.Windows.Forms.CheckBox();
+            this.J5_CB = new System.Windows.Forms.CheckBox();
+            this.J4_CB = new System.Windows.Forms.CheckBox();
+            this.J3_CB = new System.Windows.Forms.CheckBox();
+            this.J2_CB = new System.Windows.Forms.CheckBox();
+            this.J1_CB = new System.Windows.Forms.CheckBox();
+            this.J0_CB = new System.Windows.Forms.CheckBox();
+            this.X12_CB = new System.Windows.Forms.CheckBox();
+            this.X11_CB = new System.Windows.Forms.CheckBox();
+            this.X10_CB = new System.Windows.Forms.CheckBox();
+            this.X9_CB = new System.Windows.Forms.CheckBox();
+            this.X8_CB = new System.Windows.Forms.CheckBox();
+            this.X7_CB = new System.Windows.Forms.CheckBox();
+            this.X6_CB = new System.Windows.Forms.CheckBox();
+            this.X5_CB = new System.Windows.Forms.CheckBox();
+            this.X4_CB = new System.Windows.Forms.CheckBox();
+            this.X3_CB = new System.Windows.Forms.CheckBox();
+            this.X2_CB = new System.Windows.Forms.CheckBox();
+            this.X1_CB = new System.Windows.Forms.CheckBox();
+            this.X0_CB = new System.Windows.Forms.CheckBox();
+            this.M12_CB = new System.Windows.Forms.CheckBox();
+            this.M11_CB = new System.Windows.Forms.CheckBox();
+            this.M10_CB = new System.Windows.Forms.CheckBox();
+            this.M9_CB = new System.Windows.Forms.CheckBox();
+            this.M8_CB = new System.Windows.Forms.CheckBox();
+            this.M7_CB = new System.Windows.Forms.CheckBox();
+            this.M6_CB = new System.Windows.Forms.CheckBox();
+            this.M5_CB = new System.Windows.Forms.CheckBox();
+            this.M4_CB = new System.Windows.Forms.CheckBox();
+            this.M3_CB = new System.Windows.Forms.CheckBox();
+            this.M2_CB = new System.Windows.Forms.CheckBox();
+            this.M1_CB = new System.Windows.Forms.CheckBox();
+            this.M0_CB = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Hora13_LB = new System.Windows.Forms.Label();
+            this.Hora12_LB = new System.Windows.Forms.Label();
+            this.Hora11_LB = new System.Windows.Forms.Label();
+            this.Hora10_LB = new System.Windows.Forms.Label();
+            this.Hora9_LB = new System.Windows.Forms.Label();
+            this.Hora8_LB = new System.Windows.Forms.Label();
+            this.Hora7_LB = new System.Windows.Forms.Label();
+            this.Hora6_LB = new System.Windows.Forms.Label();
+            this.Hora5_LB = new System.Windows.Forms.Label();
+            this.Hora4_LB = new System.Windows.Forms.Label();
+            this.Hora3_LB = new System.Windows.Forms.Label();
+            this.Hora2_LB = new System.Windows.Forms.Label();
+            this.Hora1_LB = new System.Windows.Forms.Label();
+            this.Hora0_LB = new System.Windows.Forms.Label();
+            this.L8AM_CB = new System.Windows.Forms.CheckBox();
+            this.M8AM_CB = new System.Windows.Forms.CheckBox();
+            this.X8AM_CB = new System.Windows.Forms.CheckBox();
+            this.J8AM_CB = new System.Windows.Forms.CheckBox();
+            this.V8AM_CB = new System.Windows.Forms.CheckBox();
             this.Datos_Disponibilidad = new System.Windows.Forms.BindingSource(this.components);
             this.Fecha_DTP = new System.Windows.Forms.DateTimePicker();
             this.Observaciones_TB = new System.Windows.Forms.TextBox();
@@ -144,12 +150,8 @@ namespace moleQule.Face.Instruction
             this.FInicio_Label = new System.Windows.Forms.Label();
             this.Desmarcar_BT = new System.Windows.Forms.Button();
             this.Marcar_BT = new System.Windows.Forms.Button();
-            this.Hora0_LB = new System.Windows.Forms.Label();
-            this.L8AM_CB = new System.Windows.Forms.CheckBox();
-            this.M8AM_CB = new System.Windows.Forms.CheckBox();
-            this.X8AM_CB = new System.Windows.Forms.CheckBox();
-            this.J8AM_CB = new System.Windows.Forms.CheckBox();
-            this.V8AM_CB = new System.Windows.Forms.CheckBox();
+            this.LoadDefault_BT = new System.Windows.Forms.Button();
+            this.SetDefault_BT = new System.Windows.Forms.Button();
             observacionesLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PanelesV)).BeginInit();
             this.PanelesV.Panel1.SuspendLayout();
@@ -176,6 +178,8 @@ namespace moleQule.Face.Instruction
             // 
             // PanelesV.Panel1
             // 
+            this.PanelesV.Panel1.Controls.Add(this.SetDefault_BT);
+            this.PanelesV.Panel1.Controls.Add(this.LoadDefault_BT);
             this.PanelesV.Panel1.Controls.Add(this.Marcar_BT);
             this.PanelesV.Panel1.Controls.Add(this.Desmarcar_BT);
             this.PanelesV.Panel1.Controls.Add(this.FInicio_Label);
@@ -192,7 +196,7 @@ namespace moleQule.Face.Instruction
             // 
             this.HelpProvider.SetShowHelp(this.PanelesV.Panel2, true);
             this.HelpProvider.SetShowHelp(this.PanelesV, true);
-            this.PanelesV.Size = new System.Drawing.Size(854, 682);
+            this.PanelesV.Size = new System.Drawing.Size(1070, 682);
             this.PanelesV.SplitterDistance = 641;
             // 
             // Submit_BT
@@ -220,7 +224,7 @@ namespace moleQule.Face.Instruction
             // 
             this.HelpProvider.SetShowHelp(this.Paneles2.Panel2, true);
             this.HelpProvider.SetShowHelp(this.Paneles2, true);
-            this.Paneles2.Size = new System.Drawing.Size(852, 38);
+            this.Paneles2.Size = new System.Drawing.Size(1068, 38);
             this.Paneles2.SplitterDistance = 34;
             // 
             // Imprimir_Button
@@ -236,24 +240,24 @@ namespace moleQule.Face.Instruction
             // 
             // Progress_Panel
             // 
-            this.Progress_Panel.Location = new System.Drawing.Point(218, 24);
+            this.Progress_Panel.Location = new System.Drawing.Point(326, 232);
             // 
             // ProgressBK_Panel
             // 
-            this.ProgressBK_Panel.Size = new System.Drawing.Size(854, 682);
+            this.ProgressBK_Panel.Size = new System.Drawing.Size(1070, 682);
             // 
             // ProgressInfo_PB
             // 
-            this.ProgressInfo_PB.Location = new System.Drawing.Point(390, 389);
+            this.ProgressInfo_PB.Location = new System.Drawing.Point(498, 389);
             // 
             // Progress_PB
             // 
-            this.Progress_PB.Location = new System.Drawing.Point(390, 304);
+            this.Progress_PB.Location = new System.Drawing.Point(498, 304);
             // 
             // observacionesLabel
             // 
             observacionesLabel.AutoSize = true;
-            observacionesLabel.Location = new System.Drawing.Point(82, 573);
+            observacionesLabel.Location = new System.Drawing.Point(82, 542);
             observacionesLabel.Name = "observacionesLabel";
             observacionesLabel.Size = new System.Drawing.Size(93, 13);
             observacionesLabel.TabIndex = 10;
@@ -460,635 +464,6 @@ namespace moleQule.Face.Instruction
             this.DisponibilidadGrid.Size = new System.Drawing.Size(626, 346);
             this.DisponibilidadGrid.TabIndex = 0;
             // 
-            // S0_CB
-            // 
-            this.S0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.S0_CB.AutoSize = true;
-            this.S0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.S0_CB.Location = new System.Drawing.Point(519, 63);
-            this.S0_CB.Name = "S0_CB";
-            this.S0_CB.Size = new System.Drawing.Size(70, 14);
-            this.S0_CB.TabIndex = 33;
-            this.S0_CB.UseVisualStyleBackColor = true;
-            this.S0_CB.CheckedChanged += new System.EventHandler(this.S0_CB_CheckedChanged);
-            this.S0_CB.MouseLeave += new System.EventHandler(this.S0_CB_MouseLeave);
-            this.S0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S0_CB_MouseMove);
-            // 
-            // V0_CB
-            // 
-            this.V0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V0_CB.AutoSize = true;
-            this.V0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V0_CB.Location = new System.Drawing.Point(443, 63);
-            this.V0_CB.Name = "V0_CB";
-            this.V0_CB.Size = new System.Drawing.Size(70, 14);
-            this.V0_CB.TabIndex = 33;
-            this.V0_CB.UseVisualStyleBackColor = true;
-            this.V0_CB.CheckedChanged += new System.EventHandler(this.V0_CB_CheckedChanged);
-            this.V0_CB.MouseLeave += new System.EventHandler(this.V0_CB_MouseLeave);
-            this.V0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V0_CB_MouseMove);
-            // 
-            // J0_CB
-            // 
-            this.J0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J0_CB.AutoSize = true;
-            this.J0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J0_CB.Location = new System.Drawing.Point(367, 63);
-            this.J0_CB.Name = "J0_CB";
-            this.J0_CB.Size = new System.Drawing.Size(70, 14);
-            this.J0_CB.TabIndex = 33;
-            this.J0_CB.UseVisualStyleBackColor = true;
-            this.J0_CB.CheckedChanged += new System.EventHandler(this.J0_CB_CheckedChanged);
-            this.J0_CB.MouseLeave += new System.EventHandler(this.J0_CB_MouseLeave);
-            this.J0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J0_CB_MouseMove);
-            // 
-            // X0_CB
-            // 
-            this.X0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X0_CB.AutoSize = true;
-            this.X0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X0_CB.Location = new System.Drawing.Point(291, 63);
-            this.X0_CB.Name = "X0_CB";
-            this.X0_CB.Size = new System.Drawing.Size(70, 14);
-            this.X0_CB.TabIndex = 33;
-            this.X0_CB.UseVisualStyleBackColor = true;
-            this.X0_CB.CheckedChanged += new System.EventHandler(this.X0_CB_CheckedChanged);
-            this.X0_CB.MouseLeave += new System.EventHandler(this.X0_CB_MouseLeave);
-            this.X0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X0_CB_MouseMove);
-            // 
-            // Hora12_LB
-            // 
-            this.Hora12_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora12_LB.AutoSize = true;
-            this.Hora12_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora12_LB.Location = new System.Drawing.Point(34, 280);
-            this.Hora12_LB.Name = "Hora12_LB";
-            this.Hora12_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora12_LB.TabIndex = 93;
-            this.Hora12_LB.Text = "20:00-21:00";
-            this.Hora12_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora11_LB
-            // 
-            this.Hora11_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora11_LB.AutoSize = true;
-            this.Hora11_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora11_LB.Location = new System.Drawing.Point(34, 260);
-            this.Hora11_LB.Name = "Hora11_LB";
-            this.Hora11_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora11_LB.TabIndex = 92;
-            this.Hora11_LB.Text = "19:00-20:00";
-            this.Hora11_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora10_LB
-            // 
-            this.Hora10_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora10_LB.AutoSize = true;
-            this.Hora10_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora10_LB.Location = new System.Drawing.Point(34, 240);
-            this.Hora10_LB.Name = "Hora10_LB";
-            this.Hora10_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora10_LB.TabIndex = 91;
-            this.Hora10_LB.Text = "18:00-19:00";
-            this.Hora10_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora9_LB
-            // 
-            this.Hora9_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora9_LB.AutoSize = true;
-            this.Hora9_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora9_LB.Location = new System.Drawing.Point(34, 220);
-            this.Hora9_LB.Name = "Hora9_LB";
-            this.Hora9_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora9_LB.TabIndex = 90;
-            this.Hora9_LB.Text = "17:00-18:00";
-            this.Hora9_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora8_LB
-            // 
-            this.Hora8_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora8_LB.AutoSize = true;
-            this.Hora8_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora8_LB.Location = new System.Drawing.Point(34, 200);
-            this.Hora8_LB.Name = "Hora8_LB";
-            this.Hora8_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora8_LB.TabIndex = 89;
-            this.Hora8_LB.Text = "16:00-17:00";
-            this.Hora8_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora5_LB
-            // 
-            this.Hora5_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora5_LB.AutoSize = true;
-            this.Hora5_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora5_LB.Location = new System.Drawing.Point(34, 140);
-            this.Hora5_LB.Name = "Hora5_LB";
-            this.Hora5_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora5_LB.TabIndex = 88;
-            this.Hora5_LB.Text = "13:00-14:00";
-            this.Hora5_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // L8_CB
-            // 
-            this.L8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L8_CB.AutoSize = true;
-            this.L8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L8_CB.Location = new System.Drawing.Point(140, 223);
-            this.L8_CB.Name = "L8_CB";
-            this.L8_CB.Size = new System.Drawing.Size(69, 14);
-            this.L8_CB.TabIndex = 65;
-            this.L8_CB.UseVisualStyleBackColor = true;
-            this.L8_CB.CheckedChanged += new System.EventHandler(this.L8_CB_CheckedChanged);
-            this.L8_CB.MouseLeave += new System.EventHandler(this.L8_CB_MouseLeave);
-            this.L8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L8_CB_MouseMove);
-            // 
-            // L9_CB
-            // 
-            this.L9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L9_CB.AutoSize = true;
-            this.L9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L9_CB.Location = new System.Drawing.Point(140, 243);
-            this.L9_CB.Name = "L9_CB";
-            this.L9_CB.Size = new System.Drawing.Size(69, 14);
-            this.L9_CB.TabIndex = 60;
-            this.L9_CB.UseVisualStyleBackColor = true;
-            this.L9_CB.CheckedChanged += new System.EventHandler(this.L9_CB_CheckedChanged);
-            this.L9_CB.MouseLeave += new System.EventHandler(this.L9_CB_MouseLeave);
-            this.L9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L9_CB_MouseMove);
-            // 
-            // M4_CB
-            // 
-            this.M4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M4_CB.AutoSize = true;
-            this.M4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M4_CB.Location = new System.Drawing.Point(215, 143);
-            this.M4_CB.Name = "M4_CB";
-            this.M4_CB.Size = new System.Drawing.Size(70, 14);
-            this.M4_CB.TabIndex = 57;
-            this.M4_CB.UseVisualStyleBackColor = true;
-            this.M4_CB.CheckedChanged += new System.EventHandler(this.M4_CB_CheckedChanged);
-            this.M4_CB.MouseLeave += new System.EventHandler(this.M4_CB_MouseLeave);
-            this.M4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M4_CB_MouseMove);
-            // 
-            // X4_CB
-            // 
-            this.X4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X4_CB.AutoSize = true;
-            this.X4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X4_CB.Location = new System.Drawing.Point(291, 143);
-            this.X4_CB.Name = "X4_CB";
-            this.X4_CB.Size = new System.Drawing.Size(70, 14);
-            this.X4_CB.TabIndex = 56;
-            this.X4_CB.UseVisualStyleBackColor = true;
-            this.X4_CB.CheckedChanged += new System.EventHandler(this.X4_CB_CheckedChanged);
-            this.X4_CB.MouseLeave += new System.EventHandler(this.X4_CB_MouseLeave);
-            this.X4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X4_CB_MouseMove);
-            // 
-            // J4_CB
-            // 
-            this.J4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J4_CB.AutoSize = true;
-            this.J4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J4_CB.Location = new System.Drawing.Point(367, 143);
-            this.J4_CB.Name = "J4_CB";
-            this.J4_CB.Size = new System.Drawing.Size(70, 14);
-            this.J4_CB.TabIndex = 55;
-            this.J4_CB.UseVisualStyleBackColor = true;
-            this.J4_CB.CheckedChanged += new System.EventHandler(this.J4_CB_CheckedChanged);
-            this.J4_CB.MouseLeave += new System.EventHandler(this.J4_CB_MouseLeave);
-            this.J4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J4_CB_MouseMove);
-            // 
-            // V4_CB
-            // 
-            this.V4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V4_CB.AutoSize = true;
-            this.V4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V4_CB.Location = new System.Drawing.Point(443, 143);
-            this.V4_CB.Name = "V4_CB";
-            this.V4_CB.Size = new System.Drawing.Size(70, 14);
-            this.V4_CB.TabIndex = 54;
-            this.V4_CB.UseVisualStyleBackColor = true;
-            this.V4_CB.CheckedChanged += new System.EventHandler(this.V4_CB_CheckedChanged);
-            this.V4_CB.MouseLeave += new System.EventHandler(this.V4_CB_MouseLeave);
-            this.V4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V4_CB_MouseMove);
-            // 
-            // S4_CB
-            // 
-            this.S4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.S4_CB.AutoSize = true;
-            this.S4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.S4_CB.Location = new System.Drawing.Point(519, 143);
-            this.S4_CB.Name = "S4_CB";
-            this.S4_CB.Size = new System.Drawing.Size(70, 14);
-            this.S4_CB.TabIndex = 53;
-            this.S4_CB.UseVisualStyleBackColor = true;
-            this.S4_CB.CheckedChanged += new System.EventHandler(this.S4_CB_CheckedChanged);
-            this.S4_CB.MouseLeave += new System.EventHandler(this.S4_CB_MouseLeave);
-            this.S4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S4_CB_MouseMove);
-            // 
-            // S3_CB
-            // 
-            this.S3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.S3_CB.AutoSize = true;
-            this.S3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.S3_CB.Location = new System.Drawing.Point(519, 123);
-            this.S3_CB.Name = "S3_CB";
-            this.S3_CB.Size = new System.Drawing.Size(70, 14);
-            this.S3_CB.TabIndex = 46;
-            this.S3_CB.UseVisualStyleBackColor = true;
-            this.S3_CB.CheckedChanged += new System.EventHandler(this.S3_CB_CheckedChanged);
-            this.S3_CB.MouseLeave += new System.EventHandler(this.S3_CB_MouseLeave);
-            this.S3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S3_CB_MouseMove);
-            // 
-            // V3_CB
-            // 
-            this.V3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V3_CB.AutoSize = true;
-            this.V3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V3_CB.Location = new System.Drawing.Point(443, 123);
-            this.V3_CB.Name = "V3_CB";
-            this.V3_CB.Size = new System.Drawing.Size(70, 14);
-            this.V3_CB.TabIndex = 45;
-            this.V3_CB.UseVisualStyleBackColor = true;
-            this.V3_CB.CheckedChanged += new System.EventHandler(this.V3_CB_CheckedChanged);
-            this.V3_CB.MouseLeave += new System.EventHandler(this.V3_CB_MouseLeave);
-            this.V3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V3_CB_MouseMove);
-            // 
-            // J3_CB
-            // 
-            this.J3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J3_CB.AutoSize = true;
-            this.J3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J3_CB.Location = new System.Drawing.Point(367, 123);
-            this.J3_CB.Name = "J3_CB";
-            this.J3_CB.Size = new System.Drawing.Size(70, 14);
-            this.J3_CB.TabIndex = 44;
-            this.J3_CB.UseVisualStyleBackColor = true;
-            this.J3_CB.CheckedChanged += new System.EventHandler(this.J3_CB_CheckedChanged);
-            this.J3_CB.MouseLeave += new System.EventHandler(this.J3_CB_MouseLeave);
-            this.J3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J3_CB_MouseMove);
-            // 
-            // X3_CB
-            // 
-            this.X3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X3_CB.AutoSize = true;
-            this.X3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X3_CB.Location = new System.Drawing.Point(291, 123);
-            this.X3_CB.Name = "X3_CB";
-            this.X3_CB.Size = new System.Drawing.Size(70, 14);
-            this.X3_CB.TabIndex = 43;
-            this.X3_CB.UseVisualStyleBackColor = true;
-            this.X3_CB.CheckedChanged += new System.EventHandler(this.X3_CB_CheckedChanged);
-            this.X3_CB.MouseLeave += new System.EventHandler(this.X3_CB_MouseLeave);
-            this.X3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X3_CB_MouseMove);
-            // 
-            // M3_CB
-            // 
-            this.M3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M3_CB.AutoSize = true;
-            this.M3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M3_CB.Location = new System.Drawing.Point(215, 123);
-            this.M3_CB.Name = "M3_CB";
-            this.M3_CB.Size = new System.Drawing.Size(70, 14);
-            this.M3_CB.TabIndex = 42;
-            this.M3_CB.UseVisualStyleBackColor = true;
-            this.M3_CB.CheckedChanged += new System.EventHandler(this.M3_CB_CheckedChanged);
-            this.M3_CB.MouseLeave += new System.EventHandler(this.M3_CB_MouseLeave);
-            this.M3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M3_CB_MouseMove);
-            // 
-            // S2_CB
-            // 
-            this.S2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.S2_CB.AutoSize = true;
-            this.S2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.S2_CB.Location = new System.Drawing.Point(519, 103);
-            this.S2_CB.Name = "S2_CB";
-            this.S2_CB.Size = new System.Drawing.Size(70, 14);
-            this.S2_CB.TabIndex = 40;
-            this.S2_CB.UseVisualStyleBackColor = true;
-            this.S2_CB.CheckedChanged += new System.EventHandler(this.S2_CB_CheckedChanged);
-            this.S2_CB.MouseLeave += new System.EventHandler(this.S2_CB_MouseLeave);
-            this.S2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S2_CB_MouseMove);
-            // 
-            // V2_CB
-            // 
-            this.V2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V2_CB.AutoSize = true;
-            this.V2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V2_CB.Location = new System.Drawing.Point(443, 103);
-            this.V2_CB.Name = "V2_CB";
-            this.V2_CB.Size = new System.Drawing.Size(70, 14);
-            this.V2_CB.TabIndex = 39;
-            this.V2_CB.UseVisualStyleBackColor = true;
-            this.V2_CB.CheckedChanged += new System.EventHandler(this.V2_CB_CheckedChanged);
-            this.V2_CB.MouseLeave += new System.EventHandler(this.V2_CB_MouseLeave);
-            this.V2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V2_CB_MouseMove);
-            // 
-            // J2_CB
-            // 
-            this.J2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J2_CB.AutoSize = true;
-            this.J2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J2_CB.Location = new System.Drawing.Point(367, 103);
-            this.J2_CB.Name = "J2_CB";
-            this.J2_CB.Size = new System.Drawing.Size(70, 14);
-            this.J2_CB.TabIndex = 38;
-            this.J2_CB.UseVisualStyleBackColor = true;
-            this.J2_CB.CheckedChanged += new System.EventHandler(this.J2_CB_CheckedChanged);
-            this.J2_CB.MouseLeave += new System.EventHandler(this.J2_CB_MouseLeave);
-            this.J2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J2_CB_MouseMove);
-            // 
-            // X2_CB
-            // 
-            this.X2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X2_CB.AutoSize = true;
-            this.X2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X2_CB.Location = new System.Drawing.Point(291, 103);
-            this.X2_CB.Name = "X2_CB";
-            this.X2_CB.Size = new System.Drawing.Size(70, 14);
-            this.X2_CB.TabIndex = 37;
-            this.X2_CB.UseVisualStyleBackColor = true;
-            this.X2_CB.CheckedChanged += new System.EventHandler(this.X2_CB_CheckedChanged);
-            this.X2_CB.MouseLeave += new System.EventHandler(this.X2_CB_MouseLeave);
-            this.X2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X2_CB_MouseMove);
-            // 
-            // M2_CB
-            // 
-            this.M2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M2_CB.AutoSize = true;
-            this.M2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M2_CB.Location = new System.Drawing.Point(215, 103);
-            this.M2_CB.Name = "M2_CB";
-            this.M2_CB.Size = new System.Drawing.Size(70, 14);
-            this.M2_CB.TabIndex = 36;
-            this.M2_CB.UseVisualStyleBackColor = true;
-            this.M2_CB.CheckedChanged += new System.EventHandler(this.M2_CB_CheckedChanged);
-            this.M2_CB.MouseLeave += new System.EventHandler(this.M2_CB_MouseLeave);
-            this.M2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M2_CB_MouseMove);
-            // 
-            // L2_CB
-            // 
-            this.L2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L2_CB.AutoSize = true;
-            this.L2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L2_CB.Location = new System.Drawing.Point(140, 103);
-            this.L2_CB.Name = "L2_CB";
-            this.L2_CB.Size = new System.Drawing.Size(69, 14);
-            this.L2_CB.TabIndex = 35;
-            this.L2_CB.UseVisualStyleBackColor = true;
-            this.L2_CB.CheckedChanged += new System.EventHandler(this.L2_CB_CheckedChanged);
-            this.L2_CB.MouseLeave += new System.EventHandler(this.L2_CB_MouseLeave);
-            this.L2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L2_CB_MouseMove);
-            // 
-            // V1_CB
-            // 
-            this.V1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V1_CB.AutoSize = true;
-            this.V1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V1_CB.Location = new System.Drawing.Point(443, 83);
-            this.V1_CB.Name = "V1_CB";
-            this.V1_CB.Size = new System.Drawing.Size(70, 14);
-            this.V1_CB.TabIndex = 31;
-            this.V1_CB.UseVisualStyleBackColor = true;
-            this.V1_CB.CheckedChanged += new System.EventHandler(this.V1_CB_CheckedChanged);
-            this.V1_CB.MouseLeave += new System.EventHandler(this.V1_CB_MouseLeave);
-            this.V1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V1_CB_MouseMove);
-            // 
-            // J1_CB
-            // 
-            this.J1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J1_CB.AutoSize = true;
-            this.J1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J1_CB.Location = new System.Drawing.Point(367, 83);
-            this.J1_CB.Name = "J1_CB";
-            this.J1_CB.Size = new System.Drawing.Size(70, 14);
-            this.J1_CB.TabIndex = 30;
-            this.J1_CB.UseVisualStyleBackColor = true;
-            this.J1_CB.CheckedChanged += new System.EventHandler(this.J1_CB_CheckedChanged);
-            this.J1_CB.MouseLeave += new System.EventHandler(this.J1_CB_MouseLeave);
-            this.J1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J1_CB_MouseMove);
-            // 
-            // X1_CB
-            // 
-            this.X1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X1_CB.AutoSize = true;
-            this.X1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X1_CB.Location = new System.Drawing.Point(291, 83);
-            this.X1_CB.Name = "X1_CB";
-            this.X1_CB.Size = new System.Drawing.Size(70, 14);
-            this.X1_CB.TabIndex = 29;
-            this.X1_CB.UseVisualStyleBackColor = true;
-            this.X1_CB.CheckedChanged += new System.EventHandler(this.X1_CB_CheckedChanged);
-            this.X1_CB.MouseLeave += new System.EventHandler(this.X1_CB_MouseLeave);
-            this.X1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X1_CB_MouseMove);
-            // 
-            // M1_CB
-            // 
-            this.M1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M1_CB.AutoSize = true;
-            this.M1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M1_CB.Location = new System.Drawing.Point(215, 83);
-            this.M1_CB.Name = "M1_CB";
-            this.M1_CB.Size = new System.Drawing.Size(70, 14);
-            this.M1_CB.TabIndex = 28;
-            this.M1_CB.UseVisualStyleBackColor = true;
-            this.M1_CB.CheckedChanged += new System.EventHandler(this.M1_CB_CheckedChanged);
-            this.M1_CB.MouseLeave += new System.EventHandler(this.M1_CB_MouseLeave);
-            this.M1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M1_CB_MouseMove);
-            // 
-            // L3_CB
-            // 
-            this.L3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L3_CB.AutoSize = true;
-            this.L3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L3_CB.Location = new System.Drawing.Point(140, 123);
-            this.L3_CB.Name = "L3_CB";
-            this.L3_CB.Size = new System.Drawing.Size(69, 14);
-            this.L3_CB.TabIndex = 16;
-            this.L3_CB.UseVisualStyleBackColor = true;
-            this.L3_CB.CheckedChanged += new System.EventHandler(this.L3_CB_CheckedChanged);
-            this.L3_CB.MouseLeave += new System.EventHandler(this.L3_CB_MouseLeave);
-            this.L3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L3_CB_MouseMove);
-            // 
-            // L1_CB
-            // 
-            this.L1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L1_CB.AutoSize = true;
-            this.L1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L1_CB.Location = new System.Drawing.Point(140, 83);
-            this.L1_CB.Name = "L1_CB";
-            this.L1_CB.Size = new System.Drawing.Size(69, 14);
-            this.L1_CB.TabIndex = 0;
-            this.L1_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L1_CB.UseVisualStyleBackColor = true;
-            this.L1_CB.CheckedChanged += new System.EventHandler(this.L1_CB_CheckedChanged);
-            this.L1_CB.MouseLeave += new System.EventHandler(this.L1_CB_MouseLeave);
-            this.L1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L1_CB_MouseMove);
-            // 
-            // L7_CB
-            // 
-            this.L7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L7_CB.AutoSize = true;
-            this.L7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L7_CB.Location = new System.Drawing.Point(140, 203);
-            this.L7_CB.Name = "L7_CB";
-            this.L7_CB.Size = new System.Drawing.Size(69, 14);
-            this.L7_CB.TabIndex = 17;
-            this.L7_CB.UseVisualStyleBackColor = true;
-            this.L7_CB.CheckedChanged += new System.EventHandler(this.L7_CB_CheckedChanged);
-            this.L7_CB.MouseLeave += new System.EventHandler(this.L7_CB_MouseLeave);
-            this.L7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L7_CB_MouseMove);
-            // 
-            // L4_CB
-            // 
-            this.L4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L4_CB.AutoSize = true;
-            this.L4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L4_CB.Location = new System.Drawing.Point(140, 143);
-            this.L4_CB.Name = "L4_CB";
-            this.L4_CB.Size = new System.Drawing.Size(69, 14);
-            this.L4_CB.TabIndex = 23;
-            this.L4_CB.UseVisualStyleBackColor = true;
-            this.L4_CB.CheckedChanged += new System.EventHandler(this.L4_CB_CheckedChanged);
-            this.L4_CB.MouseLeave += new System.EventHandler(this.L4_CB_MouseLeave);
-            this.L4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L4_CB_MouseMove);
-            // 
-            // L10_CB
-            // 
-            this.L10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L10_CB.AutoSize = true;
-            this.L10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L10_CB.Location = new System.Drawing.Point(140, 263);
-            this.L10_CB.Name = "L10_CB";
-            this.L10_CB.Size = new System.Drawing.Size(69, 14);
-            this.L10_CB.TabIndex = 18;
-            this.L10_CB.UseVisualStyleBackColor = true;
-            this.L10_CB.CheckedChanged += new System.EventHandler(this.L10_CB_CheckedChanged);
-            this.L10_CB.MouseLeave += new System.EventHandler(this.L10_CB_MouseLeave);
-            this.L10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L10_CB_MouseMove);
-            // 
-            // L11_CB
-            // 
-            this.L11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L11_CB.AutoSize = true;
-            this.L11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L11_CB.Location = new System.Drawing.Point(140, 283);
-            this.L11_CB.Name = "L11_CB";
-            this.L11_CB.Size = new System.Drawing.Size(69, 14);
-            this.L11_CB.TabIndex = 58;
-            this.L11_CB.UseVisualStyleBackColor = true;
-            this.L11_CB.CheckedChanged += new System.EventHandler(this.L11_CB_CheckedChanged);
-            this.L11_CB.MouseLeave += new System.EventHandler(this.L11_CB_MouseLeave);
-            this.L11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L11_CB_MouseMove);
-            // 
-            // L12_CB
-            // 
-            this.L12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L12_CB.AutoSize = true;
-            this.L12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L12_CB.Location = new System.Drawing.Point(140, 303);
-            this.L12_CB.Name = "L12_CB";
-            this.L12_CB.Size = new System.Drawing.Size(69, 14);
-            this.L12_CB.TabIndex = 73;
-            this.L12_CB.UseVisualStyleBackColor = true;
-            this.L12_CB.CheckedChanged += new System.EventHandler(this.L12_CB_CheckedChanged);
-            this.L12_CB.MouseLeave += new System.EventHandler(this.L12_CB_MouseLeave);
-            this.L12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L12_CB_MouseMove);
-            // 
-            // M12_CB
-            // 
-            this.M12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M12_CB.AutoSize = true;
-            this.M12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M12_CB.Location = new System.Drawing.Point(215, 303);
-            this.M12_CB.Name = "M12_CB";
-            this.M12_CB.Size = new System.Drawing.Size(70, 14);
-            this.M12_CB.TabIndex = 33;
-            this.M12_CB.UseVisualStyleBackColor = true;
-            this.M12_CB.CheckedChanged += new System.EventHandler(this.M12_CB_CheckedChanged);
-            this.M12_CB.MouseLeave += new System.EventHandler(this.M12_CB_MouseLeave);
-            this.M12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M12_CB_MouseMove);
-            // 
             // Lunes_LB
             // 
             this.Lunes_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -1167,138 +542,115 @@ namespace moleQule.Face.Instruction
             this.Sabado_LB.Text = "SÁBADO";
             this.Sabado_LB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Hora2_LB
+            // ND_L_CB
             // 
-            this.Hora2_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ND_L_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora2_LB.AutoSize = true;
-            this.Hora2_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora2_LB.Location = new System.Drawing.Point(34, 80);
-            this.Hora2_LB.Name = "Hora2_LB";
-            this.Hora2_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora2_LB.TabIndex = 84;
-            this.Hora2_LB.Text = "10:00-11:00";
-            this.Hora2_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ND_L_CB.AutoSize = true;
+            this.ND_L_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ND_L_CB.Location = new System.Drawing.Point(140, 323);
+            this.ND_L_CB.Name = "ND_L_CB";
+            this.ND_L_CB.Size = new System.Drawing.Size(69, 20);
+            this.ND_L_CB.TabIndex = 117;
+            this.ND_L_CB.UseVisualStyleBackColor = true;
+            this.ND_L_CB.CheckedChanged += new System.EventHandler(this.ND_L_CB_CheckedChanged);
             // 
-            // Hora3_LB
+            // L12_CB
             // 
-            this.Hora3_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora3_LB.AutoSize = true;
-            this.Hora3_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora3_LB.Location = new System.Drawing.Point(34, 100);
-            this.Hora3_LB.Name = "Hora3_LB";
-            this.Hora3_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora3_LB.TabIndex = 85;
-            this.Hora3_LB.Text = "11:00-12:00";
-            this.Hora3_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.L12_CB.AutoSize = true;
+            this.L12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L12_CB.Location = new System.Drawing.Point(140, 303);
+            this.L12_CB.Name = "L12_CB";
+            this.L12_CB.Size = new System.Drawing.Size(69, 14);
+            this.L12_CB.TabIndex = 73;
+            this.L12_CB.UseVisualStyleBackColor = true;
+            this.L12_CB.CheckedChanged += new System.EventHandler(this.L12_CB_CheckedChanged);
+            this.L12_CB.MouseLeave += new System.EventHandler(this.L12_CB_MouseLeave);
+            this.L12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L12_CB_MouseMove);
             // 
-            // Hora4_LB
+            // L11_CB
             // 
-            this.Hora4_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora4_LB.AutoSize = true;
-            this.Hora4_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora4_LB.Location = new System.Drawing.Point(34, 120);
-            this.Hora4_LB.Name = "Hora4_LB";
-            this.Hora4_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora4_LB.TabIndex = 86;
-            this.Hora4_LB.Text = "12:00-13:00";
-            this.Hora4_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.L11_CB.AutoSize = true;
+            this.L11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L11_CB.Location = new System.Drawing.Point(140, 283);
+            this.L11_CB.Name = "L11_CB";
+            this.L11_CB.Size = new System.Drawing.Size(69, 14);
+            this.L11_CB.TabIndex = 58;
+            this.L11_CB.UseVisualStyleBackColor = true;
+            this.L11_CB.CheckedChanged += new System.EventHandler(this.L11_CB_CheckedChanged);
+            this.L11_CB.MouseLeave += new System.EventHandler(this.L11_CB_MouseLeave);
+            this.L11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L11_CB_MouseMove);
             // 
-            // S1_CB
+            // L10_CB
             // 
-            this.S1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.S1_CB.AutoSize = true;
-            this.S1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.S1_CB.Location = new System.Drawing.Point(519, 83);
-            this.S1_CB.Name = "S1_CB";
-            this.S1_CB.Size = new System.Drawing.Size(70, 14);
-            this.S1_CB.TabIndex = 32;
-            this.S1_CB.UseVisualStyleBackColor = true;
-            this.S1_CB.CheckedChanged += new System.EventHandler(this.S1_CB_CheckedChanged);
-            this.S1_CB.MouseLeave += new System.EventHandler(this.S1_CB_MouseLeave);
-            this.S1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S1_CB_MouseMove);
+            this.L10_CB.AutoSize = true;
+            this.L10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L10_CB.Location = new System.Drawing.Point(140, 263);
+            this.L10_CB.Name = "L10_CB";
+            this.L10_CB.Size = new System.Drawing.Size(69, 14);
+            this.L10_CB.TabIndex = 18;
+            this.L10_CB.UseVisualStyleBackColor = true;
+            this.L10_CB.CheckedChanged += new System.EventHandler(this.L10_CB_CheckedChanged);
+            this.L10_CB.MouseLeave += new System.EventHandler(this.L10_CB_MouseLeave);
+            this.L10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L10_CB_MouseMove);
             // 
-            // L0_CB
+            // L9_CB
             // 
-            this.L0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.L0_CB.AutoSize = true;
-            this.L0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L0_CB.Location = new System.Drawing.Point(140, 63);
-            this.L0_CB.Name = "L0_CB";
-            this.L0_CB.Size = new System.Drawing.Size(69, 14);
-            this.L0_CB.TabIndex = 96;
-            this.L0_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L0_CB.UseVisualStyleBackColor = true;
-            this.L0_CB.CheckedChanged += new System.EventHandler(this.L0_CB_CheckedChanged);
-            this.L0_CB.MouseLeave += new System.EventHandler(this.L0_CB_MouseLeave);
-            this.L0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L0_CB_MouseMove);
+            this.L9_CB.AutoSize = true;
+            this.L9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L9_CB.Location = new System.Drawing.Point(140, 243);
+            this.L9_CB.Name = "L9_CB";
+            this.L9_CB.Size = new System.Drawing.Size(69, 14);
+            this.L9_CB.TabIndex = 60;
+            this.L9_CB.UseVisualStyleBackColor = true;
+            this.L9_CB.CheckedChanged += new System.EventHandler(this.L9_CB_CheckedChanged);
+            this.L9_CB.MouseLeave += new System.EventHandler(this.L9_CB_MouseLeave);
+            this.L9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L9_CB_MouseMove);
             // 
-            // Hora6_LB
+            // L8_CB
             // 
-            this.Hora6_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora6_LB.AutoSize = true;
-            this.Hora6_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora6_LB.Location = new System.Drawing.Point(34, 160);
-            this.Hora6_LB.Name = "Hora6_LB";
-            this.Hora6_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora6_LB.TabIndex = 102;
-            this.Hora6_LB.Text = "14:00-15:00";
-            this.Hora6_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.L8_CB.AutoSize = true;
+            this.L8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L8_CB.Location = new System.Drawing.Point(140, 223);
+            this.L8_CB.Name = "L8_CB";
+            this.L8_CB.Size = new System.Drawing.Size(69, 14);
+            this.L8_CB.TabIndex = 65;
+            this.L8_CB.UseVisualStyleBackColor = true;
+            this.L8_CB.CheckedChanged += new System.EventHandler(this.L8_CB_CheckedChanged);
+            this.L8_CB.MouseLeave += new System.EventHandler(this.L8_CB_MouseLeave);
+            this.L8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L8_CB_MouseMove);
             // 
-            // Hora13_LB
+            // L7_CB
             // 
-            this.Hora13_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora13_LB.AutoSize = true;
-            this.Hora13_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora13_LB.Location = new System.Drawing.Point(34, 300);
-            this.Hora13_LB.Name = "Hora13_LB";
-            this.Hora13_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora13_LB.TabIndex = 94;
-            this.Hora13_LB.Text = "21:00-22:00";
-            this.Hora13_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // Hora7_LB
-            // 
-            this.Hora7_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora7_LB.AutoSize = true;
-            this.Hora7_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora7_LB.Location = new System.Drawing.Point(34, 180);
-            this.Hora7_LB.Name = "Hora7_LB";
-            this.Hora7_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora7_LB.TabIndex = 103;
-            this.Hora7_LB.Text = "15:00-16:00";
-            this.Hora7_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // L5_CB
-            // 
-            this.L5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.L5_CB.AutoSize = true;
-            this.L5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.L5_CB.Location = new System.Drawing.Point(140, 163);
-            this.L5_CB.Name = "L5_CB";
-            this.L5_CB.Size = new System.Drawing.Size(69, 14);
-            this.L5_CB.TabIndex = 104;
-            this.L5_CB.UseVisualStyleBackColor = true;
-            this.L5_CB.CheckedChanged += new System.EventHandler(this.L5_CB_CheckedChanged);
-            this.L5_CB.MouseLeave += new System.EventHandler(this.L5_CB_MouseLeave);
-            this.L5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L5_CB_MouseMove);
+            this.L7_CB.AutoSize = true;
+            this.L7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L7_CB.Location = new System.Drawing.Point(140, 203);
+            this.L7_CB.Name = "L7_CB";
+            this.L7_CB.Size = new System.Drawing.Size(69, 14);
+            this.L7_CB.TabIndex = 17;
+            this.L7_CB.UseVisualStyleBackColor = true;
+            this.L7_CB.CheckedChanged += new System.EventHandler(this.L7_CB_CheckedChanged);
+            this.L7_CB.MouseLeave += new System.EventHandler(this.L7_CB_MouseLeave);
+            this.L7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L7_CB_MouseMove);
             // 
             // L6_CB
             // 
@@ -1316,559 +668,103 @@ namespace moleQule.Face.Instruction
             this.L6_CB.MouseLeave += new System.EventHandler(this.L6_CB_MouseLeave);
             this.L6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L6_CB_MouseMove);
             // 
-            // M5_CB
+            // L5_CB
             // 
-            this.M5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M5_CB.AutoSize = true;
-            this.M5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M5_CB.Location = new System.Drawing.Point(215, 163);
-            this.M5_CB.Name = "M5_CB";
-            this.M5_CB.Size = new System.Drawing.Size(70, 14);
-            this.M5_CB.TabIndex = 49;
-            this.M5_CB.UseVisualStyleBackColor = true;
-            this.M5_CB.CheckedChanged += new System.EventHandler(this.M5_CB_CheckedChanged);
-            this.M5_CB.MouseLeave += new System.EventHandler(this.M5_CB_MouseLeave);
-            this.M5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M5_CB_MouseMove);
+            this.L5_CB.AutoSize = true;
+            this.L5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L5_CB.Location = new System.Drawing.Point(140, 163);
+            this.L5_CB.Name = "L5_CB";
+            this.L5_CB.Size = new System.Drawing.Size(69, 14);
+            this.L5_CB.TabIndex = 104;
+            this.L5_CB.UseVisualStyleBackColor = true;
+            this.L5_CB.CheckedChanged += new System.EventHandler(this.L5_CB_CheckedChanged);
+            this.L5_CB.MouseLeave += new System.EventHandler(this.L5_CB_MouseLeave);
+            this.L5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L5_CB_MouseMove);
             // 
-            // M6_CB
+            // L4_CB
             // 
-            this.M6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M6_CB.AutoSize = true;
-            this.M6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M6_CB.Location = new System.Drawing.Point(215, 183);
-            this.M6_CB.Name = "M6_CB";
-            this.M6_CB.Size = new System.Drawing.Size(70, 14);
-            this.M6_CB.TabIndex = 34;
-            this.M6_CB.UseVisualStyleBackColor = true;
-            this.M6_CB.CheckedChanged += new System.EventHandler(this.M6_CB_CheckedChanged);
-            this.M6_CB.MouseLeave += new System.EventHandler(this.M6_CB_MouseLeave);
-            this.M6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M6_CB_MouseMove);
+            this.L4_CB.AutoSize = true;
+            this.L4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L4_CB.Location = new System.Drawing.Point(140, 143);
+            this.L4_CB.Name = "L4_CB";
+            this.L4_CB.Size = new System.Drawing.Size(69, 14);
+            this.L4_CB.TabIndex = 23;
+            this.L4_CB.UseVisualStyleBackColor = true;
+            this.L4_CB.CheckedChanged += new System.EventHandler(this.L4_CB_CheckedChanged);
+            this.L4_CB.MouseLeave += new System.EventHandler(this.L4_CB_MouseLeave);
+            this.L4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L4_CB_MouseMove);
             // 
-            // M8_CB
+            // L3_CB
             // 
-            this.M8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M8_CB.AutoSize = true;
-            this.M8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M8_CB.Location = new System.Drawing.Point(215, 223);
-            this.M8_CB.Name = "M8_CB";
-            this.M8_CB.Size = new System.Drawing.Size(70, 14);
-            this.M8_CB.TabIndex = 69;
-            this.M8_CB.UseVisualStyleBackColor = true;
-            this.M8_CB.CheckedChanged += new System.EventHandler(this.M8_CB_CheckedChanged);
-            this.M8_CB.MouseLeave += new System.EventHandler(this.M8_CB_MouseLeave);
-            this.M8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M8_CB_MouseMove);
+            this.L3_CB.AutoSize = true;
+            this.L3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L3_CB.Location = new System.Drawing.Point(140, 123);
+            this.L3_CB.Name = "L3_CB";
+            this.L3_CB.Size = new System.Drawing.Size(69, 14);
+            this.L3_CB.TabIndex = 16;
+            this.L3_CB.UseVisualStyleBackColor = true;
+            this.L3_CB.CheckedChanged += new System.EventHandler(this.L3_CB_CheckedChanged);
+            this.L3_CB.MouseLeave += new System.EventHandler(this.L3_CB_MouseLeave);
+            this.L3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L3_CB_MouseMove);
             // 
-            // M7_CB
+            // L2_CB
             // 
-            this.M7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M7_CB.AutoSize = true;
-            this.M7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M7_CB.Location = new System.Drawing.Point(215, 203);
-            this.M7_CB.Name = "M7_CB";
-            this.M7_CB.Size = new System.Drawing.Size(70, 14);
-            this.M7_CB.TabIndex = 61;
-            this.M7_CB.UseVisualStyleBackColor = true;
-            this.M7_CB.CheckedChanged += new System.EventHandler(this.M7_CB_CheckedChanged);
-            this.M7_CB.MouseLeave += new System.EventHandler(this.M7_CB_MouseLeave);
-            this.M7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M7_CB_MouseMove);
+            this.L2_CB.AutoSize = true;
+            this.L2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L2_CB.Location = new System.Drawing.Point(140, 103);
+            this.L2_CB.Name = "L2_CB";
+            this.L2_CB.Size = new System.Drawing.Size(69, 14);
+            this.L2_CB.TabIndex = 35;
+            this.L2_CB.UseVisualStyleBackColor = true;
+            this.L2_CB.CheckedChanged += new System.EventHandler(this.L2_CB_CheckedChanged);
+            this.L2_CB.MouseLeave += new System.EventHandler(this.L2_CB_MouseLeave);
+            this.L2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L2_CB_MouseMove);
             // 
-            // M11_CB
+            // L1_CB
             // 
-            this.M11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M11_CB.AutoSize = true;
-            this.M11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M11_CB.Location = new System.Drawing.Point(215, 283);
-            this.M11_CB.Name = "M11_CB";
-            this.M11_CB.Size = new System.Drawing.Size(70, 14);
-            this.M11_CB.TabIndex = 106;
-            this.M11_CB.UseVisualStyleBackColor = true;
-            this.M11_CB.CheckedChanged += new System.EventHandler(this.M11_CB_CheckedChanged);
-            this.M11_CB.MouseLeave += new System.EventHandler(this.M11_CB_MouseLeave);
-            this.M11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M11_CB_MouseMove);
+            this.L1_CB.AutoSize = true;
+            this.L1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L1_CB.Location = new System.Drawing.Point(140, 83);
+            this.L1_CB.Name = "L1_CB";
+            this.L1_CB.Size = new System.Drawing.Size(69, 14);
+            this.L1_CB.TabIndex = 0;
+            this.L1_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L1_CB.UseVisualStyleBackColor = true;
+            this.L1_CB.CheckedChanged += new System.EventHandler(this.L1_CB_CheckedChanged);
+            this.L1_CB.MouseLeave += new System.EventHandler(this.L1_CB_MouseLeave);
+            this.L1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L1_CB_MouseMove);
             // 
-            // M10_CB
+            // L0_CB
             // 
-            this.M10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.L0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.M10_CB.AutoSize = true;
-            this.M10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M10_CB.Location = new System.Drawing.Point(215, 263);
-            this.M10_CB.Name = "M10_CB";
-            this.M10_CB.Size = new System.Drawing.Size(70, 14);
-            this.M10_CB.TabIndex = 27;
-            this.M10_CB.UseVisualStyleBackColor = true;
-            this.M10_CB.CheckedChanged += new System.EventHandler(this.M10_CB_CheckedChanged);
-            this.M10_CB.MouseLeave += new System.EventHandler(this.M10_CB_MouseLeave);
-            this.M10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M10_CB_MouseMove);
-            // 
-            // M9_CB
-            // 
-            this.M9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M9_CB.AutoSize = true;
-            this.M9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M9_CB.Location = new System.Drawing.Point(215, 243);
-            this.M9_CB.Name = "M9_CB";
-            this.M9_CB.Size = new System.Drawing.Size(70, 14);
-            this.M9_CB.TabIndex = 107;
-            this.M9_CB.UseVisualStyleBackColor = true;
-            this.M9_CB.CheckedChanged += new System.EventHandler(this.M9_CB_CheckedChanged);
-            this.M9_CB.MouseLeave += new System.EventHandler(this.M9_CB_MouseLeave);
-            this.M9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M9_CB_MouseMove);
-            // 
-            // X5_CB
-            // 
-            this.X5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X5_CB.AutoSize = true;
-            this.X5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X5_CB.Location = new System.Drawing.Point(291, 163);
-            this.X5_CB.Name = "X5_CB";
-            this.X5_CB.Size = new System.Drawing.Size(70, 14);
-            this.X5_CB.TabIndex = 19;
-            this.X5_CB.UseVisualStyleBackColor = true;
-            this.X5_CB.CheckedChanged += new System.EventHandler(this.X5_CB_CheckedChanged);
-            this.X5_CB.MouseLeave += new System.EventHandler(this.X5_CB_MouseLeave);
-            this.X5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X5_CB_MouseMove);
-            // 
-            // X6_CB
-            // 
-            this.X6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X6_CB.AutoSize = true;
-            this.X6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X6_CB.Location = new System.Drawing.Point(291, 183);
-            this.X6_CB.Name = "X6_CB";
-            this.X6_CB.Size = new System.Drawing.Size(70, 14);
-            this.X6_CB.TabIndex = 64;
-            this.X6_CB.UseVisualStyleBackColor = true;
-            this.X6_CB.CheckedChanged += new System.EventHandler(this.X6_CB_CheckedChanged);
-            this.X6_CB.MouseLeave += new System.EventHandler(this.X6_CB_MouseLeave);
-            this.X6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X6_CB_MouseMove);
-            // 
-            // X7_CB
-            // 
-            this.X7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X7_CB.AutoSize = true;
-            this.X7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X7_CB.Location = new System.Drawing.Point(291, 203);
-            this.X7_CB.Name = "X7_CB";
-            this.X7_CB.Size = new System.Drawing.Size(70, 14);
-            this.X7_CB.TabIndex = 77;
-            this.X7_CB.UseVisualStyleBackColor = true;
-            this.X7_CB.CheckedChanged += new System.EventHandler(this.X7_CB_CheckedChanged);
-            this.X7_CB.MouseLeave += new System.EventHandler(this.X7_CB_MouseLeave);
-            this.X7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X7_CB_MouseMove);
-            // 
-            // X8_CB
-            // 
-            this.X8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X8_CB.AutoSize = true;
-            this.X8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X8_CB.Location = new System.Drawing.Point(291, 223);
-            this.X8_CB.Name = "X8_CB";
-            this.X8_CB.Size = new System.Drawing.Size(70, 14);
-            this.X8_CB.TabIndex = 41;
-            this.X8_CB.UseVisualStyleBackColor = true;
-            this.X8_CB.CheckedChanged += new System.EventHandler(this.X8_CB_CheckedChanged);
-            this.X8_CB.MouseLeave += new System.EventHandler(this.X8_CB_MouseLeave);
-            this.X8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X8_CB_MouseMove);
-            // 
-            // X9_CB
-            // 
-            this.X9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X9_CB.AutoSize = true;
-            this.X9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X9_CB.Location = new System.Drawing.Point(291, 243);
-            this.X9_CB.Name = "X9_CB";
-            this.X9_CB.Size = new System.Drawing.Size(70, 14);
-            this.X9_CB.TabIndex = 52;
-            this.X9_CB.UseVisualStyleBackColor = true;
-            this.X9_CB.CheckedChanged += new System.EventHandler(this.X9_CB_CheckedChanged);
-            this.X9_CB.MouseLeave += new System.EventHandler(this.X9_CB_MouseLeave);
-            this.X9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X9_CB_MouseMove);
-            // 
-            // X10_CB
-            // 
-            this.X10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X10_CB.AutoSize = true;
-            this.X10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X10_CB.Location = new System.Drawing.Point(291, 263);
-            this.X10_CB.Name = "X10_CB";
-            this.X10_CB.Size = new System.Drawing.Size(70, 14);
-            this.X10_CB.TabIndex = 20;
-            this.X10_CB.UseVisualStyleBackColor = true;
-            this.X10_CB.CheckedChanged += new System.EventHandler(this.X10_CB_CheckedChanged);
-            this.X10_CB.MouseLeave += new System.EventHandler(this.X10_CB_MouseLeave);
-            this.X10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X10_CB_MouseMove);
-            // 
-            // X11_CB
-            // 
-            this.X11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X11_CB.AutoSize = true;
-            this.X11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X11_CB.Location = new System.Drawing.Point(291, 283);
-            this.X11_CB.Name = "X11_CB";
-            this.X11_CB.Size = new System.Drawing.Size(70, 14);
-            this.X11_CB.TabIndex = 108;
-            this.X11_CB.UseVisualStyleBackColor = true;
-            this.X11_CB.CheckedChanged += new System.EventHandler(this.X11_CB_CheckedChanged);
-            this.X11_CB.MouseLeave += new System.EventHandler(this.X11_CB_MouseLeave);
-            this.X11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X11_CB_MouseMove);
-            // 
-            // X12_CB
-            // 
-            this.X12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.X12_CB.AutoSize = true;
-            this.X12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.X12_CB.Location = new System.Drawing.Point(291, 303);
-            this.X12_CB.Name = "X12_CB";
-            this.X12_CB.Size = new System.Drawing.Size(70, 14);
-            this.X12_CB.TabIndex = 109;
-            this.X12_CB.UseVisualStyleBackColor = true;
-            this.X12_CB.CheckedChanged += new System.EventHandler(this.X12_CB_CheckedChanged);
-            this.X12_CB.MouseLeave += new System.EventHandler(this.X12_CB_MouseLeave);
-            this.X12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X12_CB_MouseMove);
-            // 
-            // J5_CB
-            // 
-            this.J5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J5_CB.AutoSize = true;
-            this.J5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J5_CB.Location = new System.Drawing.Point(367, 163);
-            this.J5_CB.Name = "J5_CB";
-            this.J5_CB.Size = new System.Drawing.Size(70, 14);
-            this.J5_CB.TabIndex = 48;
-            this.J5_CB.UseVisualStyleBackColor = true;
-            this.J5_CB.CheckedChanged += new System.EventHandler(this.J5_CB_CheckedChanged);
-            this.J5_CB.MouseLeave += new System.EventHandler(this.J5_CB_MouseLeave);
-            this.J5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J5_CB_MouseMove);
-            // 
-            // J6_CB
-            // 
-            this.J6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J6_CB.AutoSize = true;
-            this.J6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J6_CB.Location = new System.Drawing.Point(367, 183);
-            this.J6_CB.Name = "J6_CB";
-            this.J6_CB.Size = new System.Drawing.Size(70, 14);
-            this.J6_CB.TabIndex = 63;
-            this.J6_CB.UseVisualStyleBackColor = true;
-            this.J6_CB.CheckedChanged += new System.EventHandler(this.J6_CB_CheckedChanged);
-            this.J6_CB.MouseLeave += new System.EventHandler(this.J6_CB_MouseLeave);
-            this.J6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J6_CB_MouseMove);
-            // 
-            // J7_CB
-            // 
-            this.J7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J7_CB.AutoSize = true;
-            this.J7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J7_CB.Location = new System.Drawing.Point(367, 203);
-            this.J7_CB.Name = "J7_CB";
-            this.J7_CB.Size = new System.Drawing.Size(70, 14);
-            this.J7_CB.TabIndex = 76;
-            this.J7_CB.UseVisualStyleBackColor = true;
-            this.J7_CB.CheckedChanged += new System.EventHandler(this.J7_CB_CheckedChanged);
-            this.J7_CB.MouseLeave += new System.EventHandler(this.J7_CB_MouseLeave);
-            this.J7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J7_CB_MouseMove);
-            // 
-            // J8_CB
-            // 
-            this.J8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J8_CB.AutoSize = true;
-            this.J8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J8_CB.Location = new System.Drawing.Point(367, 223);
-            this.J8_CB.Name = "J8_CB";
-            this.J8_CB.Size = new System.Drawing.Size(70, 14);
-            this.J8_CB.TabIndex = 70;
-            this.J8_CB.UseVisualStyleBackColor = true;
-            this.J8_CB.CheckedChanged += new System.EventHandler(this.J8_CB_CheckedChanged);
-            this.J8_CB.MouseLeave += new System.EventHandler(this.J8_CB_MouseLeave);
-            this.J8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J8_CB_MouseMove);
-            // 
-            // J9_CB
-            // 
-            this.J9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J9_CB.AutoSize = true;
-            this.J9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J9_CB.Location = new System.Drawing.Point(367, 243);
-            this.J9_CB.Name = "J9_CB";
-            this.J9_CB.Size = new System.Drawing.Size(70, 14);
-            this.J9_CB.TabIndex = 66;
-            this.J9_CB.UseVisualStyleBackColor = true;
-            this.J9_CB.CheckedChanged += new System.EventHandler(this.J9_CB_CheckedChanged);
-            this.J9_CB.MouseLeave += new System.EventHandler(this.J9_CB_MouseLeave);
-            this.J9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J9_CB_MouseMove);
-            // 
-            // J10_CB
-            // 
-            this.J10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J10_CB.AutoSize = true;
-            this.J10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J10_CB.Location = new System.Drawing.Point(367, 263);
-            this.J10_CB.Name = "J10_CB";
-            this.J10_CB.Size = new System.Drawing.Size(70, 14);
-            this.J10_CB.TabIndex = 21;
-            this.J10_CB.UseVisualStyleBackColor = true;
-            this.J10_CB.CheckedChanged += new System.EventHandler(this.J10_CB_CheckedChanged);
-            this.J10_CB.MouseLeave += new System.EventHandler(this.J10_CB_MouseLeave);
-            this.J10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J10_CB_MouseMove);
-            // 
-            // J11_CB
-            // 
-            this.J11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J11_CB.AutoSize = true;
-            this.J11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J11_CB.Location = new System.Drawing.Point(367, 283);
-            this.J11_CB.Name = "J11_CB";
-            this.J11_CB.Size = new System.Drawing.Size(70, 14);
-            this.J11_CB.TabIndex = 110;
-            this.J11_CB.UseVisualStyleBackColor = true;
-            this.J11_CB.CheckedChanged += new System.EventHandler(this.J11_CB_CheckedChanged);
-            this.J11_CB.MouseLeave += new System.EventHandler(this.J11_CB_MouseLeave);
-            this.J11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J11_CB_MouseMove);
-            // 
-            // V5_CB
-            // 
-            this.V5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V5_CB.AutoSize = true;
-            this.V5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V5_CB.Location = new System.Drawing.Point(443, 163);
-            this.V5_CB.Name = "V5_CB";
-            this.V5_CB.Size = new System.Drawing.Size(70, 14);
-            this.V5_CB.TabIndex = 67;
-            this.V5_CB.UseVisualStyleBackColor = true;
-            this.V5_CB.CheckedChanged += new System.EventHandler(this.V5_CB_CheckedChanged);
-            this.V5_CB.MouseLeave += new System.EventHandler(this.V5_CB_MouseLeave);
-            this.V5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V5_CB_MouseMove);
-            // 
-            // V6_CB
-            // 
-            this.V6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V6_CB.AutoSize = true;
-            this.V6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V6_CB.Location = new System.Drawing.Point(443, 183);
-            this.V6_CB.Name = "V6_CB";
-            this.V6_CB.Size = new System.Drawing.Size(70, 14);
-            this.V6_CB.TabIndex = 62;
-            this.V6_CB.UseVisualStyleBackColor = true;
-            this.V6_CB.CheckedChanged += new System.EventHandler(this.V6_CB_CheckedChanged);
-            this.V6_CB.MouseLeave += new System.EventHandler(this.V6_CB_MouseLeave);
-            this.V6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V6_CB_MouseMove);
-            // 
-            // V7_CB
-            // 
-            this.V7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V7_CB.AutoSize = true;
-            this.V7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V7_CB.Location = new System.Drawing.Point(443, 203);
-            this.V7_CB.Name = "V7_CB";
-            this.V7_CB.Size = new System.Drawing.Size(70, 14);
-            this.V7_CB.TabIndex = 75;
-            this.V7_CB.UseVisualStyleBackColor = true;
-            this.V7_CB.CheckedChanged += new System.EventHandler(this.V7_CB_CheckedChanged);
-            this.V7_CB.MouseLeave += new System.EventHandler(this.V7_CB_MouseLeave);
-            this.V7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V7_CB_MouseMove);
-            // 
-            // V8_CB
-            // 
-            this.V8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V8_CB.AutoSize = true;
-            this.V8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V8_CB.Location = new System.Drawing.Point(443, 223);
-            this.V8_CB.Name = "V8_CB";
-            this.V8_CB.Size = new System.Drawing.Size(70, 14);
-            this.V8_CB.TabIndex = 71;
-            this.V8_CB.UseVisualStyleBackColor = true;
-            this.V8_CB.CheckedChanged += new System.EventHandler(this.V8_CB_CheckedChanged);
-            this.V8_CB.MouseLeave += new System.EventHandler(this.V8_CB_MouseLeave);
-            this.V8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V8_CB_MouseMove);
-            // 
-            // V9_CB
-            // 
-            this.V9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V9_CB.AutoSize = true;
-            this.V9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V9_CB.Location = new System.Drawing.Point(443, 243);
-            this.V9_CB.Name = "V9_CB";
-            this.V9_CB.Size = new System.Drawing.Size(70, 14);
-            this.V9_CB.TabIndex = 24;
-            this.V9_CB.UseVisualStyleBackColor = true;
-            this.V9_CB.CheckedChanged += new System.EventHandler(this.V9_CB_CheckedChanged);
-            this.V9_CB.MouseLeave += new System.EventHandler(this.V9_CB_MouseLeave);
-            this.V9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V9_CB_MouseMove);
-            // 
-            // V10_CB
-            // 
-            this.V10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V10_CB.AutoSize = true;
-            this.V10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V10_CB.Location = new System.Drawing.Point(443, 263);
-            this.V10_CB.Name = "V10_CB";
-            this.V10_CB.Size = new System.Drawing.Size(70, 14);
-            this.V10_CB.TabIndex = 22;
-            this.V10_CB.UseVisualStyleBackColor = true;
-            this.V10_CB.CheckedChanged += new System.EventHandler(this.V10_CB_CheckedChanged);
-            this.V10_CB.MouseLeave += new System.EventHandler(this.V10_CB_MouseLeave);
-            this.V10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V10_CB_MouseMove);
-            // 
-            // J12_CB
-            // 
-            this.J12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.J12_CB.AutoSize = true;
-            this.J12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.J12_CB.Location = new System.Drawing.Point(367, 303);
-            this.J12_CB.Name = "J12_CB";
-            this.J12_CB.Size = new System.Drawing.Size(70, 14);
-            this.J12_CB.TabIndex = 111;
-            this.J12_CB.UseVisualStyleBackColor = true;
-            this.J12_CB.CheckedChanged += new System.EventHandler(this.J12_CB_CheckedChanged);
-            this.J12_CB.MouseLeave += new System.EventHandler(this.J12_CB_MouseLeave);
-            this.J12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J12_CB_MouseMove);
-            // 
-            // V11_CB
-            // 
-            this.V11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V11_CB.AutoSize = true;
-            this.V11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V11_CB.Location = new System.Drawing.Point(443, 283);
-            this.V11_CB.Name = "V11_CB";
-            this.V11_CB.Size = new System.Drawing.Size(70, 14);
-            this.V11_CB.TabIndex = 112;
-            this.V11_CB.UseVisualStyleBackColor = true;
-            this.V11_CB.CheckedChanged += new System.EventHandler(this.V11_CB_CheckedChanged);
-            this.V11_CB.MouseLeave += new System.EventHandler(this.V11_CB_MouseLeave);
-            this.V11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V11_CB_MouseMove);
-            // 
-            // V12_CB
-            // 
-            this.V12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.V12_CB.AutoSize = true;
-            this.V12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.V12_CB.Location = new System.Drawing.Point(443, 303);
-            this.V12_CB.Name = "V12_CB";
-            this.V12_CB.Size = new System.Drawing.Size(70, 14);
-            this.V12_CB.TabIndex = 113;
-            this.V12_CB.UseVisualStyleBackColor = true;
-            this.V12_CB.CheckedChanged += new System.EventHandler(this.V12_CB_CheckedChanged);
-            this.V12_CB.MouseLeave += new System.EventHandler(this.V12_CB_MouseLeave);
-            this.V12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V12_CB_MouseMove);
-            // 
-            // M0_CB
-            // 
-            this.M0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.M0_CB.AutoSize = true;
-            this.M0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.M0_CB.Location = new System.Drawing.Point(215, 63);
-            this.M0_CB.Name = "M0_CB";
-            this.M0_CB.Size = new System.Drawing.Size(70, 14);
-            this.M0_CB.TabIndex = 114;
-            this.M0_CB.UseVisualStyleBackColor = true;
-            this.M0_CB.CheckedChanged += new System.EventHandler(this.M0_CB_CheckedChanged);
-            this.M0_CB.MouseLeave += new System.EventHandler(this.M0_CB_MouseLeave);
-            this.M0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M0_CB_MouseMove);
-            // 
-            // Hora1_LB
-            // 
-            this.Hora1_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Hora1_LB.AutoSize = true;
-            this.Hora1_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Hora1_LB.Location = new System.Drawing.Point(34, 60);
-            this.Hora1_LB.Name = "Hora1_LB";
-            this.Hora1_LB.Size = new System.Drawing.Size(100, 20);
-            this.Hora1_LB.TabIndex = 115;
-            this.Hora1_LB.Text = "9:00-10:00";
-            this.Hora1_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(34, 320);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 26);
-            this.label2.TabIndex = 116;
-            this.label2.Text = "NO DISPONIBLE";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ND_L_CB
-            // 
-            this.ND_L_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ND_L_CB.AutoSize = true;
-            this.ND_L_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ND_L_CB.Location = new System.Drawing.Point(140, 323);
-            this.ND_L_CB.Name = "ND_L_CB";
-            this.ND_L_CB.Size = new System.Drawing.Size(69, 20);
-            this.ND_L_CB.TabIndex = 117;
-            this.ND_L_CB.UseVisualStyleBackColor = true;
-            this.ND_L_CB.CheckedChanged += new System.EventHandler(this.ND_L_CB_CheckedChanged);
+            this.L0_CB.AutoSize = true;
+            this.L0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L0_CB.Location = new System.Drawing.Point(140, 63);
+            this.L0_CB.Name = "L0_CB";
+            this.L0_CB.Size = new System.Drawing.Size(69, 14);
+            this.L0_CB.TabIndex = 96;
+            this.L0_CB.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.L0_CB.UseVisualStyleBackColor = true;
+            this.L0_CB.CheckedChanged += new System.EventHandler(this.L0_CB_CheckedChanged);
+            this.L0_CB.MouseLeave += new System.EventHandler(this.L0_CB_MouseLeave);
+            this.L0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.L0_CB_MouseMove);
             // 
             // ND_M_CB
             // 
@@ -1940,88 +836,1113 @@ namespace moleQule.Face.Instruction
             this.ND_S_CB.UseVisualStyleBackColor = true;
             this.ND_S_CB.CheckedChanged += new System.EventHandler(this.ND_S_CB_CheckedChanged);
             // 
-            // Datos_Disponibilidad
+            // V12_CB
             // 
-            this.Datos_Disponibilidad.DataSource = typeof(moleQule.Library.Instruction.Disponibilidad);
+            this.V12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V12_CB.AutoSize = true;
+            this.V12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V12_CB.Location = new System.Drawing.Point(443, 303);
+            this.V12_CB.Name = "V12_CB";
+            this.V12_CB.Size = new System.Drawing.Size(70, 14);
+            this.V12_CB.TabIndex = 113;
+            this.V12_CB.UseVisualStyleBackColor = true;
+            this.V12_CB.CheckedChanged += new System.EventHandler(this.V12_CB_CheckedChanged);
+            this.V12_CB.MouseLeave += new System.EventHandler(this.V12_CB_MouseLeave);
+            this.V12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V12_CB_MouseMove);
             // 
-            // Fecha_DTP
+            // V11_CB
             // 
-            this.Fecha_DTP.CustomFormat = "dddd dd/MM/yy";
-            this.Fecha_DTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Fecha_DTP.Location = new System.Drawing.Point(381, 31);
-            this.Fecha_DTP.MinDate = new System.DateTime(1973, 1, 1, 0, 0, 0, 0);
-            this.Fecha_DTP.Name = "Fecha_DTP";
-            this.Fecha_DTP.Size = new System.Drawing.Size(150, 21);
-            this.Fecha_DTP.TabIndex = 8;
-            this.Fecha_DTP.Tag = "No Format";
-            this.Fecha_DTP.Value = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
-            this.Fecha_DTP.ValueChanged += new System.EventHandler(this.Fecha_DTP_ValueChanged);
+            this.V11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V11_CB.AutoSize = true;
+            this.V11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V11_CB.Location = new System.Drawing.Point(443, 283);
+            this.V11_CB.Name = "V11_CB";
+            this.V11_CB.Size = new System.Drawing.Size(70, 14);
+            this.V11_CB.TabIndex = 112;
+            this.V11_CB.UseVisualStyleBackColor = true;
+            this.V11_CB.CheckedChanged += new System.EventHandler(this.V11_CB_CheckedChanged);
+            this.V11_CB.MouseLeave += new System.EventHandler(this.V11_CB_MouseLeave);
+            this.V11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V11_CB_MouseMove);
             // 
-            // Observaciones_TB
+            // V10_CB
             // 
-            this.Observaciones_TB.Location = new System.Drawing.Point(181, 570);
-            this.Observaciones_TB.Multiline = true;
-            this.Observaciones_TB.Name = "Observaciones_TB";
-            this.Observaciones_TB.Size = new System.Drawing.Size(593, 56);
-            this.Observaciones_TB.TabIndex = 11;
+            this.V10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V10_CB.AutoSize = true;
+            this.V10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V10_CB.Location = new System.Drawing.Point(443, 263);
+            this.V10_CB.Name = "V10_CB";
+            this.V10_CB.Size = new System.Drawing.Size(70, 14);
+            this.V10_CB.TabIndex = 22;
+            this.V10_CB.UseVisualStyleBackColor = true;
+            this.V10_CB.CheckedChanged += new System.EventHandler(this.V10_CB_CheckedChanged);
+            this.V10_CB.MouseLeave += new System.EventHandler(this.V10_CB_MouseLeave);
+            this.V10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V10_CB_MouseMove);
             // 
-            // label12
+            // V9_CB
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(568, 35);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(43, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Horas:";
+            this.V9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V9_CB.AutoSize = true;
+            this.V9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V9_CB.Location = new System.Drawing.Point(443, 243);
+            this.V9_CB.Name = "V9_CB";
+            this.V9_CB.Size = new System.Drawing.Size(70, 14);
+            this.V9_CB.TabIndex = 24;
+            this.V9_CB.UseVisualStyleBackColor = true;
+            this.V9_CB.CheckedChanged += new System.EventHandler(this.V9_CB_CheckedChanged);
+            this.V9_CB.MouseLeave += new System.EventHandler(this.V9_CB_MouseLeave);
+            this.V9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V9_CB_MouseMove);
             // 
-            // groupBox1
+            // V8_CB
             // 
-            this.groupBox1.Controls.Add(this.Clases_TB);
-            this.groupBox1.Controls.Add(this.Instructores_CB);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.Fecha_DTP);
-            this.groupBox1.Location = new System.Drawing.Point(79, 11);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(695, 72);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
+            this.V8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V8_CB.AutoSize = true;
+            this.V8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V8_CB.Location = new System.Drawing.Point(443, 223);
+            this.V8_CB.Name = "V8_CB";
+            this.V8_CB.Size = new System.Drawing.Size(70, 14);
+            this.V8_CB.TabIndex = 71;
+            this.V8_CB.UseVisualStyleBackColor = true;
+            this.V8_CB.CheckedChanged += new System.EventHandler(this.V8_CB_CheckedChanged);
+            this.V8_CB.MouseLeave += new System.EventHandler(this.V8_CB_MouseLeave);
+            this.V8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V8_CB_MouseMove);
             // 
-            // Clases_TB
+            // V7_CB
             // 
-            this.Clases_TB.Location = new System.Drawing.Point(621, 31);
-            this.Clases_TB.Name = "Clases_TB";
-            this.Clases_TB.Size = new System.Drawing.Size(53, 21);
-            this.Clases_TB.TabIndex = 14;
-            this.Clases_TB.TextChanged += new System.EventHandler(this.Clases_TB_TextChanged);
+            this.V7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V7_CB.AutoSize = true;
+            this.V7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V7_CB.Location = new System.Drawing.Point(443, 203);
+            this.V7_CB.Name = "V7_CB";
+            this.V7_CB.Size = new System.Drawing.Size(70, 14);
+            this.V7_CB.TabIndex = 75;
+            this.V7_CB.UseVisualStyleBackColor = true;
+            this.V7_CB.CheckedChanged += new System.EventHandler(this.V7_CB_CheckedChanged);
+            this.V7_CB.MouseLeave += new System.EventHandler(this.V7_CB_MouseLeave);
+            this.V7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V7_CB_MouseMove);
             // 
-            // FInicio_Label
+            // V6_CB
             // 
-            this.FInicio_Label.AutoSize = true;
-            this.FInicio_Label.Location = new System.Drawing.Point(100, 100);
-            this.FInicio_Label.Name = "FInicio_Label";
-            this.FInicio_Label.Size = new System.Drawing.Size(0, 13);
-            this.FInicio_Label.TabIndex = 16;
+            this.V6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V6_CB.AutoSize = true;
+            this.V6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V6_CB.Location = new System.Drawing.Point(443, 183);
+            this.V6_CB.Name = "V6_CB";
+            this.V6_CB.Size = new System.Drawing.Size(70, 14);
+            this.V6_CB.TabIndex = 62;
+            this.V6_CB.UseVisualStyleBackColor = true;
+            this.V6_CB.CheckedChanged += new System.EventHandler(this.V6_CB_CheckedChanged);
+            this.V6_CB.MouseLeave += new System.EventHandler(this.V6_CB_MouseLeave);
+            this.V6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V6_CB_MouseMove);
             // 
-            // Desmarcar_BT
+            // V5_CB
             // 
-            this.Desmarcar_BT.Location = new System.Drawing.Point(247, 522);
-            this.Desmarcar_BT.Name = "Desmarcar_BT";
-            this.Desmarcar_BT.Size = new System.Drawing.Size(160, 23);
-            this.Desmarcar_BT.TabIndex = 17;
-            this.Desmarcar_BT.Text = "Desmarcar Todos";
-            this.Desmarcar_BT.UseVisualStyleBackColor = true;
-            this.Desmarcar_BT.Click += new System.EventHandler(this.Desmarcar_BT_Click);
+            this.V5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V5_CB.AutoSize = true;
+            this.V5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V5_CB.Location = new System.Drawing.Point(443, 163);
+            this.V5_CB.Name = "V5_CB";
+            this.V5_CB.Size = new System.Drawing.Size(70, 14);
+            this.V5_CB.TabIndex = 67;
+            this.V5_CB.UseVisualStyleBackColor = true;
+            this.V5_CB.CheckedChanged += new System.EventHandler(this.V5_CB_CheckedChanged);
+            this.V5_CB.MouseLeave += new System.EventHandler(this.V5_CB_MouseLeave);
+            this.V5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V5_CB_MouseMove);
             // 
-            // Marcar_BT
+            // V4_CB
             // 
-            this.Marcar_BT.Location = new System.Drawing.Point(448, 522);
-            this.Marcar_BT.Name = "Marcar_BT";
-            this.Marcar_BT.Size = new System.Drawing.Size(160, 23);
-            this.Marcar_BT.TabIndex = 18;
-            this.Marcar_BT.Text = "Marcar Todos";
-            this.Marcar_BT.UseVisualStyleBackColor = true;
-            this.Marcar_BT.Click += new System.EventHandler(this.Marcar_BT_Click);
+            this.V4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V4_CB.AutoSize = true;
+            this.V4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V4_CB.Location = new System.Drawing.Point(443, 143);
+            this.V4_CB.Name = "V4_CB";
+            this.V4_CB.Size = new System.Drawing.Size(70, 14);
+            this.V4_CB.TabIndex = 54;
+            this.V4_CB.UseVisualStyleBackColor = true;
+            this.V4_CB.CheckedChanged += new System.EventHandler(this.V4_CB_CheckedChanged);
+            this.V4_CB.MouseLeave += new System.EventHandler(this.V4_CB_MouseLeave);
+            this.V4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V4_CB_MouseMove);
+            // 
+            // V3_CB
+            // 
+            this.V3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V3_CB.AutoSize = true;
+            this.V3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V3_CB.Location = new System.Drawing.Point(443, 123);
+            this.V3_CB.Name = "V3_CB";
+            this.V3_CB.Size = new System.Drawing.Size(70, 14);
+            this.V3_CB.TabIndex = 45;
+            this.V3_CB.UseVisualStyleBackColor = true;
+            this.V3_CB.CheckedChanged += new System.EventHandler(this.V3_CB_CheckedChanged);
+            this.V3_CB.MouseLeave += new System.EventHandler(this.V3_CB_MouseLeave);
+            this.V3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V3_CB_MouseMove);
+            // 
+            // V2_CB
+            // 
+            this.V2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V2_CB.AutoSize = true;
+            this.V2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V2_CB.Location = new System.Drawing.Point(443, 103);
+            this.V2_CB.Name = "V2_CB";
+            this.V2_CB.Size = new System.Drawing.Size(70, 14);
+            this.V2_CB.TabIndex = 39;
+            this.V2_CB.UseVisualStyleBackColor = true;
+            this.V2_CB.CheckedChanged += new System.EventHandler(this.V2_CB_CheckedChanged);
+            this.V2_CB.MouseLeave += new System.EventHandler(this.V2_CB_MouseLeave);
+            this.V2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V2_CB_MouseMove);
+            // 
+            // V1_CB
+            // 
+            this.V1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V1_CB.AutoSize = true;
+            this.V1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V1_CB.Location = new System.Drawing.Point(443, 83);
+            this.V1_CB.Name = "V1_CB";
+            this.V1_CB.Size = new System.Drawing.Size(70, 14);
+            this.V1_CB.TabIndex = 31;
+            this.V1_CB.UseVisualStyleBackColor = true;
+            this.V1_CB.CheckedChanged += new System.EventHandler(this.V1_CB_CheckedChanged);
+            this.V1_CB.MouseLeave += new System.EventHandler(this.V1_CB_MouseLeave);
+            this.V1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V1_CB_MouseMove);
+            // 
+            // V0_CB
+            // 
+            this.V0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.V0_CB.AutoSize = true;
+            this.V0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.V0_CB.Location = new System.Drawing.Point(443, 63);
+            this.V0_CB.Name = "V0_CB";
+            this.V0_CB.Size = new System.Drawing.Size(70, 14);
+            this.V0_CB.TabIndex = 33;
+            this.V0_CB.UseVisualStyleBackColor = true;
+            this.V0_CB.CheckedChanged += new System.EventHandler(this.V0_CB_CheckedChanged);
+            this.V0_CB.MouseLeave += new System.EventHandler(this.V0_CB_MouseLeave);
+            this.V0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V0_CB_MouseMove);
+            // 
+            // S4_CB
+            // 
+            this.S4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.S4_CB.AutoSize = true;
+            this.S4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.S4_CB.Location = new System.Drawing.Point(519, 143);
+            this.S4_CB.Name = "S4_CB";
+            this.S4_CB.Size = new System.Drawing.Size(70, 14);
+            this.S4_CB.TabIndex = 53;
+            this.S4_CB.UseVisualStyleBackColor = true;
+            this.S4_CB.CheckedChanged += new System.EventHandler(this.S4_CB_CheckedChanged);
+            this.S4_CB.MouseLeave += new System.EventHandler(this.S4_CB_MouseLeave);
+            this.S4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S4_CB_MouseMove);
+            // 
+            // S3_CB
+            // 
+            this.S3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.S3_CB.AutoSize = true;
+            this.S3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.S3_CB.Location = new System.Drawing.Point(519, 123);
+            this.S3_CB.Name = "S3_CB";
+            this.S3_CB.Size = new System.Drawing.Size(70, 14);
+            this.S3_CB.TabIndex = 46;
+            this.S3_CB.UseVisualStyleBackColor = true;
+            this.S3_CB.CheckedChanged += new System.EventHandler(this.S3_CB_CheckedChanged);
+            this.S3_CB.MouseLeave += new System.EventHandler(this.S3_CB_MouseLeave);
+            this.S3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S3_CB_MouseMove);
+            // 
+            // S2_CB
+            // 
+            this.S2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.S2_CB.AutoSize = true;
+            this.S2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.S2_CB.Location = new System.Drawing.Point(519, 103);
+            this.S2_CB.Name = "S2_CB";
+            this.S2_CB.Size = new System.Drawing.Size(70, 14);
+            this.S2_CB.TabIndex = 40;
+            this.S2_CB.UseVisualStyleBackColor = true;
+            this.S2_CB.CheckedChanged += new System.EventHandler(this.S2_CB_CheckedChanged);
+            this.S2_CB.MouseLeave += new System.EventHandler(this.S2_CB_MouseLeave);
+            this.S2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S2_CB_MouseMove);
+            // 
+            // S1_CB
+            // 
+            this.S1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.S1_CB.AutoSize = true;
+            this.S1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.S1_CB.Location = new System.Drawing.Point(519, 83);
+            this.S1_CB.Name = "S1_CB";
+            this.S1_CB.Size = new System.Drawing.Size(70, 14);
+            this.S1_CB.TabIndex = 32;
+            this.S1_CB.UseVisualStyleBackColor = true;
+            this.S1_CB.CheckedChanged += new System.EventHandler(this.S1_CB_CheckedChanged);
+            this.S1_CB.MouseLeave += new System.EventHandler(this.S1_CB_MouseLeave);
+            this.S1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S1_CB_MouseMove);
+            // 
+            // S0_CB
+            // 
+            this.S0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.S0_CB.AutoSize = true;
+            this.S0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.S0_CB.Location = new System.Drawing.Point(519, 63);
+            this.S0_CB.Name = "S0_CB";
+            this.S0_CB.Size = new System.Drawing.Size(70, 14);
+            this.S0_CB.TabIndex = 33;
+            this.S0_CB.UseVisualStyleBackColor = true;
+            this.S0_CB.CheckedChanged += new System.EventHandler(this.S0_CB_CheckedChanged);
+            this.S0_CB.MouseLeave += new System.EventHandler(this.S0_CB_MouseLeave);
+            this.S0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.S0_CB_MouseMove);
+            // 
+            // J12_CB
+            // 
+            this.J12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J12_CB.AutoSize = true;
+            this.J12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J12_CB.Location = new System.Drawing.Point(367, 303);
+            this.J12_CB.Name = "J12_CB";
+            this.J12_CB.Size = new System.Drawing.Size(70, 14);
+            this.J12_CB.TabIndex = 111;
+            this.J12_CB.UseVisualStyleBackColor = true;
+            this.J12_CB.CheckedChanged += new System.EventHandler(this.J12_CB_CheckedChanged);
+            this.J12_CB.MouseLeave += new System.EventHandler(this.J12_CB_MouseLeave);
+            this.J12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J12_CB_MouseMove);
+            // 
+            // J11_CB
+            // 
+            this.J11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J11_CB.AutoSize = true;
+            this.J11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J11_CB.Location = new System.Drawing.Point(367, 283);
+            this.J11_CB.Name = "J11_CB";
+            this.J11_CB.Size = new System.Drawing.Size(70, 14);
+            this.J11_CB.TabIndex = 110;
+            this.J11_CB.UseVisualStyleBackColor = true;
+            this.J11_CB.CheckedChanged += new System.EventHandler(this.J11_CB_CheckedChanged);
+            this.J11_CB.MouseLeave += new System.EventHandler(this.J11_CB_MouseLeave);
+            this.J11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J11_CB_MouseMove);
+            // 
+            // J10_CB
+            // 
+            this.J10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J10_CB.AutoSize = true;
+            this.J10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J10_CB.Location = new System.Drawing.Point(367, 263);
+            this.J10_CB.Name = "J10_CB";
+            this.J10_CB.Size = new System.Drawing.Size(70, 14);
+            this.J10_CB.TabIndex = 21;
+            this.J10_CB.UseVisualStyleBackColor = true;
+            this.J10_CB.CheckedChanged += new System.EventHandler(this.J10_CB_CheckedChanged);
+            this.J10_CB.MouseLeave += new System.EventHandler(this.J10_CB_MouseLeave);
+            this.J10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J10_CB_MouseMove);
+            // 
+            // J9_CB
+            // 
+            this.J9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J9_CB.AutoSize = true;
+            this.J9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J9_CB.Location = new System.Drawing.Point(367, 243);
+            this.J9_CB.Name = "J9_CB";
+            this.J9_CB.Size = new System.Drawing.Size(70, 14);
+            this.J9_CB.TabIndex = 66;
+            this.J9_CB.UseVisualStyleBackColor = true;
+            this.J9_CB.CheckedChanged += new System.EventHandler(this.J9_CB_CheckedChanged);
+            this.J9_CB.MouseLeave += new System.EventHandler(this.J9_CB_MouseLeave);
+            this.J9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J9_CB_MouseMove);
+            // 
+            // J8_CB
+            // 
+            this.J8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J8_CB.AutoSize = true;
+            this.J8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J8_CB.Location = new System.Drawing.Point(367, 223);
+            this.J8_CB.Name = "J8_CB";
+            this.J8_CB.Size = new System.Drawing.Size(70, 14);
+            this.J8_CB.TabIndex = 70;
+            this.J8_CB.UseVisualStyleBackColor = true;
+            this.J8_CB.CheckedChanged += new System.EventHandler(this.J8_CB_CheckedChanged);
+            this.J8_CB.MouseLeave += new System.EventHandler(this.J8_CB_MouseLeave);
+            this.J8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J8_CB_MouseMove);
+            // 
+            // J7_CB
+            // 
+            this.J7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J7_CB.AutoSize = true;
+            this.J7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J7_CB.Location = new System.Drawing.Point(367, 203);
+            this.J7_CB.Name = "J7_CB";
+            this.J7_CB.Size = new System.Drawing.Size(70, 14);
+            this.J7_CB.TabIndex = 76;
+            this.J7_CB.UseVisualStyleBackColor = true;
+            this.J7_CB.CheckedChanged += new System.EventHandler(this.J7_CB_CheckedChanged);
+            this.J7_CB.MouseLeave += new System.EventHandler(this.J7_CB_MouseLeave);
+            this.J7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J7_CB_MouseMove);
+            // 
+            // J6_CB
+            // 
+            this.J6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J6_CB.AutoSize = true;
+            this.J6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J6_CB.Location = new System.Drawing.Point(367, 183);
+            this.J6_CB.Name = "J6_CB";
+            this.J6_CB.Size = new System.Drawing.Size(70, 14);
+            this.J6_CB.TabIndex = 63;
+            this.J6_CB.UseVisualStyleBackColor = true;
+            this.J6_CB.CheckedChanged += new System.EventHandler(this.J6_CB_CheckedChanged);
+            this.J6_CB.MouseLeave += new System.EventHandler(this.J6_CB_MouseLeave);
+            this.J6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J6_CB_MouseMove);
+            // 
+            // J5_CB
+            // 
+            this.J5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J5_CB.AutoSize = true;
+            this.J5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J5_CB.Location = new System.Drawing.Point(367, 163);
+            this.J5_CB.Name = "J5_CB";
+            this.J5_CB.Size = new System.Drawing.Size(70, 14);
+            this.J5_CB.TabIndex = 48;
+            this.J5_CB.UseVisualStyleBackColor = true;
+            this.J5_CB.CheckedChanged += new System.EventHandler(this.J5_CB_CheckedChanged);
+            this.J5_CB.MouseLeave += new System.EventHandler(this.J5_CB_MouseLeave);
+            this.J5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J5_CB_MouseMove);
+            // 
+            // J4_CB
+            // 
+            this.J4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J4_CB.AutoSize = true;
+            this.J4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J4_CB.Location = new System.Drawing.Point(367, 143);
+            this.J4_CB.Name = "J4_CB";
+            this.J4_CB.Size = new System.Drawing.Size(70, 14);
+            this.J4_CB.TabIndex = 55;
+            this.J4_CB.UseVisualStyleBackColor = true;
+            this.J4_CB.CheckedChanged += new System.EventHandler(this.J4_CB_CheckedChanged);
+            this.J4_CB.MouseLeave += new System.EventHandler(this.J4_CB_MouseLeave);
+            this.J4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J4_CB_MouseMove);
+            // 
+            // J3_CB
+            // 
+            this.J3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J3_CB.AutoSize = true;
+            this.J3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J3_CB.Location = new System.Drawing.Point(367, 123);
+            this.J3_CB.Name = "J3_CB";
+            this.J3_CB.Size = new System.Drawing.Size(70, 14);
+            this.J3_CB.TabIndex = 44;
+            this.J3_CB.UseVisualStyleBackColor = true;
+            this.J3_CB.CheckedChanged += new System.EventHandler(this.J3_CB_CheckedChanged);
+            this.J3_CB.MouseLeave += new System.EventHandler(this.J3_CB_MouseLeave);
+            this.J3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J3_CB_MouseMove);
+            // 
+            // J2_CB
+            // 
+            this.J2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J2_CB.AutoSize = true;
+            this.J2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J2_CB.Location = new System.Drawing.Point(367, 103);
+            this.J2_CB.Name = "J2_CB";
+            this.J2_CB.Size = new System.Drawing.Size(70, 14);
+            this.J2_CB.TabIndex = 38;
+            this.J2_CB.UseVisualStyleBackColor = true;
+            this.J2_CB.CheckedChanged += new System.EventHandler(this.J2_CB_CheckedChanged);
+            this.J2_CB.MouseLeave += new System.EventHandler(this.J2_CB_MouseLeave);
+            this.J2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J2_CB_MouseMove);
+            // 
+            // J1_CB
+            // 
+            this.J1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J1_CB.AutoSize = true;
+            this.J1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J1_CB.Location = new System.Drawing.Point(367, 83);
+            this.J1_CB.Name = "J1_CB";
+            this.J1_CB.Size = new System.Drawing.Size(70, 14);
+            this.J1_CB.TabIndex = 30;
+            this.J1_CB.UseVisualStyleBackColor = true;
+            this.J1_CB.CheckedChanged += new System.EventHandler(this.J1_CB_CheckedChanged);
+            this.J1_CB.MouseLeave += new System.EventHandler(this.J1_CB_MouseLeave);
+            this.J1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J1_CB_MouseMove);
+            // 
+            // J0_CB
+            // 
+            this.J0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.J0_CB.AutoSize = true;
+            this.J0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.J0_CB.Location = new System.Drawing.Point(367, 63);
+            this.J0_CB.Name = "J0_CB";
+            this.J0_CB.Size = new System.Drawing.Size(70, 14);
+            this.J0_CB.TabIndex = 33;
+            this.J0_CB.UseVisualStyleBackColor = true;
+            this.J0_CB.CheckedChanged += new System.EventHandler(this.J0_CB_CheckedChanged);
+            this.J0_CB.MouseLeave += new System.EventHandler(this.J0_CB_MouseLeave);
+            this.J0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.J0_CB_MouseMove);
+            // 
+            // X12_CB
+            // 
+            this.X12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X12_CB.AutoSize = true;
+            this.X12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X12_CB.Location = new System.Drawing.Point(291, 303);
+            this.X12_CB.Name = "X12_CB";
+            this.X12_CB.Size = new System.Drawing.Size(70, 14);
+            this.X12_CB.TabIndex = 109;
+            this.X12_CB.UseVisualStyleBackColor = true;
+            this.X12_CB.CheckedChanged += new System.EventHandler(this.X12_CB_CheckedChanged);
+            this.X12_CB.MouseLeave += new System.EventHandler(this.X12_CB_MouseLeave);
+            this.X12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X12_CB_MouseMove);
+            // 
+            // X11_CB
+            // 
+            this.X11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X11_CB.AutoSize = true;
+            this.X11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X11_CB.Location = new System.Drawing.Point(291, 283);
+            this.X11_CB.Name = "X11_CB";
+            this.X11_CB.Size = new System.Drawing.Size(70, 14);
+            this.X11_CB.TabIndex = 108;
+            this.X11_CB.UseVisualStyleBackColor = true;
+            this.X11_CB.CheckedChanged += new System.EventHandler(this.X11_CB_CheckedChanged);
+            this.X11_CB.MouseLeave += new System.EventHandler(this.X11_CB_MouseLeave);
+            this.X11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X11_CB_MouseMove);
+            // 
+            // X10_CB
+            // 
+            this.X10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X10_CB.AutoSize = true;
+            this.X10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X10_CB.Location = new System.Drawing.Point(291, 263);
+            this.X10_CB.Name = "X10_CB";
+            this.X10_CB.Size = new System.Drawing.Size(70, 14);
+            this.X10_CB.TabIndex = 20;
+            this.X10_CB.UseVisualStyleBackColor = true;
+            this.X10_CB.CheckedChanged += new System.EventHandler(this.X10_CB_CheckedChanged);
+            this.X10_CB.MouseLeave += new System.EventHandler(this.X10_CB_MouseLeave);
+            this.X10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X10_CB_MouseMove);
+            // 
+            // X9_CB
+            // 
+            this.X9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X9_CB.AutoSize = true;
+            this.X9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X9_CB.Location = new System.Drawing.Point(291, 243);
+            this.X9_CB.Name = "X9_CB";
+            this.X9_CB.Size = new System.Drawing.Size(70, 14);
+            this.X9_CB.TabIndex = 52;
+            this.X9_CB.UseVisualStyleBackColor = true;
+            this.X9_CB.CheckedChanged += new System.EventHandler(this.X9_CB_CheckedChanged);
+            this.X9_CB.MouseLeave += new System.EventHandler(this.X9_CB_MouseLeave);
+            this.X9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X9_CB_MouseMove);
+            // 
+            // X8_CB
+            // 
+            this.X8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X8_CB.AutoSize = true;
+            this.X8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X8_CB.Location = new System.Drawing.Point(291, 223);
+            this.X8_CB.Name = "X8_CB";
+            this.X8_CB.Size = new System.Drawing.Size(70, 14);
+            this.X8_CB.TabIndex = 41;
+            this.X8_CB.UseVisualStyleBackColor = true;
+            this.X8_CB.CheckedChanged += new System.EventHandler(this.X8_CB_CheckedChanged);
+            this.X8_CB.MouseLeave += new System.EventHandler(this.X8_CB_MouseLeave);
+            this.X8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X8_CB_MouseMove);
+            // 
+            // X7_CB
+            // 
+            this.X7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X7_CB.AutoSize = true;
+            this.X7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X7_CB.Location = new System.Drawing.Point(291, 203);
+            this.X7_CB.Name = "X7_CB";
+            this.X7_CB.Size = new System.Drawing.Size(70, 14);
+            this.X7_CB.TabIndex = 77;
+            this.X7_CB.UseVisualStyleBackColor = true;
+            this.X7_CB.CheckedChanged += new System.EventHandler(this.X7_CB_CheckedChanged);
+            this.X7_CB.MouseLeave += new System.EventHandler(this.X7_CB_MouseLeave);
+            this.X7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X7_CB_MouseMove);
+            // 
+            // X6_CB
+            // 
+            this.X6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X6_CB.AutoSize = true;
+            this.X6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X6_CB.Location = new System.Drawing.Point(291, 183);
+            this.X6_CB.Name = "X6_CB";
+            this.X6_CB.Size = new System.Drawing.Size(70, 14);
+            this.X6_CB.TabIndex = 64;
+            this.X6_CB.UseVisualStyleBackColor = true;
+            this.X6_CB.CheckedChanged += new System.EventHandler(this.X6_CB_CheckedChanged);
+            this.X6_CB.MouseLeave += new System.EventHandler(this.X6_CB_MouseLeave);
+            this.X6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X6_CB_MouseMove);
+            // 
+            // X5_CB
+            // 
+            this.X5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X5_CB.AutoSize = true;
+            this.X5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X5_CB.Location = new System.Drawing.Point(291, 163);
+            this.X5_CB.Name = "X5_CB";
+            this.X5_CB.Size = new System.Drawing.Size(70, 14);
+            this.X5_CB.TabIndex = 19;
+            this.X5_CB.UseVisualStyleBackColor = true;
+            this.X5_CB.CheckedChanged += new System.EventHandler(this.X5_CB_CheckedChanged);
+            this.X5_CB.MouseLeave += new System.EventHandler(this.X5_CB_MouseLeave);
+            this.X5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X5_CB_MouseMove);
+            // 
+            // X4_CB
+            // 
+            this.X4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X4_CB.AutoSize = true;
+            this.X4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X4_CB.Location = new System.Drawing.Point(291, 143);
+            this.X4_CB.Name = "X4_CB";
+            this.X4_CB.Size = new System.Drawing.Size(70, 14);
+            this.X4_CB.TabIndex = 56;
+            this.X4_CB.UseVisualStyleBackColor = true;
+            this.X4_CB.CheckedChanged += new System.EventHandler(this.X4_CB_CheckedChanged);
+            this.X4_CB.MouseLeave += new System.EventHandler(this.X4_CB_MouseLeave);
+            this.X4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X4_CB_MouseMove);
+            // 
+            // X3_CB
+            // 
+            this.X3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X3_CB.AutoSize = true;
+            this.X3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X3_CB.Location = new System.Drawing.Point(291, 123);
+            this.X3_CB.Name = "X3_CB";
+            this.X3_CB.Size = new System.Drawing.Size(70, 14);
+            this.X3_CB.TabIndex = 43;
+            this.X3_CB.UseVisualStyleBackColor = true;
+            this.X3_CB.CheckedChanged += new System.EventHandler(this.X3_CB_CheckedChanged);
+            this.X3_CB.MouseLeave += new System.EventHandler(this.X3_CB_MouseLeave);
+            this.X3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X3_CB_MouseMove);
+            // 
+            // X2_CB
+            // 
+            this.X2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X2_CB.AutoSize = true;
+            this.X2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X2_CB.Location = new System.Drawing.Point(291, 103);
+            this.X2_CB.Name = "X2_CB";
+            this.X2_CB.Size = new System.Drawing.Size(70, 14);
+            this.X2_CB.TabIndex = 37;
+            this.X2_CB.UseVisualStyleBackColor = true;
+            this.X2_CB.CheckedChanged += new System.EventHandler(this.X2_CB_CheckedChanged);
+            this.X2_CB.MouseLeave += new System.EventHandler(this.X2_CB_MouseLeave);
+            this.X2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X2_CB_MouseMove);
+            // 
+            // X1_CB
+            // 
+            this.X1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X1_CB.AutoSize = true;
+            this.X1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X1_CB.Location = new System.Drawing.Point(291, 83);
+            this.X1_CB.Name = "X1_CB";
+            this.X1_CB.Size = new System.Drawing.Size(70, 14);
+            this.X1_CB.TabIndex = 29;
+            this.X1_CB.UseVisualStyleBackColor = true;
+            this.X1_CB.CheckedChanged += new System.EventHandler(this.X1_CB_CheckedChanged);
+            this.X1_CB.MouseLeave += new System.EventHandler(this.X1_CB_MouseLeave);
+            this.X1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X1_CB_MouseMove);
+            // 
+            // X0_CB
+            // 
+            this.X0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.X0_CB.AutoSize = true;
+            this.X0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.X0_CB.Location = new System.Drawing.Point(291, 63);
+            this.X0_CB.Name = "X0_CB";
+            this.X0_CB.Size = new System.Drawing.Size(70, 14);
+            this.X0_CB.TabIndex = 33;
+            this.X0_CB.UseVisualStyleBackColor = true;
+            this.X0_CB.CheckedChanged += new System.EventHandler(this.X0_CB_CheckedChanged);
+            this.X0_CB.MouseLeave += new System.EventHandler(this.X0_CB_MouseLeave);
+            this.X0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.X0_CB_MouseMove);
+            // 
+            // M12_CB
+            // 
+            this.M12_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M12_CB.AutoSize = true;
+            this.M12_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M12_CB.Location = new System.Drawing.Point(215, 303);
+            this.M12_CB.Name = "M12_CB";
+            this.M12_CB.Size = new System.Drawing.Size(70, 14);
+            this.M12_CB.TabIndex = 33;
+            this.M12_CB.UseVisualStyleBackColor = true;
+            this.M12_CB.CheckedChanged += new System.EventHandler(this.M12_CB_CheckedChanged);
+            this.M12_CB.MouseLeave += new System.EventHandler(this.M12_CB_MouseLeave);
+            this.M12_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M12_CB_MouseMove);
+            // 
+            // M11_CB
+            // 
+            this.M11_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M11_CB.AutoSize = true;
+            this.M11_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M11_CB.Location = new System.Drawing.Point(215, 283);
+            this.M11_CB.Name = "M11_CB";
+            this.M11_CB.Size = new System.Drawing.Size(70, 14);
+            this.M11_CB.TabIndex = 106;
+            this.M11_CB.UseVisualStyleBackColor = true;
+            this.M11_CB.CheckedChanged += new System.EventHandler(this.M11_CB_CheckedChanged);
+            this.M11_CB.MouseLeave += new System.EventHandler(this.M11_CB_MouseLeave);
+            this.M11_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M11_CB_MouseMove);
+            // 
+            // M10_CB
+            // 
+            this.M10_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M10_CB.AutoSize = true;
+            this.M10_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M10_CB.Location = new System.Drawing.Point(215, 263);
+            this.M10_CB.Name = "M10_CB";
+            this.M10_CB.Size = new System.Drawing.Size(70, 14);
+            this.M10_CB.TabIndex = 27;
+            this.M10_CB.UseVisualStyleBackColor = true;
+            this.M10_CB.CheckedChanged += new System.EventHandler(this.M10_CB_CheckedChanged);
+            this.M10_CB.MouseLeave += new System.EventHandler(this.M10_CB_MouseLeave);
+            this.M10_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M10_CB_MouseMove);
+            // 
+            // M9_CB
+            // 
+            this.M9_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M9_CB.AutoSize = true;
+            this.M9_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M9_CB.Location = new System.Drawing.Point(215, 243);
+            this.M9_CB.Name = "M9_CB";
+            this.M9_CB.Size = new System.Drawing.Size(70, 14);
+            this.M9_CB.TabIndex = 107;
+            this.M9_CB.UseVisualStyleBackColor = true;
+            this.M9_CB.CheckedChanged += new System.EventHandler(this.M9_CB_CheckedChanged);
+            this.M9_CB.MouseLeave += new System.EventHandler(this.M9_CB_MouseLeave);
+            this.M9_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M9_CB_MouseMove);
+            // 
+            // M8_CB
+            // 
+            this.M8_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M8_CB.AutoSize = true;
+            this.M8_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M8_CB.Location = new System.Drawing.Point(215, 223);
+            this.M8_CB.Name = "M8_CB";
+            this.M8_CB.Size = new System.Drawing.Size(70, 14);
+            this.M8_CB.TabIndex = 69;
+            this.M8_CB.UseVisualStyleBackColor = true;
+            this.M8_CB.CheckedChanged += new System.EventHandler(this.M8_CB_CheckedChanged);
+            this.M8_CB.MouseLeave += new System.EventHandler(this.M8_CB_MouseLeave);
+            this.M8_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M8_CB_MouseMove);
+            // 
+            // M7_CB
+            // 
+            this.M7_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M7_CB.AutoSize = true;
+            this.M7_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M7_CB.Location = new System.Drawing.Point(215, 203);
+            this.M7_CB.Name = "M7_CB";
+            this.M7_CB.Size = new System.Drawing.Size(70, 14);
+            this.M7_CB.TabIndex = 61;
+            this.M7_CB.UseVisualStyleBackColor = true;
+            this.M7_CB.CheckedChanged += new System.EventHandler(this.M7_CB_CheckedChanged);
+            this.M7_CB.MouseLeave += new System.EventHandler(this.M7_CB_MouseLeave);
+            this.M7_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M7_CB_MouseMove);
+            // 
+            // M6_CB
+            // 
+            this.M6_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M6_CB.AutoSize = true;
+            this.M6_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M6_CB.Location = new System.Drawing.Point(215, 183);
+            this.M6_CB.Name = "M6_CB";
+            this.M6_CB.Size = new System.Drawing.Size(70, 14);
+            this.M6_CB.TabIndex = 34;
+            this.M6_CB.UseVisualStyleBackColor = true;
+            this.M6_CB.CheckedChanged += new System.EventHandler(this.M6_CB_CheckedChanged);
+            this.M6_CB.MouseLeave += new System.EventHandler(this.M6_CB_MouseLeave);
+            this.M6_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M6_CB_MouseMove);
+            // 
+            // M5_CB
+            // 
+            this.M5_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M5_CB.AutoSize = true;
+            this.M5_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M5_CB.Location = new System.Drawing.Point(215, 163);
+            this.M5_CB.Name = "M5_CB";
+            this.M5_CB.Size = new System.Drawing.Size(70, 14);
+            this.M5_CB.TabIndex = 49;
+            this.M5_CB.UseVisualStyleBackColor = true;
+            this.M5_CB.CheckedChanged += new System.EventHandler(this.M5_CB_CheckedChanged);
+            this.M5_CB.MouseLeave += new System.EventHandler(this.M5_CB_MouseLeave);
+            this.M5_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M5_CB_MouseMove);
+            // 
+            // M4_CB
+            // 
+            this.M4_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M4_CB.AutoSize = true;
+            this.M4_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M4_CB.Location = new System.Drawing.Point(215, 143);
+            this.M4_CB.Name = "M4_CB";
+            this.M4_CB.Size = new System.Drawing.Size(70, 14);
+            this.M4_CB.TabIndex = 57;
+            this.M4_CB.UseVisualStyleBackColor = true;
+            this.M4_CB.CheckedChanged += new System.EventHandler(this.M4_CB_CheckedChanged);
+            this.M4_CB.MouseLeave += new System.EventHandler(this.M4_CB_MouseLeave);
+            this.M4_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M4_CB_MouseMove);
+            // 
+            // M3_CB
+            // 
+            this.M3_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M3_CB.AutoSize = true;
+            this.M3_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M3_CB.Location = new System.Drawing.Point(215, 123);
+            this.M3_CB.Name = "M3_CB";
+            this.M3_CB.Size = new System.Drawing.Size(70, 14);
+            this.M3_CB.TabIndex = 42;
+            this.M3_CB.UseVisualStyleBackColor = true;
+            this.M3_CB.CheckedChanged += new System.EventHandler(this.M3_CB_CheckedChanged);
+            this.M3_CB.MouseLeave += new System.EventHandler(this.M3_CB_MouseLeave);
+            this.M3_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M3_CB_MouseMove);
+            // 
+            // M2_CB
+            // 
+            this.M2_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M2_CB.AutoSize = true;
+            this.M2_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M2_CB.Location = new System.Drawing.Point(215, 103);
+            this.M2_CB.Name = "M2_CB";
+            this.M2_CB.Size = new System.Drawing.Size(70, 14);
+            this.M2_CB.TabIndex = 36;
+            this.M2_CB.UseVisualStyleBackColor = true;
+            this.M2_CB.CheckedChanged += new System.EventHandler(this.M2_CB_CheckedChanged);
+            this.M2_CB.MouseLeave += new System.EventHandler(this.M2_CB_MouseLeave);
+            this.M2_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M2_CB_MouseMove);
+            // 
+            // M1_CB
+            // 
+            this.M1_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M1_CB.AutoSize = true;
+            this.M1_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M1_CB.Location = new System.Drawing.Point(215, 83);
+            this.M1_CB.Name = "M1_CB";
+            this.M1_CB.Size = new System.Drawing.Size(70, 14);
+            this.M1_CB.TabIndex = 28;
+            this.M1_CB.UseVisualStyleBackColor = true;
+            this.M1_CB.CheckedChanged += new System.EventHandler(this.M1_CB_CheckedChanged);
+            this.M1_CB.MouseLeave += new System.EventHandler(this.M1_CB_MouseLeave);
+            this.M1_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M1_CB_MouseMove);
+            // 
+            // M0_CB
+            // 
+            this.M0_CB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.M0_CB.AutoSize = true;
+            this.M0_CB.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.M0_CB.Location = new System.Drawing.Point(215, 63);
+            this.M0_CB.Name = "M0_CB";
+            this.M0_CB.Size = new System.Drawing.Size(70, 14);
+            this.M0_CB.TabIndex = 114;
+            this.M0_CB.UseVisualStyleBackColor = true;
+            this.M0_CB.CheckedChanged += new System.EventHandler(this.M0_CB_CheckedChanged);
+            this.M0_CB.MouseLeave += new System.EventHandler(this.M0_CB_MouseLeave);
+            this.M0_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.M0_CB_MouseMove);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label2.Location = new System.Drawing.Point(34, 320);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 26);
+            this.label2.TabIndex = 116;
+            this.label2.Text = "NO DISPONIBLE";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Hora13_LB
+            // 
+            this.Hora13_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora13_LB.AutoSize = true;
+            this.Hora13_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora13_LB.Location = new System.Drawing.Point(34, 300);
+            this.Hora13_LB.Name = "Hora13_LB";
+            this.Hora13_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora13_LB.TabIndex = 94;
+            this.Hora13_LB.Text = "21:00-22:00";
+            this.Hora13_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora12_LB
+            // 
+            this.Hora12_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora12_LB.AutoSize = true;
+            this.Hora12_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora12_LB.Location = new System.Drawing.Point(34, 280);
+            this.Hora12_LB.Name = "Hora12_LB";
+            this.Hora12_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora12_LB.TabIndex = 93;
+            this.Hora12_LB.Text = "20:00-21:00";
+            this.Hora12_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora11_LB
+            // 
+            this.Hora11_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora11_LB.AutoSize = true;
+            this.Hora11_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora11_LB.Location = new System.Drawing.Point(34, 260);
+            this.Hora11_LB.Name = "Hora11_LB";
+            this.Hora11_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora11_LB.TabIndex = 92;
+            this.Hora11_LB.Text = "19:00-20:00";
+            this.Hora11_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora10_LB
+            // 
+            this.Hora10_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora10_LB.AutoSize = true;
+            this.Hora10_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora10_LB.Location = new System.Drawing.Point(34, 240);
+            this.Hora10_LB.Name = "Hora10_LB";
+            this.Hora10_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora10_LB.TabIndex = 91;
+            this.Hora10_LB.Text = "18:00-19:00";
+            this.Hora10_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora9_LB
+            // 
+            this.Hora9_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora9_LB.AutoSize = true;
+            this.Hora9_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora9_LB.Location = new System.Drawing.Point(34, 220);
+            this.Hora9_LB.Name = "Hora9_LB";
+            this.Hora9_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora9_LB.TabIndex = 90;
+            this.Hora9_LB.Text = "17:00-18:00";
+            this.Hora9_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora8_LB
+            // 
+            this.Hora8_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora8_LB.AutoSize = true;
+            this.Hora8_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora8_LB.Location = new System.Drawing.Point(34, 200);
+            this.Hora8_LB.Name = "Hora8_LB";
+            this.Hora8_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora8_LB.TabIndex = 89;
+            this.Hora8_LB.Text = "16:00-17:00";
+            this.Hora8_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora7_LB
+            // 
+            this.Hora7_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora7_LB.AutoSize = true;
+            this.Hora7_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora7_LB.Location = new System.Drawing.Point(34, 180);
+            this.Hora7_LB.Name = "Hora7_LB";
+            this.Hora7_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora7_LB.TabIndex = 103;
+            this.Hora7_LB.Text = "15:00-16:00";
+            this.Hora7_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora6_LB
+            // 
+            this.Hora6_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora6_LB.AutoSize = true;
+            this.Hora6_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora6_LB.Location = new System.Drawing.Point(34, 160);
+            this.Hora6_LB.Name = "Hora6_LB";
+            this.Hora6_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora6_LB.TabIndex = 102;
+            this.Hora6_LB.Text = "14:00-15:00";
+            this.Hora6_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora5_LB
+            // 
+            this.Hora5_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora5_LB.AutoSize = true;
+            this.Hora5_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora5_LB.Location = new System.Drawing.Point(34, 140);
+            this.Hora5_LB.Name = "Hora5_LB";
+            this.Hora5_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora5_LB.TabIndex = 88;
+            this.Hora5_LB.Text = "13:00-14:00";
+            this.Hora5_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora4_LB
+            // 
+            this.Hora4_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora4_LB.AutoSize = true;
+            this.Hora4_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora4_LB.Location = new System.Drawing.Point(34, 120);
+            this.Hora4_LB.Name = "Hora4_LB";
+            this.Hora4_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora4_LB.TabIndex = 86;
+            this.Hora4_LB.Text = "12:00-13:00";
+            this.Hora4_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora3_LB
+            // 
+            this.Hora3_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora3_LB.AutoSize = true;
+            this.Hora3_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora3_LB.Location = new System.Drawing.Point(34, 100);
+            this.Hora3_LB.Name = "Hora3_LB";
+            this.Hora3_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora3_LB.TabIndex = 85;
+            this.Hora3_LB.Text = "11:00-12:00";
+            this.Hora3_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora2_LB
+            // 
+            this.Hora2_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora2_LB.AutoSize = true;
+            this.Hora2_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora2_LB.Location = new System.Drawing.Point(34, 80);
+            this.Hora2_LB.Name = "Hora2_LB";
+            this.Hora2_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora2_LB.TabIndex = 84;
+            this.Hora2_LB.Text = "10:00-11:00";
+            this.Hora2_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // Hora1_LB
+            // 
+            this.Hora1_LB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Hora1_LB.AutoSize = true;
+            this.Hora1_LB.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Hora1_LB.Location = new System.Drawing.Point(34, 60);
+            this.Hora1_LB.Name = "Hora1_LB";
+            this.Hora1_LB.Size = new System.Drawing.Size(100, 20);
+            this.Hora1_LB.TabIndex = 115;
+            this.Hora1_LB.Text = "9:00-10:00";
+            this.Hora1_LB.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // Hora0_LB
             // 
@@ -2122,10 +2043,113 @@ namespace moleQule.Face.Instruction
             this.V8AM_CB.MouseLeave += new System.EventHandler(this.V8AM_CB_MouseLeave);
             this.V8AM_CB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.V8AM_CB_MouseMove);
             // 
+            // Datos_Disponibilidad
+            // 
+            this.Datos_Disponibilidad.DataSource = typeof(moleQule.Library.Instruction.Disponibilidad);
+            // 
+            // Fecha_DTP
+            // 
+            this.Fecha_DTP.CustomFormat = "dddd dd/MM/yy";
+            this.Fecha_DTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Fecha_DTP.Location = new System.Drawing.Point(381, 31);
+            this.Fecha_DTP.MinDate = new System.DateTime(1973, 1, 1, 0, 0, 0, 0);
+            this.Fecha_DTP.Name = "Fecha_DTP";
+            this.Fecha_DTP.Size = new System.Drawing.Size(150, 21);
+            this.Fecha_DTP.TabIndex = 8;
+            this.Fecha_DTP.Tag = "No Format";
+            this.Fecha_DTP.Value = new System.DateTime(2009, 1, 1, 0, 0, 0, 0);
+            this.Fecha_DTP.ValueChanged += new System.EventHandler(this.Fecha_DTP_ValueChanged);
+            // 
+            // Observaciones_TB
+            // 
+            this.Observaciones_TB.Location = new System.Drawing.Point(181, 532);
+            this.Observaciones_TB.Multiline = true;
+            this.Observaciones_TB.Name = "Observaciones_TB";
+            this.Observaciones_TB.Size = new System.Drawing.Size(593, 94);
+            this.Observaciones_TB.TabIndex = 11;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(568, 35);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(43, 13);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "Horas:";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.Clases_TB);
+            this.groupBox1.Controls.Add(this.Instructores_CB);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.Fecha_DTP);
+            this.groupBox1.Location = new System.Drawing.Point(79, 11);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(695, 72);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            // 
+            // Clases_TB
+            // 
+            this.Clases_TB.Location = new System.Drawing.Point(621, 31);
+            this.Clases_TB.Name = "Clases_TB";
+            this.Clases_TB.Size = new System.Drawing.Size(53, 21);
+            this.Clases_TB.TabIndex = 14;
+            this.Clases_TB.TextChanged += new System.EventHandler(this.Clases_TB_TextChanged);
+            // 
+            // FInicio_Label
+            // 
+            this.FInicio_Label.AutoSize = true;
+            this.FInicio_Label.Location = new System.Drawing.Point(100, 100);
+            this.FInicio_Label.Name = "FInicio_Label";
+            this.FInicio_Label.Size = new System.Drawing.Size(0, 13);
+            this.FInicio_Label.TabIndex = 16;
+            // 
+            // Desmarcar_BT
+            // 
+            this.Desmarcar_BT.Location = new System.Drawing.Point(866, 365);
+            this.Desmarcar_BT.Name = "Desmarcar_BT";
+            this.Desmarcar_BT.Size = new System.Drawing.Size(160, 23);
+            this.Desmarcar_BT.TabIndex = 17;
+            this.Desmarcar_BT.Text = "Desmarcar Todos";
+            this.Desmarcar_BT.UseVisualStyleBackColor = true;
+            this.Desmarcar_BT.Click += new System.EventHandler(this.Desmarcar_BT_Click);
+            // 
+            // Marcar_BT
+            // 
+            this.Marcar_BT.Location = new System.Drawing.Point(866, 327);
+            this.Marcar_BT.Name = "Marcar_BT";
+            this.Marcar_BT.Size = new System.Drawing.Size(160, 23);
+            this.Marcar_BT.TabIndex = 18;
+            this.Marcar_BT.Text = "Marcar Todos";
+            this.Marcar_BT.UseVisualStyleBackColor = true;
+            this.Marcar_BT.Click += new System.EventHandler(this.Marcar_BT_Click);
+            // 
+            // LoadDefault_BT
+            // 
+            this.LoadDefault_BT.Location = new System.Drawing.Point(866, 289);
+            this.LoadDefault_BT.Name = "LoadDefault_BT";
+            this.LoadDefault_BT.Size = new System.Drawing.Size(160, 23);
+            this.LoadDefault_BT.TabIndex = 19;
+            this.LoadDefault_BT.Text = "Configuración por defecto";
+            this.LoadDefault_BT.UseVisualStyleBackColor = true;
+            this.LoadDefault_BT.Click += new System.EventHandler(this.LoadDefault_BT_Click);
+            // 
+            // SetDefault_BT
+            // 
+            this.SetDefault_BT.Location = new System.Drawing.Point(866, 251);
+            this.SetDefault_BT.Name = "SetDefault_BT";
+            this.SetDefault_BT.Size = new System.Drawing.Size(160, 23);
+            this.SetDefault_BT.TabIndex = 20;
+            this.SetDefault_BT.Text = "Establecer por defecto";
+            this.SetDefault_BT.UseVisualStyleBackColor = true;
+            this.SetDefault_BT.Click += new System.EventHandler(this.SetDefault_BT_Click);
+            // 
             // DisponibilidadForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
-            this.ClientSize = new System.Drawing.Size(854, 682);
+            this.ClientSize = new System.Drawing.Size(1070, 682);
             this.HelpProvider.SetHelpNavigator(this, System.Windows.Forms.HelpNavigator.TopicId);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisponibilidadForm";
@@ -2278,5 +2302,7 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.CheckBox X8AM_CB;
         protected System.Windows.Forms.CheckBox J8AM_CB;
         protected System.Windows.Forms.CheckBox V8AM_CB;
+        private System.Windows.Forms.Button SetDefault_BT;
+        private System.Windows.Forms.Button LoadDefault_BT;
     }
 }

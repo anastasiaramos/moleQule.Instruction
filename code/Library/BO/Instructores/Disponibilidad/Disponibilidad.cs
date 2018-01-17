@@ -104,6 +104,7 @@ namespace moleQule.Library.Instruction
         private bool _x8am = false;
         private bool _j8am = false;
         private bool _v8am = false;
+        private bool _predeterminado = false;
   
 		#endregion
 		
@@ -195,6 +196,7 @@ namespace moleQule.Library.Instruction
         public virtual bool X8AM { get { return _nd_x ? false : _x8am; } set { _x8am = value; } }
         public virtual bool J8AM { get { return _nd_j ? false : _j8am; } set { _j8am = value; } }
         public virtual bool V8AM { get { return _nd_v ? false : _v8am; } set { _v8am = value; } }
+        public virtual bool Predeterminado { get { return _predeterminado; } set { _predeterminado = value; } }
 
 		#endregion
 		
@@ -293,6 +295,7 @@ namespace moleQule.Library.Instruction
             _x8am = Format.DataReader.GetBool(source, "X8AM");
             _j8am = Format.DataReader.GetBool(source, "J8AM");
             _v8am = Format.DataReader.GetBool(source, "V8AM");
+            _predeterminado = Format.DataReader.GetBool(source, "PREDETERMINADO");
 
 		}		
 		public virtual void CopyValues(DisponibilidadRecord source)
@@ -386,6 +389,7 @@ namespace moleQule.Library.Instruction
             _x8am = source.X8AM;
             _j8am = source.J8AM;
             _v8am = source.V8AM;
+            _predeterminado = source.Predeterminado;
 		}
 		
 		#endregion	
@@ -2535,6 +2539,27 @@ namespace moleQule.Library.Instruction
                 }
             }
         }
+        public virtual bool Predeterminado
+        {
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            get
+            {
+                //CanReadProperty(true);
+                return _base.Record.Predeterminado;
+            }
+
+            [System.Runtime.CompilerServices.MethodImpl(System.Runtime.CompilerServices.MethodImplOptions.NoInlining)]
+            set
+            {
+                //////CanWriteProperty(true);
+
+                if (!_base.Record.Predeterminado.Equals(value))
+                {
+                    _base.Record.Predeterminado = value;
+                    PropertyHasChanged();
+                }
+            }
+        }
 
         public virtual List<bool> Semana
         {
@@ -2668,6 +2693,7 @@ namespace moleQule.Library.Instruction
 			NdJ = source.NdJ;
 			NdV = source.NdV;
 			NdS = source.NdS;
+            Predeterminado = source.Predeterminado;
 		}
 		
 			

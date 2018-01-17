@@ -59,6 +59,19 @@ namespace moleQule.Library.Instruction
             return list;
         }
 
+        public static Submodulo_Instructor_PromocionList GetListByInstructor(long oid_instructor)
+        {
+            CriteriaEx criteria = Submodulo_Instructor_Promocion.GetCriteria(Submodulo_Instructor_Promocion.OpenSession());
+            criteria.Query = Submodulo_Instructor_PromocionList.SELECT_BY_INSTRUCTOR(oid_instructor);
+
+            //No criteria. Retrieve all de List
+            Submodulo_Instructor_PromocionList list = DataPortal.Fetch<Submodulo_Instructor_PromocionList>(criteria);
+
+            CloseSession(criteria.SessionCode);
+
+            return list;
+        }
+
         public static Submodulo_Instructor_PromocionList GetChildList(IList<Submodulo_Instructor_PromocionInfo> list)
         {
             Submodulo_Instructor_PromocionList flist = new Submodulo_Instructor_PromocionList();
@@ -243,16 +256,52 @@ namespace moleQule.Library.Instruction
             string tabla = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
             string s = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
             string m = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string p = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
             string query;
 
             query = "SELECT SIP.*," +
+                    "       COALESCE(M.\"NUMERO\",0) || ' ' || COALESCE(M.\"TEXTO\",'') AS \"MODULO\", " +
+                    "       COALESCE(S.\"CODIGO\",'') || ' ' || COALESCE(S.\"TEXTO\",'') AS \"SUBMODULO\", " +
+                    "       COALESCE(P.\"NUMERO\",'') || ' ' || COALESCE(P.\"NOMBRE\",'') AS \"PROMOCION\" , " +
                     "       M.\"OID\" AS \"OID_MODULO\"" +
                     " FROM " + tabla + " AS SIP" +
                     " LEFT JOIN " + s + " AS S ON SIP.\"OID_SUBMODULO\" = S.\"OID\"" +
                     " LEFT JOIN " + m + " AS M ON S.\"OID_MODULO\" = M.\"OID\"" +
+                    " LEFT JOIN " + p + " AS P ON P.\"OID\" = SIP.\"OID_PROMOCION\"" +
                     " ORDER BY M.\"NUMERO_ORDEN\", S.\"CODIGO_ORDEN\"";
 
             return query;
+        }
+
+        /// <summary>
+        /// Construye la tabla 
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="schema"></param>
+        /// <param name="sesion"></param>
+        /// <returns></returns>
+        public static string SELECT_BY_INSTRUCTOR(long oid_instructor)
+        {
+            string tabla = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
+            string s = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
+            string m = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string p = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
+            string query;
+
+            query = "SELECT SIP.*," +
+                    "       COALESCE(M.\"NUMERO\",0) || ' ' || COALESCE(M.\"TEXTO\",'') AS \"MODULO\", " +
+	                "       COALESCE(S.\"CODIGO\",'') || ' ' || COALESCE(S.\"TEXTO\",'') AS \"SUBMODULO\", " +
+	                "       COALESCE(P.\"NUMERO\",'') || ' ' || COALESCE(P.\"NOMBRE\",'') AS \"PROMOCION\" , " + 
+                    "       M.\"OID\" AS \"OID_MODULO\"" +
+                    " FROM " + tabla + " AS SIP" +
+                    " LEFT JOIN " + s + " AS S ON SIP.\"OID_SUBMODULO\" = S.\"OID\"" +
+                    " LEFT JOIN " + m + " AS M ON S.\"OID_MODULO\" = M.\"OID\"" +
+                    " LEFT JOIN " + p + " AS P ON P.\"OID\" = SIP.\"OID_PROMOCION\"" +
+                    " WHERE SIP.\"OID_INSTRUCTOR\" = " + oid_instructor.ToString() +
+                    " ORDER BY P.\"NUMERO\", M.\"NUMERO_ORDEN\", S.\"CODIGO_ORDEN\"";
+
+            return query;
+
         }
 
         #endregion

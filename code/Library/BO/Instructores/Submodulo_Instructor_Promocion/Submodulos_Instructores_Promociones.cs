@@ -244,15 +244,20 @@ namespace moleQule.Library.Instruction
             string sip = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
             string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
             string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
             string submodulo_instructor = nHManager.Instance.GetSQLTable(typeof(Submodulo_InstructorRecord));
 
             string query;
 
             query = "SELECT SIP.*," +
+                    "       COALESCE(M.\"NUMERO\",0) || ' ' || COALESCE(M.\"TEXTO\",'') AS \"MODULO\", " +
+                    "       COALESCE(S.\"CODIGO\",'') || ' ' || COALESCE(S.\"TEXTO\",'') AS \"SUBMODULO\", " +
+                    "       COALESCE(P.\"NUMERO\",'') || ' ' || COALESCE(P.\"NOMBRE\",'') AS \"PROMOCION\" , " +
                     "       M.\"OID\" AS \"OID_MODULO\"" +
                     " FROM " + sip + " AS SIP" +
-                    " INNER JOIN " + submodulo + " AS S ON (SIP.\"OID_SUBMODULO\" = S.\"OID\") " +
-                    " INNER JOIN " + modulo + " AS M ON (S.\"OID_MODULO\" = M.\"OID\") " +
+                    " LEFT JOIN " + submodulo + " AS S ON SIP.\"OID_SUBMODULO\" = S.\"OID\"" +
+                    " LEFT JOIN " + modulo + " AS M ON S.\"OID_MODULO\" = M.\"OID\"" +
+                    " LEFT JOIN " + promocion + " AS P ON P.\"OID\" = SIP.\"OID_PROMOCION\"" +
                     " WHERE SIP.\"OID_INSTRUCTOR_PROMOCION\" = " + oid.ToString();
 
             if (ModulePrincipal.GetMostrarInstructoresAutorizadosSetting())
@@ -279,15 +284,20 @@ namespace moleQule.Library.Instruction
             string sip = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
             string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
             string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
             string si = nHManager.Instance.GetSQLTable(typeof(Submodulo_InstructorRecord));
 
             string query;
 
             query = "SELECT SIP.*," +
+                    "       COALESCE(M.\"NUMERO\",0) || ' ' || COALESCE(M.\"TEXTO\",'') AS \"MODULO\", " +
+                    "       COALESCE(S.\"CODIGO\",'') || ' ' || COALESCE(S.\"TEXTO\",'') AS \"SUBMODULO\", " +
+                    "       COALESCE(P.\"NUMERO\",'') || ' ' || COALESCE(P.\"NOMBRE\",'') AS \"PROMOCION\" , " +
                     "       M.\"OID\" AS \"OID_MODULO\"" +
                     " FROM " + sip + " AS SIP" +
-                    " INNER JOIN " + submodulo + " AS S ON (SIP.\"OID_SUBMODULO\" = S.\"OID\") " +
-                    " INNER JOIN " + modulo + " AS M ON (S.\"OID_MODULO\" = M.\"OID\") " +
+                    " LEFT JOIN " + submodulo + " AS S ON SIP.\"OID_SUBMODULO\" = S.\"OID\"" +
+                    " LEFT JOIN " + modulo + " AS M ON S.\"OID_MODULO\" = M.\"OID\"" +
+                    " LEFT JOIN " + promocion + " AS P ON P.\"OID\" = SIP.\"OID_PROMOCION\"" +
                     " WHERE SIP.\"OID_INSTRUCTOR_PROMOCION\" = " + oid.ToString() + " ";
 
             if (ModulePrincipal.GetMostrarInstructoresAutorizadosSetting())
@@ -309,14 +319,19 @@ namespace moleQule.Library.Instruction
             string sip = nHManager.Instance.GetSQLTable(typeof(Submodulo_Instructor_PromocionRecord));
             string submodulo = nHManager.Instance.GetSQLTable(typeof(SubmoduloRecord));
             string modulo = nHManager.Instance.GetSQLTable(typeof(ModuloRecord));
+            string promocion = nHManager.Instance.GetSQLTable(typeof(PromocionRecord));
 
             string query;
 
             query = "SELECT *," +
+                    "       COALESCE(M.\"NUMERO\",0) || ' ' || COALESCE(M.\"TEXTO\",'') AS \"MODULO\", " +
+                    "       COALESCE(S.\"CODIGO\",'') || ' ' || COALESCE(S.\"TEXTO\",'') AS \"SUBMODULO\", " +
+                    "       COALESCE(P.\"NUMERO\",'') || ' ' || COALESCE(P.\"NOMBRE\",'') AS \"PROMOCION\" , " +
                     "       M.\"OID\" AS \"OID_MODULO\"" +
                     " FROM " + sip + " AS SIP" +
-                    " INNER JOIN " + submodulo + " AS S ON (SIP.\"OID_SUBMODULO\" = S.\"OID\")" +
-                    " INNER JOIN " + modulo + " AS M ON (S.\"OID_MODULO\" = M.\"OID\")" +
+                    " LEFT JOIN " + submodulo + " AS S ON SIP.\"OID_SUBMODULO\" = S.\"OID\"" +
+                    " LEFT JOIN " + modulo + " AS M ON S.\"OID_MODULO\" = M.\"OID\"" +
+                    " LEFT JOIN " + promocion + " AS P ON P.\"OID\" = SIP.\"OID_PROMOCION\"" +
                     " WHERE SIP.\"OID_PROMOCION\" = " + oid.ToString() +
                     " ORDER BY M.\"NUMERO_ORDEN\", S.\"CODIGO_ORDEN\"";
 

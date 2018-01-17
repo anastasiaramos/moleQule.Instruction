@@ -113,6 +113,7 @@ namespace moleQule.Library.Instruction
         public bool X8AM { get { return _base.Record.X8AM; } }
         public bool J8AM { get { return _base.Record.J8AM; } }
         public bool V8AM { get { return _base.Record.V8AM; } }
+        public bool Predeterminado { get { return _base.Record.Predeterminado; } }
 
         public List<bool> Semana { get { return _base.Semana; } set { _base.Semana = value; } }
 

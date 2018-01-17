@@ -208,10 +208,12 @@ namespace moleQule.Face.Instruction
             // 
             // Imprimir_Button
             // 
+            this.Imprimir_Button.Enabled = true;
             this.Imprimir_Button.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.Imprimir_Button.Location = new System.Drawing.Point(161, 6);
             this.HelpProvider.SetShowHelp(this.Imprimir_Button, true);
             this.Imprimir_Button.Size = new System.Drawing.Size(87, 23);
+            this.Imprimir_Button.Visible = true;
             // 
             // Docs_BT
             // 

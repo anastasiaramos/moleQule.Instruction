@@ -34,13 +34,21 @@ namespace moleQule.Library.Instruction
         public long OidInstructorPromocion { get { return _base.Record.OidInstructorPromocion; } }
 
         public long OidModulo { get { return _base.OidModulo; } }
+        public string Modulo { get { return _base.Modulo; } }
+        public string Submodulo { get { return _base.Submodulo; } }
+        public string Promocion { get { return _base.Promocion; } }
 		
 		
 		#endregion
 		
 		#region Business Methods
-						
-		public void CopyFrom(Submodulo_Instructor_Promocion source) { _base.CopyValues(source); }
+
+        public void CopyFrom(Submodulo_Instructor_Promocion source) { _base.CopyValues(source); }
+
+        public Submodulo_Instructor_PromocionPrint GetPrintObject()
+        {
+            return Submodulo_Instructor_PromocionPrint.New(this);
+        }
 			
 		#endregion		
 					 
