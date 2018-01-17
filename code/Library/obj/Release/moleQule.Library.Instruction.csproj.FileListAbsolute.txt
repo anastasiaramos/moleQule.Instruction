@@ -78,7 +78,6 @@ C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\Npgsql.pdb
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\Npgsql.xml
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\bin\policy.2.0.Npgsql.config
-C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Release\moleQule.Library.Instruction.Reports.Examen.RespuestaExamenListSubRpt.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Release\moleQule.Library.Instruction.Resources.Defaults.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Release\moleQule.Library.Instruction.Resources.ElementosSeguros.resources
 C:\Users\Anastasia\Documents\Git Projects\moleQule.Instruction\code\Library\obj\Release\moleQule.Library.Instruction.Resources.Enums.resources

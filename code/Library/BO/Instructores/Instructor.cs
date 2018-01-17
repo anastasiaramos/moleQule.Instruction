@@ -1778,6 +1778,26 @@ namespace moleQule.Library.Instruction
 			return false;
 		}
 
+        
+        public Disponibilidad GetPredeterminado()
+        {
+            Disponibilidad disp = null;
+
+            if (Disponibilidades != null && Disponibilidades.Count > 0)
+            {
+                foreach (Disponibilidad item in Disponibilidades)
+                {
+                    if (item.Predeterminado)
+                    {
+                        disp = item.Clone();
+                        break;
+                    }
+                }
+            }
+
+            return disp;
+        }
+
         //public static ListaProfesores GetInstructoresHorarios(DateTime time, long oid_promocion)
         //{
         //    ListaProfesores lista = new ListaProfesores();

@@ -289,6 +289,9 @@ namespace moleQule.Face.Instruction
                                 }
                             }
 
+                            FormatDefaultButtons();
+
+
                         } break;
                     case "Instructores_CB":
                         {
@@ -326,8 +329,10 @@ namespace moleQule.Face.Instruction
                                     Datos_Disponibilidad.DataSource = _entity.Disponibilidades;
                                 }
 
-                                Fecha_DTP.Value = DateTime.Today;                                
-                               SetDependentControlSource(Fecha_DTP.Name);
+                                Fecha_DTP.Value = DateTime.Today;
+
+                                _default = _entity.GetPredeterminado();
+                                SetDependentControlSource(Fecha_DTP.Name);
                             }
 
                         } break;
@@ -391,6 +396,8 @@ namespace moleQule.Face.Instruction
             }
 
             _disponibilidad.Predeterminado = true;
+
+            _default = _disponibilidad.Clone();
         }
 
         protected override void LoadDefaultAction()

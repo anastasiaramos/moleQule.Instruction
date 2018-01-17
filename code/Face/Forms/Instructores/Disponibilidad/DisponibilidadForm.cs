@@ -28,6 +28,7 @@ namespace moleQule.Face.Instruction
         
         protected InstructorList listainfo = null;
         protected Disponibilidad _disponibilidad;
+        protected Disponibilidad _default = null;
 
         /// <summary>
         /// Se trata del objeto actual y que se va a editar.
@@ -166,6 +167,24 @@ namespace moleQule.Face.Instruction
 
         #endregion
 
+        #region Commands
+
+        protected virtual void FormatDefaultButtons()
+        {
+            if (_default != null && _disponibilidad.EsPredeterminado(_default))
+                SetDefaultButtons(false);
+            else
+                SetDefaultButtons(true);
+        }
+
+        protected virtual void SetDefaultButtons(bool value)
+        {
+            LoadDefault_BT.Enabled = value;
+            SetDefault_BT.Enabled = value;
+        }
+
+        #endregion
+
         #region Events
 
         private void Fecha_DTP_ValueChanged(object sender, EventArgs e)
@@ -289,6 +308,8 @@ namespace moleQule.Face.Instruction
                 J0_CB.Checked = false;
                 V0_CB.Checked = false;
             }
+
+            FormatDefaultButtons();
         }
 
         private void Marcar_BT_Click(object sender, EventArgs e)
@@ -371,48 +392,86 @@ namespace moleQule.Face.Instruction
                 J0_CB.Checked = true;
                 V0_CB.Checked = true;
             }
+
+            FormatDefaultButtons();
         }
 
         private void L0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.L0 = L0_CB.Checked;
+
+            if (_default == null || _disponibilidad.L0 != _default.L0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.M0 = M0_CB.Checked;
+
+            if (_default == null || _disponibilidad.M0 != _default.M0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.X0 = X0_CB.Checked;
+
+            if (_default == null || _disponibilidad.X0 != _default.X0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.J0 = J0_CB.Checked;
+
+            if (_default == null || _disponibilidad.J0 != _default.J0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.V0 = V0_CB.Checked;
+
+            if (_default == null || _disponibilidad.V0 != _default.V0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void S0_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.S0 = S0_CB.Checked;
+
+            if (_default == null || _disponibilidad.S0 != _default.S0)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void L1_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.L1 = L1_CB.Checked;
+
+            if (_default == null || _disponibilidad.L1 != _default.L1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
 
         }
 
@@ -421,12 +480,22 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad != null)
                 _disponibilidad.M1 = M1_CB.Checked;
 
+            if (_default == null || _disponibilidad.M1 != _default.M1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void X1_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X1 = X1_CB.Checked;
+
+            if (_default == null || _disponibilidad.X1 != _default.X1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
 
         }
 
@@ -435,12 +504,22 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad != null)
                 _disponibilidad.J1 = J1_CB.Checked;
 
+            if (_default == null || _disponibilidad.J1 != _default.J1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void V1_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.V1 = V1_CB.Checked;
+
+            if (_default == null || _disponibilidad.V1 != _default.V1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
 
         }
 
@@ -449,12 +528,22 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad != null)
                 _disponibilidad.S1 = S1_CB.Checked;
 
+            if (_default == null || _disponibilidad.S1 != _default.S1)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void L2_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L2 = L2_CB.Checked;
+
+            if (_default == null || _disponibilidad.L2 != _default.L2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
 
         }
 
@@ -463,6 +552,11 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad !=null)
                 _disponibilidad.M2 = M2_CB.Checked;
 
+            if (_default == null || _disponibilidad.M2 != _default.M2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void X2_CB_CheckedChanged(object sender, EventArgs e)
@@ -470,372 +564,686 @@ namespace moleQule.Face.Instruction
             if (_disponibilidad !=null)
                 _disponibilidad.X2 = X2_CB.Checked;
 
+            if (_default == null || _disponibilidad.X2 != _default.X2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
         }
 
         private void J2_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J2 = J2_CB.Checked;
+
+            if (_default == null || _disponibilidad.J2 != _default.J2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V2_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V2 = V2_CB.Checked;
+
+            if (_default == null || _disponibilidad.V2 != _default.V2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void S2_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.S2 = S2_CB.Checked;
+
+            if (_default == null || _disponibilidad.S2 != _default.S2)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L3 = L3_CB.Checked;
+
+            if (_default == null || _disponibilidad.L3 != _default.L3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M3 = M3_CB.Checked;
+
+            if (_default == null || _disponibilidad.M3 != _default.M3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X3 = X3_CB.Checked;
+
+            if (_default == null || _disponibilidad.X3 != _default.X3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J3 = J3_CB.Checked;
+
+            if (_default == null || _disponibilidad.J3 != _default.J3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V3 = V3_CB.Checked;
+
+            if (_default == null || _disponibilidad.V3 != _default.V3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void S3_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.S3 = S3_CB.Checked;
+
+            if (_default == null || _disponibilidad.S3 != _default.S3)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L4 = L4_CB.Checked;
+
+            if (_default == null || _disponibilidad.L4 != _default.L4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M4 = M4_CB.Checked;
+
+            if (_default == null || _disponibilidad.M4 != _default.M4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X4 = X4_CB.Checked;
+
+            if (_default == null || _disponibilidad.X4 != _default.X4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J4 = J4_CB.Checked;
+
+            if (_default == null || _disponibilidad.J4 != _default.J4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V4 = V4_CB.Checked;
+
+            if (_default == null || _disponibilidad.V4 != _default.V4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void S4_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.S4 = S4_CB.Checked;
+
+            if (_default == null || _disponibilidad.S4 != _default.S4)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L5_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L5 = L5_CB.Checked;
+
+            if (_default == null || _disponibilidad.L5 != _default.L5)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M5_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M5 = M5_CB.Checked;
+
+            if (_default == null || _disponibilidad.M5 != _default.M5)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X5_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X5 = X5_CB.Checked;
+
+            if (_default == null || _disponibilidad.X5 != _default.X5)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J5_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J5 = J5_CB.Checked;
+
+            if (_default == null || _disponibilidad.J5 != _default.J5)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V5_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V5 = V5_CB.Checked;
+
+            if (_default == null || _disponibilidad.V5 != _default.V5)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L6_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L6 = L6_CB.Checked;
+
+            if (_default == null || _disponibilidad.L6 != _default.L6)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M6_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M6 = M6_CB.Checked;
+
+            if (_default == null || _disponibilidad.M6 != _default.M6)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X6_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X6 = X6_CB.Checked;
+
+            if (_default == null || _disponibilidad.X6 != _default.X6)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J6_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J6 = J6_CB.Checked;
+
+            if (_default == null || _disponibilidad.J6 != _default.J6)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V6_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V6 = V6_CB.Checked;
+
+            if (_default == null || _disponibilidad.V6 != _default.V6)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L7_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L7 = L7_CB.Checked;
+
+            if (_default == null || _disponibilidad.L7 != _default.L7)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M7_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M7 = M7_CB.Checked;
+
+            if (_default == null || _disponibilidad.M7 != _default.M7)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X7_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X7 = X7_CB.Checked;
+
+            if (_default == null || _disponibilidad.X7 != _default.X7)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J7_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J7 = J7_CB.Checked;
+
+            if (_default == null || _disponibilidad.J7 != _default.J7)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V7_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V7 = V7_CB.Checked;
+
+            if (_default == null || _disponibilidad.V7 != _default.V7)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L8_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L8 = L8_CB.Checked;
+
+            if (_default == null || _disponibilidad.L8 != _default.L8)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M8_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M8 = M8_CB.Checked;
+
+            if (_default == null || _disponibilidad.M8 != _default.M8)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X8_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X8 = X8_CB.Checked;
+
+            if (_default == null || _disponibilidad.X8 != _default.X8)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J8_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J8 = J8_CB.Checked;
+
+            if (_default == null || _disponibilidad.J8 != _default.J8)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
+            FormatDefaultButtons();
         }
 
         private void V8_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V8 = V8_CB.Checked;
+
+            if (_default == null || _disponibilidad.V8 != _default.V8)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L9_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L9 = L9_CB.Checked;
+
+            if (_default == null || _disponibilidad.L9 != _default.L9)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M9_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M9 = M9_CB.Checked;
+
+            if (_default == null || _disponibilidad.M9 != _default.M9)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X9_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X9 = X9_CB.Checked;
+
+            if (_default == null || _disponibilidad.X9 != _default.X9)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J9_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J9 = J9_CB.Checked;
+
+            if (_default == null || _disponibilidad.J9 != _default.J9)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
+
+            FormatDefaultButtons();
         }
 
         private void V9_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.V9 = V9_CB.Checked;
+
+            if (_default == null || _disponibilidad.V9 != _default.V9)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L10_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.L10 = L10_CB.Checked;
+
+            if (_default == null || _disponibilidad.L10 != _default.L10)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M10_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.M10 = M10_CB.Checked;
+
+            if (_default == null || _disponibilidad.M10 != _default.M10)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X10_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.X10 = X10_CB.Checked;
+
+            if (_default == null || _disponibilidad.X10 != _default.X10)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J10_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad !=null)
                 _disponibilidad.J10 = J10_CB.Checked;
+
+            if (_default == null || _disponibilidad.J10 != _default.J10)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V10_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.V10 = V10_CB.Checked;
+
+            if (_default == null || _disponibilidad.V10 != _default.V10)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L11_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.L11 = L11_CB.Checked;
+
+            if (_default == null || _disponibilidad.L11 != _default.L11)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L12_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.L12 = L12_CB.Checked;
+
+            if (_default == null || _disponibilidad.L12 != _default.L12)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M11_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.M11 = M11_CB.Checked;
+
+            if (_default == null || _disponibilidad.M11 != _default.M11)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void M12_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.M12 = M12_CB.Checked;
+
+            if (_default == null || _disponibilidad.M12 != _default.M12)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X11_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.X11 = X11_CB.Checked;
+
+            if (_default == null || _disponibilidad.X11 != _default.X11)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void X12_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.X12 = X12_CB.Checked;
+
+            if (_default == null || _disponibilidad.X12 != _default.X12)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J11_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.J11 = J11_CB.Checked;
+
+            if (_default == null || _disponibilidad.J11 != _default.J11)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void J12_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.J12 = J12_CB.Checked;
+
+            if (_default == null || _disponibilidad.J12 != _default.J12)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V11_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.V11 = V11_CB.Checked;
+
+            if (_default == null || _disponibilidad.V11 != _default.V11)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void V12_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.V12 = V12_CB.Checked;
+
+            if (_default == null || _disponibilidad.V12 != _default.V12)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_L_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdL = ND_L_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdL != _default.NdL)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_M_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdM = ND_M_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdM != _default.NdM)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_X_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdX = ND_X_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdX != _default.NdX)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_J_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdJ = ND_J_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdJ != _default.NdJ)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_V_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdV = ND_V_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdV != _default.NdV)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void ND_S_CB_CheckedChanged(object sender, EventArgs e)
         {
             if (_disponibilidad != null)
                 _disponibilidad.NdS = ND_S_CB.Checked;
+
+            if (_default == null || _disponibilidad.NdS != _default.NdS)
+                SetDefaultButtons(true);
+            else
+                FormatDefaultButtons();
         }
 
         private void L0_CB_MouseMove(object sender, MouseEventArgs e)

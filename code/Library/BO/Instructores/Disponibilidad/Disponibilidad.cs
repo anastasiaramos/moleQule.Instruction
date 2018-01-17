@@ -2914,7 +2914,59 @@ namespace moleQule.Library.Instruction
 
 		 
 		 #endregion
-	
-	}
+
+        #region Commands
+
+            public bool EsPredeterminado(Disponibilidad predeterminado)
+            {
+                if (predeterminado.ClasesSemanales == ClasesSemanales)
+                {
+                    if (predeterminado.L8AM != L8AM || predeterminado.L0 != L0 || predeterminado.L1 != L1
+                        || predeterminado.L2 != L2 || predeterminado.L3 != L3 || predeterminado.L4 != L4
+                        || predeterminado.L5 != L5 || predeterminado.L6 != L6 || predeterminado.L7 != L7
+                        || predeterminado.L8 != L8 || predeterminado.L9 != L9 || predeterminado.L10 != L10 
+                        || predeterminado.L11 != L11 || predeterminado.L12 != L12 || predeterminado.NdL != NdL
+
+                        || predeterminado.M8AM != M8AM || predeterminado.M0 != M0 || predeterminado.M1 != M1
+                        || predeterminado.M2 != M2 || predeterminado.M3 != M3 || predeterminado.M4 != M4
+                        || predeterminado.M5 != M5 || predeterminado.M6 != M6 || predeterminado.M7 != M7
+                        || predeterminado.M8 != M8 || predeterminado.M9 != M9 || predeterminado.M10 != M10
+                        || predeterminado.M11 != M11 || predeterminado.M12 != M12 || predeterminado.NdM != NdM
+
+                        || predeterminado.X8AM != X8AM || predeterminado.X0 != X0 || predeterminado.X1 != X1
+                        || predeterminado.X2 != X2 || predeterminado.X3 != X3 || predeterminado.X4 != X4
+                        || predeterminado.X5 != X5 || predeterminado.X6 != X6 || predeterminado.X7 != X7
+                        || predeterminado.X8 != X8 || predeterminado.X9 != X9 || predeterminado.X10 != X10
+                        || predeterminado.X11 != X11 || predeterminado.X12 != X12 || predeterminado.NdX != NdX
+
+                        || predeterminado.J8AM != J8AM || predeterminado.J0 != J0 || predeterminado.J1 != J1
+                        || predeterminado.J2 != J2 || predeterminado.J3 != J3 || predeterminado.J4 != J4
+                        || predeterminado.J5 != J5 || predeterminado.J6 != J6 || predeterminado.J7 != J7
+                        || predeterminado.J8 != J8 || predeterminado.J9 != J9 || predeterminado.J10 != J10
+                        || predeterminado.J11 != J11 || predeterminado.J12 != J12 || predeterminado.NdJ != NdJ
+
+                        || predeterminado.V8AM != V8AM || predeterminado.V0 != V0 || predeterminado.V1 != V1
+                        || predeterminado.V2 != V2 || predeterminado.V3 != V3 || predeterminado.V4 != V4
+                        || predeterminado.V5 != V5 || predeterminado.V6 != V6 || predeterminado.V7 != V7
+                        || predeterminado.V8 != V8 || predeterminado.V9 != V9 || predeterminado.V10 != V10
+                        || predeterminado.V11 != V11 || predeterminado.V12 != V12 || predeterminado.NdV != NdV
+
+                        || predeterminado.S0 != S0 || predeterminado.S1 != S1
+                        || predeterminado.S2 != S2 || predeterminado.S3 != S3 || predeterminado.S4 != S4
+                        || predeterminado.NdS != NdS) 
+                        
+                        return false;
+
+                }
+                else
+                    return false;
+
+
+                return true;
+            }
+
+        #endregion
+
+    }
 }
 

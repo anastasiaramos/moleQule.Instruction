@@ -240,7 +240,7 @@ namespace moleQule.Face.Instruction
             // 
             // Progress_Panel
             // 
-            this.Progress_Panel.Location = new System.Drawing.Point(326, 232);
+            this.Progress_Panel.Location = new System.Drawing.Point(326, 93);
             // 
             // ProgressBK_Panel
             // 
@@ -2302,7 +2302,7 @@ namespace moleQule.Face.Instruction
         protected System.Windows.Forms.CheckBox X8AM_CB;
         protected System.Windows.Forms.CheckBox J8AM_CB;
         protected System.Windows.Forms.CheckBox V8AM_CB;
-        private System.Windows.Forms.Button SetDefault_BT;
-        private System.Windows.Forms.Button LoadDefault_BT;
+        protected System.Windows.Forms.Button SetDefault_BT;
+        protected System.Windows.Forms.Button LoadDefault_BT;
     }
 }
