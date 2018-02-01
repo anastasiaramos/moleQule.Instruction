@@ -18,43 +18,43 @@ namespace moleQule.Library.Instruction
 
         #region Business Methods Examen
 
-        public ExamenTestRpt GetDetailTestReport(   ExamenInfo item, 
-                                                    CompanyInfo empresa, 
-                                                    Preguntas lista_preguntas)
-        {
-            if (item == null) return null;
-            ExamenTestRpt doc = new ExamenTestRpt();
+        //public ExamenTestRpt GetDetailTestReport(   ExamenInfo item, 
+        //                                            CompanyInfo empresa, 
+        //                                            Preguntas lista_preguntas)
+        //{
+        //    if (item == null) return null;
+        //    ExamenTestRpt doc = new ExamenTestRpt();
             
-            List<ExamenPrint> pList = new List<ExamenPrint>();
-            List<PreguntaExamenInfo> preguntas = new List<PreguntaExamenInfo>();
-            List<RespuestaExamenPrint> respuestas = new List<RespuestaExamenPrint>();
+        //    List<ExamenPrint> pList = new List<ExamenPrint>();
+        //    List<PreguntaExamenInfo> preguntas = new List<PreguntaExamenInfo>();
+        //    List<RespuestaExamenPrint> respuestas = new List<RespuestaExamenPrint>();
 
-            foreach (PreguntaExamenInfo info in item.PreguntaExamenes)
-            {
-                bool imagen = true;
-                preguntas.Add(info.GetPrintObject(lista_preguntas));
-                foreach (RespuestaExamenInfo r_info in info.RespuestaExamenes)
-                {
-                    respuestas.Add(r_info.GetPrintObject(info, lista_preguntas, item, imagen));
-                    imagen = false; //será verdadero sólo en la primera iteración, para que sólo cargue la imagen una vez
-                }
-            }
+        //    foreach (PreguntaExamenInfo info in item.PreguntaExamenes)
+        //    {
+        //        bool imagen = true;
+        //        preguntas.Add(info.GetPrintObject(lista_preguntas));
+        //        foreach (RespuestaExamenInfo r_info in info.RespuestaExamenes)
+        //        {
+        //            respuestas.Add(r_info.GetPrintObject(info, lista_preguntas, item, imagen));
+        //            imagen = false; //será verdadero sólo en la primera iteración, para que sólo cargue la imagen una vez
+        //        }
+        //    }
 
-            //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
-            if (preguntas.Count <= 0)
-                return null;
+        //    //Si no existen conceptos, no tiene sentido un informe detallado. Además, falla en Crystal Reports
+        //    if (preguntas.Count <= 0)
+        //        return null;
             
-            pList.Add(item.GetPrintObject(empresa, string.Empty));
+        //    pList.Add(item.GetPrintObject(empresa, string.Empty));
 
-            doc.SetDataSource(pList);
+        //    doc.SetDataSource(pList);
 
-            doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(respuestas);
-            doc.SetParameterValue("Empresa", empresa.Name);
+        //    doc.Subreports["RespuestaExamenListSubRpt"].SetDataSource(respuestas);
+        //    doc.SetParameterValue("Empresa", empresa.Name);
 
-            //FormatReport(doc, preguntas);
+        //    //FormatReport(doc, preguntas);
 
-            return doc;
-        }
+        //    return doc;
+        //}
 
         public ExamenTestRpt GetDetailTestReport(ExamenInfo item,
                                                 CompanyInfo empresa,

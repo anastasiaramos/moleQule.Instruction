@@ -54,66 +54,9 @@ namespace moleQule.Library.Instruction
                 if (pregunta.Imagen != string.Empty)
                 {
                     if (File.Exists(pregunta.ImagenWithPath))
-                        _imagen = Resize(pregunta.ImagenWithPath);
+                        _imagen = Resize(pregunta.ImagenWithPath, pregunta.Imagen);
                     else
                         _imagen = string.Empty;
-
-                    /*if (File.Exists(pregunta.ImagenWithPath))
-                    {
-                        //string path = Images.GetRootPath() + Paths.FOTO_PREGUNTAS_EXAMENES.Substring(2) + pregunta.OidExamen.ToString("00000") + "\\" + pregunta.Imagen;
-                        string path = pregunta.ImagenWithPath;
-
-                        // Cargamos la imagen en el buffer
-                        if (File.Exists(path))
-                        {
-                            Bitmap bitmap = new Bitmap(path);
-                            string ext = string.Empty;
-
-                            if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                                ext = ".jpg";
-                            else
-                            {
-                                if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                                    ext = ".bmp";
-                                else
-                                {
-                                    if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                                        ext = ".png";
-                                }
-                            }
-
-                            if (_imagen_grande)
-                            {
-                                Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                            }
-                            else
-                            {
-                                if (bitmap.Width > 750 || bitmap.Height > 850)
-                                {
-                                    Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                    path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                }
-                                else
-                                {
-                                    Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, bitmap.Width, bitmap.Height, true, bitmap.RawFormat);
-                                    path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                }
-                            }
-
-                            //Declaramos fs para poder abrir la imagen.
-                            FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-
-                            // Declaramos un lector binario para pasar la imagen a bytes
-                            BinaryReader br = new BinaryReader(fs);
-                            _imagen_pregunta = new byte[(int)fs.Length];
-                            br.Read(ImagenPregunta, 0, (int)fs.Length);
-                            br.Close();
-                            fs.Close();
-                        }
-                    }
-                    else
-                        _imagen = string.Empty;*/
                 }
                 else
                 {
@@ -124,81 +67,13 @@ namespace moleQule.Library.Instruction
                         if (p != null && p.Imagen != string.Empty)
                         {
                             if (File.Exists(p.ImagenWithPath))
-                                _imagen = Resize(p.ImagenWithPath);
+                                _imagen = Resize(p.ImagenWithPath, p.Imagen);
                             else
                                 _imagen = string.Empty;
-
-                            /*if (File.Exists(p.ImagenWithPath))
-                            {
-                                //string path = Images.GetRootPath() + Paths.FOTO_PREGUNTAS.Substring(2) + p.Imagen;
-                                _imagen = p.Imagen;
-                                string path = p.ImagenWithPath;
-
-                                // Cargamos la imagen en el buffer
-                                if (File.Exists(path))
-                                {
-                                    Bitmap bitmap = new Bitmap(path);
-                                    string ext = string.Empty;
-
-                                    if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                                        ext = ".jpg";
-                                    else
-                                    {
-                                        if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                                            ext = ".bmp";
-                                        else
-                                        {
-                                            if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                                                ext = ".png";
-                                        }
-                                    }
-
-                                    if (_imagen_grande)
-                                    {
-                                        Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                        path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                    }
-                                    else
-                                    {
-                                        if (bitmap.Width > 750 || bitmap.Height > 850)
-                                        {
-                                            Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                            path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                        }
-                                        else
-                                        {
-                                            File.Copy(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext, true);
-                                            //Images.Save(path, Resources.Paths.FOTO_PREGUNTAS_EXAMENES, "temp" + ext, bitmap.Width, bitmap.Height, true, bitmap.RawFormat);
-                                            path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                        }
-                                    }
-
-                                    Image prueba = Image.FromFile(path);
-                                    MemoryStream stream = new MemoryStream();
-                                    prueba.Save(stream, bitmap.RawFormat);
-                                    _imagen_pregunta = stream.ToArray();
-
-                                    bitmap.Dispose();
-                                    prueba.Dispose();
-
-                                    //Declaramos fs para poder abrir la imagen.
-                                    //FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-
-                                    //// Declaramos un lector binario para pasar la imagen a bytes
-                                    //BinaryReader br = new BinaryReader(fs);
-                                    //_imagen_pregunta = new byte[(int)fs.Length];
-                                    //br.Read(ImagenPregunta, 0, (int)fs.Length);
-                                    //br.Close();
-                                    //fs.Close();
-                                }
-                            }
-                            else
-                                _imagen = string.Empty;*/
                         }
                     }
                 }
             }
-            _imagen_grande = false; //trampilla :)
         }
 
         protected void CopyValues(RespuestaExamenInfo source,
@@ -220,72 +95,15 @@ namespace moleQule.Library.Instruction
             _pregunta = pregunta.Texto;
             _orden = pregunta.Orden;
             _imagen = pregunta.Imagen;
-            _imagen_grande = pregunta.ImagenGrande;
 
             if (imagen)
             {
                 if (pregunta.Imagen != string.Empty)
                 {
                     if (File.Exists(pregunta.ImagenWithPath))
-                        _imagen = Resize(pregunta.ImagenWithPath);
+                        _imagen = Resize(pregunta.ImagenWithPath, pregunta.Imagen);
                     else
                         _imagen = string.Empty;
-                    //string path = Images.GetRootPath() + Paths.FOTO_PREGUNTAS_EXAMENES.Substring(2) + pregunta.OidExamen.ToString("00000") + "\\" + pregunta.Imagen;
-                    /*if (File.Exists(pregunta.ImagenWithPath))
-                    {
-                        string path = pregunta.ImagenWithPath;
-
-                        // Cargamos la imagen en el buffer
-                        if (File.Exists(path))
-                        {
-                            Bitmap bitmap = new Bitmap(path);
-                            string ext = string.Empty;
-
-                            if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                                ext = ".jpg";
-                            else
-                            {
-                                if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                                    ext = ".bmp";
-                                else
-                                {
-                                    if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                                        ext = ".png";
-                                }
-                            }
-
-                            if (_imagen_grande)
-                            {
-                                Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                            }
-                            else
-                            {
-                                if (bitmap.Width > 750 || bitmap.Height > 850)
-                                {
-                                    Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                    path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                }
-                                else
-                                {
-                                    Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, bitmap.Width, bitmap.Height, true, bitmap.RawFormat);
-                                    path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                }
-                            }
-
-                            //Declaramos fs para poder abrir la imagen.
-                            FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-
-                            // Declaramos un lector binario para pasar la imagen a bytes
-                            BinaryReader br = new BinaryReader(fs);
-                            _imagen_pregunta = new byte[(int)fs.Length];
-                            br.Read(ImagenPregunta, 0, (int)fs.Length);
-                            br.Close();
-                            fs.Close();
-                        }
-                    }
-                    else
-                        _imagen = string.Empty;*/
                 }
                 else
                 {
@@ -296,81 +114,13 @@ namespace moleQule.Library.Instruction
                         if (p != null && p.Imagen != string.Empty)
                         {
                             if (File.Exists(p.ImagenWithPath))
-                                _imagen = Resize(p.ImagenWithPath);
+                                _imagen = Resize(p.ImagenWithPath, p.Imagen);
                             else
                                 _imagen = string.Empty;
-
-                            /*if (File.Exists(p.ImagenWithPath))
-                            {
-                                //string path = Images.GetRootPath() + Paths.FOTO_PREGUNTAS.Substring(2) + p.Imagen;
-                                _imagen = p.Imagen;
-                                string path = p.ImagenWithPath;
-
-                                // Cargamos la imagen en el buffer
-                                if (File.Exists(path))
-                                {
-                                    Bitmap bitmap = new Bitmap(path);
-                                    string ext = string.Empty;
-
-                                    if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Jpeg.Guid))
-                                        ext = ".jpg";
-                                    else
-                                    {
-                                        if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Bmp.Guid))
-                                            ext = ".bmp";
-                                        else
-                                        {
-                                            if (bitmap.RawFormat.Guid.Equals(System.Drawing.Imaging.ImageFormat.Png.Guid))
-                                                ext = ".png";
-                                        }
-                                    }
-
-                                    if (_imagen_grande)
-                                    {
-                                        Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                        path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                    }
-                                    else
-                                    {
-                                        if (bitmap.Width > 750 || bitmap.Height > 850)
-                                        {
-                                            Images.Save(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH, "temp" + ext, 750, 850, true, bitmap.RawFormat);
-                                            path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                        }
-                                        else
-                                        {
-                                            File.Copy(path, ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext, true);
-                                            //Images.Save(path, Resources.Paths.FOTO_PREGUNTAS_EXAMENES, "temp" + ext, bitmap.Width, bitmap.Height, true, bitmap.RawFormat);
-                                            path = ModuleController.FOTOS_PREGUNTAS_EXAMEN_PATH + "temp" + ext;
-                                        }
-                                    }
-
-                                    Image prueba = Image.FromFile(path);
-                                    MemoryStream stream = new MemoryStream();
-                                    prueba.Save(stream, bitmap.RawFormat);
-                                    _imagen_pregunta = stream.ToArray();
-
-                                    bitmap.Dispose();
-                                    prueba.Dispose();
-
-                                    //Declaramos fs para poder abrir la imagen.
-                                    //FileStream fs = new FileStream(path, FileMode.Open, FileAccess.Read);
-
-                                    //// Declaramos un lector binario para pasar la imagen a bytes
-                                    //BinaryReader br = new BinaryReader(fs);
-                                    //_imagen_pregunta = new byte[(int)fs.Length];
-                                    //br.Read(ImagenPregunta, 0, (int)fs.Length);
-                                    //br.Close();
-                                    //fs.Close();
-                                }
-                            }
-                            else
-                                _imagen = string.Empty;*/
                         }
                     }
                 }
             }
-            //_imagen_grande = false; //trampilla :)
         }
 
         #endregion
@@ -405,7 +155,7 @@ namespace moleQule.Library.Instruction
 
         #endregion
 
-        public static string Resize(string path)
+        public static string Resize(string path, string name)
         {
             Image imagen = Image.FromFile(path);
             int width = 550;//ancho de página
@@ -414,12 +164,13 @@ namespace moleQule.Library.Instruction
             if (imagen.Width >= width)
                 height = imagen.Height * width / imagen.Width;
             else
-                return path;
+                width = imagen.Width;
+                //return path;
 
             var destRect = new Rectangle(0, 0, width, height);
             var destImage = new Bitmap(width, height);
 
-            destImage.SetResolution(imagen.HorizontalResolution, imagen.VerticalResolution);
+            destImage.SetResolution(96, 96);
 
             using (var graphics = Graphics.FromImage(destImage))
             {
@@ -436,7 +187,12 @@ namespace moleQule.Library.Instruction
                 }
             }
 
-            string resized_path = path.Substring(0, path.LastIndexOf(".")) + "_resized" + path.Substring(path.LastIndexOf("."));
+            if (!Directory.Exists(".\\Temp"))
+                Directory.CreateDirectory(".\\Temp");
+
+            string resized_path = Directory.GetCurrentDirectory() + "\\Temp\\" + name;
+
+            //path.Substring(0, path.LastIndexOf(".")) + "_resized" + path.Substring(path.LastIndexOf("."));
 
             imagen.Dispose();
             destImage.Save(resized_path);

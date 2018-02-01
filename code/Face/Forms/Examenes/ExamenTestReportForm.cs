@@ -101,6 +101,9 @@ namespace moleQule.Face.Instruction
                     ReportViewer.SetReport(examen);
                     ReportViewer.ShowDialog();
 
+                    if (Directory.Exists(".\\Temp"))
+                        Directory.Delete(".\\Temp", true);
+
                     break;
 
                 case ETipoPagina.Respuestas:
